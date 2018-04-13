@@ -1,20 +1,17 @@
-/*
-  ==============================================================================
-
-    SineWaveVoice.cpp
-    Created: 11 Apr 2018 7:44:41pm
-    Author:  maxon
-
-  ==============================================================================
-*/
 
 #include "SineWaveVoice.h"
 #include "SineWaveSound.h"
+
+SineWaveVoice::SineWaveVoice(float freqRate) : mFreqRate(freqRate) {
+
+}
+
 
 bool SineWaveVoice::canPlaySound(SynthesiserSound * sound)
   {
 	  return dynamic_cast<SineWaveSound*> (sound) != nullptr;
   }
+
 
   void SineWaveVoice::startNote(int midiNoteNumber, float velocity, SynthesiserSound *, int)
   {
@@ -22,7 +19,7 @@ bool SineWaveVoice::canPlaySound(SynthesiserSound * sound)
 	  level = velocity * 0.15;
 	  tailOff = 0.0;
 
-	  auto cyclesPerSecond = MidiMessage::getMidiNoteInHertz(midiNoteNumber);
+	  auto cyclesPerSecond = mFreqRate*MidiMessage::getMidiNoteInHertz(midiNoteNumber);
 	  auto cyclesPerSample = cyclesPerSecond / getSampleRate();
 
 	  angleDelta = cyclesPerSample * 2.0 * MathConstants<double>::pi;
@@ -84,3 +81,12 @@ bool SineWaveVoice::canPlaySound(SynthesiserSound * sound)
 		  }
 	  }
   }
+
+void SineWaveVoice::pitchWheelMoved(int newPitchWheelValue) {
+
+}
+
+void SineWaveVoice::controllerMoved(int controllerNumber, int newControllerValue) {
+
+}
+

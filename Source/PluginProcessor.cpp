@@ -10,6 +10,8 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
+#include "Synth/MixerVoice.h"
+#include "Synth/EnvelopeVoice.h"
 
 //==============================================================================
 AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
@@ -17,8 +19,13 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
                        )
 
 {
-	
-	sineSynth.addVoice(new SineWaveVoice());
+
+	auto mixerVoice = new MixerVoice({
+            new SineWaveVoice(1),
+            new SineWaveVoice(2),
+            new EnvelopeVoice()
+    });
+	sineSynth.addVoice(mixerVoice);
 	sineSynth.addSound(new SineWaveSound());
 }
 
