@@ -1,12 +1,11 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
-#include <vector>
-#include "../Common/IVoiceModule.h"
+#include "IVoiceModule.h"
+#include "IVoiceModuleHost.h"
 
-class MixerVoice : public SynthesiserVoice {
-
+class CVoiceModuleHost : public SynthesiserVoice, public IVoiceModuleHost {
 public:
-    MixerVoice(const std::vector<SynthesiserVoice*>& subvoices);
+    CVoiceModuleHost(const std::vector<IVoiceModule*>& modules);
 
     bool canPlaySound(SynthesiserSound* sound) override;
 
@@ -19,7 +18,7 @@ public:
     void controllerMoved(int controllerNumber, int newControllerValue) override;
 
     void renderNextBlock(AudioSampleBuffer& outputBuffer, int startSample, int numSamples) override;
-private:
-    std::vector<std::unique_ptr<SynthesiserVoice>> mSubvoices;
-};
 
+private:
+    std::vector<std::unique_ptr<IVoiceModule>> mVoiceModules;
+};
