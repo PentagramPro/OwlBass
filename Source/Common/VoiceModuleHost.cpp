@@ -3,11 +3,15 @@
 #include "VoiceModuleHost.h"
 #include "VoiceModuleHostSound.h"
 
-CVoiceModuleHost::CVoiceModuleHost(const std::vector<IVoiceModule *> &modules) {
-    for(auto m: modules) {
-        mVoiceModules.emplace_back(m);
-    }
+
+CVoiceModuleHost::CVoiceModuleHost() {
+
 }
+
+void CVoiceModuleHost::AddModule(IVoiceModule *module) {
+    mVoiceModules.emplace_back(module);
+}
+
 
 bool CVoiceModuleHost::canPlaySound(SynthesiserSound *sound) {
     auto voiceModuleSound = dynamic_cast<CVoiceModuleHostSound*> (sound);
@@ -42,4 +46,12 @@ void CVoiceModuleHost::renderNextBlock(AudioSampleBuffer &outputBuffer, int star
     for(auto& voice : mVoiceModules) {
         voice->ProcessBlock(outputBuffer, startSample, numSamples);
     }
+}
+
+double CVoiceModuleHost::GetSampleRate() const {
+    return getSampleRate();
+}
+
+void CVoiceModuleHost::SoundEnded() {
+    clearCurrentNote();
 }

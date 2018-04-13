@@ -12,6 +12,9 @@
 #include "PluginEditor.h"
 #include "Synth/MixerVoice.h"
 #include "Synth/EnvelopeVoice.h"
+#include "Synth/SineWaveVoice.h"
+#include "Common/VoiceModuleHost.h"
+#include "Common/VoiceModuleHostSound.h"
 
 //==============================================================================
 AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
@@ -20,13 +23,13 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
 {
 
-	auto mixerVoice = new MixerVoice({
-            new SineWaveVoice(1),
-            new SineWaveVoice(2),
-            new EnvelopeVoice()
-    });
-	sineSynth.addVoice(mixerVoice);
-	sineSynth.addSound(new SineWaveSound());
+	auto voiceModuleHost = new CVoiceModuleHost();
+    voiceModuleHost->AddModule(new SineWaveVoice(*voiceModuleHost,1));
+    voiceModuleHost->AddModule(new SineWaveVoice(*voiceModuleHost,2));
+    voiceModuleHost->AddModule(new EnvelopeVoice(*voiceModuleHost));
+
+	sineSynth.addVoice(voiceModuleHost);
+	sineSynth.addSound(new CVoiceModuleHostSound());
 }
 
 AdditiveVstAudioProcessor::~AdditiveVstAudioProcessor()

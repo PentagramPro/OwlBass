@@ -5,29 +5,25 @@
 #include "EnvelopeVoice.h"
 #include <algorithm>
 
-bool EnvelopeVoice::canPlaySound(SynthesiserSound *sound) {
-    true;
+EnvelopeVoice::EnvelopeVoice(IVoiceModuleHost &host) : mHost(host) {
+
 }
 
-void EnvelopeVoice::startNote(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) {
+
+
+void EnvelopeVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) {
     mSoundLevel = 0;
-    mAttackPerSample = mAttackTime/getSampleRate();
+    mAttackPerSample = mAttackTime/mHost.GetSampleRate();
     mState = EState::Attack;
 }
 
-void EnvelopeVoice::stopNote(float velocity, bool allowTailOff) {
+void EnvelopeVoice::OnNoteStop(float velocity, bool allowTailOff) {
     mState = EState::Idle;
 }
 
-void EnvelopeVoice::pitchWheelMoved(int newPitchWheelValue) {
 
-}
 
-void EnvelopeVoice::controllerMoved(int controllerNumber, int newControllerValue) {
-
-}
-
-void EnvelopeVoice::renderNextBlock(AudioBuffer<float> &outputBuffer, int startSample, int numSamples) {
+void EnvelopeVoice::ProcessBlock(AudioBuffer<float> &outputBuffer, int startSample, int numSamples) {
     int samplesCount = numSamples;
     int currentSample = startSample;
 
@@ -61,3 +57,4 @@ void EnvelopeVoice::renderNextBlock(AudioBuffer<float> &outputBuffer, int startS
         currentSample++;
     }
 }
+

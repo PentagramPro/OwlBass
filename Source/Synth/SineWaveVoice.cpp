@@ -1,31 +1,28 @@
 
 #include "SineWaveVoice.h"
-#include "SineWaveSound.h"
 
-SineWaveVoice::SineWaveVoice(float freqRate) : mFreqRate(freqRate) {
+SineWaveVoice::SineWaveVoice(IVoiceModuleHost& host,float freqRate)
+		: mFreqRate(freqRate)
+, mHost(host){
 
 }
 
 
-bool SineWaveVoice::canPlaySound(SynthesiserSound * sound)
-  {
-	  return dynamic_cast<SineWaveSound*> (sound) != nullptr;
-  }
 
 
-  void SineWaveVoice::startNote(int midiNoteNumber, float velocity, SynthesiserSound *, int)
+  void SineWaveVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int)
   {
 	  currentAngle = 0.0;
 	  level = velocity * 0.15;
 	  tailOff = 0.0;
 
 	  auto cyclesPerSecond = mFreqRate*MidiMessage::getMidiNoteInHertz(midiNoteNumber);
-	  auto cyclesPerSample = cyclesPerSecond / getSampleRate();
+	  auto cyclesPerSample = cyclesPerSecond / mHost.GetSampleRate();
 
 	  angleDelta = cyclesPerSample * 2.0 * MathConstants<double>::pi;
   }
 
-  void SineWaveVoice::stopNote(float, bool allowTailOff)
+  void SineWaveVoice::OnNoteStop(float, bool allowTailOff)
   {
 	  if (allowTailOff)
 	  {
@@ -34,12 +31,12 @@ bool SineWaveVoice::canPlaySound(SynthesiserSound * sound)
 	  }
 	  else
 	  {
-		  clearCurrentNote();
+		  mHost.SoundEnded();
 		  angleDelta = 0.0;
 	  }
   }
 
-  void SineWaveVoice::renderNextBlock(AudioSampleBuffer & outputBuffer, int startSample, int numSamples)
+  void SineWaveVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSample, int numSamples)
   {
 	  if (angleDelta != 0.0)
 	  {
@@ -59,7 +56,7 @@ bool SineWaveVoice::canPlaySound(SynthesiserSound * sound)
 
 				  if (tailOff <= 0.005)
 				  {
-					  clearCurrentNote(); // [9]
+					  mHost.SoundEnded(); // [9]
 
 					  angleDelta = 0.0;
 					  break;
@@ -82,11 +79,4 @@ bool SineWaveVoice::canPlaySound(SynthesiserSound * sound)
 	  }
   }
 
-void SineWaveVoice::pitchWheelMoved(int newPitchWheelValue) {
-
-}
-
-void SineWaveVoice::controllerMoved(int controllerNumber, int newControllerValue) {
-
-}
 

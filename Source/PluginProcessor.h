@@ -11,8 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "SineWaveSound.h"
-#include "SineWaveVoice.h"
+
 //==============================================================================
 /**
 */

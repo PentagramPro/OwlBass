@@ -18,14 +18,14 @@
             file="Source/Common/VoiceModuleHostSound.h"/>
     </GROUP>
     <GROUP id="{06D74786-B672-E363-A511-E371D1D9C0AF}" name="Synth">
-      <FILE id="MgnSw7" name="SineWaveVoice.h" compile="0" resource="0" file="Source/SineWaveVoice.h"/>
-      <FILE id="HPa00j" name="SineWaveVoice.cpp" compile="1" resource="0"
-            file="Source/SineWaveVoice.cpp"/>
       <FILE id="ecgqvL" name="EnvelopeVoice.cpp" compile="1" resource="0"
             file="Source/Synth/EnvelopeVoice.cpp"/>
       <FILE id="OaBZLH" name="EnvelopeVoice.h" compile="0" resource="0" file="Source/Synth/EnvelopeVoice.h"/>
       <FILE id="fnSfqN" name="MixerVoice.cpp" compile="1" resource="0" file="Source/Synth/MixerVoice.cpp"/>
       <FILE id="NiSqvs" name="MixerVoice.h" compile="0" resource="0" file="Source/Synth/MixerVoice.h"/>
+      <FILE id="GBYkHe" name="SineWaveVoice.cpp" compile="1" resource="0"
+            file="Source/Synth/SineWaveVoice.cpp"/>
+      <FILE id="wQIBYk" name="SineWaveVoice.h" compile="0" resource="0" file="Source/Synth/SineWaveVoice.h"/>
     </GROUP>
     <GROUP id="{760016CA-87E6-5D77-FD13-3993BD947A8C}" name="Source">
       <FILE id="bjQnPX" name="PluginProcessor.cpp" compile="1" resource="0"
@@ -36,9 +36,6 @@
             file="Source/PluginEditor.cpp"/>
       <FILE id="cKHRSH" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
-    <FILE id="RIEV4d" name="SineWaveSound.cpp" compile="1" resource="0"
-          file="Source/SineWaveSound.cpp"/>
-    <FILE id="u5WRZo" name="SineWaveSound.h" compile="0" resource="0" file="Source/SineWaveSound.h"/>
   </MAINGROUP>
   <LIVE_SETTINGS>
     <WINDOWS/>
