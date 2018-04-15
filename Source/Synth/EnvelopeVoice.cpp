@@ -3,18 +3,17 @@
 //
 
 #include "EnvelopeVoice.h"
+#include "../Common/ProperiesRegistry.h"
 #include <algorithm>
 #include <string>
 
-EnvelopeVoice::EnvelopeVoice(IVoiceModuleHost &host) : mHost(host) {
-
+void EnvelopeVoice::InitProperties(CPropertiesRegistry & registry)
+{
+	registry.AddProperty(GetPropName("Attack"), mAttackTime, 0.001, 10);
 }
-
-
 
 void EnvelopeVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) {
     mSoundLevel = 0;
-    mAttackPerSample = mAttackTime/mHost.GetSampleRate();
     mState = EState::Attack;
 }
 
@@ -37,7 +36,7 @@ void EnvelopeVoice::ProcessBlock(AudioBuffer<float> &outputBuffer, int startSamp
 
         if(mState == EState::Attack) {
 
-            mSoundLevel+=mAttackPerSample;
+            mSoundLevel+= mAttackTime / GetHost().GetSampleRate();
             if (mSoundLevel > 1) {
                 mSoundLevel = 1;
                 mState = EState::Sustain;

@@ -10,6 +10,14 @@
       <FILE id="UPoTg9" name="IVoiceModule.h" compile="0" resource="0" file="Source/Common/IVoiceModule.h"/>
       <FILE id="FUiNsk" name="IVoiceModuleHost.h" compile="0" resource="0"
             file="Source/Common/IVoiceModuleHost.h"/>
+      <FILE id="YGJIJo" name="ProperiesRegistry.cpp" compile="1" resource="0"
+            file="Source/Common/ProperiesRegistry.cpp"/>
+      <FILE id="rety8S" name="ProperiesRegistry.h" compile="0" resource="0"
+            file="Source/Common/ProperiesRegistry.h"/>
+      <FILE id="qOEdOC" name="VoiceModuleBase.cpp" compile="1" resource="0"
+            file="Source/Common/VoiceModuleBase.cpp"/>
+      <FILE id="WxIXIi" name="VoiceModuleBase.h" compile="0" resource="0"
+            file="Source/Common/VoiceModuleBase.h"/>
       <FILE id="NeIwkl" name="VoiceModuleHost.cpp" compile="1" resource="0"
             file="Source/Common/VoiceModuleHost.cpp"/>
       <FILE id="F9XAvg" name="VoiceModuleHost.h" compile="0" resource="0"

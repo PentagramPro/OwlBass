@@ -1,12 +1,13 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "../Common/IVoiceModule.h"
+#include "../Common/VoiceModuleBase.h"
 #include "../Common/IVoiceModuleHost.h"
 
-class EnvelopeVoice  : public IVoiceModule {
+class EnvelopeVoice  : public CVoiceModuleBase {
 public:
-    EnvelopeVoice(IVoiceModuleHost& host);
+	EnvelopeVoice(const std::string& name, IVoiceModuleHost& host) : CVoiceModuleBase(name, host) {}
 
+	void InitProperties(CPropertiesRegistry& registry);
     void OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) override;
 
     void OnNoteStop(float velocity, bool allowTailOff) override;
@@ -15,11 +16,9 @@ public:
 
 private:
     enum class EState {Idle, Attack, Sustain, Release};
-    float mAttackTime = 1;
-    double mAttackPerSample;
+    double mAttackTime = 1;
     double mSoundLevel;
 
-    IVoiceModuleHost& mHost;
     EState mState = EState ::Idle;
 };
 
