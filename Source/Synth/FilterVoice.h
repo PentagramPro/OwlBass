@@ -3,6 +3,7 @@
 #include "../Common/VoiceModuleBase.h"
 #include "../Common/IVoiceModuleHost.h"
 #include "../DSP/DSPLowpassFilter.h"
+#include "../DSP/DSPLowpassFilter2.h"
 
 class CFilterVoice : public CVoiceModuleBase {
 public:
@@ -15,9 +16,10 @@ public:
 	void ProcessBlock(AudioBuffer<float> &outputBuffer, int startSample, int numSamples) override;
 
 private:
-	CDSPLowpassFilter mFilter;
+	CDSPLowpassFilter2 mFilter;
 	double mCutoffFreq = 1;
 
 	// Inherited via CVoiceModuleBase
 	virtual void InitProperties(CPropertiesRegistry & registry) override;
+	bool mPlayingNote = false;
 };

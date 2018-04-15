@@ -51,6 +51,10 @@
             file="Source/DSP/DSPLowpassFilter.cpp"/>
       <FILE id="I8zSgs" name="DSPLowpassFilter.h" compile="0" resource="0"
             file="Source/DSP/DSPLowpassFilter.h"/>
+      <FILE id="Vun31j" name="DSPLowpassFilter2.cpp" compile="1" resource="0"
+            file="Source/DSP/DSPLowpassFilter2.cpp"/>
+      <FILE id="uIEMRS" name="DSPLowpassFilter2.h" compile="0" resource="0"
+            file="Source/DSP/DSPLowpassFilter2.h"/>
     </GROUP>
     <GROUP id="{760016CA-87E6-5D77-FD13-3993BD947A8C}" name="Source">
       <FILE id="bjQnPX" name="PluginProcessor.cpp" compile="1" resource="0"
