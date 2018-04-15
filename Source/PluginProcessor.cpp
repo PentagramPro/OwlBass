@@ -27,7 +27,9 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
 	auto voiceModuleHost = new CVoiceModuleHost(mPropRegistry);
   //  voiceModuleHost->AddModule(new SineWaveVoice("OSC1",*voiceModuleHost,2));
-	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC2",*voiceModuleHost, 1));
+	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC2",*voiceModuleHost, 1,0.3));
+	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC3", *voiceModuleHost, 0.5, 0.3));
+	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC4", *voiceModuleHost, 0.25, 0.3));
     voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost));
 

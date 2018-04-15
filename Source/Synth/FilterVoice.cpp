@@ -6,7 +6,7 @@ void CFilterVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSo
 	mFilter.Reset(GetHost().GetSampleRate());
 
 	mFilter.SetParams(mCutoffFreq, 3);
-
+	mCutoffSmooth = mCutoffFreq;
 	mPlayingNote = true;
 }
 
@@ -21,7 +21,9 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 	int samplesCount = numSamples;
 	int currentSample = startSample;
 	double hzPerSample = 0.0001;
-	mFilter.SetParams(mCutoffFreq, 3);
+
+	
+	
 
 	if (!mPlayingNote) {
 		return;
@@ -29,8 +31,9 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 
 	while (--samplesCount >= 0) {
 
+		mCutoffSmooth += (mCutoffFreq - mCutoffSmooth) * 0.01;
 
-		
+		mFilter.SetParams(mCutoffSmooth, 3);
 
 		for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
 			double res = outputBuffer.getSample(i, currentSample);

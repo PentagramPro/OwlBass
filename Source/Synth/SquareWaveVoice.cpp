@@ -1,8 +1,9 @@
 #include "SquareWaveVoice.h"
 
-CSquareWaveVoice::CSquareWaveVoice(const std::string& name, IVoiceModuleHost& host, float freqRate)
+CSquareWaveVoice::CSquareWaveVoice(const std::string& name, IVoiceModuleHost& host, float freqRate, float volume)
 	: CVoiceModuleBase(name, host)
 	, mFreqRate(freqRate)
+	, mVolume(volume)
 {
 }
 
@@ -36,7 +37,7 @@ void CSquareWaveVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startS
 			mSampleCounter = 0;
 		}
 
-		float output = mSampleCounter / mSamplesPerCycle > 0.5 ? 1 : 0;
+		float output = mSampleCounter / mSamplesPerCycle > 0.5 ? mVolume : -mVolume;
 
 		for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
 			outputBuffer.addSample(i, currentSample, output);

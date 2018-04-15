@@ -18,7 +18,7 @@ public:
 private:
 	CDSPLowpassFilter2 mFilter;
 	double mCutoffFreq = 1;
-
+	double mCutoffSmooth = 1;
 	// Inherited via CVoiceModuleBase
 	virtual void InitProperties(CPropertiesRegistry & registry) override;
 	bool mPlayingNote = false;
