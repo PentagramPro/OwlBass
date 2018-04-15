@@ -21,11 +21,27 @@
       <FILE id="ecgqvL" name="EnvelopeVoice.cpp" compile="1" resource="0"
             file="Source/Synth/EnvelopeVoice.cpp"/>
       <FILE id="OaBZLH" name="EnvelopeVoice.h" compile="0" resource="0" file="Source/Synth/EnvelopeVoice.h"/>
+      <FILE id="t7vMNY" name="FilterVoice.cpp" compile="1" resource="0" file="Source/Synth/FilterVoice.cpp"/>
+      <FILE id="omX3Ae" name="FilterVoice.h" compile="0" resource="0" file="Source/Synth/FilterVoice.h"/>
       <FILE id="fnSfqN" name="MixerVoice.cpp" compile="1" resource="0" file="Source/Synth/MixerVoice.cpp"/>
       <FILE id="NiSqvs" name="MixerVoice.h" compile="0" resource="0" file="Source/Synth/MixerVoice.h"/>
       <FILE id="GBYkHe" name="SineWaveVoice.cpp" compile="1" resource="0"
             file="Source/Synth/SineWaveVoice.cpp"/>
       <FILE id="wQIBYk" name="SineWaveVoice.h" compile="0" resource="0" file="Source/Synth/SineWaveVoice.h"/>
+      <FILE id="Cj3yHl" name="SquareWaveVoice.cpp" compile="1" resource="0"
+            file="Source/Synth/SquareWaveVoice.cpp"/>
+      <FILE id="Dy7cRw" name="SquareWaveVoice.h" compile="0" resource="0"
+            file="Source/Synth/SquareWaveVoice.h"/>
+    </GROUP>
+    <GROUP id="{5AB94AE6-C205-BC2E-C1FD-A2D89913ACCE}" name="DSP">
+      <FILE id="jdp5ph" name="DSPIntegration.cpp" compile="1" resource="0"
+            file="Source/DSP/DSPIntegration.cpp"/>
+      <FILE id="w4BqLh" name="DSPIntegration.h" compile="0" resource="0"
+            file="Source/DSP/DSPIntegration.h"/>
+      <FILE id="BqiaY8" name="DSPLowpassFilter.cpp" compile="1" resource="0"
+            file="Source/DSP/DSPLowpassFilter.cpp"/>
+      <FILE id="I8zSgs" name="DSPLowpassFilter.h" compile="0" resource="0"
+            file="Source/DSP/DSPLowpassFilter.h"/>
     </GROUP>
     <GROUP id="{760016CA-87E6-5D77-FD13-3993BD947A8C}" name="Source">
       <FILE id="bjQnPX" name="PluginProcessor.cpp" compile="1" resource="0"

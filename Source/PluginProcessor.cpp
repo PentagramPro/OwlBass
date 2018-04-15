@@ -13,6 +13,8 @@
 #include "Synth/MixerVoice.h"
 #include "Synth/EnvelopeVoice.h"
 #include "Synth/SineWaveVoice.h"
+#include "Synth/FilterVoice.h"
+#include "Synth/SquareWaveVoice.h"
 #include "Common/VoiceModuleHost.h"
 #include "Common/VoiceModuleHostSound.h"
 
@@ -24,9 +26,11 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 {
 
 	auto voiceModuleHost = new CVoiceModuleHost();
-    voiceModuleHost->AddModule(new SineWaveVoice(*voiceModuleHost,1));
-    voiceModuleHost->AddModule(new SineWaveVoice(*voiceModuleHost,2));
+  //  voiceModuleHost->AddModule(new SineWaveVoice(*voiceModuleHost,2));
+	voiceModuleHost->AddModule(new CSquareWaveVoice(*voiceModuleHost, 1));
     voiceModuleHost->AddModule(new EnvelopeVoice(*voiceModuleHost));
+	voiceModuleHost->AddModule(new CFilterVoice(*voiceModuleHost));
+
 
 	sineSynth.addVoice(voiceModuleHost);
 	sineSynth.addSound(new CVoiceModuleHostSound());

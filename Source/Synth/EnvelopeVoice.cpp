@@ -4,6 +4,7 @@
 
 #include "EnvelopeVoice.h"
 #include <algorithm>
+#include <string>
 
 EnvelopeVoice::EnvelopeVoice(IVoiceModuleHost &host) : mHost(host) {
 
@@ -49,9 +50,6 @@ void EnvelopeVoice::ProcessBlock(AudioBuffer<float> &outputBuffer, int startSamp
 
         for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
             const double scaledSampleValue = outputBuffer.getSample(i, currentSample)*mSoundLevel;
-            if(mState==EState::Attack) {
-                Logger::writeToLog(std::to_string(scaledSampleValue));
-            }
             outputBuffer.setSample(i, currentSample, scaledSampleValue);
         }
         currentSample++;
