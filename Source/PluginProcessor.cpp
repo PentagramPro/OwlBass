@@ -25,11 +25,11 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
 {
 
-	auto voiceModuleHost = new CVoiceModuleHost();
-  //  voiceModuleHost->AddModule(new SineWaveVoice(*voiceModuleHost,2));
-	voiceModuleHost->AddModule(new CSquareWaveVoice(*voiceModuleHost, 1));
-    voiceModuleHost->AddModule(new EnvelopeVoice(*voiceModuleHost));
-	voiceModuleHost->AddModule(new CFilterVoice(*voiceModuleHost));
+	auto voiceModuleHost = new CVoiceModuleHost(mPropRegistry);
+  //  voiceModuleHost->AddModule(new SineWaveVoice("OSC1",*voiceModuleHost,2));
+	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC2",*voiceModuleHost, 1));
+    voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
+	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost));
 
 
 	sineSynth.addVoice(voiceModuleHost);

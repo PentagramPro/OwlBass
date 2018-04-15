@@ -1,9 +1,8 @@
 
 #include "SineWaveVoice.h"
 
-SineWaveVoice::SineWaveVoice(IVoiceModuleHost& host,float freqRate)
-		: mFreqRate(freqRate)
-, mHost(host){
+SineWaveVoice::SineWaveVoice(const std::string& name, IVoiceModuleHost& host, float freqRate)
+		: CVoiceModuleBase(name, host), mFreqRate(freqRate){
 
 }
 
@@ -17,7 +16,7 @@ SineWaveVoice::SineWaveVoice(IVoiceModuleHost& host,float freqRate)
 	  tailOff = 0.0;
 
 	  auto cyclesPerSecond = mFreqRate*MidiMessage::getMidiNoteInHertz(midiNoteNumber);
-	  auto cyclesPerSample = cyclesPerSecond / mHost.GetSampleRate();
+	  auto cyclesPerSample = cyclesPerSecond / GetHost().GetSampleRate();
 
 	  angleDelta = cyclesPerSample * 2.0 * MathConstants<double>::pi;
   }
@@ -31,7 +30,7 @@ SineWaveVoice::SineWaveVoice(IVoiceModuleHost& host,float freqRate)
 	  }
 	  else
 	  {
-		  mHost.SoundEnded();
+		  GetHost().SoundEnded();
 		  angleDelta = 0.0;
 	  }
   }
@@ -56,7 +55,7 @@ SineWaveVoice::SineWaveVoice(IVoiceModuleHost& host,float freqRate)
 
 				  if (tailOff <= 0.005)
 				  {
-					  mHost.SoundEnded(); // [9]
+					  GetHost().SoundEnded(); // [9]
 
 					  angleDelta = 0.0;
 					  break;
@@ -77,6 +76,10 @@ SineWaveVoice::SineWaveVoice(IVoiceModuleHost& host,float freqRate)
 			  }
 		  }
 	  }
+  }
+
+  void SineWaveVoice::InitProperties(CPropertiesRegistry & registry)
+  {
   }
 
 

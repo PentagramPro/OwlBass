@@ -1,7 +1,7 @@
 #include "SquareWaveVoice.h"
 
-CSquareWaveVoice::CSquareWaveVoice(IVoiceModuleHost & host, float freqRate)
-	: mHost(host)
+CSquareWaveVoice::CSquareWaveVoice(const std::string& name, IVoiceModuleHost& host, float freqRate)
+	: CVoiceModuleBase(name, host)
 	, mFreqRate(freqRate)
 {
 }
@@ -9,14 +9,14 @@ CSquareWaveVoice::CSquareWaveVoice(IVoiceModuleHost & host, float freqRate)
 void CSquareWaveVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int currentPitchWheelPosition)
 {
 	auto cyclesPerSecond = mFreqRate * MidiMessage::getMidiNoteInHertz(midiNoteNumber);
-	mSamplesPerCycle = mHost.GetSampleRate() / cyclesPerSecond;
+	mSamplesPerCycle = GetHost().GetSampleRate() / cyclesPerSecond;
 	mSampleCounter = 0;
 	mEnabled = true;
 }
 
 void CSquareWaveVoice::OnNoteStop(float velocity, bool allowTailOff)
 {
-	mHost.SoundEnded();
+	GetHost().SoundEnded();
 	mEnabled = false;
 }
 
@@ -43,4 +43,8 @@ void CSquareWaveVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startS
 		}
 		currentSample++;
 	}
+}
+
+void CSquareWaveVoice::InitProperties(CPropertiesRegistry & registry)
+{
 }

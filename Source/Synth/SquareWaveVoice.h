@@ -1,13 +1,13 @@
 
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "../Common/IVoiceModule.h"
+#include "../Common/VoiceModuleBase.h"
 #include "../Common/IVoiceModuleHost.h"
 
-class CSquareWaveVoice : public IVoiceModule
+class CSquareWaveVoice : public CVoiceModuleBase
 {
 public:
-	CSquareWaveVoice(IVoiceModuleHost& host, float freqRate);
+	CSquareWaveVoice(const std::string& name, IVoiceModuleHost& host, float freqRate);
 
 	void OnNoteStart(int midiNoteNumber, float velocity,
 		SynthesiserSound*, int currentPitchWheelPosition) override;
@@ -17,10 +17,13 @@ public:
 	void ProcessBlock(AudioSampleBuffer& outputBuffer, int startSample, int numSamples) override;
 
 private:
+	virtual void InitProperties(CPropertiesRegistry & registry) override;
 
 	float mFreqRate = 1;
-	IVoiceModuleHost& mHost;
 	float mSamplesPerCycle;
 	float mSampleCounter;
 	bool mEnabled=false;
+
+	// Inherited via CVoiceModuleBase
+	
 };

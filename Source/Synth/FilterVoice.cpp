@@ -1,18 +1,15 @@
 #include "FilterVoice.h"
-
-CFilterVoice::CFilterVoice(IVoiceModuleHost & host) : mHost(host)
-{
-}
+#include "../Common/ProperiesRegistry.h"
 
 void CFilterVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound * sound, int currentPitchWheelPosition)
 {
-	mFilter.Reset(mHost.GetSampleRate());
-	mFilter.SetParams(500, 3);
+	mFilter.Reset(GetHost().GetSampleRate());
+	mFilter.SetParams(mCutoffFreq, 3);
 }
 
 void CFilterVoice::OnNoteStop(float velocity, bool allowTailOff)
 {
-	mHost.SoundEnded();
+	GetHost().SoundEnded();
 }
 
 void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSample, int numSamples)
@@ -20,7 +17,7 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 	int samplesCount = numSamples;
 	int currentSample = startSample;
 
-	
+	mFilter.SetParams(mCutoffFreq, 3);
 	while (--samplesCount >= 0) {
 
 
@@ -32,4 +29,9 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 		}
 		currentSample++;
 	}
+}
+
+void CFilterVoice::InitProperties(CPropertiesRegistry & registry)
+{
+	registry.AddProperty(GetPropName("CutoffFreq"), mCutoffFreq, 0, 10000);
 }

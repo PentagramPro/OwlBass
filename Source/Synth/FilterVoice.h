@@ -1,12 +1,12 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "../Common/IVoiceModule.h"
+#include "../Common/VoiceModuleBase.h"
 #include "../Common/IVoiceModuleHost.h"
 #include "../DSP/DSPLowpassFilter.h"
 
-class CFilterVoice : public IVoiceModule {
+class CFilterVoice : public CVoiceModuleBase {
 public:
-	CFilterVoice(IVoiceModuleHost& host);
+	CFilterVoice(const std::string& name, IVoiceModuleHost& host) : CVoiceModuleBase(name, host) {}
 
 	void OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) override;
 
@@ -16,5 +16,8 @@ public:
 
 private:
 	CDSPLowpassFilter mFilter;
-	IVoiceModuleHost& mHost;
+	double mCutoffFreq = 1;
+
+	// Inherited via CVoiceModuleBase
+	virtual void InitProperties(CPropertiesRegistry & registry) override;
 };

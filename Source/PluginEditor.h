@@ -16,7 +16,7 @@
 //==============================================================================
 /**
 */
-class AdditiveVstAudioProcessorEditor  : public AudioProcessorEditor
+class AdditiveVstAudioProcessorEditor  : public AudioProcessorEditor, private Slider::Listener
 {
 public:
     AdditiveVstAudioProcessorEditor (AdditiveVstAudioProcessor&);
@@ -27,6 +27,8 @@ public:
     void resized() override;
 
 private:
+	void sliderValueChanged(Slider* slider) override;
+
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     AdditiveVstAudioProcessor& processor;

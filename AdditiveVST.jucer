@@ -14,6 +14,7 @@
             file="Source/Common/ProperiesRegistry.cpp"/>
       <FILE id="rety8S" name="ProperiesRegistry.h" compile="0" resource="0"
             file="Source/Common/ProperiesRegistry.h"/>
+      <FILE id="t8FaGU" name="Toolbox.h" compile="0" resource="0" file="Source/Common/Toolbox.h"/>
       <FILE id="qOEdOC" name="VoiceModuleBase.cpp" compile="1" resource="0"
             file="Source/Common/VoiceModuleBase.cpp"/>
       <FILE id="WxIXIi" name="VoiceModuleBase.h" compile="0" resource="0"

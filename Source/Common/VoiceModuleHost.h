@@ -3,9 +3,11 @@
 #include "IVoiceModule.h"
 #include "IVoiceModuleHost.h"
 
+class CPropertiesRegistry;
+
 class CVoiceModuleHost : public SynthesiserVoice, public IVoiceModuleHost {
 public:
-    CVoiceModuleHost();
+    CVoiceModuleHost(CPropertiesRegistry& propRegistry);
     void AddModule(IVoiceModule* module);
     bool canPlaySound(SynthesiserSound* sound) override;
 
@@ -26,4 +28,5 @@ public:
 
 private:
     std::vector<std::unique_ptr<IVoiceModule>> mVoiceModules;
+	CPropertiesRegistry & mPropRegistry;
 };

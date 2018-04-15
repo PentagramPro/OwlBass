@@ -2,7 +2,7 @@
 #include "MixerVoice.h"
 
 
-MixerVoice::MixerVoice(const std::vector<IVoiceModule*>& subvoices) {
+MixerVoice::MixerVoice(const std::string& name, IVoiceModuleHost& host, const std::vector<IVoiceModule*>& subvoices) : CVoiceModuleBase(name, host) {
     for(auto subvoice: subvoices) {
         mSubvoices.emplace_back(subvoice);
     }
@@ -31,4 +31,8 @@ void MixerVoice::ProcessBlock(AudioSampleBuffer &outputBuffer, int startSample, 
         voice->ProcessBlock(outputBuffer, startSample, numSamples);
     }
 
+}
+
+void MixerVoice::InitProperties(CPropertiesRegistry & registry)
+{
 }

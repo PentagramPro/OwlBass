@@ -11,7 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-
+#include "Common/ProperiesRegistry.h"
 //==============================================================================
 /**
 */
@@ -57,8 +57,9 @@ public:
 
 	Synthesiser sineSynth;
 
+	CPropertiesRegistry& GetPropertiesRegistry() { return mPropRegistry; }
 private:
-	
+	CPropertiesRegistry mPropRegistry;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AdditiveVstAudioProcessor)
 };

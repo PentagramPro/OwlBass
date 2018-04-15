@@ -10,7 +10,6 @@ void CDSPLowpassFilter::SetParams(double cutoff, double Q)
 {
 	mQ = Q;
 	mCutoffRadsPerSec = MathConstants<double>::twoPi*cutoff;
-	mFeedback = 0;
 }
 
 void CDSPLowpassFilter::Reset(double sampleRate)
@@ -20,6 +19,7 @@ void CDSPLowpassFilter::Reset(double sampleRate)
 	mIntFeedbackQ.Reset(sampleRate);
 	mIntGate1.Reset(sampleRate);
 	mIntGate2.Reset(sampleRate);
+	mFeedback = 0;
 }
 
 double CDSPLowpassFilter::Next(double input)

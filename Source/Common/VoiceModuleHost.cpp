@@ -4,12 +4,13 @@
 #include "VoiceModuleHostSound.h"
 
 
-CVoiceModuleHost::CVoiceModuleHost() {
+CVoiceModuleHost::CVoiceModuleHost(CPropertiesRegistry& propRegistry) : mPropRegistry(propRegistry) {
 
 }
 
 void CVoiceModuleHost::AddModule(IVoiceModule *module) {
     mVoiceModules.emplace_back(module);
+	module->InitProperties(mPropRegistry);
 }
 
 
