@@ -12,9 +12,7 @@
             file="Source/UI/MainSynthGui.cpp"/>
       <FILE id="IkeoRK" name="MainSynthGui.h" compile="0" resource="0" file="Source/UI/MainSynthGui.h"/>
     </GROUP>
-    <GROUP id="{D273DE03-1424-D5E0-7D48-D067800C8468}" name="Resources">
-      <FILE id="Lq1Nuc" name="gui_main.xml" compile="0" resource="1" file="Resources/gui_main.xml"/>
-    </GROUP>
+    <GROUP id="{D273DE03-1424-D5E0-7D48-D067800C8468}" name="Resources"/>
     <GROUP id="{B8CFA7A4-FAD0-BD52-4FC5-F3C76E7937E6}" name="Common">
       <FILE id="UPoTg9" name="IVoiceModule.h" compile="0" resource="0" file="Source/Common/IVoiceModule.h"/>
       <FILE id="FUiNsk" name="IVoiceModuleHost.h" compile="0" resource="0"
