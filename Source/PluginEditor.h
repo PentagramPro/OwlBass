@@ -1,22 +1,14 @@
-/*
-  ==============================================================================
-
-    This file was auto-generated!
-
-    It contains the basic framework code for a JUCE plugin editor.
-
-  ==============================================================================
-*/
 
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "PluginProcessor.h"
-
+#include "UI/MainSynthGui.h"
+#include "UI/IGuiListener.h"
 //==============================================================================
 /**
 */
-class AdditiveVstAudioProcessorEditor  : public AudioProcessorEditor, private Slider::Listener
+class AdditiveVstAudioProcessorEditor  : public AudioProcessorEditor, private IGuiListener
 {
 public:
     AdditiveVstAudioProcessorEditor (AdditiveVstAudioProcessor&);
@@ -27,14 +19,16 @@ public:
     void resized() override;
 
 private:
-	void sliderValueChanged(Slider* slider) override;
+	
 
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     AdditiveVstAudioProcessor& processor;
 
-	Slider midiVolume;
-
+	MainSynthGui mGui;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AdditiveVstAudioProcessorEditor)
+
+		// Inherited via IGuiListener
+		virtual void OnValueChanged(const std::string & name, float value) override;
 };

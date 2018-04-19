@@ -6,6 +6,15 @@
               buildAAX="0" enableIAA="0" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
               pluginVSTCategory="kPlugCategGenerator">
   <MAINGROUP id="ErWoIN" name="AdditiveVST">
+    <GROUP id="{E5593B42-EF84-EC40-B08F-4858405D93AA}" name="Ui">
+      <FILE id="rzxOcp" name="IGuiListener.h" compile="0" resource="0" file="Source/UI/IGuiListener.h"/>
+      <FILE id="edn7bv" name="MainSynthGui.cpp" compile="1" resource="0"
+            file="Source/UI/MainSynthGui.cpp"/>
+      <FILE id="IkeoRK" name="MainSynthGui.h" compile="0" resource="0" file="Source/UI/MainSynthGui.h"/>
+    </GROUP>
+    <GROUP id="{D273DE03-1424-D5E0-7D48-D067800C8468}" name="Resources">
+      <FILE id="Lq1Nuc" name="gui_main.xml" compile="0" resource="1" file="Resources/gui_main.xml"/>
+    </GROUP>
     <GROUP id="{B8CFA7A4-FAD0-BD52-4FC5-F3C76E7937E6}" name="Common">
       <FILE id="UPoTg9" name="IVoiceModule.h" compile="0" resource="0" file="Source/Common/IVoiceModule.h"/>
       <FILE id="FUiNsk" name="IVoiceModuleHost.h" compile="0" resource="0"
@@ -32,6 +41,9 @@
       <FILE id="OaBZLH" name="EnvelopeVoice.h" compile="0" resource="0" file="Source/Synth/EnvelopeVoice.h"/>
       <FILE id="t7vMNY" name="FilterVoice.cpp" compile="1" resource="0" file="Source/Synth/FilterVoice.cpp"/>
       <FILE id="omX3Ae" name="FilterVoice.h" compile="0" resource="0" file="Source/Synth/FilterVoice.h"/>
+      <FILE id="h6fDDv" name="LimiterVoice.cpp" compile="1" resource="0"
+            file="Source/Synth/LimiterVoice.cpp"/>
+      <FILE id="SKjVvV" name="LimiterVoice.h" compile="0" resource="0" file="Source/Synth/LimiterVoice.h"/>
       <FILE id="fnSfqN" name="MixerVoice.cpp" compile="1" resource="0" file="Source/Synth/MixerVoice.cpp"/>
       <FILE id="NiSqvs" name="MixerVoice.h" compile="0" resource="0" file="Source/Synth/MixerVoice.h"/>
       <FILE id="GBYkHe" name="SineWaveVoice.cpp" compile="1" resource="0"

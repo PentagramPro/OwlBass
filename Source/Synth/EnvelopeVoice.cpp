@@ -36,7 +36,7 @@ void EnvelopeVoice::ProcessBlock(AudioBuffer<float> &outputBuffer, int startSamp
 
         if(mState == EState::Attack) {
 
-            mSoundLevel+= mAttackTime / GetHost().GetSampleRate();
+            mSoundLevel+= 1 / (GetHost().GetSampleRate()*mAttackTime);
             if (mSoundLevel > 1) {
                 mSoundLevel = 1;
                 mState = EState::Sustain;

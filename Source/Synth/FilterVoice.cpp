@@ -38,8 +38,7 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 		for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
 			double res = outputBuffer.getSample(i, currentSample);
 
-			res = mFilter.Next(res)*0.9;
-			res = Toolbox::clamp(res, -1.0, 1.0);
+			res = mFilter.Next(res);
 			outputBuffer.setSample(i, currentSample, res);
 		}
 		currentSample++;

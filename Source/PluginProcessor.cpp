@@ -15,6 +15,7 @@
 #include "Synth/SineWaveVoice.h"
 #include "Synth/FilterVoice.h"
 #include "Synth/SquareWaveVoice.h"
+#include "Synth/LimiterVoice.h"
 #include "Common/VoiceModuleHost.h"
 #include "Common/VoiceModuleHostSound.h"
 
@@ -32,6 +33,7 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC4", *voiceModuleHost, 0.25, 0.3));
     voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost));
+	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.5));
 
 
 	sineSynth.addVoice(voiceModuleHost);
