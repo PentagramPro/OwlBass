@@ -10,15 +10,16 @@ CSquareWaveVoice::CSquareWaveVoice(const std::string& name, IVoiceModuleHost& ho
 void CSquareWaveVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int currentPitchWheelPosition)
 {
 	auto cyclesPerSecond = mFreqRate * MidiMessage::getMidiNoteInHertz(midiNoteNumber);
-	mSamplesPerCycle = GetHost().GetSampleRate() / cyclesPerSecond;
+	mSamplesPerCycle = GetSampleRate() / cyclesPerSecond;
 	mSampleCounter = 0;
-	mEnabled = true;
+
+	StartSound();
 }
 
 void CSquareWaveVoice::OnNoteStop(float velocity, bool allowTailOff)
 {
-	GetHost().SoundEnded();
-	mEnabled = false;
+	StopSound();
+
 }
 
 void CSquareWaveVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSample, int numSamples)
@@ -26,9 +27,6 @@ void CSquareWaveVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startS
 	int samplesCount = numSamples;
 	int currentSample = startSample;
 
-	if (!mEnabled) {
-		return;
-	}
 
 	while (--samplesCount >= 0) {
 

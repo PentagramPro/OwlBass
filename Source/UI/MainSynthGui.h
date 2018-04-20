@@ -61,6 +61,7 @@ private:
     //==============================================================================
     ScopedPointer<Slider> slider;
     ScopedPointer<Slider> slider2;
+    ScopedPointer<Slider> slider3;
 
 
     //==============================================================================

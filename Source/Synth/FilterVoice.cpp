@@ -3,17 +3,18 @@
 #include "../Common/Toolbox.h"
 void CFilterVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound * sound, int currentPitchWheelPosition)
 {
-	mFilter.Reset(GetHost().GetSampleRate());
+	mFilter.Reset(GetSampleRate());
 
 	mFilter.SetParams(mCutoffFreq, 3);
 	mCutoffSmooth = mCutoffFreq;
 	mPlayingNote = true;
+	StartSound();
 }
 
 void CFilterVoice::OnNoteStop(float velocity, bool allowTailOff)
 {
-	GetHost().SoundEnded();
 	mPlayingNote = false;
+	StopSound();
 }
 
 void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSample, int numSamples)
@@ -24,11 +25,6 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 
 	
 	
-
-	if (!mPlayingNote) {
-		return;
-	}
-
 	while (--samplesCount >= 0) {
 
 		mCutoffSmooth += (mCutoffFreq - mCutoffSmooth) * 0.01;

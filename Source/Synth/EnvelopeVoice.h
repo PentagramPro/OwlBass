@@ -17,6 +17,7 @@ public:
 private:
     enum class EState {Idle, Attack, Sustain, Release};
     double mAttackTime = 1;
+	double mReleaseTime = 1;
     double mSoundLevel;
 
     EState mState = EState ::Idle;

@@ -16,9 +16,10 @@ SineWaveVoice::SineWaveVoice(const std::string& name, IVoiceModuleHost& host, fl
 	  tailOff = 0.0;
 
 	  auto cyclesPerSecond = mFreqRate*MidiMessage::getMidiNoteInHertz(midiNoteNumber);
-	  auto cyclesPerSample = cyclesPerSecond / GetHost().GetSampleRate();
+	  auto cyclesPerSample = cyclesPerSecond / GetSampleRate();
 
 	  angleDelta = cyclesPerSample * 2.0 * MathConstants<double>::pi;
+	  StartSound();
   }
 
   void SineWaveVoice::OnNoteStop(float, bool allowTailOff)
@@ -30,7 +31,7 @@ SineWaveVoice::SineWaveVoice(const std::string& name, IVoiceModuleHost& host, fl
 	  }
 	  else
 	  {
-		  GetHost().SoundEnded();
+		  StopSound();
 		  angleDelta = 0.0;
 	  }
   }
@@ -55,7 +56,7 @@ SineWaveVoice::SineWaveVoice(const std::string& name, IVoiceModuleHost& host, fl
 
 				  if (tailOff <= 0.005)
 				  {
-					  GetHost().SoundEnded(); // [9]
+					  StopSound(); // [9]
 
 					  angleDelta = 0.0;
 					  break;

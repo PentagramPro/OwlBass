@@ -10,15 +10,18 @@
 void EnvelopeVoice::InitProperties(CPropertiesRegistry & registry)
 {
 	registry.AddProperty(GetPropName("Attack"), mAttackTime, 0.001, 10);
+	registry.AddProperty(GetPropName("Release"), mReleaseTime, 0.001, 10);
 }
 
 void EnvelopeVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) {
     mSoundLevel = 0;
     mState = EState::Attack;
+	StartSound();
 }
 
 void EnvelopeVoice::OnNoteStop(float velocity, bool allowTailOff) {
-    mState = EState::Idle;
+    mState = EState::Release;
+	StopSound();
 }
 
 
@@ -27,21 +30,30 @@ void EnvelopeVoice::ProcessBlock(AudioBuffer<float> &outputBuffer, int startSamp
     int samplesCount = numSamples;
     int currentSample = startSample;
 
-    if(mState==EState::Idle) {
-        return;
-    }
+	const double attackSamples = 1 / (GetSampleRate()*mAttackTime);
+	const double releaseSamples = 1 / (GetSampleRate()*mReleaseTime);
 
     while (--samplesCount >= 0){
 
 
         if(mState == EState::Attack) {
 
-            mSoundLevel+= 1 / (GetHost().GetSampleRate()*mAttackTime);
+            mSoundLevel+= attackSamples;
             if (mSoundLevel > 1) {
                 mSoundLevel = 1;
                 mState = EState::Sustain;
             }
         }
+		else if (mState == EState::Release) {
+			mSoundLevel -= releaseSamples;
+			if (mSoundLevel <= 0) {
+				mSoundLevel = 0;
+				mState = EState::Idle;
+			}
+		}
+		else if (mState == EState::Idle) {
+			mSoundLevel = 0;
+		}
         else {
             mSoundLevel = 1;
         }

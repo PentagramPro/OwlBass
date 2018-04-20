@@ -23,7 +23,7 @@ private:
 	float mVolume = 1;
 	float mSamplesPerCycle;
 	float mSampleCounter;
-	bool mEnabled=false;
+
 
 	// Inherited via CVoiceModuleBase
 	

@@ -48,6 +48,14 @@ MainSynthGui::MainSynthGui ()
 
     slider2->setBounds (56, 80, 296, 24);
 
+    addAndMakeVisible (slider3 = new Slider ("ADSRVol.Release"));
+    slider3->setRange (0, 10, 0);
+    slider3->setSliderStyle (Slider::LinearHorizontal);
+    slider3->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
+    slider3->addListener (this);
+
+    slider3->setBounds (56, 120, 296, 24);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -66,6 +74,7 @@ MainSynthGui::~MainSynthGui()
 
     slider = nullptr;
     slider2 = nullptr;
+    slider3 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -111,6 +120,11 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_slider2] -- add your slider handling code here..
         //[/UserSliderCode_slider2]
     }
+    else if (sliderThatWasMoved == slider3)
+    {
+        //[UserSliderCode_slider3] -- add your slider handling code here..
+        //[/UserSliderCode_slider3]
+    }
 
     //[UsersliderValueChanged_Post]
     //[/UsersliderValueChanged_Post]
@@ -148,6 +162,11 @@ BEGIN_JUCER_METADATA
           needsCallback="1"/>
   <SLIDER name="ADSRVol.Attack" id="e686dcf41ff8f723" memberName="slider2"
           virtualName="" explicitFocusOrder="0" pos="56 80 296 24" min="0.00000000000000000000"
+          max="10.00000000000000000000" int="0.00000000000000000000" style="LinearHorizontal"
+          textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+  <SLIDER name="ADSRVol.Release" id="19e4bee93ea59267" memberName="slider3"
+          virtualName="" explicitFocusOrder="0" pos="56 120 296 24" min="0.00000000000000000000"
           max="10.00000000000000000000" int="0.00000000000000000000" style="LinearHorizontal"
           textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>

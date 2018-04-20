@@ -10,4 +10,5 @@ public:
             SynthesiserSound* sound, int currentPitchWheelPosition) = 0;
     virtual void OnNoteStop(float velocity, bool allowTailOff) = 0;
     virtual void ProcessBlock(AudioSampleBuffer& outputBuffer, int startSample, int numSamples) = 0;
+	virtual bool IsBusy() const = 0;
 };

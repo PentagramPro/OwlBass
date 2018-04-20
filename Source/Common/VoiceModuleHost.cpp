@@ -54,5 +54,10 @@ double CVoiceModuleHost::GetSampleRate() const {
 }
 
 void CVoiceModuleHost::SoundEnded() {
+	for (auto& voice : mVoiceModules) {
+		if (voice->IsBusy()) {
+			return;
+		}
+	}
     clearCurrentNote();
 }
