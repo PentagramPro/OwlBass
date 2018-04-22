@@ -53,14 +53,12 @@
             file="Source/Synth/SquareWaveVoice.h"/>
     </GROUP>
     <GROUP id="{5AB94AE6-C205-BC2E-C1FD-A2D89913ACCE}" name="DSP">
+      <FILE id="FOyYAt" name="DSPDelay.cpp" compile="1" resource="0" file="Source/DSP/DSPDelay.cpp"/>
+      <FILE id="g56sPT" name="DSPDelay.h" compile="0" resource="0" file="Source/DSP/DSPDelay.h"/>
       <FILE id="jdp5ph" name="DSPIntegration.cpp" compile="1" resource="0"
             file="Source/DSP/DSPIntegration.cpp"/>
       <FILE id="w4BqLh" name="DSPIntegration.h" compile="0" resource="0"
             file="Source/DSP/DSPIntegration.h"/>
-      <FILE id="BqiaY8" name="DSPLowpassFilter.cpp" compile="1" resource="0"
-            file="Source/DSP/DSPLowpassFilter.cpp"/>
-      <FILE id="I8zSgs" name="DSPLowpassFilter.h" compile="0" resource="0"
-            file="Source/DSP/DSPLowpassFilter.h"/>
       <FILE id="Vun31j" name="DSPLowpassFilter2.cpp" compile="1" resource="0"
             file="Source/DSP/DSPLowpassFilter2.cpp"/>
       <FILE id="uIEMRS" name="DSPLowpassFilter2.h" compile="0" resource="0"

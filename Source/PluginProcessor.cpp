@@ -27,7 +27,7 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 {
 
 	auto voiceModuleHost = new CVoiceModuleHost(mPropRegistry);
-  //  voiceModuleHost->AddModule(new SineWaveVoice("OSC1",*voiceModuleHost,2));
+    //voiceModuleHost->AddModule(new SineWaveVoice("OSC1",*voiceModuleHost,2));
 	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC2",*voiceModuleHost, 1,0.3));
 	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC3", *voiceModuleHost, 0.5, 0.3));
 	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC4", *voiceModuleHost, 0.25, 0.3));
@@ -35,7 +35,7 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost));
 	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.5));
 
-
+	
 	sineSynth.addVoice(voiceModuleHost);
 	sineSynth.addSound(new CVoiceModuleHostSound());
 }
@@ -111,6 +111,7 @@ void AdditiveVstAudioProcessor::prepareToPlay (double sampleRate, int samplesPer
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
+	mSampleRate = sampleRate;
 	sineSynth.setCurrentPlaybackSampleRate(sampleRate);
 }
 
@@ -120,34 +121,23 @@ void AdditiveVstAudioProcessor::releaseResources()
     // spare memory, etc.
 }
 
-#ifndef JucePlugin_PreferredChannelConfigurations
 bool AdditiveVstAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
-  #if JucePlugin_IsMidiEffect
-    ignoreUnused (layouts);
-    return true;
-  #else
-    // This is the place where you check if the layout is supported.
-    // In this template code we only support mono or stereo.
+ 
     if (layouts.getMainOutputChannelSet() != AudioChannelSet::mono()
      && layouts.getMainOutputChannelSet() != AudioChannelSet::stereo())
         return false;
 
-    // This checks if the input layout matches the output layout
-   #if ! JucePlugin_IsSynth
-    if (layouts.getMainOutputChannelSet() != layouts.getMainInputChannelSet())
-        return false;
-   #endif
 
     return true;
-  #endif
 }
-#endif
+
 
 void AdditiveVstAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
 {
 	
 	sineSynth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+	
 }
 
 //==============================================================================

@@ -14,14 +14,16 @@ void EnvelopeVoice::InitProperties(CPropertiesRegistry & registry)
 }
 
 void EnvelopeVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) {
-    mSoundLevel = 0;
-    mState = EState::Attack;
+    //mSoundLevel = 0;
+
+	mState = EState::Attack;
+
 	StartSound();
 }
 
 void EnvelopeVoice::OnNoteStop(float velocity, bool allowTailOff) {
     mState = EState::Release;
-	StopSound();
+	
 }
 
 
@@ -32,6 +34,7 @@ void EnvelopeVoice::ProcessBlock(AudioBuffer<float> &outputBuffer, int startSamp
 
 	const double attackSamples = 1 / (GetSampleRate()*mAttackTime);
 	const double releaseSamples = 1 / (GetSampleRate()*mReleaseTime);
+	
 
     while (--samplesCount >= 0){
 
@@ -49,6 +52,7 @@ void EnvelopeVoice::ProcessBlock(AudioBuffer<float> &outputBuffer, int startSamp
 			if (mSoundLevel <= 0) {
 				mSoundLevel = 0;
 				mState = EState::Idle;
+				StopSound();
 			}
 		}
 		else if (mState == EState::Idle) {

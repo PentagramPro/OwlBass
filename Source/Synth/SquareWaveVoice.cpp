@@ -5,13 +5,15 @@ CSquareWaveVoice::CSquareWaveVoice(const std::string& name, IVoiceModuleHost& ho
 	, mFreqRate(freqRate)
 	, mVolume(volume)
 {
+	mDelay.Reset(GetSampleRate(), 0.005);
+	mSamplesPerCycle = 0;
 }
 
 void CSquareWaveVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int currentPitchWheelPosition)
 {
 	auto cyclesPerSecond = mFreqRate * MidiMessage::getMidiNoteInHertz(midiNoteNumber);
 	mSamplesPerCycle = GetSampleRate() / cyclesPerSecond;
-	mSampleCounter = 0;
+	//mSampleCounter = 0;
 
 	StartSound();
 }
@@ -29,13 +31,17 @@ void CSquareWaveVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startS
 
 
 	while (--samplesCount >= 0) {
+		const double samples = mDelay.Next(mSamplesPerCycle);
 
 		mSampleCounter++;
-		if (mSampleCounter >= mSamplesPerCycle) {
+		if (mSampleCounter >= samples) {
 			mSampleCounter = 0;
 		}
 
-		float output = mSampleCounter / mSamplesPerCycle > 0.5 ? mVolume : -mVolume;
+		float output = 0;
+		if (samples != 0) {
+			output = mSampleCounter / samples > 0.5 ? mVolume : -mVolume;
+		}
 
 		for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
 			outputBuffer.addSample(i, currentSample, output);

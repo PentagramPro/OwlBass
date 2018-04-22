@@ -3,6 +3,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "../Common/VoiceModuleBase.h"
 #include "../Common/IVoiceModuleHost.h"
+#include "../DSP/DSPDelay.h"
 
 class CSquareWaveVoice : public CVoiceModuleBase
 {
@@ -19,11 +20,12 @@ public:
 private:
 	virtual void InitProperties(CPropertiesRegistry & registry) override;
 
-	float mFreqRate = 1;
-	float mVolume = 1;
-	float mSamplesPerCycle;
-	float mSampleCounter;
+	double mFreqRate = 1;
+	double mVolume = 1;
+	double mSamplesPerCycle;
+	double mSampleCounter = 0;
 
+	CDSPDelay mDelay;
 
 	// Inherited via CVoiceModuleBase
 	

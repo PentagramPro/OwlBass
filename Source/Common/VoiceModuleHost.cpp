@@ -44,6 +44,7 @@ void CVoiceModuleHost::controllerMoved(int controllerNumber, int newControllerVa
 }
 
 void CVoiceModuleHost::renderNextBlock(AudioSampleBuffer &outputBuffer, int startSample, int numSamples) {
+	
     for(auto& voice : mVoiceModules) {
         voice->ProcessBlock(outputBuffer, startSample, numSamples);
     }

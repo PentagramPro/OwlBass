@@ -2,7 +2,6 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "../Common/VoiceModuleBase.h"
 #include "../Common/IVoiceModuleHost.h"
-#include "../DSP/DSPLowpassFilter.h"
 #include "../DSP/DSPLowpassFilter2.h"
 
 class CFilterVoice : public CVoiceModuleBase {

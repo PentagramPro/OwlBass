@@ -9,7 +9,7 @@ public:
 
 	void InitProperties(CPropertiesRegistry& registry);
     void OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) override;
-
+	
     void OnNoteStop(float velocity, bool allowTailOff) override;
 
     void ProcessBlock(AudioBuffer<float> &outputBuffer, int startSample, int numSamples) override;
@@ -18,7 +18,8 @@ private:
     enum class EState {Idle, Attack, Sustain, Release};
     double mAttackTime = 1;
 	double mReleaseTime = 1;
-    double mSoundLevel;
+	
+    double mSoundLevel = 0;
 
     EState mState = EState ::Idle;
 };

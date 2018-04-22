@@ -23,7 +23,7 @@ SineWaveVoice::SineWaveVoice(const std::string& name, IVoiceModuleHost& host, fl
   }
 
   void SineWaveVoice::OnNoteStop(float, bool allowTailOff)
-  {
+  {/*
 	  if (allowTailOff)
 	  {
 		  if (tailOff == 0.0)
@@ -33,7 +33,7 @@ SineWaveVoice::SineWaveVoice(const std::string& name, IVoiceModuleHost& host, fl
 	  {
 		  StopSound();
 		  angleDelta = 0.0;
-	  }
+	  }*/
   }
 
   void SineWaveVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSample, int numSamples)

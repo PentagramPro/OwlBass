@@ -60,6 +60,8 @@ public:
 	CPropertiesRegistry& GetPropertiesRegistry() { return mPropRegistry; }
 private:
 	CPropertiesRegistry mPropRegistry;
+	double mSampleRate;
+	int mSampleCounter = 0;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AdditiveVstAudioProcessor)
 };
