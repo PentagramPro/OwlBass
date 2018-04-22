@@ -3,10 +3,11 @@
 #include "../Common/VoiceModuleBase.h"
 #include "../Common/IVoiceModuleHost.h"
 #include "../DSP/DSPLowpassFilter2.h"
+#include "../DSP/DSPDelay.h"
 
 class CFilterVoice : public CVoiceModuleBase {
 public:
-	CFilterVoice(const std::string& name, IVoiceModuleHost& host) : CVoiceModuleBase(name, host) {}
+	CFilterVoice(const std::string& name, IVoiceModuleHost& host);
 
 	void OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) override;
 
@@ -16,9 +17,10 @@ public:
 
 private:
 	CDSPLowpassFilter2 mFilter;
+	CDSPDelay mCutoffDelay;
 	double mCutoffFreq = 1;
-	double mCutoffSmooth = 1;
+	
 	// Inherited via CVoiceModuleBase
 	virtual void InitProperties(CPropertiesRegistry & registry) override;
-	bool mPlayingNote = false;
+	
 };

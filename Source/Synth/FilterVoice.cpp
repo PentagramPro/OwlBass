@@ -1,19 +1,23 @@
 #include "FilterVoice.h"
 #include "../Common/ProperiesRegistry.h"
 #include "../Common/Toolbox.h"
-void CFilterVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound * sound, int currentPitchWheelPosition)
+CFilterVoice::CFilterVoice(const std::string & name, IVoiceModuleHost & host) : CVoiceModuleBase(name, host)
 {
 	mFilter.Reset(GetSampleRate());
+	mCutoffDelay.Reset(GetSampleRate(), 0.1);
+}
+void CFilterVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound * sound, int currentPitchWheelPosition)
+{
+	
 
 	mFilter.SetParams(mCutoffFreq, 3);
-	mCutoffSmooth = mCutoffFreq;
-	mPlayingNote = true;
+	
 	StartSound();
 }
 
 void CFilterVoice::OnNoteStop(float velocity, bool allowTailOff)
 {
-	mPlayingNote = false;
+	
 	StopSound();
 }
 
@@ -21,15 +25,15 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 {
 	int samplesCount = numSamples;
 	int currentSample = startSample;
-	double hzPerSample = 0.0001;
+	
 
 	
 	
 	while (--samplesCount >= 0) {
 
-		mCutoffSmooth += (mCutoffFreq - mCutoffSmooth) * 0.01;
+		const double cutoff = mCutoffDelay.Next(mCutoffFreq);
 
-		mFilter.SetParams(mCutoffSmooth, 3);
+		mFilter.SetParams(cutoff, 3);
 
 		for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
 			double res = outputBuffer.getSample(i, currentSample);
