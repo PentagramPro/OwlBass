@@ -9,6 +9,8 @@ class CVoiceModuleHost : public SynthesiserVoice, public IVoiceModuleHost {
 public:
     CVoiceModuleHost(CPropertiesRegistry& propRegistry);
     void AddModule(IVoiceModule* module);
+	
+
     bool canPlaySound(SynthesiserSound* sound) override;
 
     void startNote(int midiNoteNumber, float velocity,

@@ -11,9 +11,9 @@
 #include "VoiceModuleBase.h"
 #include "IVoiceModuleHost.h"
 
-double CVoiceModuleBase::GetSampleRate()
+double CVoiceModuleBase::GetSampleRate() const
 {
-	return mHost.GetSampleRate();
+	return mHost->GetSampleRate();
 }
 
 std::string CVoiceModuleBase::GetPropName(const std::string & propertyName) const
@@ -29,5 +29,5 @@ std::string CVoiceModuleBase::GetPropName(const std::string & propertyName) cons
   void CVoiceModuleBase::StopSound()
   {
 	  mIsBusy = false;
-	  mHost.SoundEnded();
+	  mHost->SoundEnded();
   }

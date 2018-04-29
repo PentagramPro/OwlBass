@@ -14,6 +14,8 @@ void CVoiceModuleHost::AddModule(IVoiceModule *module) {
 }
 
 
+
+
 bool CVoiceModuleHost::canPlaySound(SynthesiserSound *sound) {
     auto voiceModuleSound = dynamic_cast<CVoiceModuleHostSound*> (sound);
     return voiceModuleSound!= nullptr;

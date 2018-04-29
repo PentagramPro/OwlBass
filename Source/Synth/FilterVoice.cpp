@@ -1,7 +1,9 @@
 #include "FilterVoice.h"
 #include "../Common/ProperiesRegistry.h"
 #include "../Common/Toolbox.h"
-CFilterVoice::CFilterVoice(const std::string & name, IVoiceModuleHost & host) : CVoiceModuleBase(name, host)
+CFilterVoice::CFilterVoice(const std::string & name, IVoiceModuleHost & host, IVoltageController& cutoffEnvelope)
+	: CVoiceModuleBase(name, host)
+	, mCutoffEnvelope(cutoffEnvelope)
 {
 	mFilter.Reset(GetSampleRate());
 	mCutoffDelay.Reset(GetSampleRate(), 0.1);
@@ -27,11 +29,12 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 	int currentSample = startSample;
 	
 
-	
+	auto& freqEnvelope = mCutoffEnvelope.GetVoltageBuffer();
 	
 	while (--samplesCount >= 0) {
 
-		const double cutoff = mCutoffDelay.Next(mCutoffFreq);
+		const double freqEnvelopeVal = freqEnvelope.getSample(0, currentSample);
+		const double cutoff = mCutoffDelay.Next(mCutoffFreq+(mCutoffFreqMax-mCutoffFreq)*freqEnvelopeVal);
 
 		mFilter.SetParams(cutoff, mQ);
 
@@ -47,6 +50,6 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 
 void CFilterVoice::InitProperties(CPropertiesRegistry & registry)
 {
-	registry.AddProperty(GetPropName("CutoffFreq"), mCutoffFreq, 0, 10000);
+	registry.AddProperty(GetPropName("CutoffFreq"), mCutoffFreq, 0, mCutoffFreqMax);
 	registry.AddProperty(GetPropName("Q"), mQ, 1, 5);
 }

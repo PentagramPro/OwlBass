@@ -51,11 +51,17 @@
             file="Source/Common/VoiceModuleHostSound.h"/>
     </GROUP>
     <GROUP id="{06D74786-B672-E363-A511-E371D1D9C0AF}" name="Synth">
+      <FILE id="SEiEh8" name="ControlVoltageSource.cpp" compile="1" resource="0"
+            file="Source/Synth/ControlVoltageSource.cpp"/>
+      <FILE id="MENVG3" name="ControlVoltageSource.h" compile="0" resource="0"
+            file="Source/Synth/ControlVoltageSource.h"/>
       <FILE id="ecgqvL" name="EnvelopeVoice.cpp" compile="1" resource="0"
             file="Source/Synth/EnvelopeVoice.cpp"/>
       <FILE id="OaBZLH" name="EnvelopeVoice.h" compile="0" resource="0" file="Source/Synth/EnvelopeVoice.h"/>
       <FILE id="t7vMNY" name="FilterVoice.cpp" compile="1" resource="0" file="Source/Synth/FilterVoice.cpp"/>
       <FILE id="omX3Ae" name="FilterVoice.h" compile="0" resource="0" file="Source/Synth/FilterVoice.h"/>
+      <FILE id="pjUBBv" name="IVoltageController.h" compile="0" resource="0"
+            file="Source/Synth/IVoltageController.h"/>
       <FILE id="h6fDDv" name="LimiterVoice.cpp" compile="1" resource="0"
             file="Source/Synth/LimiterVoice.cpp"/>
       <FILE id="SKjVvV" name="LimiterVoice.h" compile="0" resource="0" file="Source/Synth/LimiterVoice.h"/>
