@@ -14,6 +14,23 @@
     </GROUP>
     <GROUP id="{D273DE03-1424-D5E0-7D48-D067800C8468}" name="Resources"/>
     <GROUP id="{B8CFA7A4-FAD0-BD52-4FC5-F3C76E7937E6}" name="Common">
+      <GROUP id="{D3A59B67-8BAF-1206-82EF-DFF32D5407DF}" name="Patterns">
+        <FILE id="MbYCvc" name="ListenerHandle.h" compile="0" resource="0"
+              file="Source/Common/ListenerHandle.h"/>
+        <FILE id="qkGqsQ" name="ListenerRegistry.h" compile="0" resource="0"
+              file="Source/Common/ListenerRegistry.h"/>
+      </GROUP>
+      <GROUP id="{E65FEF34-C2D2-A124-E0D1-27BC06CB9302}" name="Data">
+        <FILE id="jQksFh" name="SynthProgram.cpp" compile="1" resource="0"
+              file="Source/Common/SynthProgram.cpp"/>
+        <FILE id="FHxZlM" name="SynthProgram.h" compile="0" resource="0" file="Source/Common/SynthProgram.h"/>
+        <FILE id="rkNTOH" name="SynthProgramRegistry.cpp" compile="1" resource="0"
+              file="Source/Common/SynthProgramRegistry.cpp"/>
+        <FILE id="OmwMmJ" name="SynthProgramRegistry.h" compile="0" resource="0"
+              file="Source/Common/SynthProgramRegistry.h"/>
+        <FILE id="stEVVS" name="SynthState.cpp" compile="1" resource="0" file="Source/Common/SynthState.cpp"/>
+        <FILE id="nKmN61" name="SynthState.h" compile="0" resource="0" file="Source/Common/SynthState.h"/>
+      </GROUP>
       <FILE id="UPoTg9" name="IVoiceModule.h" compile="0" resource="0" file="Source/Common/IVoiceModule.h"/>
       <FILE id="FUiNsk" name="IVoiceModuleHost.h" compile="0" resource="0"
             file="Source/Common/IVoiceModuleHost.h"/>

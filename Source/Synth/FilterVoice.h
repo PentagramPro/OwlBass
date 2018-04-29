@@ -19,6 +19,7 @@ private:
 	CDSPLowpassFilter2 mFilter;
 	CDSPDelay mCutoffDelay;
 	double mCutoffFreq = 1;
+	double mQ = 1;
 	
 	// Inherited via CVoiceModuleBase
 	virtual void InitProperties(CPropertiesRegistry & registry) override;

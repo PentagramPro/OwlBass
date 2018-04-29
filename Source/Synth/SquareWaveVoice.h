@@ -21,6 +21,7 @@ private:
 	virtual void InitProperties(CPropertiesRegistry & registry) override;
 
 	double mFreqRate = 1;
+	double mVolumeMultiplier = 1;
 	double mVolume = 1;
 	double mSamplesPerCycle;
 	double mSampleCounter = 0;

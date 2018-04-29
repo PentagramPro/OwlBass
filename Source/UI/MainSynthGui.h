@@ -59,9 +59,36 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    ScopedPointer<Slider> slider;
     ScopedPointer<Slider> slider2;
     ScopedPointer<Slider> slider3;
+    ScopedPointer<Label> label;
+    ScopedPointer<Label> label2;
+    ScopedPointer<Label> label3;
+    ScopedPointer<Slider> slider4;
+    ScopedPointer<Slider> slider5;
+    ScopedPointer<Label> label4;
+    ScopedPointer<Label> label5;
+    ScopedPointer<Slider> slider6;
+    ScopedPointer<Label> label6;
+    ScopedPointer<Slider> slider7;
+    ScopedPointer<Label> label7;
+    ScopedPointer<Slider> slider8;
+    ScopedPointer<Label> label8;
+    ScopedPointer<Label> label9;
+    ScopedPointer<Slider> slider9;
+    ScopedPointer<Slider> slider10;
+    ScopedPointer<Label> label10;
+    ScopedPointer<Label> label11;
+    ScopedPointer<Label> label12;
+    ScopedPointer<Label> label13;
+    ScopedPointer<Slider> slider11;
+    ScopedPointer<Slider> slider12;
+    ScopedPointer<Slider> slider13;
+    ScopedPointer<Slider> slider14;
+    ScopedPointer<Label> label14;
+    ScopedPointer<Label> label15;
+    ScopedPointer<Label> label16;
+    ScopedPointer<Label> label17;
 
 
     //==============================================================================

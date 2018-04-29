@@ -1,9 +1,10 @@
 #include "SquareWaveVoice.h"
+#include "../Common/ProperiesRegistry.h"
 
 CSquareWaveVoice::CSquareWaveVoice(const std::string& name, IVoiceModuleHost& host, float freqRate, float volume)
 	: CVoiceModuleBase(name, host)
 	, mFreqRate(freqRate)
-	, mVolume(volume)
+	, mVolumeMultiplier(volume)
 {
 	mDelay.Reset(GetSampleRate(), 0.005);
 	mSamplesPerCycle = 0;
@@ -40,7 +41,8 @@ void CSquareWaveVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startS
 
 		float output = 0;
 		if (samples != 0) {
-			output = mSampleCounter / samples > 0.5 ? mVolume : -mVolume;
+			const float vol = mVolumeMultiplier * mVolume;
+			output = mSampleCounter / samples > 0.5 ? vol : -vol;
 		}
 
 		for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
@@ -52,4 +54,5 @@ void CSquareWaveVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startS
 
 void CSquareWaveVoice::InitProperties(CPropertiesRegistry & registry)
 {
+	registry.AddProperty(GetPropName("Volume"), mVolume, 0, 1);
 }

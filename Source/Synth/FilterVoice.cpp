@@ -10,7 +10,7 @@ void CFilterVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSo
 {
 	
 
-	mFilter.SetParams(mCutoffFreq, 3);
+	mFilter.SetParams(mCutoffFreq, mQ);
 	
 	StartSound();
 }
@@ -33,7 +33,7 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 
 		const double cutoff = mCutoffDelay.Next(mCutoffFreq);
 
-		mFilter.SetParams(cutoff, 3);
+		mFilter.SetParams(cutoff, mQ);
 
 		for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
 			double res = outputBuffer.getSample(i, currentSample);
@@ -48,4 +48,5 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 void CFilterVoice::InitProperties(CPropertiesRegistry & registry)
 {
 	registry.AddProperty(GetPropName("CutoffFreq"), mCutoffFreq, 0, 10000);
+	registry.AddProperty(GetPropName("Q"), mQ, 1, 5);
 }

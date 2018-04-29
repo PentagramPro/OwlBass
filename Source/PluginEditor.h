@@ -5,10 +5,13 @@
 #include "PluginProcessor.h"
 #include "UI/MainSynthGui.h"
 #include "UI/IGuiListener.h"
+#include "Common/ProperiesRegistry.h"
+#include "Common/ListenerHandle.h"
+
 //==============================================================================
 /**
 */
-class AdditiveVstAudioProcessorEditor  : public AudioProcessorEditor, private IGuiListener
+class AdditiveVstAudioProcessorEditor  : public AudioProcessorEditor, private IGuiListener, public IPropertiesRegistryListener
 {
 public:
     AdditiveVstAudioProcessorEditor (AdditiveVstAudioProcessor&);
@@ -31,4 +34,8 @@ private:
 
 		// Inherited via IGuiListener
 		virtual void OnValueChanged(const std::string & name, float value) override;
+	IListenerHandle mRegistryListenerHandle;
+
+	// Inherited via IPropertiesRegistryListener
+	virtual void OnPropertiesFromSynthState() override;
 };

@@ -18,6 +18,7 @@
 #include "Synth/LimiterVoice.h"
 #include "Common/VoiceModuleHost.h"
 #include "Common/VoiceModuleHostSound.h"
+#include "Common/SynthState.h"
 
 //==============================================================================
 AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
@@ -28,9 +29,9 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
 	auto voiceModuleHost = new CVoiceModuleHost(mPropRegistry);
     //voiceModuleHost->AddModule(new SineWaveVoice("OSC1",*voiceModuleHost,2));
-	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC2",*voiceModuleHost, 1,0.3));
-	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC3", *voiceModuleHost, 0.5, 0.3));
-	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC4", *voiceModuleHost, 0.25, 0.3));
+	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC1",*voiceModuleHost, 1,0.3));
+	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC2", *voiceModuleHost, 0.5, 0.3));
+	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC3", *voiceModuleHost, 0.25, 0.3));
     voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost));
 	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.5));
@@ -157,12 +158,18 @@ void AdditiveVstAudioProcessor::getStateInformation (MemoryBlock& destData)
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
+	CSynthState state;
+	mPropRegistry.ToSynthState(state);
+	state.Serialize(destData);
 }
 
 void AdditiveVstAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
+	CSynthState state;
+	state.Deserialize((const char*)data, sizeInBytes);
+	mPropRegistry.FromSynthState(state);
 }
 
 //==============================================================================

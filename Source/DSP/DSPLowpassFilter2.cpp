@@ -25,5 +25,12 @@ double CDSPLowpassFilter2::Next(double X)
 	double res = mCutoffRadsPerSec * mRate*mRate*(mCutoffRadsPerSec*mAcc - mYprev / (mQ*mRate) + mCutoffRadsPerSec * X) + mYprev;
 	mXprev = X;
 	mYprev = res;
+	if (std::isnan(mAcc)) {
+		mAcc = 0;
+	}
+	if (std::isnan(mYprev)) {
+		mYprev = 0;
+	}
+	
 	return res;
 }
