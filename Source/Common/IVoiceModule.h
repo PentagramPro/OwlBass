@@ -5,6 +5,7 @@ class CPropertiesRegistry;
 
 class IVoiceModule {
 public:
+	virtual ~IVoiceModule() {}
 	virtual void InitProperties(CPropertiesRegistry& registry) = 0;
     virtual void OnNoteStart(int midiNoteNumber, float velocity,
             SynthesiserSound* sound, int currentPitchWheelPosition) = 0;

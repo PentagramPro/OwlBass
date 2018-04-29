@@ -6,6 +6,11 @@ CControlVoltageSource::CControlVoltageSource(const std::string & name, IVoiceMod
 	mWrappedVoice->ReplaceHost(*this);
 }
 
+CControlVoltageSource::~CControlVoltageSource()
+{
+
+}
+
 void CControlVoltageSource::InitProperties(CPropertiesRegistry & registry)
 {
 	mWrappedVoice->InitProperties(registry);
