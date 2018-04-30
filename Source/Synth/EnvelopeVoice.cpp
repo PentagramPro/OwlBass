@@ -9,8 +9,9 @@
 
 void EnvelopeVoice::InitProperties(CPropertiesRegistry & registry)
 {
-	registry.AddProperty(GetPropName("Attack"), mAttackTime, 0.001, 10);
-	registry.AddProperty(GetPropName("Release"), mReleaseTime, 0.001, 10);
+	registry.AddProperty(GetPropName("Attack"), mAttackTime, 0.001, 10, [](double x) {return x * x; });
+	registry.AddProperty(GetPropName("Release"), mReleaseTime, 0.001, 10, [](double x) {return x * x; });
+	registry.AddProperty(GetPropName("Sustain"), mSustainLevel, 0, 1);
 }
 
 void EnvelopeVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) {
@@ -42,8 +43,8 @@ void EnvelopeVoice::ProcessBlock(AudioBuffer<float> &outputBuffer, int startSamp
         if(mState == EState::Attack) {
 
             mSoundLevel+= attackSamples;
-            if (mSoundLevel > 1) {
-                mSoundLevel = 1;
+            if (mSoundLevel > mSustainLevel) {
+                mSoundLevel = mSustainLevel;
                 mState = EState::Sustain;
             }
         }
@@ -59,7 +60,7 @@ void EnvelopeVoice::ProcessBlock(AudioBuffer<float> &outputBuffer, int startSamp
 			mSoundLevel = 0;
 		}
         else {
-            mSoundLevel = 1;
+            mSoundLevel = mSustainLevel;
         }
         
 

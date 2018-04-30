@@ -3,17 +3,17 @@
 
 #include "../Common/SynthState.h"
 
-void CPropertiesRegistry::AddProperty(const std::string & name, double & propRef, double minValue, double maxValue)
+void CPropertiesRegistry::AddProperty(const std::string & name, double & propRef, double minValue, double maxValue, std::function<double(double)> function)
 {
-	mProperties[name] = std::unique_ptr<SPropertyRecord>(new SPropertyRecord(propRef, minValue, maxValue));
+	mProperties[name] = std::unique_ptr<SPropertyRecord>(new SPropertyRecord(propRef, minValue, maxValue, function));
 }
 
 void CPropertiesRegistry::SetProperty(const std::string & name, double value)
 {
 	auto p = mProperties.find(name);
 	if (p != mProperties.end()) {
-		 
-		p->second->mReference = Toolbox::clamp(value, p->second->mMinValue, p->second->mMaxValue);
+		const double convertedVal = Toolbox::clamp(p->second->mFunction(value), 0.0, 1.0);
+		p->second->mReference = p->second->mMinValue+(p->second->mMaxValue- p->second->mMinValue)*convertedVal;
 	}
 }
 

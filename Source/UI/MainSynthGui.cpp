@@ -33,7 +33,7 @@ MainSynthGui::MainSynthGui ()
     //[/Constructor_pre]
 
     addAndMakeVisible (slider2 = new Slider ("ADSRVol.Attack"));
-    slider2->setRange (0, 10, 0);
+    slider2->setRange (0, 1, 0);
     slider2->setSliderStyle (Slider::LinearVertical);
     slider2->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider2->addListener (this);
@@ -41,7 +41,7 @@ MainSynthGui::MainSynthGui ()
     slider2->setBounds (32, 168, 40, 104);
 
     addAndMakeVisible (slider3 = new Slider ("ADSRVol.Release"));
-    slider3->setRange (0, 10, 0);
+    slider3->setRange (0, 1, 0);
     slider3->setSliderStyle (Slider::LinearVertical);
     slider3->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider3->addListener (this);
@@ -136,7 +136,7 @@ MainSynthGui::MainSynthGui ()
     label6->setBounds (179, 97, 56, 24);
 
     addAndMakeVisible (slider7 = new Slider ("Filter.CutoffFreq"));
-    slider7->setRange (40, 2500, 0);
+    slider7->setRange (0, 1, 0);
     slider7->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider7->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider7->addListener (this);
@@ -154,7 +154,7 @@ MainSynthGui::MainSynthGui ()
     label7->setBounds (288, 96, 56, 24);
 
     addAndMakeVisible (slider8 = new Slider ("Filter.Q"));
-    slider8->setRange (1, 5, 0);
+    slider8->setRange (0, 1, 0);
     slider8->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider8->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider8->addListener (this);
@@ -182,7 +182,7 @@ MainSynthGui::MainSynthGui ()
     label9->setBounds (272, 136, 168, 24);
 
     addAndMakeVisible (slider9 = new Slider ("ADSRVol.Decay"));
-    slider9->setRange (0, 10, 0);
+    slider9->setRange (0, 1, 0);
     slider9->setSliderStyle (Slider::LinearVertical);
     slider9->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider9->addListener (this);
@@ -190,7 +190,7 @@ MainSynthGui::MainSynthGui ()
     slider9->setBounds (64, 168, 40, 104);
 
     addAndMakeVisible (slider10 = new Slider ("ADSRVol.Sustain"));
-    slider10->setRange (0, 10, 0);
+    slider10->setRange (0, 1, 0);
     slider10->setSliderStyle (Slider::LinearVertical);
     slider10->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider10->setColour (Slider::thumbColourId, Colour (0xff328f09));
@@ -239,7 +239,7 @@ MainSynthGui::MainSynthGui ()
     label13->setBounds (128, 264, 40, 24);
 
     addAndMakeVisible (slider11 = new Slider ("ADSRFilter.Attack"));
-    slider11->setRange (0, 10, 0);
+    slider11->setRange (0, 1, 0);
     slider11->setSliderStyle (Slider::LinearVertical);
     slider11->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider11->addListener (this);
@@ -247,7 +247,7 @@ MainSynthGui::MainSynthGui ()
     slider11->setBounds (282, 166, 40, 104);
 
     addAndMakeVisible (slider12 = new Slider ("ADSRFilter.Release"));
-    slider12->setRange (0, 10, 0);
+    slider12->setRange (0, 1, 0);
     slider12->setSliderStyle (Slider::LinearVertical);
     slider12->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider12->addListener (this);
@@ -255,7 +255,7 @@ MainSynthGui::MainSynthGui ()
     slider12->setBounds (378, 166, 40, 104);
 
     addAndMakeVisible (slider13 = new Slider ("ADSRFilter.Decay"));
-    slider13->setRange (0, 10, 0);
+    slider13->setRange (0, 1, 0);
     slider13->setSliderStyle (Slider::LinearVertical);
     slider13->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider13->addListener (this);
@@ -263,7 +263,7 @@ MainSynthGui::MainSynthGui ()
     slider13->setBounds (314, 166, 40, 104);
 
     addAndMakeVisible (slider14 = new Slider ("ADSRFilter.Sustain"));
-    slider14->setRange (0, 10, 0);
+    slider14->setRange (0, 1, 0);
     slider14->setSliderStyle (Slider::LinearVertical);
     slider14->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider14->setColour (Slider::thumbColourId, Colour (0xff328f09));
@@ -488,12 +488,12 @@ BEGIN_JUCER_METADATA
   <BACKGROUND backgroundColour="ff323e44"/>
   <SLIDER name="ADSRVol.Attack" id="e686dcf41ff8f723" memberName="slider2"
           virtualName="" explicitFocusOrder="0" pos="32 168 40 104" min="0.00000000000000000000"
-          max="10.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRVol.Release" id="19e4bee93ea59267" memberName="slider3"
           virtualName="" explicitFocusOrder="0" pos="128 168 40 104" min="0.00000000000000000000"
-          max="10.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <LABEL name="new label" id="cb473a02381fc25e" memberName="label" virtualName=""
@@ -546,19 +546,18 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="Filter.CutoffFreq" id="b5ddfb611a52b59e" memberName="slider7"
-          virtualName="" explicitFocusOrder="0" pos="272 40 88 72" min="40.00000000000000000000"
-          max="2500.00000000000000000000" int="0.00000000000000000000"
-          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
-          needsCallback="1"/>
+          virtualName="" explicitFocusOrder="0" pos="272 40 88 72" min="0.00000000000000000000"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <LABEL name="new label" id="f2561c1e16491f99" memberName="label7" virtualName=""
          explicitFocusOrder="0" pos="288 96 56 24" edTextCol="ff000000"
          edBkgCol="0" labelText="cutoff" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="Filter.Q" id="32ff76d91d4131a8" memberName="slider8" virtualName=""
-          explicitFocusOrder="0" pos="344 40 88 72" min="1.00000000000000000000"
-          max="5.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          explicitFocusOrder="0" pos="344 40 88 72" min="0.00000000000000000000"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <LABEL name="new label" id="48e7205aa5fa5143" memberName="label8" virtualName=""
@@ -574,12 +573,12 @@ BEGIN_JUCER_METADATA
          bold="0" italic="0" justification="33"/>
   <SLIDER name="ADSRVol.Decay" id="33ff15337c7414bc" memberName="slider9"
           virtualName="" explicitFocusOrder="0" pos="64 168 40 104" min="0.00000000000000000000"
-          max="10.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRVol.Sustain" id="47081380203247f0" memberName="slider10"
           virtualName="" explicitFocusOrder="0" pos="96 168 40 104" thumbcol="ff328f09"
-          min="0.00000000000000000000" max="10.00000000000000000000" int="0.00000000000000000000"
+          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="LinearVertical" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
@@ -605,22 +604,22 @@ BEGIN_JUCER_METADATA
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="ADSRFilter.Attack" id="b7c6f52502efa9c4" memberName="slider11"
           virtualName="" explicitFocusOrder="0" pos="282 166 40 104" min="0.00000000000000000000"
-          max="10.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRFilter.Release" id="a612ede8993ce62a" memberName="slider12"
           virtualName="" explicitFocusOrder="0" pos="378 166 40 104" min="0.00000000000000000000"
-          max="10.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRFilter.Decay" id="b9d9ef6bc9e3ccbd" memberName="slider13"
           virtualName="" explicitFocusOrder="0" pos="314 166 40 104" min="0.00000000000000000000"
-          max="10.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRFilter.Sustain" id="908f631705334540" memberName="slider14"
           virtualName="" explicitFocusOrder="0" pos="346 166 40 104" thumbcol="ff328f09"
-          min="0.00000000000000000000" max="10.00000000000000000000" int="0.00000000000000000000"
+          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="LinearVertical" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>

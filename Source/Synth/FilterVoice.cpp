@@ -50,6 +50,6 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 
 void CFilterVoice::InitProperties(CPropertiesRegistry & registry)
 {
-	registry.AddProperty(GetPropName("CutoffFreq"), mCutoffFreq, 0, mCutoffFreqMax);
+	registry.AddProperty(GetPropName("CutoffFreq"), mCutoffFreq, 20, mCutoffFreqMax);
 	registry.AddProperty(GetPropName("Q"), mQ, 1, 5);
 }

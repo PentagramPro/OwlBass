@@ -7,6 +7,10 @@
               pluginVSTCategory="kPlugCategGenerator">
   <MAINGROUP id="ErWoIN" name="AdditiveVST">
     <GROUP id="{E5593B42-EF84-EC40-B08F-4858405D93AA}" name="Ui">
+      <FILE id="v2erM9" name="AdvancedSlider.cpp" compile="1" resource="0"
+            file="Source/UI/AdvancedSlider.cpp"/>
+      <FILE id="ikJNyz" name="AdvancedSlider.h" compile="0" resource="0"
+            file="Source/UI/AdvancedSlider.h"/>
       <FILE id="rzxOcp" name="IGuiListener.h" compile="0" resource="0" file="Source/UI/IGuiListener.h"/>
       <FILE id="edn7bv" name="MainSynthGui.cpp" compile="1" resource="0"
             file="Source/UI/MainSynthGui.cpp"/>
