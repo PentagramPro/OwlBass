@@ -71,6 +71,9 @@
       <FILE id="SKjVvV" name="LimiterVoice.h" compile="0" resource="0" file="Source/Synth/LimiterVoice.h"/>
       <FILE id="fnSfqN" name="MixerVoice.cpp" compile="1" resource="0" file="Source/Synth/MixerVoice.cpp"/>
       <FILE id="NiSqvs" name="MixerVoice.h" compile="0" resource="0" file="Source/Synth/MixerVoice.h"/>
+      <FILE id="nhierR" name="SawtoothVoice.cpp" compile="1" resource="0"
+            file="Source/Synth/SawtoothVoice.cpp"/>
+      <FILE id="oa12nC" name="SawtoothVoice.h" compile="0" resource="0" file="Source/Synth/SawtoothVoice.h"/>
       <FILE id="GBYkHe" name="SineWaveVoice.cpp" compile="1" resource="0"
             file="Source/Synth/SineWaveVoice.cpp"/>
       <FILE id="wQIBYk" name="SineWaveVoice.h" compile="0" resource="0" file="Source/Synth/SineWaveVoice.h"/>

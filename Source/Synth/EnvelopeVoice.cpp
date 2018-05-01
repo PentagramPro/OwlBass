@@ -9,7 +9,7 @@
 
 void EnvelopeVoice::InitProperties(CPropertiesRegistry & registry)
 {
-	registry.AddProperty(GetPropName("Attack"), mAttackTime, 0.001, 10, [](double x) {return x * x; });
+	registry.AddProperty(GetPropName("Attack"), mAttackTime, 0.0004, 10, [](double x) {return x * x; });
 	registry.AddProperty(GetPropName("Release"), mReleaseTime, 0.001, 10, [](double x) {return x * x; });
 	registry.AddProperty(GetPropName("Sustain"), mSustainLevel, 0, 1);
 }

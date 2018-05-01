@@ -17,6 +17,7 @@
 #include "Synth/SquareWaveVoice.h"
 #include "Synth/LimiterVoice.h"
 #include "Synth/ControlVoltageSource.h"
+#include "Synth/SawtoothVoice.h"
 #include "Common/VoiceModuleHost.h"
 #include "Common/VoiceModuleHostSound.h"
 #include "Common/SynthState.h"
@@ -35,6 +36,7 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	CControlVoltageSource* cvEnvelopeCutoff = new CControlVoltageSource("CVS1", *voiceModuleHost, envelopeCutoff);
 
 	voiceModuleHost->AddModule(cvEnvelopeCutoff);
+	voiceModuleHost->AddModule(new CSawtoothVoice("OSC0", *voiceModuleHost));
 	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC1",*voiceModuleHost, 1,0.3));
 	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC2", *voiceModuleHost, 0.5, 0.3));
 	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC3", *voiceModuleHost, 0.25, 0.3));
