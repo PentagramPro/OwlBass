@@ -29,7 +29,7 @@ void CSawtoothVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSam
 
 	while (--samplesCount >= 0) {
 		mSampleCounter++;
-		if (mSampleCounter > mCurrentSamplesPerCycle) {
+		if (mSampleCounter >= mCurrentSamplesPerCycle) {
 			mSampleCounter = 0;
 			mCurrentSamplesPerCycle = mDelay.Next(mNextSamplesPerCycle);
 		}

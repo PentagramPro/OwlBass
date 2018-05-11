@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT name="AdditiveVST" projectType="audioplug" buildStandalone="1"
-              jucerVersion="5.3.1" pluginFormats="buildVST,buildVST3,buildAU,buildStandalone"
+              jucerVersion="5.3.2" pluginFormats="buildVST,buildVST3,buildAU,buildStandalone"
               buildVST="1" buildVST3="1" buildAU="1" buildAUv3="0" buildRTAS="0"
               buildAAX="0" enableIAA="0" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
-              pluginVSTCategory="kPlugCategGenerator">
+              pluginVSTCategory="kPlugCategGenerator" id="Dxz9Um">
   <MAINGROUP id="ErWoIN" name="AdditiveVST">
     <GROUP id="{E5593B42-EF84-EC40-B08F-4858405D93AA}" name="Ui">
       <FILE id="v2erM9" name="AdvancedSlider.cpp" compile="1" resource="0"
@@ -71,6 +71,10 @@
       <FILE id="SKjVvV" name="LimiterVoice.h" compile="0" resource="0" file="Source/Synth/LimiterVoice.h"/>
       <FILE id="fnSfqN" name="MixerVoice.cpp" compile="1" resource="0" file="Source/Synth/MixerVoice.cpp"/>
       <FILE id="NiSqvs" name="MixerVoice.h" compile="0" resource="0" file="Source/Synth/MixerVoice.h"/>
+      <FILE id="OlKDXh" name="MultiModeOscillator.cpp" compile="1" resource="0"
+            file="Source/Synth/MultiModeOscillator.cpp"/>
+      <FILE id="aKokZR" name="MultiModeOscillator.h" compile="0" resource="0"
+            file="Source/Synth/MultiModeOscillator.h"/>
       <FILE id="nhierR" name="SawtoothVoice.cpp" compile="1" resource="0"
             file="Source/Synth/SawtoothVoice.cpp"/>
       <FILE id="oa12nC" name="SawtoothVoice.h" compile="0" resource="0" file="Source/Synth/SawtoothVoice.h"/>
