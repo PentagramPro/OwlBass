@@ -48,7 +48,7 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	voiceModuleHost->AddModule(new CMultiModeOscillator("OSC3", *voiceModuleHost, *cvReferenceSawtooth));
     voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost, *cvEnvelopeCutoff));
-	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.5));
+	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.3));
 
 	
 	sineSynth.addVoice(voiceModuleHost);

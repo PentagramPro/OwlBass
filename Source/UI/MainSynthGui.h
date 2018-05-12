@@ -93,6 +93,9 @@ private:
     std::unique_ptr<Slider> slider15;
     std::unique_ptr<Slider> slider16;
     std::unique_ptr<Slider> slider17;
+    std::unique_ptr<Slider> slider18;
+    std::unique_ptr<Slider> slider19;
+    std::unique_ptr<Slider> slider20;
 
 
     //==============================================================================

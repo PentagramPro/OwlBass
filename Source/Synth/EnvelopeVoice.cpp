@@ -9,9 +9,9 @@
 #include <cmath>
 void EnvelopeVoice::InitProperties(CPropertiesRegistry & registry)
 {
-	registry.AddProperty<double>(GetPropName("Attack"), mAttackTime, 0.0004, 10.0, [](float x) {return x * x; }, [](double x) {return std::sqrt(x); });
-	registry.AddProperty<double>(GetPropName("Release"), mReleaseTime, 0.001, 10.0, [](float x) {return x * x; }, [](double x) {return std::sqrt(x); });
-	registry.AddProperty(GetPropName("Sustain"), mSustainLevel, 0.0, 1.0);
+	registry.AddProperty(GetPropName("Attack"), new CPropertySquareDouble01(mAttackTime, 0.0004, 10.0));
+	registry.AddProperty(GetPropName("Release"), new CPropertySquareDouble01(mReleaseTime, 0.001, 10.0));
+	registry.AddProperty(GetPropName("Sustain"), new CPropertyDouble01(mSustainLevel, 0.0, 1.0));
 }
 
 void EnvelopeVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) {

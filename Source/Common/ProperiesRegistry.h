@@ -18,54 +18,76 @@ public:
 };
 
 template<typename T>
-class SPropertyRecord : public IPropertyRecord {
-public:
-	T& mReference;
+class CPropertyRecord : public IPropertyRecord {
+protected:
+	CPropertyRecord(T& reference, T min, T max) : mReference(reference), mMinValue(min), mMaxValue(max) {}
+
+	T & mReference;
 	T mMaxValue;
 	T mMinValue;
-	std::function<T(float)> mFunction;
-	std::function<float(T)> mInvertedFunction;
-	SPropertyRecord(T& ref, T min, T max) : mReference(ref), mMinValue(min), mMaxValue(max), mFunction([](float x) {return (T)x; })
-		, mInvertedFunction([](T x) { return (float)x;	}) {}
-	SPropertyRecord(T& ref, T min, T max, std::function<T(float)> function, std::function<float(T)> invertedFunction)
-		: mReference(ref), mMinValue(min), mMaxValue(max), mFunction(function), mInvertedFunction(invertedFunction) {	}
 
-	void SetReference(float value) override {
-		const T convertedVal = mFunction(value);
-		SetReferenceInternal(convertedVal);
-	}
+};
 
-	float GetFromReference() {
-		T res = GetFromReferenceInternal(mReference);
-		return mInvertedFunction(res);
-	}
-private:
-	void SetReferenceInternal(double convertedVal) {
-		convertedVal = Toolbox::clamp(convertedVal, 0.0, 1.0);
-		mReference =mMinValue + (mMaxValue - mMinValue)*convertedVal;
-	}
-	void SetReferenceInternal(int convertedVal) {
-		convertedVal = Toolbox::clamp(convertedVal, mMinValue, mMaxValue);
-		mReference = convertedVal;
-	}
-	double GetFromReferenceInternal(double refVal) {
-		return (refVal - mMinValue) / (mMaxValue - mMinValue);
-	}
-	int GetFromReferenceInternal(int refVal) {
-		return refVal;
+class CPropertyDouble01 : public CPropertyRecord<double>{
+public:
+	CPropertyDouble01(double& reference, double min, double max) : CPropertyRecord<double>(reference, min, max) { }
+
+	virtual void SetReference(float value) override {
+		double convertedVal = Toolbox::clamp((double)value, 0.0, 1.0);
+		mReference = mMinValue + (mMaxValue - mMinValue)*convertedVal;
+
 	}
 
-	virtual void SetRaw(double value) override
-	{
-		mReference = (T)value;
+	virtual float GetFromReference() override {
+		return (mReference - mMinValue) / (mMaxValue-mMinValue);
 	}
 
-	virtual double GetRaw() const override
-	{
-		return (double)mReference;
+	virtual void SetRaw(double value) override {
+		mReference = value;
+	}
+
+	virtual double GetRaw() const override {
+		return mReference;
 	}
 
 };
+
+class CPropertySquareDouble01 : public CPropertyDouble01 {
+public:
+	CPropertySquareDouble01(double& reference, double min, double max) : CPropertyDouble01(reference, min, max) { }
+
+	virtual void SetReference(float value) override {
+		CPropertyDouble01::SetReference(value*value);
+	}
+
+	virtual float GetFromReference() override {
+		return std::sqrt(CPropertyDouble01::GetFromReference());
+	}
+
+};
+
+class CPropertyInt : public CPropertyRecord<int> {
+public:
+	CPropertyInt(int& reference, int min, int max) : CPropertyRecord<int>(reference, min, max) { }
+
+	virtual void SetReference(float value) override {
+		mReference = Toolbox::clamp((int)std::lround(value), mMinValue, mMaxValue);
+	}
+
+	virtual float GetFromReference() override {
+		return mReference;
+	}
+
+	virtual void SetRaw(double value) override {
+		mReference = std::round(value);
+	}
+
+	virtual double GetRaw() const override {
+		return mReference;
+	}
+
+};
+
 
 class IPropertiesRegistryListener {
 public:
@@ -89,15 +111,10 @@ public:
 		return 0;
 	}
 
-	template<typename T>
-	void AddProperty(const std::string & name, T & propRef, T minValue, T maxValue, std::function<T(float)> function, std::function<float(T)> invertedFunction)
+	
+	void AddProperty(const std::string & name, IPropertyRecord* prop)
 	{
-		mProperties[name] = std::unique_ptr<SPropertyRecord<T>>(new SPropertyRecord<T>(propRef, minValue, maxValue, function, invertedFunction));
-	}
-	template<typename T>
-	void AddProperty(const std::string & name, T & propRef, T minValue, T maxValue)
-	{
-		mProperties[name] = std::unique_ptr<SPropertyRecord<T>>(new SPropertyRecord<T>(propRef, minValue, maxValue));
+		mProperties[name] = std::unique_ptr<IPropertyRecord>(prop);
 	}
 
 

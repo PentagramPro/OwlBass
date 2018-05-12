@@ -3,6 +3,13 @@
 
 #include "../Common/SynthState.h"
 
+bool CPropertiesRegistry::HasProperty(const std::string & name) const
+{
+	auto p = mProperties.find(name);
+	return p != mProperties.end();
+}
+
+
 
 
 void CPropertiesRegistry::SetProperty(const std::string & name, float value)
@@ -37,8 +44,3 @@ void CPropertiesRegistry::ToSynthState(CSynthState & state)
 
 
 
-bool CPropertiesRegistry::HasProperty(const std::string & name) const
-{
-	auto p = mProperties.find(name);
-	return p != mProperties.end();
-}

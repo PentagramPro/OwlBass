@@ -24,5 +24,6 @@ private:
 	double mVolume = 1;
 	int mDividerCounter = -1;
 	int mDividerMax = 1;
+	int mWaveform = 1;
 	IVoltageController& mReferenceSawtooth;
 };
