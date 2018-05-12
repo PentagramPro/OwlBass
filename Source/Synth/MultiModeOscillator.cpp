@@ -34,7 +34,7 @@ void CMultiModeOscillator::ProcessBlock(AudioSampleBuffer & outputBuffer, int st
 
 		const double sawtoothDivided = ((double)mDividerCounter + reference) / (double)mDividerMax;
 		for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
-			outputBuffer.addSample(i, currentSample, sawtoothDivided);
+			outputBuffer.addSample(i, currentSample, sawtoothDivided*mVolume);
 		}
 
 		currentSample++;
@@ -43,5 +43,6 @@ void CMultiModeOscillator::ProcessBlock(AudioSampleBuffer & outputBuffer, int st
 
 void CMultiModeOscillator::InitProperties(CPropertiesRegistry & registry)
 {
-	//registry.AddProperty("divider")
+	registry.AddProperty(GetPropName("Volume"), mVolume, 0.0, 1.0);
+	registry.AddProperty(GetPropName("Divider"), mDividerMax, 1, 4);
 }

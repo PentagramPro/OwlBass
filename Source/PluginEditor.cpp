@@ -17,7 +17,7 @@ AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAud
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (420, 300);
+    setSize (440, 400);
 
 	// these define the parameters of our slider object
 
@@ -53,7 +53,7 @@ void AdditiveVstAudioProcessorEditor::OnPropertiesFromSynthState()
 	for (auto component : mGui.getChildren()) {
 		Slider* slider = dynamic_cast<Slider*>(component);
 		if (slider && processor.GetPropertiesRegistry().HasProperty(slider->getName().toStdString())) {
-			slider->setValue(processor.GetPropertiesRegistry().GetProperty(slider->getName().toStdString())->mReference);
+			slider->setValue(processor.GetPropertiesRegistry().GetPropertyValueFromReference(slider->getName().toStdString()));
 		}
 	}
 }

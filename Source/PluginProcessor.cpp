@@ -18,6 +18,7 @@
 #include "Synth/LimiterVoice.h"
 #include "Synth/ControlVoltageSource.h"
 #include "Synth/SawtoothVoice.h"
+#include "Synth/MultiModeOscillator.h"
 #include "Common/VoiceModuleHost.h"
 #include "Common/VoiceModuleHostSound.h"
 #include "Common/SynthState.h"
@@ -33,13 +34,18 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
     //voiceModuleHost->AddModule(new SineWaveVoice("OSC1",*voiceModuleHost,2));
 
 	std::shared_ptr<EnvelopeVoice> envelopeCutoff(new EnvelopeVoice("ADSRFilter", *voiceModuleHost));
-	CControlVoltageSource* cvEnvelopeCutoff = new CControlVoltageSource("CVS1", *voiceModuleHost, envelopeCutoff);
+	CControlVoltageSource* cvEnvelopeCutoff = new CControlVoltageSource("CVS1", *voiceModuleHost, envelopeCutoff,1.0);
+
+	std::shared_ptr<CSawtoothVoice> referenceSawtooth(new CSawtoothVoice("OSC0", *voiceModuleHost));
+	CControlVoltageSource* cvReferenceSawtooth = new CControlVoltageSource("CVS2", *voiceModuleHost, referenceSawtooth,0.0);
 
 	voiceModuleHost->AddModule(cvEnvelopeCutoff);
-	voiceModuleHost->AddModule(new CSawtoothVoice("OSC0", *voiceModuleHost));
-	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC1",*voiceModuleHost, 1,0.3));
-	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC2", *voiceModuleHost, 0.5, 0.3));
-	voiceModuleHost->AddModule(new CSquareWaveVoice("OSC3", *voiceModuleHost, 0.25, 0.3));
+	voiceModuleHost->AddModule(cvReferenceSawtooth);
+	
+
+	voiceModuleHost->AddModule(new CMultiModeOscillator("OSC1",*voiceModuleHost, *cvReferenceSawtooth));
+	voiceModuleHost->AddModule(new CMultiModeOscillator("OSC2", *voiceModuleHost, *cvReferenceSawtooth));
+	voiceModuleHost->AddModule(new CMultiModeOscillator("OSC3", *voiceModuleHost, *cvReferenceSawtooth));
     voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost, *cvEnvelopeCutoff));
 	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.5));

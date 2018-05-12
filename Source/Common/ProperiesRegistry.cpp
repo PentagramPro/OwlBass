@@ -1,26 +1,27 @@
 #include "ProperiesRegistry.h"
-#include "Toolbox.h"
+
 
 #include "../Common/SynthState.h"
 
-void CPropertiesRegistry::AddProperty(const std::string & name, double & propRef, double minValue, double maxValue, std::function<double(double)> function)
-{
-	mProperties[name] = std::unique_ptr<SPropertyRecord>(new SPropertyRecord(propRef, minValue, maxValue, function));
-}
 
-void CPropertiesRegistry::SetProperty(const std::string & name, double value)
+
+void CPropertiesRegistry::SetProperty(const std::string & name, float value)
 {
 	auto p = mProperties.find(name);
 	if (p != mProperties.end()) {
-		const double convertedVal = Toolbox::clamp(p->second->mFunction(value), 0.0, 1.0);
-		p->second->mReference = p->second->mMinValue+(p->second->mMaxValue- p->second->mMinValue)*convertedVal;
+		p->second->SetReference(value);
 	}
+
 }
 
 void CPropertiesRegistry::FromSynthState(const CSynthState & state)
 {
 	for (const auto& record : state.GetState()) {
-		SetProperty(record.first, record.second);
+		auto p = mProperties.find(record.first);
+		if (p != mProperties.end()) {
+			p->second->SetRaw(record.second);
+		}
+		
 	}
 	for (auto& listener : GetListeners()) {
 		listener->OnPropertiesFromSynthState();
@@ -30,20 +31,11 @@ void CPropertiesRegistry::FromSynthState(const CSynthState & state)
 void CPropertiesRegistry::ToSynthState(CSynthState & state)
 {
 	for (auto& record : mProperties) {
-		state.AddKeyValue(record.first, record.second->mReference);
+		state.AddKeyValue(record.first, record.second->GetRaw());
 	}
 }
 
 
-
-const SPropertyRecord * CPropertiesRegistry::GetProperty(const std::string & name) const
-{
-	auto p = mProperties.find(name);
-	if (p != mProperties.end()) {
-		return p->second.get();
-	}
-	return nullptr;
-}
 
 bool CPropertiesRegistry::HasProperty(const std::string & name) const
 {

@@ -54,5 +54,5 @@ void CSquareWaveVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startS
 
 void CSquareWaveVoice::InitProperties(CPropertiesRegistry & registry)
 {
-	registry.AddProperty(GetPropName("Volume"), mVolume, 0, 1);
+	registry.AddProperty(GetPropName("Volume"), mVolume, 0.0, 1.0);
 }

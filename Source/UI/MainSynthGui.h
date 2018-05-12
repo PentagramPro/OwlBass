@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.3.1
+  Created with Projucer version: 5.3.2
 
   ------------------------------------------------------------------------------
 
@@ -60,36 +60,39 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    ScopedPointer<Slider> slider2;
-    ScopedPointer<Slider> slider3;
-    ScopedPointer<Label> label;
-    ScopedPointer<Label> label2;
-    ScopedPointer<Label> label3;
-    ScopedPointer<Slider> slider4;
-    ScopedPointer<Slider> slider5;
-    ScopedPointer<Label> label4;
-    ScopedPointer<Label> label5;
-    ScopedPointer<Slider> slider6;
-    ScopedPointer<Label> label6;
-    ScopedPointer<Slider> slider7;
-    ScopedPointer<Label> label7;
-    ScopedPointer<Slider> slider8;
-    ScopedPointer<Label> label8;
-    ScopedPointer<Label> label9;
-    ScopedPointer<Slider> slider9;
-    ScopedPointer<Slider> slider10;
-    ScopedPointer<Label> label10;
-    ScopedPointer<Label> label11;
-    ScopedPointer<Label> label12;
-    ScopedPointer<Label> label13;
-    ScopedPointer<Slider> slider11;
-    ScopedPointer<Slider> slider12;
-    ScopedPointer<Slider> slider13;
-    ScopedPointer<Slider> slider14;
-    ScopedPointer<Label> label14;
-    ScopedPointer<Label> label15;
-    ScopedPointer<Label> label16;
-    ScopedPointer<Label> label17;
+    std::unique_ptr<Slider> slider2;
+    std::unique_ptr<Slider> slider3;
+    std::unique_ptr<Label> label;
+    std::unique_ptr<Label> label2;
+    std::unique_ptr<Label> label3;
+    std::unique_ptr<Slider> slider4;
+    std::unique_ptr<Slider> slider5;
+    std::unique_ptr<Label> label4;
+    std::unique_ptr<Label> label5;
+    std::unique_ptr<Slider> slider6;
+    std::unique_ptr<Label> label6;
+    std::unique_ptr<Slider> slider7;
+    std::unique_ptr<Label> label7;
+    std::unique_ptr<Slider> slider8;
+    std::unique_ptr<Label> label8;
+    std::unique_ptr<Label> label9;
+    std::unique_ptr<Slider> slider9;
+    std::unique_ptr<Slider> slider10;
+    std::unique_ptr<Label> label10;
+    std::unique_ptr<Label> label11;
+    std::unique_ptr<Label> label12;
+    std::unique_ptr<Label> label13;
+    std::unique_ptr<Slider> slider11;
+    std::unique_ptr<Slider> slider12;
+    std::unique_ptr<Slider> slider13;
+    std::unique_ptr<Slider> slider14;
+    std::unique_ptr<Label> label14;
+    std::unique_ptr<Label> label15;
+    std::unique_ptr<Label> label16;
+    std::unique_ptr<Label> label17;
+    std::unique_ptr<Slider> slider15;
+    std::unique_ptr<Slider> slider16;
+    std::unique_ptr<Slider> slider17;
 
 
     //==============================================================================

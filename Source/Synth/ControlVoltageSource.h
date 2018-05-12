@@ -8,7 +8,7 @@
 
 class CControlVoltageSource : public CVoiceModuleBase, public IVoltageController, public IVoiceModuleHost {
 public:
-	CControlVoltageSource(const std::string& name, IVoiceModuleHost& host, std::shared_ptr<CVoiceModuleBase> wrappedVoice);
+	CControlVoltageSource(const std::string& name, IVoiceModuleHost& host, std::shared_ptr<CVoiceModuleBase> wrappedVoice, double initialValue);
 	virtual ~CControlVoltageSource();
 	void InitProperties(CPropertiesRegistry& registry);
 	void OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) override;
@@ -27,5 +27,6 @@ private:
 	// Inherited via IVoiceModuleHost
 	virtual double GetSampleRate() const override;
 	virtual void SoundEnded() override;
+	double mInitialValue;
 };
 

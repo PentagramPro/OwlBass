@@ -6,12 +6,12 @@
 #include "../Common/ProperiesRegistry.h"
 #include <algorithm>
 #include <string>
-
+#include <cmath>
 void EnvelopeVoice::InitProperties(CPropertiesRegistry & registry)
 {
-	registry.AddProperty(GetPropName("Attack"), mAttackTime, 0.0004, 10, [](double x) {return x * x; });
-	registry.AddProperty(GetPropName("Release"), mReleaseTime, 0.001, 10, [](double x) {return x * x; });
-	registry.AddProperty(GetPropName("Sustain"), mSustainLevel, 0, 1);
+	registry.AddProperty<double>(GetPropName("Attack"), mAttackTime, 0.0004, 10.0, [](float x) {return x * x; }, [](double x) {return std::sqrt(x); });
+	registry.AddProperty<double>(GetPropName("Release"), mReleaseTime, 0.001, 10.0, [](float x) {return x * x; }, [](double x) {return std::sqrt(x); });
+	registry.AddProperty(GetPropName("Sustain"), mSustainLevel, 0.0, 1.0);
 }
 
 void EnvelopeVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) {

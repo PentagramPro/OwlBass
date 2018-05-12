@@ -1,7 +1,7 @@
 #include "ControlVoltageSource.h"
 
-CControlVoltageSource::CControlVoltageSource(const std::string & name, IVoiceModuleHost & host, std::shared_ptr<CVoiceModuleBase> wrappedVoice)
-	: CVoiceModuleBase(name, host), mWrappedVoice(wrappedVoice)
+CControlVoltageSource::CControlVoltageSource(const std::string & name, IVoiceModuleHost & host, std::shared_ptr<CVoiceModuleBase> wrappedVoice, double initialValue)
+	: CVoiceModuleBase(name, host), mWrappedVoice(wrappedVoice), mInitialValue(initialValue)
 {
 	mWrappedVoice->ReplaceHost(*this);
 }
@@ -30,7 +30,7 @@ void CControlVoltageSource::OnNoteStop(float velocity, bool allowTailOff)
 void CControlVoltageSource::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSample, int numSamples)
 {
 	mBuffer.setSize(1, outputBuffer.getNumSamples(), false, false, true);
-	FloatVectorOperations::fill(mBuffer.getWritePointer(0), 1, mBuffer.getNumSamples());
+	FloatVectorOperations::fill(mBuffer.getWritePointer(0), mInitialValue, mBuffer.getNumSamples());
 	
 	mWrappedVoice->ProcessBlock(mBuffer, startSample, numSamples);
 }
