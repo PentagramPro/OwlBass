@@ -32,7 +32,7 @@ void CMultiModeOscillator::ProcessBlock(AudioSampleBuffer & outputBuffer, int st
 			}
 		}
 
-		const double sawtoothDivided = ((double)mDividerCounter + reference) / (double)mDividerMax;
+		const double sawtoothDivided = ((double)mDividerCounter + reference) / (double)mDividerMax * 2.0 - 1.0;
 		for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
 			outputBuffer.addSample(i, currentSample, sawtoothDivided*mVolume);
 		}
