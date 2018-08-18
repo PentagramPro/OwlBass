@@ -76,18 +76,14 @@ private:
     std::unique_ptr<Slider> slider8;
     std::unique_ptr<Label> label8;
     std::unique_ptr<Label> label9;
-    std::unique_ptr<Slider> slider9;
     std::unique_ptr<Slider> slider10;
     std::unique_ptr<Label> label10;
-    std::unique_ptr<Label> label11;
     std::unique_ptr<Label> label12;
     std::unique_ptr<Label> label13;
     std::unique_ptr<Slider> slider11;
     std::unique_ptr<Slider> slider12;
-    std::unique_ptr<Slider> slider13;
     std::unique_ptr<Slider> slider14;
     std::unique_ptr<Label> label14;
-    std::unique_ptr<Label> label15;
     std::unique_ptr<Label> label16;
     std::unique_ptr<Label> label17;
     std::unique_ptr<Slider> slider15;
@@ -96,6 +92,8 @@ private:
     std::unique_ptr<Slider> slider18;
     std::unique_ptr<Slider> slider19;
     std::unique_ptr<Slider> slider20;
+    std::unique_ptr<Slider> slider9;
+    std::unique_ptr<Label> label11;
 
 
     //==============================================================================

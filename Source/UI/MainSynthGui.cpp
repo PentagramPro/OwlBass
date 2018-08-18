@@ -48,7 +48,7 @@ MainSynthGui::MainSynthGui ()
     slider3->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider3->addListener (this);
 
-    slider3->setBounds (120, 288, 40, 104);
+    slider3->setBounds (88, 288, 40, 104);
 
     label.reset (new Label ("new label",
                             TRANS("OSC")));
@@ -197,15 +197,6 @@ MainSynthGui::MainSynthGui ()
 
     label9->setBounds (304, 144, 168, 24);
 
-    slider9.reset (new Slider ("ADSRVol.Decay"));
-    addAndMakeVisible (slider9.get());
-    slider9->setRange (0, 1, 0);
-    slider9->setSliderStyle (Slider::LinearVertical);
-    slider9->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
-    slider9->addListener (this);
-
-    slider9->setBounds (56, 288, 40, 104);
-
     slider10.reset (new Slider ("ADSRVol.Sustain"));
     addAndMakeVisible (slider10.get());
     slider10->setRange (0, 1, 0);
@@ -214,7 +205,7 @@ MainSynthGui::MainSynthGui ()
     slider10->setColour (Slider::thumbColourId, Colour (0xff328f09));
     slider10->addListener (this);
 
-    slider10->setBounds (88, 288, 40, 104);
+    slider10->setBounds (56, 288, 40, 104);
 
     label10.reset (new Label ("new label",
                               TRANS("A")));
@@ -227,17 +218,6 @@ MainSynthGui::MainSynthGui ()
 
     label10->setBounds (24, 384, 40, 24);
 
-    label11.reset (new Label ("new label",
-                              TRANS("D")));
-    addAndMakeVisible (label11.get());
-    label11->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label11->setJustificationType (Justification::centred);
-    label11->setEditable (false, false, false);
-    label11->setColour (TextEditor::textColourId, Colours::black);
-    label11->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
-
-    label11->setBounds (56, 384, 40, 24);
-
     label12.reset (new Label ("new label",
                               TRANS("S")));
     addAndMakeVisible (label12.get());
@@ -247,7 +227,7 @@ MainSynthGui::MainSynthGui ()
     label12->setColour (TextEditor::textColourId, Colours::black);
     label12->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label12->setBounds (88, 384, 40, 24);
+    label12->setBounds (56, 384, 40, 24);
 
     label13.reset (new Label ("new label",
                               TRANS("R")));
@@ -258,7 +238,7 @@ MainSynthGui::MainSynthGui ()
     label13->setColour (TextEditor::textColourId, Colours::black);
     label13->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label13->setBounds (120, 384, 40, 24);
+    label13->setBounds (88, 384, 40, 24);
 
     slider11.reset (new Slider ("ADSRFilter.Attack"));
     addAndMakeVisible (slider11.get());
@@ -276,16 +256,7 @@ MainSynthGui::MainSynthGui ()
     slider12->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider12->addListener (this);
 
-    slider12->setBounds (410, 174, 40, 104);
-
-    slider13.reset (new Slider ("ADSRFilter.Decay"));
-    addAndMakeVisible (slider13.get());
-    slider13->setRange (0, 1, 0);
-    slider13->setSliderStyle (Slider::LinearVertical);
-    slider13->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
-    slider13->addListener (this);
-
-    slider13->setBounds (346, 174, 40, 104);
+    slider12->setBounds (378, 174, 40, 104);
 
     slider14.reset (new Slider ("ADSRFilter.Sustain"));
     addAndMakeVisible (slider14.get());
@@ -295,7 +266,7 @@ MainSynthGui::MainSynthGui ()
     slider14->setColour (Slider::thumbColourId, Colour (0xff328f09));
     slider14->addListener (this);
 
-    slider14->setBounds (378, 174, 40, 104);
+    slider14->setBounds (346, 174, 40, 104);
 
     label14.reset (new Label ("new label",
                               TRANS("A")));
@@ -308,17 +279,6 @@ MainSynthGui::MainSynthGui ()
 
     label14->setBounds (314, 270, 40, 24);
 
-    label15.reset (new Label ("new label",
-                              TRANS("D")));
-    addAndMakeVisible (label15.get());
-    label15->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label15->setJustificationType (Justification::centred);
-    label15->setEditable (false, false, false);
-    label15->setColour (TextEditor::textColourId, Colours::black);
-    label15->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
-
-    label15->setBounds (346, 270, 40, 24);
-
     label16.reset (new Label ("new label",
                               TRANS("S")));
     addAndMakeVisible (label16.get());
@@ -328,7 +288,7 @@ MainSynthGui::MainSynthGui ()
     label16->setColour (TextEditor::textColourId, Colours::black);
     label16->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label16->setBounds (378, 270, 40, 24);
+    label16->setBounds (346, 270, 40, 24);
 
     label17.reset (new Label ("new label",
                               TRANS("R")));
@@ -339,7 +299,7 @@ MainSynthGui::MainSynthGui ()
     label17->setColour (TextEditor::textColourId, Colours::black);
     label17->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label17->setBounds (410, 270, 40, 24);
+    label17->setBounds (378, 270, 40, 24);
 
     slider15.reset (new Slider ("OSC1.Divider"));
     addAndMakeVisible (slider15.get());
@@ -401,6 +361,26 @@ MainSynthGui::MainSynthGui ()
 
     slider20->setBounds (160, 192, 74, 56);
 
+    slider9.reset (new Slider ("Filter.EnvelopeScale"));
+    addAndMakeVisible (slider9.get());
+    slider9->setRange (0, 1, 0);
+    slider9->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider9->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider9->addListener (this);
+
+    slider9->setBounds (456, 24, 72, 104);
+
+    label11.reset (new Label ("new label",
+                              TRANS("Envelope")));
+    addAndMakeVisible (label11.get());
+    label11->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label11->setJustificationType (Justification::centred);
+    label11->setEditable (false, false, false);
+    label11->setColour (TextEditor::textColourId, Colours::black);
+    label11->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label11->setBounds (456, 96, 72, 24);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -433,18 +413,14 @@ MainSynthGui::~MainSynthGui()
     slider8 = nullptr;
     label8 = nullptr;
     label9 = nullptr;
-    slider9 = nullptr;
     slider10 = nullptr;
     label10 = nullptr;
-    label11 = nullptr;
     label12 = nullptr;
     label13 = nullptr;
     slider11 = nullptr;
     slider12 = nullptr;
-    slider13 = nullptr;
     slider14 = nullptr;
     label14 = nullptr;
-    label15 = nullptr;
     label16 = nullptr;
     label17 = nullptr;
     slider15 = nullptr;
@@ -453,6 +429,8 @@ MainSynthGui::~MainSynthGui()
     slider18 = nullptr;
     slider19 = nullptr;
     slider20 = nullptr;
+    slider9 = nullptr;
+    label11 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -523,11 +501,6 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_slider8] -- add your slider handling code here..
         //[/UserSliderCode_slider8]
     }
-    else if (sliderThatWasMoved == slider9.get())
-    {
-        //[UserSliderCode_slider9] -- add your slider handling code here..
-        //[/UserSliderCode_slider9]
-    }
     else if (sliderThatWasMoved == slider10.get())
     {
         //[UserSliderCode_slider10] -- add your slider handling code here..
@@ -542,11 +515,6 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_slider12] -- add your slider handling code here..
         //[/UserSliderCode_slider12]
-    }
-    else if (sliderThatWasMoved == slider13.get())
-    {
-        //[UserSliderCode_slider13] -- add your slider handling code here..
-        //[/UserSliderCode_slider13]
     }
     else if (sliderThatWasMoved == slider14.get())
     {
@@ -583,6 +551,11 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_slider20] -- add your slider handling code here..
         //[/UserSliderCode_slider20]
     }
+    else if (sliderThatWasMoved == slider9.get())
+    {
+        //[UserSliderCode_slider9] -- add your slider handling code here..
+        //[/UserSliderCode_slider9]
+    }
 
     //[UsersliderValueChanged_Post]
     //[/UsersliderValueChanged_Post]
@@ -618,7 +591,7 @@ BEGIN_JUCER_METADATA
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRVol.Release" id="19e4bee93ea59267" memberName="slider3"
-          virtualName="" explicitFocusOrder="0" pos="120 288 40 104" min="0.00000000000000000000"
+          virtualName="" explicitFocusOrder="0" pos="88 288 40 104" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
@@ -697,13 +670,8 @@ BEGIN_JUCER_METADATA
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="17.00000000000000000000" kerning="0.00000000000000000000"
          bold="0" italic="0" justification="33"/>
-  <SLIDER name="ADSRVol.Decay" id="33ff15337c7414bc" memberName="slider9"
-          virtualName="" explicitFocusOrder="0" pos="56 288 40 104" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRVol.Sustain" id="47081380203247f0" memberName="slider10"
-          virtualName="" explicitFocusOrder="0" pos="88 288 40 104" thumbcol="ff328f09"
+          virtualName="" explicitFocusOrder="0" pos="56 288 40 104" thumbcol="ff328f09"
           min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="LinearVertical" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
@@ -713,18 +681,13 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="A" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
-  <LABEL name="new label" id="732b1b6d536ed611" memberName="label11" virtualName=""
-         explicitFocusOrder="0" pos="56 384 40 24" edTextCol="ff000000"
-         edBkgCol="0" labelText="D" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="efd670deeff2cfc7" memberName="label12" virtualName=""
-         explicitFocusOrder="0" pos="88 384 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="56 384 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="S" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="2f0c3fb14ccd3bbd" memberName="label13" virtualName=""
-         explicitFocusOrder="0" pos="120 384 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="88 384 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="R" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
@@ -734,17 +697,12 @@ BEGIN_JUCER_METADATA
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRFilter.Release" id="a612ede8993ce62a" memberName="slider12"
-          virtualName="" explicitFocusOrder="0" pos="410 174 40 104" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
-  <SLIDER name="ADSRFilter.Decay" id="b9d9ef6bc9e3ccbd" memberName="slider13"
-          virtualName="" explicitFocusOrder="0" pos="346 174 40 104" min="0.00000000000000000000"
+          virtualName="" explicitFocusOrder="0" pos="378 174 40 104" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRFilter.Sustain" id="908f631705334540" memberName="slider14"
-          virtualName="" explicitFocusOrder="0" pos="378 174 40 104" thumbcol="ff328f09"
+          virtualName="" explicitFocusOrder="0" pos="346 174 40 104" thumbcol="ff328f09"
           min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="LinearVertical" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
@@ -754,18 +712,13 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="A" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
-  <LABEL name="new label" id="9df3dfe73c541c71" memberName="label15" virtualName=""
-         explicitFocusOrder="0" pos="346 270 40 24" edTextCol="ff000000"
-         edBkgCol="0" labelText="D" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="2461a2ec3f347fff" memberName="label16" virtualName=""
-         explicitFocusOrder="0" pos="378 270 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="346 270 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="S" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="2661e2cc57cd8376" memberName="label17" virtualName=""
-         explicitFocusOrder="0" pos="410 270 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="378 270 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="R" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
@@ -805,6 +758,16 @@ BEGIN_JUCER_METADATA
           style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
+  <SLIDER name="Filter.EnvelopeScale" id="ca2b8d2bd3d5be06" memberName="slider9"
+          virtualName="" explicitFocusOrder="0" pos="456 24 72 104" min="0.00000000000000000000"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+  <LABEL name="new label" id="2744ff8c0fec8fa" memberName="label11" virtualName=""
+         explicitFocusOrder="0" pos="456 96 72 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Envelope" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

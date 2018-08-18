@@ -25,6 +25,7 @@ AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAud
 	addAndMakeVisible(mGui);
 	mGui.SetListener(this);
 	mRegistryListenerHandle = processor.GetPropertiesRegistry().AddListener(*this);
+	OnPropertiesFromSynthState();
 }
 
 AdditiveVstAudioProcessorEditor::~AdditiveVstAudioProcessorEditor()
