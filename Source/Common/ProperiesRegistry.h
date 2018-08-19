@@ -112,10 +112,7 @@ public:
 	}
 
 	
-	void AddProperty(const std::string & name, IPropertyRecord* prop)
-	{
-		mProperties[name] = std::unique_ptr<IPropertyRecord>(prop);
-	}
+	void AddProperty(const std::string & name, IPropertyRecord* prop);
 
 
 	bool HasProperty(const std::string & name) const;

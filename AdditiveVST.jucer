@@ -18,6 +18,8 @@
     </GROUP>
     <GROUP id="{D273DE03-1424-D5E0-7D48-D067800C8468}" name="Resources"/>
     <GROUP id="{B8CFA7A4-FAD0-BD52-4FC5-F3C76E7937E6}" name="Common">
+      <FILE id="aFGy48" name="AudioQueue.cpp" compile="1" resource="0" file="Source/Common/AudioQueue.cpp"/>
+      <FILE id="seJFHO" name="AudioQueue.h" compile="0" resource="0" file="Source/Common/AudioQueue.h"/>
       <GROUP id="{D3A59B67-8BAF-1206-82EF-DFF32D5407DF}" name="Patterns">
         <FILE id="MbYCvc" name="ListenerHandle.h" compile="0" resource="0"
               file="Source/Common/ListenerHandle.h"/>
@@ -55,6 +57,8 @@
             file="Source/Common/VoiceModuleHostSound.h"/>
     </GROUP>
     <GROUP id="{06D74786-B672-E363-A511-E371D1D9C0AF}" name="Synth">
+      <FILE id="jmyDQx" name="ChorusVoice.cpp" compile="1" resource="0" file="Source/Synth/ChorusVoice.cpp"/>
+      <FILE id="r64Rlj" name="ChorusVoice.h" compile="0" resource="0" file="Source/Synth/ChorusVoice.h"/>
       <FILE id="SEiEh8" name="ControlVoltageSource.cpp" compile="1" resource="0"
             file="Source/Synth/ControlVoltageSource.cpp"/>
       <FILE id="MENVG3" name="ControlVoltageSource.h" compile="0" resource="0"

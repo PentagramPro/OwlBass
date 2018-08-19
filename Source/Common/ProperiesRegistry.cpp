@@ -3,6 +3,11 @@
 
 #include "../Common/SynthState.h"
 
+void CPropertiesRegistry::AddProperty(const std::string & name, IPropertyRecord * prop)
+{
+	mProperties[name] = std::unique_ptr<IPropertyRecord>(prop);
+}
+
 bool CPropertiesRegistry::HasProperty(const std::string & name) const
 {
 	auto p = mProperties.find(name);

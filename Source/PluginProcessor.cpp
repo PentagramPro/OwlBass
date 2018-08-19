@@ -19,6 +19,7 @@
 #include "Synth/ControlVoltageSource.h"
 #include "Synth/SawtoothVoice.h"
 #include "Synth/MultiModeOscillator.h"
+#include "Synth/ChorusVoice.h"
 #include "Common/VoiceModuleHost.h"
 #include "Common/VoiceModuleHostSound.h"
 #include "Common/SynthState.h"
@@ -49,6 +50,8 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
     voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost, *cvEnvelopeCutoff));
 	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.3));
+
+	voiceModuleHost->AddModule(new CChorusVoice("Chorus", *voiceModuleHost,0.1,5));
 
 	
 	sineSynth.addVoice(voiceModuleHost);
