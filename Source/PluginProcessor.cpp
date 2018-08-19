@@ -51,7 +51,7 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost, *cvEnvelopeCutoff));
 	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.3));
 
-	voiceModuleHost->AddModule(new CChorusVoice("Chorus", *voiceModuleHost,0.1,5));
+	//voiceModuleHost->AddModule(new CChorusVoice("Chorus", *voiceModuleHost,0.3,6));
 
 	
 	sineSynth.addVoice(voiceModuleHost);

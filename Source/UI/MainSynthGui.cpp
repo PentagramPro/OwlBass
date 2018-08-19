@@ -381,6 +381,37 @@ MainSynthGui::MainSynthGui ()
 
     label11->setBounds (456, 96, 72, 24);
 
+    slider.reset (new Slider ("Chorus.Wet"));
+    addAndMakeVisible (slider.get());
+    slider->setRange (0, 1, 0);
+    slider->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider->addListener (this);
+
+    slider->setBounds (272, 344, 111, 64);
+
+    label15.reset (new Label ("new label",
+                              TRANS("Chorus")));
+    addAndMakeVisible (label15.get());
+    label15->setFont (Font (17.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label15->setJustificationType (Justification::centredLeft);
+    label15->setEditable (false, false, false);
+    label15->setColour (TextEditor::textColourId, Colours::black);
+    label15->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label15->setBounds (312, 320, 168, 24);
+
+    label18.reset (new Label ("new label",
+                              TRANS("wet")));
+    addAndMakeVisible (label18.get());
+    label18->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label18->setJustificationType (Justification::centred);
+    label18->setEditable (false, false, false);
+    label18->setColour (TextEditor::textColourId, Colours::black);
+    label18->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label18->setBounds (296, 392, 64, 24);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -431,6 +462,9 @@ MainSynthGui::~MainSynthGui()
     slider20 = nullptr;
     slider9 = nullptr;
     label11 = nullptr;
+    slider = nullptr;
+    label15 = nullptr;
+    label18 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -555,6 +589,11 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_slider9] -- add your slider handling code here..
         //[/UserSliderCode_slider9]
+    }
+    else if (sliderThatWasMoved == slider.get())
+    {
+        //[UserSliderCode_slider] -- add your slider handling code here..
+        //[/UserSliderCode_slider]
     }
 
     //[UsersliderValueChanged_Post]
@@ -766,6 +805,21 @@ BEGIN_JUCER_METADATA
   <LABEL name="new label" id="2744ff8c0fec8fa" memberName="label11" virtualName=""
          explicitFocusOrder="0" pos="456 96 72 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Envelope" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+  <SLIDER name="Chorus.Wet" id="f02a07f8a8edc9" memberName="slider" virtualName=""
+          explicitFocusOrder="0" pos="272 344 111 64" min="0.00000000000000000000"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+  <LABEL name="new label" id="7d1d2877a9909ff4" memberName="label15" virtualName=""
+         explicitFocusOrder="0" pos="312 320 168 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Chorus" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="17.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+  <LABEL name="new label" id="2e9d93e276cf4ffd" memberName="label18" virtualName=""
+         explicitFocusOrder="0" pos="296 392 64 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="wet" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>

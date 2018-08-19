@@ -3,14 +3,13 @@
 #include "../Common/VoiceModuleBase.h"
 #include "../Common/IVoiceModuleHost.h"
 #include "../Common/AudioQueue.h"
-#include "../DSP/DSPLowpassFilter2.h"
-#include "../DSP/DSPDelay.h"
+#include "IVoltageController.h"
 #include <vector>
 
 class CChorusVoice : public CVoiceModuleBase {
 public:
-	CChorusVoice(const std::string& name, IVoiceModuleHost& host, double lengthSec, int voices)
-		: CVoiceModuleBase(name, host), mLengthSec(lengthSec), mVoices(voices) {}
+	CChorusVoice(const std::string& name, IVoiceModuleHost& host, IVoltageController& phaseLfo, double lengthSec, int voices)
+		: CVoiceModuleBase(name, host), mLengthSec(lengthSec), mVoices(voices), mPhaseLfo(phaseLfo) {}
 
 
 	// Inherited via CVoiceModuleBase
@@ -24,7 +23,10 @@ public:
 private:
 	std::unique_ptr<CAudioQueue> mBuffer;
 	std::vector<int> mVoiceOffsets;
+	IVoltageController& mPhaseLfo;
 	double mLengthSec;
+	double mWet = 0;
+	
 	int mVoices;
 };
 

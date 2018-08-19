@@ -17,6 +17,8 @@ public:
 
 	void ProcessBlock(AudioSampleBuffer& outputBuffer, int startSample, int numSamples) override;
 
+	// used to directly control frequency in LFO
+	void SetSamplesPerCycle(int samples);
 private:
 	virtual void InitProperties(CPropertiesRegistry & registry) override;
 

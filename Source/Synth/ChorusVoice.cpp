@@ -1,8 +1,11 @@
 
 #include "ChorusVoice.h"
+#include "../Common/ProperiesRegistry.h"
+
 const int Channels = 2;
-void CChorusVoice::InitProperties(CPropertiesRegistry & registry)
+	void CChorusVoice::InitProperties(CPropertiesRegistry & registry)
   {
+		registry.AddProperty(GetPropName("Wet"), new CPropertyDouble01(mWet, 0, 1));
   }
 
   void CChorusVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound * sound, int currentPitchWheelPosition)
@@ -40,6 +43,11 @@ void CChorusVoice::InitProperties(CPropertiesRegistry & registry)
 		  return;
 	  }
 
+	  if (mWet == 0) {
+		  return;
+	  }
+	  auto phaseLfoBuffer = mPhaseLfo.GetVoltageBuffer();
+
 	  while (--samplesCount >= 0) {
 		  
 		  double result[Channels];
@@ -47,11 +55,14 @@ void CChorusVoice::InitProperties(CPropertiesRegistry & registry)
 		  for (int channel = 0; channel < Channels; channel++) {
 			  result[channel] = 0;
 			  for (const int offset : mVoiceOffsets) {
-				  result[channel] += offset==0?outputBuffer.getSample(channel,currentSample) : mBuffer->GetRelativeToFront(offset, channel);
+				  const double offsetPhased = offset * mWet * phaseLfoBuffer.getSample(0,currentSample);
+				  result[channel] += offset==0?outputBuffer.getSample(channel,currentSample) : mBuffer->GetRelativeToFront(offsetPhased, channel);
 			  }
 			  result[channel] /= mVoices;
 
-			  outputBuffer.setSample(channel, currentSample, result[channel]);
+			  const double oldSample = outputBuffer.getSample(channel, currentSample);
+
+			  outputBuffer.setSample(channel, currentSample, result[channel]*mWet+oldSample*(1-mWet));
 			  mBuffer->PushToFront(result);
 		  }
 		  

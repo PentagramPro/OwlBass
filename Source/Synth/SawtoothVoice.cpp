@@ -5,13 +5,19 @@ CSawtoothVoice::CSawtoothVoice(const std::string & name, IVoiceModuleHost & host
 	mDelay.Reset(GetSampleRate(), 0.005);
 }
 
-void CSawtoothVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int currentPitchWheelPosition)
+void CSawtoothVoice::SetSamplesPerCycle(int samples)
 {
-	auto cyclesPerSecond = MidiMessage::getMidiNoteInHertz(midiNoteNumber);
-	mNextSamplesPerCycle = GetSampleRate() / cyclesPerSecond;
+	mNextSamplesPerCycle = samples;
 	if (mCurrentSamplesPerCycle == 0) {
 		mCurrentSamplesPerCycle = mNextSamplesPerCycle;
 	}
+}
+
+
+void CSawtoothVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int currentPitchWheelPosition)
+{
+	auto cyclesPerSecond = MidiMessage::getMidiNoteInHertz(midiNoteNumber);
+	SetSamplesPerCycle(GetSampleRate() / cyclesPerSecond);
 
 	StartSound();
 }
@@ -44,6 +50,7 @@ void CSawtoothVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSam
 		currentSample++;
 	}
 }
+
 
 void CSawtoothVoice::InitProperties(CPropertiesRegistry & registry)
 {
