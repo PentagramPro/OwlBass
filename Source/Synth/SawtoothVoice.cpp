@@ -58,5 +58,5 @@ void CSawtoothVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSam
 
 void CSawtoothVoice::InitProperties(CPropertiesRegistry & registry)
 {
-	registry.AddProperty(GetPropName("Detune"), new CPropertyDouble01(mDetune, 0.98,1.02));
+	registry.AddProperty(GetPropName("Detune"), new CPropertyDouble01(mDetune, 1,1.02));
 }

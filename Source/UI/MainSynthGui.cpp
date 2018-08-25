@@ -434,7 +434,7 @@ MainSynthGui::MainSynthGui ()
 
     slider21.reset (new Slider ("UnisonMixer.Volume"));
     addAndMakeVisible (slider21.get());
-    slider21->setRange (0, 1, 0);
+    slider21->setRange (0, 0.5, 0);
     slider21->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider21->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider21->addListener (this);
@@ -888,7 +888,7 @@ BEGIN_JUCER_METADATA
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="UnisonMixer.Volume" id="b64e5d44b2af789a" memberName="slider21"
           virtualName="" explicitFocusOrder="0" pos="152 336 111 64" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          max="0.50000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <LABEL name="new label" id="2e34fa49a2369321" memberName="label20" virtualName=""
