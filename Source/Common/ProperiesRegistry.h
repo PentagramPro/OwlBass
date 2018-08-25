@@ -88,6 +88,38 @@ public:
 
 };
 
+class CPropertiesList : public IPropertyRecord {
+public:
+	CPropertiesList(IPropertyRecord* firstProperty) {
+		AddProperty(firstProperty);
+	}
+
+	void AddProperty(IPropertyRecord* prop) {
+		mProperties.emplace_back(prop);
+		//std::unique_ptr<IPropertyRecord>(prop);
+	}
+
+	virtual void SetReference(float value) {
+		for (auto& item : mProperties) {
+			item->SetReference(value);
+		}
+	}
+	virtual float GetFromReference() {
+		return mProperties.front()->GetFromReference();
+	}
+	virtual void SetRaw(double value) {
+		for (auto& item : mProperties) {
+			item->SetRaw(value);
+		}
+	}
+	virtual double GetRaw() const {
+		return mProperties.front()->GetRaw();
+	}
+
+private:
+	std::vector<std::unique_ptr<IPropertyRecord>> mProperties;
+
+};
 
 class IPropertiesRegistryListener {
 public:
@@ -117,5 +149,5 @@ public:
 
 	bool HasProperty(const std::string & name) const;
 private:
-	std::unordered_map<std::string, std::unique_ptr<IPropertyRecord>> mProperties;
+	std::unordered_map<std::string, std::unique_ptr<CPropertiesList>> mProperties;
 };

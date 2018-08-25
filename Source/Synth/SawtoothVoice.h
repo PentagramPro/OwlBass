@@ -25,6 +25,7 @@ private:
 	double mCurrentSamplesPerCycle;
 	double mNextSamplesPerCycle;
 	double mSampleCounter = 0;
+	double mDetune = 1;
 
 	CDSPDelay mDelay;
 

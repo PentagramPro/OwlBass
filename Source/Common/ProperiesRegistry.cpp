@@ -5,7 +5,15 @@
 
 void CPropertiesRegistry::AddProperty(const std::string & name, IPropertyRecord * prop)
 {
-	mProperties[name] = std::unique_ptr<IPropertyRecord>(prop);
+	auto propList = mProperties.find(name);
+	if (propList == mProperties.end()) {
+		std::unique_ptr<CPropertiesList> newProperty(new CPropertiesList(prop));
+		mProperties[name] = std::move(newProperty);
+	}
+	else {
+		propList->second->AddProperty(prop);
+	}
+	
 }
 
 bool CPropertiesRegistry::HasProperty(const std::string & name) const

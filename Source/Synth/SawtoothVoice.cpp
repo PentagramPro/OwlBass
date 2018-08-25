@@ -1,4 +1,5 @@
 #include "SawtoothVoice.h"
+#include "../Common/ProperiesRegistry.h"
 
 CSawtoothVoice::CSawtoothVoice(const std::string & name, IVoiceModuleHost & host) : CVoiceModuleBase(name,host)
 {
@@ -16,7 +17,7 @@ void CSawtoothVoice::SetSamplesPerCycle(int samples)
 
 void CSawtoothVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int currentPitchWheelPosition)
 {
-	auto cyclesPerSecond = MidiMessage::getMidiNoteInHertz(midiNoteNumber);
+	auto cyclesPerSecond = MidiMessage::getMidiNoteInHertz(midiNoteNumber)*mDetune;
 	SetSamplesPerCycle(GetSampleRate() / cyclesPerSecond);
 
 	StartSound();
@@ -54,4 +55,5 @@ void CSawtoothVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSam
 
 void CSawtoothVoice::InitProperties(CPropertiesRegistry & registry)
 {
+	registry.AddProperty(GetPropName("Volume"), new CPropertyDouble01(mDetune, 0.9,1.1));
 }
