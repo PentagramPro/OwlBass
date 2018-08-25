@@ -12,6 +12,10 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "Common/ProperiesRegistry.h"
+
+class CVoiceModuleHost;
+class CMixerVoice;
+
 //==============================================================================
 /**
 */
@@ -59,6 +63,8 @@ public:
 
 	CPropertiesRegistry& GetPropertiesRegistry() { return mPropRegistry; }
 private:
+	void AddBlockOfOscillators(CMixerVoice* mixerVoice, CVoiceModuleHost& host, double detuneScale);
+
 	CPropertiesRegistry mPropRegistry;
 	double mSampleRate;
 	int mSampleCounter = 0;

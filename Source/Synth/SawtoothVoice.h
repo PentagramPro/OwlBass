@@ -8,7 +8,7 @@
 class CSawtoothVoice : public CVoiceModuleBase
 {
 public:
-	CSawtoothVoice(const std::string& name, IVoiceModuleHost& host);
+	CSawtoothVoice(const std::string& name, IVoiceModuleHost& host, double detuneScale);
 
 	void OnNoteStart(int midiNoteNumber, float velocity,
 		SynthesiserSound*, int currentPitchWheelPosition) override;
@@ -26,7 +26,7 @@ private:
 	double mNextSamplesPerCycle;
 	double mSampleCounter = 0;
 	double mDetune = 1;
-
+	const double mDetuneScale = 1;
 	CDSPDelay mDelay;
 
 	// Inherited via CVoiceModuleBase

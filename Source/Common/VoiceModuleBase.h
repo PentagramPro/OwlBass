@@ -9,7 +9,7 @@ public:
 	virtual ~CVoiceModuleBase() {}
 
 	const std::string& GetName() const { return mName; }
-	bool IsBusy() const override { return mIsBusy; }
+	virtual bool IsBusy() const override { return mIsBusy; }
 
 	void ReplaceHost(IVoiceModuleHost& host) { mHost = &host; }
 protected:

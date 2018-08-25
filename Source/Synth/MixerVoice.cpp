@@ -1,38 +1,61 @@
 
 #include "MixerVoice.h"
+#include "../Common/ProperiesRegistry.h"
 
-
-MixerVoice::MixerVoice(const std::string& name, IVoiceModuleHost& host, const std::vector<IVoiceModule*>& subvoices) : CVoiceModuleBase(name, host) {
-    for(auto subvoice: subvoices) {
-        mSubvoices.emplace_back(subvoice);
-    }
+CMixerVoice::CMixerVoice(const std::string& name, IVoiceModuleHost& host) : CVoiceModuleBase(name, host) {
+    
 }
 
 
 
 
-void MixerVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) {
+void CMixerVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) {
     for(auto& voice : mSubvoices) {
         voice->OnNoteStart(midiNoteNumber, velocity, sound, currentPitchWheelPosition);
     }
 }
 
-void MixerVoice::OnNoteStop(float velocity, bool allowTailOff) {
+void CMixerVoice::OnNoteStop(float velocity, bool allowTailOff) {
     for(auto& voice : mSubvoices) {
         voice->OnNoteStop(velocity,allowTailOff);
     }
 }
 
-
-void MixerVoice::ProcessBlock(AudioSampleBuffer &outputBuffer, int startSample, int numSamples) {
-
-
-    for(auto& voice : mSubvoices) {
-        voice->ProcessBlock(outputBuffer, startSample, numSamples);
-    }
-
+void CMixerVoice::AddModule(IVoiceModule * voice)
+{
+	mSubvoices.emplace_back(voice);
 }
 
-void MixerVoice::InitProperties(CPropertiesRegistry & registry)
+bool CMixerVoice::IsBusy() const
 {
+	for (const auto& voice : mSubvoices) {
+		if (voice->IsBusy()) {
+			return true;
+		}
+	}
+	return false;
+}
+
+
+void CMixerVoice::ProcessBlock(AudioSampleBuffer &outputBuffer, int startSample, int numSamples) {
+
+	mBuffer.setSize(1, outputBuffer.getNumSamples(), false, false, true);
+	mBuffer.clear();
+
+    for(auto& voice : mSubvoices) {
+        voice->ProcessBlock(mBuffer, startSample, numSamples);
+    }
+	
+	
+	outputBuffer.applyGain(startSample,numSamples,2 - mVolume);
+
+	for (int i = 0; i < outputBuffer.getNumChannels(); i++) {
+		outputBuffer.addFrom(i, startSample, mBuffer, 0,startSample, numSamples, mVolume);
+	}
+	
+}
+
+void CMixerVoice::InitProperties(CPropertiesRegistry & registry)
+{
+	registry.AddProperty(GetPropName("Volume"), new CPropertyDouble01(mVolume, 0, 1));
 }

@@ -1,7 +1,8 @@
 #include "SawtoothVoice.h"
 #include "../Common/ProperiesRegistry.h"
 
-CSawtoothVoice::CSawtoothVoice(const std::string & name, IVoiceModuleHost & host) : CVoiceModuleBase(name,host)
+CSawtoothVoice::CSawtoothVoice(const std::string & name, IVoiceModuleHost & host, double detuneScale) : CVoiceModuleBase(name,host)
+, mDetuneScale(detuneScale)
 {
 	mDelay.Reset(GetSampleRate(), 0.005);
 }
@@ -17,7 +18,9 @@ void CSawtoothVoice::SetSamplesPerCycle(int samples)
 
 void CSawtoothVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int currentPitchWheelPosition)
 {
-	auto cyclesPerSecond = MidiMessage::getMidiNoteInHertz(midiNoteNumber)*mDetune;
+	const double detune = (mDetune - 1)*mDetuneScale + 1;
+	auto cyclesPerSecond = MidiMessage::getMidiNoteInHertz(midiNoteNumber)*detune;
+	DBG("Sawtooth voice cycles per second: " << cyclesPerSecond);
 	SetSamplesPerCycle(GetSampleRate() / cyclesPerSecond);
 
 	StartSound();
@@ -55,5 +58,5 @@ void CSawtoothVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSam
 
 void CSawtoothVoice::InitProperties(CPropertiesRegistry & registry)
 {
-	registry.AddProperty(GetPropName("Volume"), new CPropertyDouble01(mDetune, 0.9,1.1));
+	registry.AddProperty(GetPropName("Detune"), new CPropertyDouble01(mDetune, 0.98,1.02));
 }

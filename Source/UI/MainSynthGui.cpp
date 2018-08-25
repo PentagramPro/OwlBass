@@ -412,6 +412,46 @@ MainSynthGui::MainSynthGui ()
 
     label18->setBounds (296, 392, 64, 24);
 
+    slider13.reset (new Slider ("ReferenceOscillator.Detune"));
+    addAndMakeVisible (slider13.get());
+    slider13->setRange (0, 1, 0);
+    slider13->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider13->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider13->addListener (this);
+
+    slider13->setBounds (152, 264, 111, 64);
+
+    label19.reset (new Label ("new label",
+                              TRANS("detune")));
+    addAndMakeVisible (label19.get());
+    label19->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label19->setJustificationType (Justification::centred);
+    label19->setEditable (false, false, false);
+    label19->setColour (TextEditor::textColourId, Colours::black);
+    label19->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label19->setBounds (176, 312, 64, 24);
+
+    slider21.reset (new Slider ("UnisonMixer.Volume"));
+    addAndMakeVisible (slider21.get());
+    slider21->setRange (0, 1, 0);
+    slider21->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider21->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider21->addListener (this);
+
+    slider21->setBounds (152, 336, 111, 64);
+
+    label20.reset (new Label ("new label",
+                              TRANS("volume")));
+    addAndMakeVisible (label20.get());
+    label20->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label20->setJustificationType (Justification::centred);
+    label20->setEditable (false, false, false);
+    label20->setColour (TextEditor::textColourId, Colours::black);
+    label20->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label20->setBounds (176, 384, 64, 24);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -465,6 +505,10 @@ MainSynthGui::~MainSynthGui()
     slider = nullptr;
     label15 = nullptr;
     label18 = nullptr;
+    slider13 = nullptr;
+    label19 = nullptr;
+    slider21 = nullptr;
+    label20 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -594,6 +638,16 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_slider] -- add your slider handling code here..
         //[/UserSliderCode_slider]
+    }
+    else if (sliderThatWasMoved == slider13.get())
+    {
+        //[UserSliderCode_slider13] -- add your slider handling code here..
+        //[/UserSliderCode_slider13]
+    }
+    else if (sliderThatWasMoved == slider21.get())
+    {
+        //[UserSliderCode_slider21] -- add your slider handling code here..
+        //[/UserSliderCode_slider21]
     }
 
     //[UsersliderValueChanged_Post]
@@ -820,6 +874,26 @@ BEGIN_JUCER_METADATA
   <LABEL name="new label" id="2e9d93e276cf4ffd" memberName="label18" virtualName=""
          explicitFocusOrder="0" pos="296 392 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="wet" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+  <SLIDER name="ReferenceOscillator.Detune" id="179c2467b254d1c1" memberName="slider13"
+          virtualName="" explicitFocusOrder="0" pos="152 264 111 64" min="0.00000000000000000000"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+  <LABEL name="new label" id="3fd1e9e11b37a09e" memberName="label19" virtualName=""
+         explicitFocusOrder="0" pos="176 312 64 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="detune" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+  <SLIDER name="UnisonMixer.Volume" id="b64e5d44b2af789a" memberName="slider21"
+          virtualName="" explicitFocusOrder="0" pos="152 336 111 64" min="0.00000000000000000000"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+  <LABEL name="new label" id="2e34fa49a2369321" memberName="label20" virtualName=""
+         explicitFocusOrder="0" pos="176 384 64 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="volume" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>

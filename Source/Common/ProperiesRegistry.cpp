@@ -29,7 +29,11 @@ void CPropertiesRegistry::SetProperty(const std::string & name, float value)
 {
 	auto p = mProperties.find(name);
 	if (p != mProperties.end()) {
+		DBG("Setting property " << name << " to " << value);
 		p->second->SetReference(value);
+	}
+	else {
+		DBG("Cannot find property " << name);
 	}
 
 }

@@ -20,6 +20,7 @@
 #include "Synth/SawtoothVoice.h"
 #include "Synth/MultiModeOscillator.h"
 #include "Synth/ChorusVoice.h"
+
 #include "Common/VoiceModuleHost.h"
 #include "Common/VoiceModuleHostSound.h"
 #include "Common/SynthState.h"
@@ -36,20 +37,24 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
 	std::shared_ptr<EnvelopeVoice> envelopeCutoff(new EnvelopeVoice("ADSRFilter", *voiceModuleHost));
 	CControlVoltageSource* cvEnvelopeCutoff = new CControlVoltageSource("CVS1", *voiceModuleHost, envelopeCutoff,1.0);
-
-	std::shared_ptr<CSawtoothVoice> referenceSawtooth(new CSawtoothVoice("OSC0", *voiceModuleHost));
-	CControlVoltageSource* cvReferenceSawtooth = new CControlVoltageSource("CVS2", *voiceModuleHost, referenceSawtooth,0.0);
-
 	voiceModuleHost->AddModule(cvEnvelopeCutoff);
-	voiceModuleHost->AddModule(cvReferenceSawtooth);
-	
 
-	voiceModuleHost->AddModule(new CMultiModeOscillator("OSC1",*voiceModuleHost, *cvReferenceSawtooth));
-	voiceModuleHost->AddModule(new CMultiModeOscillator("OSC2", *voiceModuleHost, *cvReferenceSawtooth));
-	voiceModuleHost->AddModule(new CMultiModeOscillator("OSC3", *voiceModuleHost, *cvReferenceSawtooth));
+	const double detuneScale = 2;
+	AddBlockOfOscillators(nullptr, *voiceModuleHost, detuneScale*0);
+
+	CMixerVoice* unisonMixer(new CMixerVoice("UnisonMixer", *voiceModuleHost));
+
+	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.3);
+	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.6);
+	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale * 1);
+	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.2);
+	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.4);
+	
+	voiceModuleHost->AddModule(unisonMixer);
+
     voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost, *cvEnvelopeCutoff));
-	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.3));
+	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.08));
 
 	//voiceModuleHost->AddModule(new CChorusVoice("Chorus", *voiceModuleHost,0.3,6));
 
@@ -58,9 +63,30 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	sineSynth.addSound(new CVoiceModuleHostSound());
 }
 
+
 AdditiveVstAudioProcessor::~AdditiveVstAudioProcessor()
 {
 }
+
+void AdditiveVstAudioProcessor::AddBlockOfOscillators( CMixerVoice* mixerVoice, CVoiceModuleHost& host, double detuneScale) {
+	std::shared_ptr<CSawtoothVoice> referenceSawtooth(new CSawtoothVoice("ReferenceOscillator", host, detuneScale));
+	CControlVoltageSource* cvReferenceSawtooth = new CControlVoltageSource("ReferenceOscillatorCV", host, referenceSawtooth, 0.0);
+
+
+	host.AddModule(cvReferenceSawtooth);
+	if (mixerVoice) {
+		mixerVoice->AddModule(new CMultiModeOscillator("OSC1", host, *cvReferenceSawtooth));
+		mixerVoice->AddModule(new CMultiModeOscillator("OSC2", host, *cvReferenceSawtooth));
+		mixerVoice->AddModule(new CMultiModeOscillator("OSC3", host, *cvReferenceSawtooth));
+	}
+	else {
+		host.AddModule(new CMultiModeOscillator("OSC1", host, *cvReferenceSawtooth));
+		host.AddModule(new CMultiModeOscillator("OSC2", host, *cvReferenceSawtooth));
+		host.AddModule(new CMultiModeOscillator("OSC3", host, *cvReferenceSawtooth));
+	}
+	
+}
+
 
 //==============================================================================
 const String AdditiveVstAudioProcessor::getName() const
