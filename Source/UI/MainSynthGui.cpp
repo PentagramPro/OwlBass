@@ -388,7 +388,7 @@ MainSynthGui::MainSynthGui ()
     slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider->addListener (this);
 
-    slider->setBounds (272, 344, 111, 64);
+    slider->setBounds (296, 344, 63, 64);
 
     label15.reset (new Label ("new label",
                               TRANS("Chorus")));
@@ -452,11 +452,31 @@ MainSynthGui::MainSynthGui ()
 
     label20->setBounds (176, 384, 64, 24);
 
+    slider22.reset (new Slider ("ChorusLfo.Frequency"));
+    addAndMakeVisible (slider22.get());
+    slider22->setRange (0, 1, 0);
+    slider22->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider22->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider22->addListener (this);
+
+    slider22->setBounds (360, 344, 63, 64);
+
+    label21.reset (new Label ("new label",
+                              TRANS("lfo")));
+    addAndMakeVisible (label21.get());
+    label21->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label21->setJustificationType (Justification::centred);
+    label21->setEditable (false, false, false);
+    label21->setColour (TextEditor::textColourId, Colours::black);
+    label21->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label21->setBounds (360, 392, 64, 24);
+
 
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (600, 400);
+    setSize (600, 480);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -509,6 +529,8 @@ MainSynthGui::~MainSynthGui()
     label19 = nullptr;
     slider21 = nullptr;
     label20 = nullptr;
+    slider22 = nullptr;
+    label21 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -649,6 +671,11 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_slider21] -- add your slider handling code here..
         //[/UserSliderCode_slider21]
     }
+    else if (sliderThatWasMoved == slider22.get())
+    {
+        //[UserSliderCode_slider22] -- add your slider handling code here..
+        //[/UserSliderCode_slider22]
+    }
 
     //[UsersliderValueChanged_Post]
     //[/UsersliderValueChanged_Post]
@@ -676,7 +703,7 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="MainSynthGui" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="0" initialWidth="600" initialHeight="400">
+                 fixedSize="0" initialWidth="600" initialHeight="480">
   <BACKGROUND backgroundColour="ff323e44"/>
   <SLIDER name="ADSRVol.Attack" id="e686dcf41ff8f723" memberName="slider2"
           virtualName="" explicitFocusOrder="0" pos="24 288 40 104" min="0.00000000000000000000"
@@ -862,7 +889,7 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="Chorus.Wet" id="f02a07f8a8edc9" memberName="slider" virtualName=""
-          explicitFocusOrder="0" pos="272 344 111 64" min="0.00000000000000000000"
+          explicitFocusOrder="0" pos="296 344 63 64" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
@@ -894,6 +921,16 @@ BEGIN_JUCER_METADATA
   <LABEL name="new label" id="2e34fa49a2369321" memberName="label20" virtualName=""
          explicitFocusOrder="0" pos="176 384 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="volume" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+  <SLIDER name="ChorusLfo.Frequency" id="fef0c0a17fbbe76b" memberName="slider22"
+          virtualName="" explicitFocusOrder="0" pos="360 344 63 64" min="0.00000000000000000000"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+  <LABEL name="new label" id="6a484cbc8a86f45b" memberName="label21" virtualName=""
+         explicitFocusOrder="0" pos="360 392 64 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="lfo" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>

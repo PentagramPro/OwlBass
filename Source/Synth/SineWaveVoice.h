@@ -4,10 +4,10 @@
 #include "../Common/VoiceModuleBase.h"
 #include "../Common/IVoiceModuleHost.h"
 
-class SineWaveVoice : public CVoiceModuleBase
+class CSineLfoVoice : public CVoiceModuleBase
 {
 public:
-	SineWaveVoice(const std::string& name, IVoiceModuleHost& host, float freqRate);
+	CSineLfoVoice(const std::string& name, IVoiceModuleHost& host);
 
 	void OnNoteStart(int midiNoteNumber, float velocity,
 		SynthesiserSound*, int /*currentPitchWheelPosition*/) override;
@@ -19,9 +19,10 @@ public:
 private:
 	// Inherited via CVoiceModuleBase
 	virtual void InitProperties(CPropertiesRegistry & registry) override;
+	void UpdateFrequency();
 
-	double currentAngle = 0.0, angleDelta = 0.0, level = 0.0, tailOff = 0.0;
-	float mFreqRate = 1;
+	double currentAngle = 0.0, angleDelta = 0.0;
+	double mFrequency = 1;
 
 
 };
