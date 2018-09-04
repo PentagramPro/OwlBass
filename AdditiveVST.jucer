@@ -79,6 +79,8 @@
             file="Source/Synth/MultiModeOscillator.cpp"/>
       <FILE id="aKokZR" name="MultiModeOscillator.h" compile="0" resource="0"
             file="Source/Synth/MultiModeOscillator.h"/>
+      <FILE id="m48qZV" name="NoiseVoice.cpp" compile="1" resource="0" file="Source/Synth/NoiseVoice.cpp"/>
+      <FILE id="mH6xkt" name="NoiseVoice.h" compile="0" resource="0" file="Source/Synth/NoiseVoice.h"/>
       <FILE id="nhierR" name="SawtoothVoice.cpp" compile="1" resource="0"
             file="Source/Synth/SawtoothVoice.cpp"/>
       <FILE id="oa12nC" name="SawtoothVoice.h" compile="0" resource="0" file="Source/Synth/SawtoothVoice.h"/>

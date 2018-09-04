@@ -20,6 +20,7 @@
 #include "Synth/SawtoothVoice.h"
 #include "Synth/MultiModeOscillator.h"
 #include "Synth/ChorusVoice.h"
+#include "Synth/NoiseVoice.h"
 
 #include "Common/VoiceModuleHost.h"
 #include "Common/VoiceModuleHostSound.h"
@@ -43,6 +44,7 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	AddBlockOfOscillators(nullptr, *voiceModuleHost, detuneScale*0);
 
 	CMixerVoice* unisonMixer(new CMixerVoice("UnisonMixer", *voiceModuleHost));
+	//voiceModuleHost->AddModule(new CNoiseVoice("Noise", *voiceModuleHost));
 
 	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.3);
 	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.6);
@@ -55,6 +57,7 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
     voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost, *cvEnvelopeCutoff));
 	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.08));
+	
 
 	{
 		std::shared_ptr<CSineLfoVoice> chorusSineLfo(new CSineLfoVoice("ChorusLfo", *voiceModuleHost));
