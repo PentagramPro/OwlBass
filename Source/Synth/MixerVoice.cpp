@@ -58,4 +58,7 @@ void CMixerVoice::ProcessBlock(AudioSampleBuffer &outputBuffer, int startSample,
 void CMixerVoice::InitProperties(CPropertiesRegistry & registry)
 {
 	registry.AddProperty(GetPropName("Volume"), new CPropertyDouble01(mVolume, 0, 1));
+	for (auto& voice : mSubvoices) {
+		voice->InitProperties(registry);
+	}
 }

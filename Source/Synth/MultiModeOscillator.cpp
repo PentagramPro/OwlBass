@@ -8,6 +8,7 @@ CMultiModeOscillator::CMultiModeOscillator(const std::string & name, IVoiceModul
 
 void CMultiModeOscillator::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int currentPitchWheelPosition)
 {
+	DBG("Oscillator mode " << mWaveform);
 	StartSound();
 }
 
