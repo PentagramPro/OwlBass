@@ -63,6 +63,8 @@
             file="Source/Synth/ControlVoltageSource.cpp"/>
       <FILE id="MENVG3" name="ControlVoltageSource.h" compile="0" resource="0"
             file="Source/Synth/ControlVoltageSource.h"/>
+      <FILE id="oakOjE" name="DelayVoice.cpp" compile="1" resource="0" file="Source/Synth/DelayVoice.cpp"/>
+      <FILE id="Onst5s" name="DelayVoice.h" compile="0" resource="0" file="Source/Synth/DelayVoice.h"/>
       <FILE id="ecgqvL" name="EnvelopeVoice.cpp" compile="1" resource="0"
             file="Source/Synth/EnvelopeVoice.cpp"/>
       <FILE id="OaBZLH" name="EnvelopeVoice.h" compile="0" resource="0" file="Source/Synth/EnvelopeVoice.h"/>

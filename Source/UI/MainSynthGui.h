@@ -103,6 +103,8 @@ private:
     std::unique_ptr<Label> label20;
     std::unique_ptr<Slider> slider22;
     std::unique_ptr<Label> label21;
+    std::unique_ptr<Slider> slider23;
+    std::unique_ptr<Label> label22;
 
 
     //==============================================================================

@@ -20,6 +20,7 @@
 #include "Synth/SawtoothVoice.h"
 #include "Synth/MultiModeOscillator.h"
 #include "Synth/ChorusVoice.h"
+#include "Synth/DelayVoice.h"
 #include "Synth/NoiseVoice.h"
 
 #include "Common/VoiceModuleHost.h"
@@ -60,13 +61,9 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.08));
 	
 
-	{
-		std::shared_ptr<CSineLfoVoice> chorusSineLfo(new CSineLfoVoice("ChorusLfo", *voiceModuleHost));
-		CControlVoltageSource* cvChorusSineLfo = new CControlVoltageSource("CV_ChorusLfo", *voiceModuleHost, chorusSineLfo, 0);
-		voiceModuleHost->AddModule(cvChorusSineLfo);
-		
-		voiceModuleHost->AddModule(new CChorusVoice("Chorus", *voiceModuleHost, *cvChorusSineLfo, 0.3,5));
-	}
+	
+	voiceModuleHost->AddModule(new CDelayVoice("Delay", *voiceModuleHost));
+
 	
 	sineSynth.addVoice(voiceModuleHost);
 	sineSynth.addSound(new CVoiceModuleHostSound());

@@ -50,23 +50,24 @@ const int Channels = 2;
 
 	  while (--samplesCount >= 0) {
 		  
-		  double result[Channels];
-		  const double lfoOffset = (1 + phaseLfoBuffer.getSample(0, currentSample))/2;
+		  mBuffer->AdvancePointer();
+		  
 		  for (int channel = 0; channel < Channels; channel++) {
-			  result[channel] = 0;
+			  
 			  const double oldSample = outputBuffer.getSample(channel, currentSample);
+			  mBuffer->SetSample(channel, oldSample);
+			  double result = 0;
 			  for (const int offset : mVoiceOffsets) {
-				  const double offsetPhased = offset*(1-lfoOffset*0.01);
-				  result[channel] += offset==0? oldSample : mBuffer->GetRelativeToFront(offsetPhased, channel);
+				  result += mBuffer->GetRelativeToFront(offset, channel);
 			  }
-			  result[channel] /= mVoices;
+			  result /= mVoices;
 
 			  
 
-			  outputBuffer.setSample(channel, currentSample, result[channel]*mWet*mVoices+oldSample*(1-mWet));
+			  outputBuffer.setSample(channel, currentSample, result*mWet*mVoices+oldSample*(1-mWet));
 			  
 		  }
-		  mBuffer->PushToFront(result);
+		  
 
 		  currentSample++;
 	  }
