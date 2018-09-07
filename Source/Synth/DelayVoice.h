@@ -23,7 +23,7 @@ public:
 private:
 	std::unique_ptr<CAudioQueue> mBuffer;
 	double mLengthSec = 1;
-	double mBufferLengthSec = 1;
+	
 	double mFeedback = 0.05f;
 	double mWet = 0;
 

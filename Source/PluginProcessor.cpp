@@ -59,7 +59,14 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost, *cvEnvelopeCutoff));
 	voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
 	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.08));
-	
+	/*
+	{
+		std::shared_ptr<CSineLfoVoice> chorusSineLfo(new CSineLfoVoice("ChorusLfo", *voiceModuleHost));
+		CControlVoltageSource* cvChorusSineLfo = new CControlVoltageSource("CV_ChorusLfo", *voiceModuleHost, chorusSineLfo, 0);
+		voiceModuleHost->AddModule(cvChorusSineLfo);
+
+		voiceModuleHost->AddModule(new CChorusVoice("Chorus", *voiceModuleHost, *cvChorusSineLfo, 0.3, 3));
+	}*/
 
 	
 	voiceModuleHost->AddModule(new CDelayVoice("Delay", *voiceModuleHost));

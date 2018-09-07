@@ -492,6 +492,57 @@ MainSynthGui::MainSynthGui ()
 
     label22->setBounds (424, 392, 64, 24);
 
+    label23.reset (new Label ("new label",
+                              TRANS("Chorus")));
+    addAndMakeVisible (label23.get());
+    label23->setFont (Font (17.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label23->setJustificationType (Justification::centredLeft);
+    label23->setEditable (false, false, false);
+    label23->setColour (TextEditor::textColourId, Colours::black);
+    label23->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label23->setBounds (440, 144, 168, 24);
+
+    slider24.reset (new Slider ("Chorus.Wet"));
+    addAndMakeVisible (slider24.get());
+    slider24->setRange (0, 1, 0);
+    slider24->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider24->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider24->addListener (this);
+
+    slider24->setBounds (429, 166, 63, 64);
+
+    label24.reset (new Label ("new label",
+                              TRANS("wet")));
+    addAndMakeVisible (label24.get());
+    label24->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label24->setJustificationType (Justification::centred);
+    label24->setEditable (false, false, false);
+    label24->setColour (TextEditor::textColourId, Colours::black);
+    label24->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label24->setBounds (429, 214, 64, 24);
+
+    slider25.reset (new Slider ("Chorus.Lfo"));
+    addAndMakeVisible (slider25.get());
+    slider25->setRange (0, 1, 0);
+    slider25->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider25->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider25->addListener (this);
+
+    slider25->setBounds (493, 166, 63, 64);
+
+    label25.reset (new Label ("new label",
+                              TRANS("lfo\n")));
+    addAndMakeVisible (label25.get());
+    label25->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label25->setJustificationType (Justification::centred);
+    label25->setEditable (false, false, false);
+    label25->setColour (TextEditor::textColourId, Colours::black);
+    label25->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label25->setBounds (493, 214, 64, 24);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -553,6 +604,11 @@ MainSynthGui::~MainSynthGui()
     label21 = nullptr;
     slider23 = nullptr;
     label22 = nullptr;
+    label23 = nullptr;
+    slider24 = nullptr;
+    label24 = nullptr;
+    slider25 = nullptr;
+    label25 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -702,6 +758,16 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_slider23] -- add your slider handling code here..
         //[/UserSliderCode_slider23]
+    }
+    else if (sliderThatWasMoved == slider24.get())
+    {
+        //[UserSliderCode_slider24] -- add your slider handling code here..
+        //[/UserSliderCode_slider24]
+    }
+    else if (sliderThatWasMoved == slider25.get())
+    {
+        //[UserSliderCode_slider25] -- add your slider handling code here..
+        //[/UserSliderCode_slider25]
     }
 
     //[UsersliderValueChanged_Post]
@@ -968,6 +1034,31 @@ BEGIN_JUCER_METADATA
   <LABEL name="new label" id="3c2f6ccb4ec0e07b" memberName="label22" virtualName=""
          explicitFocusOrder="0" pos="424 392 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="feedback" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+  <LABEL name="new label" id="98b57b38ca5faf1d" memberName="label23" virtualName=""
+         explicitFocusOrder="0" pos="440 144 168 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Chorus" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="17.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+  <SLIDER name="Chorus.Wet" id="5368775b170396ed" memberName="slider24"
+          virtualName="" explicitFocusOrder="0" pos="429 166 63 64" min="0.00000000000000000000"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+  <LABEL name="new label" id="55b1ebded2b1c262" memberName="label24" virtualName=""
+         explicitFocusOrder="0" pos="429 214 64 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="wet" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+  <SLIDER name="Chorus.Lfo" id="2202e097e51ba4b1" memberName="slider25"
+          virtualName="" explicitFocusOrder="0" pos="493 166 63 64" min="0.00000000000000000000"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+  <LABEL name="new label" id="8764af513f87c67d" memberName="label25" virtualName=""
+         explicitFocusOrder="0" pos="493 214 64 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="lfo&#10;" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>

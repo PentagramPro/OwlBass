@@ -11,17 +11,10 @@ const int Channels = 2;
   void CChorusVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound * sound, int currentPitchWheelPosition)
   {
 	  if (!mBuffer) {
-		  const int bufferSize = GetSampleRate()*mLengthSec;
-		  mBuffer.reset(new CAudioQueue(Channels, bufferSize));
-		  for (int voice = 0; voice < mVoices; voice++) {
-			  int offset = 0;
-			  if (mVoices > 1) {
-				  offset = bufferSize / (mVoices - 1) * voice;
-			  }
-			  if (voice == mVoices - 1) {
-				  offset = bufferSize - 1;
-			  }
-			  mVoiceOffsets.push_back(offset);
+		  
+		  mBuffer.reset(new CAudioQueue(Channels,mLengthSec,GetSampleRate()));
+		  for (int voice = 1; voice < mVoices; voice++) {
+			  mVoiceOffsets.push_back(mLengthSec/mVoices*voice);
 		  }
 	  }
   }
@@ -39,6 +32,7 @@ const int Channels = 2;
 		  return;
 	  }
 	  if (outputBuffer.getNumChannels() < Channels || mBuffer->GetNumChannels() < Channels) {
+		  DBG(Channels << " " << outputBuffer.getNumChannels() << " " << mBuffer->GetNumChannels());
 		  jassertfalse;
 		  return;
 	  }
@@ -51,14 +45,15 @@ const int Channels = 2;
 	  while (--samplesCount >= 0) {
 		  
 		  mBuffer->AdvancePointer();
-		  
+		  const double lfo = phaseLfoBuffer.getSample(0, currentSample)/2+1;
+
 		  for (int channel = 0; channel < Channels; channel++) {
 			  
 			  const double oldSample = outputBuffer.getSample(channel, currentSample);
 			  mBuffer->SetSample(channel, oldSample);
-			  double result = 0;
-			  for (const int offset : mVoiceOffsets) {
-				  result += mBuffer->GetRelativeToFront(offset, channel);
+			  double result = oldSample;
+			  for (const double offset : mVoiceOffsets) {
+				  result += mBuffer->GetRelativeToFront(offset*lfo, channel);
 			  }
 			  result /= mVoices;
 

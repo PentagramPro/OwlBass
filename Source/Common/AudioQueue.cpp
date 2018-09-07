@@ -1,8 +1,21 @@
 #include "AudioQueue.h"
+#include <cmath>
 
-CAudioQueue::CAudioQueue(int channels, int samples) : mBuffer(channels, samples)
+CAudioQueue::CAudioQueue(int channels, double lengthSeconds, int sampleRate)
+	: mSampleRate(sampleRate)
+	, mChannels(channels)
 {
+	SetLength(lengthSeconds);
 	mBuffer.clear();
+}
+
+void CAudioQueue::SetLength(double lengthSeconds) {
+	if (mLength >= lengthSeconds) {
+		return;
+	}
+	const int samples = lengthSeconds * mSampleRate+10;
+	mBuffer.setSize(mChannels, samples, true, true);
+	mLength = lengthSeconds;
 }
 
 void CAudioQueue::AdvancePointer()
@@ -19,14 +32,22 @@ void CAudioQueue::SetSample(int channel, double sample)
 }
 
 
-double CAudioQueue::GetRelativeToFront(int offset, int channel) const 
+double CAudioQueue::GetRelativeToFront(double timeSeconds, int channel) const 
 {
 	const int bufferSize = mBuffer.getNumSamples();
-	int samplePos = (mCurrentSample - 1 - offset) % bufferSize;
-	if (samplePos < 0) {
-		samplePos += bufferSize;
-	}
-	return mBuffer.getSample(channel,samplePos);
+	const double offset = timeSeconds * mSampleRate;
+	const int offsetMax = std::ceil(offset);
+	const int offsetMin = std::floor(offset);
+
+	int sampleMax = (mCurrentSample - 1 - offsetMax);
+	if (sampleMax < 0) { sampleMax += bufferSize; }
+
+	int sampleMin = (mCurrentSample - 1 - offsetMin);
+	if (sampleMin < 0) { sampleMin += bufferSize; }
+
+	const double distanceFromMax = offsetMax - offset;
+
+	return mBuffer.getSample(channel,sampleMax)*(1-distanceFromMax)+ mBuffer.getSample(channel, sampleMin)*distanceFromMax;
 }
 
 double CAudioQueue::GetLastSample(int channel) const
