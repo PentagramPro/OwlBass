@@ -42,16 +42,17 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	voiceModuleHost->AddModule(cvEnvelopeCutoff);
 
 	const double detuneScale = 2;
-	AddBlockOfOscillators(nullptr, *voiceModuleHost, detuneScale*0);
+	AddBlockOfOscillators(nullptr, *voiceModuleHost, detuneScale*0,0);
 
 	CMixerVoice* unisonMixer(new CMixerVoice("UnisonMixer", *voiceModuleHost));
 	//voiceModuleHost->AddModule(new CNoiseVoice("Noise", *voiceModuleHost));
 
-	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.3);
-	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.6);
-	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale * 1);
-	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.2);
-	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.4);
+	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.3,-1);
+	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.6,1);
+	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale * 1,0.6);
+	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale * 1, -0.6);
+	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.2, -0.4);
+	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.4,0.4);
 	
 	voiceModuleHost->AddModule(unisonMixer);
 
@@ -81,21 +82,21 @@ AdditiveVstAudioProcessor::~AdditiveVstAudioProcessor()
 {
 }
 
-void AdditiveVstAudioProcessor::AddBlockOfOscillators( CMixerVoice* mixerVoice, CVoiceModuleHost& host, double detuneScale) {
+void AdditiveVstAudioProcessor::AddBlockOfOscillators( CMixerVoice* mixerVoice, CVoiceModuleHost& host, double detuneScale, double pan) {
 	std::shared_ptr<CSawtoothVoice> referenceSawtooth(new CSawtoothVoice("ReferenceOscillator", host, detuneScale));
 	CControlVoltageSource* cvReferenceSawtooth = new CControlVoltageSource("ReferenceOscillatorCV", host, referenceSawtooth, 0.0);
 
 
 	host.AddModule(cvReferenceSawtooth);
 	if (mixerVoice) {
-		mixerVoice->AddModule(new CMultiModeOscillator("OSC1", host, *cvReferenceSawtooth));
-		mixerVoice->AddModule(new CMultiModeOscillator("OSC2", host, *cvReferenceSawtooth));
-		mixerVoice->AddModule(new CMultiModeOscillator("OSC3", host, *cvReferenceSawtooth));
+		mixerVoice->AddModule(new CMultiModeOscillator("OSC1", host, *cvReferenceSawtooth,pan));
+		mixerVoice->AddModule(new CMultiModeOscillator("OSC2", host, *cvReferenceSawtooth, pan));
+		mixerVoice->AddModule(new CMultiModeOscillator("OSC3", host, *cvReferenceSawtooth, pan));
 	}
 	else {
-		host.AddModule(new CMultiModeOscillator("OSC1", host, *cvReferenceSawtooth));
-		host.AddModule(new CMultiModeOscillator("OSC2", host, *cvReferenceSawtooth));
-		host.AddModule(new CMultiModeOscillator("OSC3", host, *cvReferenceSawtooth));
+		host.AddModule(new CMultiModeOscillator("OSC1", host, *cvReferenceSawtooth, pan));
+		host.AddModule(new CMultiModeOscillator("OSC2", host, *cvReferenceSawtooth, pan));
+		host.AddModule(new CMultiModeOscillator("OSC3", host, *cvReferenceSawtooth, pan));
 	}
 	
 }

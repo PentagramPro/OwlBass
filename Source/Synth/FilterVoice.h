@@ -5,6 +5,7 @@
 #include "../DSP/DSPLowpassFilter2.h"
 #include "../DSP/DSPDelay.h"
 #include "IVoltageController.h"
+#include <vector>
 
 class CFilterVoice : public CVoiceModuleBase {
 public:
@@ -17,7 +18,7 @@ public:
 	void ProcessBlock(AudioBuffer<float> &outputBuffer, int startSample, int numSamples) override;
 
 private:
-	CDSPLowpassFilter2 mFilter;
+	std::vector<CDSPLowpassFilter2> mFilter;
 	CDSPDelay mCutoffDelay;
 	double mCutoffFreq = 1;
 	double mQ = 1;

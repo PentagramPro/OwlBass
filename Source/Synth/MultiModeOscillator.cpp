@@ -1,8 +1,8 @@
 #include "MultiModeOscillator.h"
 #include "../Common/ProperiesRegistry.h"
 
-CMultiModeOscillator::CMultiModeOscillator(const std::string & name, IVoiceModuleHost & host, IVoltageController & referenceSawtooth) : CVoiceModuleBase(name,host)
-, mReferenceSawtooth(referenceSawtooth)
+CMultiModeOscillator::CMultiModeOscillator(const std::string & name, IVoiceModuleHost & host, IVoltageController & referenceSawtooth, double pan) : CVoiceModuleBase(name,host)
+, mReferenceSawtooth(referenceSawtooth), mPan(pan)
 {
 }
 
@@ -21,6 +21,10 @@ void CMultiModeOscillator::ProcessBlock(AudioSampleBuffer & outputBuffer, int st
 {
 	int samplesCount = numSamples;
 	int currentSample = startSample;
+
+	if (outputBuffer.getNumChannels() < 2) {
+		jassertfalse;
+	}
 
 	const auto& referenceBuffer = mReferenceSawtooth.GetVoltageBuffer();
 	while (--samplesCount >= 0) {
@@ -47,9 +51,12 @@ void CMultiModeOscillator::ProcessBlock(AudioSampleBuffer & outputBuffer, int st
 		default:
 			result = sawtoothDivided;
 		}
-		for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
-			outputBuffer.addSample(i, currentSample, result*mVolume);
-		}
+
+		result *= mVolume;
+		const double panLeft = -mPan / 2 + 0.5;
+		const double panRight = mPan / 2 + 0.5;
+		outputBuffer.addSample(0, currentSample, result*panLeft);
+		outputBuffer.addSample(1, currentSample, result*panRight);
 
 		currentSample++;
 	}

@@ -9,7 +9,7 @@
 class CMultiModeOscillator : public CVoiceModuleBase
 {
 public:
-	CMultiModeOscillator(const std::string& name, IVoiceModuleHost& host, IVoltageController& referenceSawtooth);
+	CMultiModeOscillator(const std::string& name, IVoiceModuleHost& host, IVoltageController& referenceSawtooth, double pan);
 
 	void OnNoteStart(int midiNoteNumber, float velocity,
 		SynthesiserSound*, int currentPitchWheelPosition) override;
@@ -25,5 +25,6 @@ private:
 	int mDividerCounter = -1;
 	int mDividerMax = 1;
 	int mWaveform = 1;
+	double mPan = 0;
 	IVoltageController& mReferenceSawtooth;
 };

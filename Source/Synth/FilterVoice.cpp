@@ -7,14 +7,18 @@ CFilterVoice::CFilterVoice(const std::string & name, IVoiceModuleHost & host, IV
 	: CVoiceModuleBase(name, host)
 	, mCutoffEnvelope(cutoffEnvelope)
 {
-	mFilter.Reset(GetSampleRate());
+	mFilter.resize(2);
+	for (auto& filter : mFilter) {
+		filter.Reset(GetSampleRate());
+	}
 	mCutoffDelay.Reset(GetSampleRate(), 0.1);
 }
 void CFilterVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound * sound, int currentPitchWheelPosition)
 {
 	
-
-	mFilter.SetParams(mCutoffFreq, mQ);
+	for (auto& filter : mFilter) {
+		filter.SetParams(mCutoffFreq, mQ);
+	}
 	
 	StartSound();
 }
@@ -30,6 +34,9 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 	int samplesCount = numSamples;
 	int currentSample = startSample;
 	
+	if (mFilter.size() > outputBuffer.getNumChannels()) {
+		jassertfalse;
+	}
 
 	auto& freqEnvelope = mCutoffEnvelope.GetVoltageBuffer();
 	
@@ -39,12 +46,16 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 		const double currentCutoff = mCutoffFreq + std::abs(mEnvelopeScale > 0 ? mCutoffFreqMax : mCutoffFreqMin - mCutoffFreq)*freqEnvelopeVal;
 		const double cutoff = mCutoffDelay.Next(currentCutoff);
 
-		mFilter.SetParams(cutoff, mQ);
+
+		
 
 		for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
+
+			mFilter[i].SetParams(cutoff, mQ);
+
 			double res = outputBuffer.getSample(i, currentSample);
 
-			res = mFilter.Next(res);
+			res = mFilter[i].Next(res);
 			outputBuffer.setSample(i, currentSample, res);
 		}
 		currentSample++;

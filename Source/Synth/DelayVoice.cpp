@@ -3,6 +3,12 @@
 
 const double MaxDelayLength = 2;
 
+CDelayVoice::CDelayVoice(const std::string & name, IVoiceModuleHost & host) : CVoiceModuleBase(name, host)
+{
+	mFilter.Reset(GetSampleRate());
+	mFilter.SetParams(4000, 1);
+}
+
 void CDelayVoice::InitProperties(CPropertiesRegistry & registry)
 {
 	registry.AddProperty(GetPropName("Wet"), new CPropertyDouble01(mWet, 0, 1));

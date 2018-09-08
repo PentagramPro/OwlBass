@@ -63,7 +63,7 @@ public:
 
 	CPropertiesRegistry& GetPropertiesRegistry() { return mPropRegistry; }
 private:
-	void AddBlockOfOscillators(CMixerVoice* mixerVoice, CVoiceModuleHost& host, double detuneScale);
+	void AddBlockOfOscillators(CMixerVoice* mixerVoice, CVoiceModuleHost& host, double detuneScale, double pan);
 
 	CPropertiesRegistry mPropRegistry;
 	double mSampleRate;

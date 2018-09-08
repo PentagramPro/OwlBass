@@ -4,12 +4,13 @@
 #include "../Common/IVoiceModuleHost.h"
 #include "../Common/AudioQueue.h"
 #include "IVoltageController.h"
+#include "../DSP/DSPLowpassFilter2.h"
 #include <vector>
 
 class CDelayVoice : public CVoiceModuleBase {
 public:
-	CDelayVoice(const std::string& name, IVoiceModuleHost& host)
-		: CVoiceModuleBase(name, host){}
+	CDelayVoice(const std::string& name, IVoiceModuleHost& host);
+		
 
 
 	// Inherited via CVoiceModuleBase
@@ -26,7 +27,7 @@ private:
 	
 	double mFeedback = 0.05f;
 	double mWet = 0;
-
+	CDSPLowpassFilter2 mFilter;
 	std::vector<double> mLastSample;
 
 };

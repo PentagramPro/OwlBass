@@ -39,7 +39,7 @@ bool CMixerVoice::IsBusy() const
 
 void CMixerVoice::ProcessBlock(AudioSampleBuffer &outputBuffer, int startSample, int numSamples) {
 
-	mBuffer.setSize(1, outputBuffer.getNumSamples(), false, false, true);
+	mBuffer.setSize(2, outputBuffer.getNumSamples(), false, false, true);
 	mBuffer.clear();
 
     for(auto& voice : mSubvoices) {
