@@ -8,7 +8,7 @@ public:
 	CVoiceModuleBase(const std::string& name, IVoiceModuleHost& host) : mName(name), mHost(&host) {}
 	virtual ~CVoiceModuleBase() {}
 
-	const std::string& GetName() const { return mName; }
+	const std::string& GetName() const override { return mName; }
 	virtual bool IsBusy() const override { return mIsBusy; }
 
 	void ReplaceHost(IVoiceModuleHost& host) { mHost = &host; }

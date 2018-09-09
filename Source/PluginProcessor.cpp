@@ -35,6 +35,7 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 {
 
 	auto voiceModuleHost = new CVoiceModuleHost(mPropRegistry);
+	mRootHost = voiceModuleHost;
     //voiceModuleHost->AddModule(new SineWaveVoice("OSC1",*voiceModuleHost,2));
 
 	std::shared_ptr<EnvelopeVoice> envelopeCutoff(new EnvelopeVoice("ADSRFilter", *voiceModuleHost));
@@ -75,6 +76,8 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	
 	sineSynth.addVoice(voiceModuleHost);
 	sineSynth.addSound(new CVoiceModuleHostSound());
+
+	
 }
 
 
@@ -227,6 +230,11 @@ void AdditiveVstAudioProcessor::setStateInformation (const void* data, int sizeI
 	CSynthState state;
 	state.Deserialize((const char*)data, sizeInBytes);
 	mPropRegistry.FromSynthState(state);
+}
+
+IVoiceModule* AdditiveVstAudioProcessor::GetModuleByName(const std::string & name) const
+{
+	return mRootHost->GetVoiceByName(name);
 }
 
 //==============================================================================

@@ -5,8 +5,7 @@ const double MaxDelayLength = 2;
 
 CDelayVoice::CDelayVoice(const std::string & name, IVoiceModuleHost & host) : CVoiceModuleBase(name, host)
 {
-	mFilter.Reset(GetSampleRate());
-	mFilter.SetParams(4000, 1);
+
 }
 
 void CDelayVoice::InitProperties(CPropertiesRegistry & registry)
@@ -32,6 +31,13 @@ void CDelayVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSample
 	if (!mBuffer) {
 		mBuffer.reset(new CAudioQueue(outputBuffer.getNumChannels(), MaxDelayLength,GetSampleRate()));
 	}
+	if (mFilter.size() < outputBuffer.getNumChannels()) {
+		mFilter.resize(outputBuffer.getNumChannels());
+		for (auto& filter : mFilter) {
+			filter.Reset(GetSampleRate());
+			filter.SetParams(3500, 1);
+		}
+	}
 
 	const int channels = outputBuffer.getNumChannels();
 	const double dry = 1 - mWet;
@@ -42,12 +48,12 @@ void CDelayVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSample
 
 		for (int channel = 0; channel < channels; channel++) {
 			const double sourceSample = outputBuffer.getSample(channel, currentSample);
-			double resSample = sourceSample + mBuffer->GetRelativeToFront(mLengthSec,channel)*mWet;
+			double resSample = sourceSample + mFilter[channel].Next(mBuffer->GetRelativeToFront(mLengthSec,channel)*mWet);
 
 
 			outputBuffer.setSample(channel, currentSample, resSample);
-
-			mBuffer->SetSample(channel, sourceSample*feedbackDry+resSample*mFeedback);
+			const double sampleForDelayBuffer =sourceSample*feedbackDry + resSample * mFeedback;
+			mBuffer->SetSample(channel, sampleForDelayBuffer);
 		}
 
 		currentSample++;

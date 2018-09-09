@@ -27,7 +27,7 @@ private:
 	
 	double mFeedback = 0.05f;
 	double mWet = 0;
-	CDSPLowpassFilter2 mFilter;
+	std::vector<CDSPLowpassFilter2> mFilter;
 	std::vector<double> mLastSample;
 
 };

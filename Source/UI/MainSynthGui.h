@@ -25,6 +25,7 @@
 #include "AdvancedSlider.h"
 //[/Headers]
 
+#include "BodePlot.h"
 
 
 //==============================================================================
@@ -46,6 +47,7 @@ public:
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
 	void SetListener(IGuiListener* listener);
+	BodePlot& GetBodePlot() const { return *bodePlotArea; }
     //[/UserMethods]
 
     void paint (Graphics& g) override;
@@ -105,6 +107,7 @@ private:
     std::unique_ptr<Label> label21;
     std::unique_ptr<Slider> slider23;
     std::unique_ptr<Label> label22;
+    std::unique_ptr<BodePlot> bodePlotArea;
 
 
     //==============================================================================

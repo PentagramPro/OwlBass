@@ -15,7 +15,7 @@
 
 class CVoiceModuleHost;
 class CMixerVoice;
-
+class IVoiceModule;
 //==============================================================================
 /**
 */
@@ -60,6 +60,7 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
 	Synthesiser sineSynth;
+	IVoiceModule* GetModuleByName(const std::string& name) const;
 
 	CPropertiesRegistry& GetPropertiesRegistry() { return mPropRegistry; }
 private:
@@ -68,6 +69,7 @@ private:
 	CPropertiesRegistry mPropRegistry;
 	double mSampleRate;
 	int mSampleCounter = 0;
+	CVoiceModuleHost* mRootHost = nullptr;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AdditiveVstAudioProcessor)
 };

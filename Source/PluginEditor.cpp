@@ -17,7 +17,7 @@ AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAud
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (540, 480);
+    setSize (740, 480);
 
 	// these define the parameters of our slider object
 
@@ -26,6 +26,11 @@ AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAud
 	mGui.SetListener(this);
 	mRegistryListenerHandle = processor.GetPropertiesRegistry().AddListener(*this);
 	OnPropertiesFromSynthState();
+
+	auto voiceForBode = processor.GetModuleByName("Filter");
+	if (voiceForBode) {
+		mGui.GetBodePlot().SetVoiceModule(*voiceForBode);
+	}
 }
 
 AdditiveVstAudioProcessorEditor::~AdditiveVstAudioProcessorEditor()

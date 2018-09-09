@@ -1,6 +1,7 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "IVoiceModule.h"
+#include "VoiceModuleBase.h"
 #include "IVoiceModuleHost.h"
 
 class CPropertiesRegistry;
@@ -27,6 +28,8 @@ public:
     double GetSampleRate() const override;
 
     void SoundEnded() override;
+
+	IVoiceModule* GetVoiceByName(const std::string& name) const ;
 
 private:
     std::vector<std::unique_ptr<IVoiceModule>> mVoiceModules;

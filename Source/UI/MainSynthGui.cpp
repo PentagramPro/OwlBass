@@ -492,11 +492,15 @@ MainSynthGui::MainSynthGui ()
 
     label22->setBounds (424, 392, 64, 24);
 
+    bodePlotArea.reset (new BodePlot());
+    addAndMakeVisible (bodePlotArea.get());
+    bodePlotArea->setBounds (448, 136, 256, 200);
+
 
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (600, 480);
+    setSize (740, 480);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -553,6 +557,7 @@ MainSynthGui::~MainSynthGui()
     label21 = nullptr;
     slider23 = nullptr;
     label22 = nullptr;
+    bodePlotArea = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -730,7 +735,7 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="MainSynthGui" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="0" initialWidth="600" initialHeight="480">
+                 fixedSize="0" initialWidth="740" initialHeight="480">
   <BACKGROUND backgroundColour="ff323e44"/>
   <SLIDER name="ADSRVol.Attack" id="e686dcf41ff8f723" memberName="slider2"
           virtualName="" explicitFocusOrder="0" pos="24 288 40 104" min="0.00000000000000000000"
@@ -970,6 +975,9 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="feedback" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+  <JUCERCOMP name="" id="32f1dfc8526ae323" memberName="bodePlotArea" virtualName=""
+             explicitFocusOrder="0" pos="448 136 256 200" sourceFile="BodePlot.cpp"
+             constructorParams=""/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

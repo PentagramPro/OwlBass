@@ -2,7 +2,7 @@
 
 #include "VoiceModuleHost.h"
 #include "VoiceModuleHostSound.h"
-
+#include <string>
 
 CVoiceModuleHost::CVoiceModuleHost(CPropertiesRegistry& propRegistry) : mPropRegistry(propRegistry) {
 
@@ -63,4 +63,16 @@ void CVoiceModuleHost::SoundEnded() {
 		}
 	}
     clearCurrentNote();
+}
+
+IVoiceModule * CVoiceModuleHost::GetVoiceByName(const std::string & name) const
+{
+	auto res = std::find_if(mVoiceModules.begin(), mVoiceModules.end(), [&](const std::unique_ptr<IVoiceModule>& m) {
+		return m->GetName() == name;
+	});
+
+	if (res == mVoiceModules.end()) {
+		return nullptr;
+	}
+	return res->get();
 }
