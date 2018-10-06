@@ -7,10 +7,7 @@ CFilterVoice::CFilterVoice(const std::string & name, IVoiceModuleHost & host, IV
 	: CVoiceModuleBase(name, host)
 	, mCutoffEnvelope(cutoffEnvelope)
 {
-	mFilter.resize(2);
-	for (auto& filter : mFilter) {
-		filter.Reset(GetSampleRate());
-	}
+	
 	mCutoffDelay.Reset(GetSampleRate(), 0.1);
 }
 void CFilterVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound * sound, int currentPitchWheelPosition)
@@ -34,8 +31,12 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 	int samplesCount = numSamples;
 	int currentSample = startSample;
 	
-	if (mFilter.size() > outputBuffer.getNumChannels()) {
-		jassertfalse;
+	if (mFilter.size() < outputBuffer.getNumChannels()) {
+		mFilter.resize(outputBuffer.getNumChannels());
+		for (auto& filter : mFilter) {
+			filter.Reset(GetSampleRate());
+			filter.SetParams(mCutoffFreq, mQ);
+		}
 	}
 
 	auto& freqEnvelope = mCutoffEnvelope.GetVoltageBuffer();

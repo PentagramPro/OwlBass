@@ -22,6 +22,7 @@
 //[Headers]     -- You can add your own extra header files here --
 #include "../../JuceLibraryCode/JuceHeader.h"
 #include "../Common/VoiceModuleBase.h"
+class CFourierProbeVoice;
 //[/Headers]
 
 
@@ -43,7 +44,7 @@ public:
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
-	void SetVoiceModule(IVoiceModule& voice);
+	void SetVoiceModule(CFourierProbeVoice& voice);
     //[/UserMethods]
 
     void paint (Graphics& g) override;
@@ -54,6 +55,7 @@ public:
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 	juce::Path mBodePath;
+	CFourierProbeVoice* mFourierProbe = nullptr;
     //[/UserVariables]
 
     //==============================================================================

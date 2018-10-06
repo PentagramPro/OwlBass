@@ -15,13 +15,12 @@ void CNoiseVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSou
   {
 	  int samplesCount = numSamples;
 	  int currentSample = startSample;
-
+	  if (outputBuffer.getNumChannels() < 3) {
+		  return;
+	  }
 
 	  while (--samplesCount >= 0) {
-		  
-
-		  for (auto i = outputBuffer.getNumChannels(); --i >= 0;)
-			  outputBuffer.setSample(i, currentSample, mRandom.nextDouble());
+		  outputBuffer.setSample(2, currentSample, mRandom.nextDouble());
 
 		  currentSample++;
 	  }

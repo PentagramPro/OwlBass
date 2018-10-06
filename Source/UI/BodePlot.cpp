@@ -25,7 +25,7 @@
 
 
 //[MiscUserDefs] You can add your own user definitions and misc code here...
-#include "../modules/juce_dsp/juce_dsp.h"
+#include "../Synth/FourierProbeVoice.h"
 //[/MiscUserDefs]
 
 //==============================================================================
@@ -39,7 +39,6 @@ BodePlot::BodePlot ()
     //[/UserPreSize]
 
     setSize (600, 400);
-
 
     //[Constructor] You can add your own custom stuff here..
     //[/Constructor]
@@ -65,9 +64,28 @@ void BodePlot::paint (Graphics& g)
     g.fillAll (Colour (0xff323e44));
 
     //[UserPaint] Add your own custom painting code here..
+	if (mFourierProbe) {
+		auto& buffer = mFourierProbe->GetOutputBuffer();
+		mBodePath.clear();
+		const int length = buffer.getNumSamples();
+
+		mBodePath.startNewSubPath(length, buffer.getSample(0, 0)+0.01);
+
+		for (int i = 0; i < length; i++) {
+			const double sample = -buffer.getSample(0, i);
+			mBodePath.lineTo(length-i, sample);
+		}
+		mBodePath.scaleToFit(0, 0, getWidth(), getHeight(), false);
 		
-	g.strokePath(mBodePath, PathStrokeType(2));
+	}
+
+	if(!mBodePath.isEmpty())
+		g.strokePath(mBodePath, PathStrokeType(2));
+	juce::Timer::callAfterDelay(100, [this]() {
+		repaint();
+	});
     //[/UserPaint]
+	
 }
 
 void BodePlot::resized()
@@ -82,8 +100,9 @@ void BodePlot::resized()
 
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
-void BodePlot::SetVoiceModule(IVoiceModule& voice) {
-	AudioBuffer<float> buffer;
+void BodePlot::SetVoiceModule(CFourierProbeVoice& voice) {
+	mFourierProbe = &voice;
+	/*AudioBuffer<float> buffer;
 	juce::Random rnd;
 	juce::dsp::FFT fft(8);
 
@@ -111,7 +130,7 @@ void BodePlot::SetVoiceModule(IVoiceModule& voice) {
 	}
 
 
-	mBodePath.scaleToFit(0, 0, getWidth(), getHeight(), false);
+	mBodePath.scaleToFit(0, 0, getWidth(), getHeight(), false);*/
 }
 //[/MiscUserCode]
 

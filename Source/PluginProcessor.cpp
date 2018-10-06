@@ -20,6 +20,7 @@
 #include "Synth/SawtoothVoice.h"
 #include "Synth/MultiModeOscillator.h"
 #include "Synth/ChorusVoice.h"
+#include "Synth/FourierProbeVoice.h"
 #include "Synth/DelayVoice.h"
 #include "Synth/NoiseVoice.h"
 
@@ -46,7 +47,7 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	AddBlockOfOscillators(nullptr, *voiceModuleHost, detuneScale*0,0);
 
 	CMixerVoice* unisonMixer(new CMixerVoice("UnisonMixer", *voiceModuleHost));
-	//voiceModuleHost->AddModule(new CNoiseVoice("Noise", *voiceModuleHost));
+	
 
 	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.3,-1);
 	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.6,1);
@@ -58,21 +59,18 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	voiceModuleHost->AddModule(unisonMixer);
 
     voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
+	
+	voiceModuleHost->AddModule(new CNoiseVoice("Noise", *voiceModuleHost));
+
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost, *cvEnvelopeCutoff));
 	voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
+	voiceModuleHost->AddModule(new CFourierProbeVoice("FourierProbe", *voiceModuleHost, 10));
 	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.08));
-	/*
-	{
-		std::shared_ptr<CSineLfoVoice> chorusSineLfo(new CSineLfoVoice("ChorusLfo", *voiceModuleHost));
-		CControlVoltageSource* cvChorusSineLfo = new CControlVoltageSource("CV_ChorusLfo", *voiceModuleHost, chorusSineLfo, 0);
-		voiceModuleHost->AddModule(cvChorusSineLfo);
 
-		voiceModuleHost->AddModule(new CChorusVoice("Chorus", *voiceModuleHost, *cvChorusSineLfo, 0.3, 3));
-	}*/
 
-	
 	voiceModuleHost->AddModule(new CDelayVoice("Delay", *voiceModuleHost));
-
+	
+	
 	
 	sineSynth.addVoice(voiceModuleHost);
 	sineSynth.addSound(new CVoiceModuleHostSound());
@@ -196,9 +194,14 @@ bool AdditiveVstAudioProcessor::isBusesLayoutSupported (const BusesLayout& layou
 
 void AdditiveVstAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
 {
-	
-	sineSynth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
-	
+	if (mInternalBuffer.getNumSamples() < buffer.getNumSamples()) {
+		mInternalBuffer.setSize(3, buffer.getNumSamples());
+	}
+	mInternalBuffer.clear();
+	//buffer.setSize(3, buffer.getNumChannels(), true, false, true);
+	sineSynth.renderNextBlock(mInternalBuffer, midiMessages, 0, buffer.getNumSamples());
+	buffer.copyFrom(0, 0, mInternalBuffer, 0, 0, buffer.getNumSamples());
+	buffer.copyFrom(1, 0, mInternalBuffer, 1, 0, buffer.getNumSamples());
 }
 
 //==============================================================================

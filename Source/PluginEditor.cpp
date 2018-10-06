@@ -10,7 +10,7 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
-
+#include "Synth\FourierProbeVoice.h"
 //==============================================================================
 AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAudioProcessor& p)
     : AudioProcessorEditor (&p), processor (p)
@@ -27,9 +27,9 @@ AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAud
 	mRegistryListenerHandle = processor.GetPropertiesRegistry().AddListener(*this);
 	OnPropertiesFromSynthState();
 
-	auto voiceForBode = processor.GetModuleByName("Filter");
+	auto voiceForBode = processor.GetModuleByName("FourierProbe");
 	if (voiceForBode) {
-		mGui.GetBodePlot().SetVoiceModule(*voiceForBode);
+		mGui.GetBodePlot().SetVoiceModule((CFourierProbeVoice&)*voiceForBode);
 	}
 }
 

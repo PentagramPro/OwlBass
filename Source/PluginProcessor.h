@@ -60,6 +60,7 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
 	Synthesiser sineSynth;
+	AudioBuffer<float> mInternalBuffer;
 	IVoiceModule* GetModuleByName(const std::string& name) const;
 
 	CPropertiesRegistry& GetPropertiesRegistry() { return mPropRegistry; }
