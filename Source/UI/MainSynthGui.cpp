@@ -496,6 +496,16 @@ MainSynthGui::MainSynthGui ()
     addAndMakeVisible (bodePlotArea.get());
     bodePlotArea->setBounds (448, 136, 256, 200);
 
+    slider24.reset (new Slider ("PostProcessing.Enabled"));
+    addAndMakeVisible (slider24.get());
+    slider24->setRange (0, 1, 1);
+    slider24->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider24->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider24->setColour (Slider::thumbColourId, Colours::cornflowerblue);
+    slider24->addListener (this);
+
+    slider24->setBounds (544, 352, 71, 56);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -558,6 +568,7 @@ MainSynthGui::~MainSynthGui()
     slider23 = nullptr;
     label22 = nullptr;
     bodePlotArea = nullptr;
+    slider24 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -707,6 +718,11 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_slider23] -- add your slider handling code here..
         //[/UserSliderCode_slider23]
+    }
+    else if (sliderThatWasMoved == slider24.get())
+    {
+        //[UserSliderCode_slider24] -- add your slider handling code here..
+        //[/UserSliderCode_slider24]
     }
 
     //[UsersliderValueChanged_Post]
@@ -978,6 +994,12 @@ BEGIN_JUCER_METADATA
   <JUCERCOMP name="" id="32f1dfc8526ae323" memberName="bodePlotArea" virtualName=""
              explicitFocusOrder="0" pos="448 136 256 200" sourceFile="BodePlot.cpp"
              constructorParams=""/>
+  <SLIDER name="PostProcessing.Enabled" id="41b41b935d066ade" memberName="slider24"
+          virtualName="" explicitFocusOrder="0" pos="544 352 71 56" thumbcol="ff6495ed"
+          min="0.00000000000000000000" max="1.00000000000000000000" int="1.00000000000000000000"
+          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          needsCallback="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

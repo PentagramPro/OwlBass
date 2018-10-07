@@ -40,6 +40,7 @@ BodePlot::BodePlot ()
 
     setSize (600, 400);
 
+
     //[Constructor] You can add your own custom stuff here..
     //[/Constructor]
 }
@@ -69,17 +70,17 @@ void BodePlot::paint (Graphics& g)
 		mBodePath.clear();
 		const int length = buffer.getNumSamples();
 
-		mBodePath.startNewSubPath(length, buffer.getSample(0, 0)+0.01);
+		mBodePath.startNewSubPath(std::log10l(length), buffer.getSample(0, 0)+0.01);
 
 		for (int i = 0; i < length; i++) {
 			double sample = -buffer.getSample(0, i);
 			if (std::isinf(sample) || std::isnan(sample)) {
 				sample = 0;
 			}
-			mBodePath.lineTo(length-i, sample);
+			mBodePath.lineTo(std::log10l(length-i), sample);
 		}
 		mBodePath.scaleToFit(0, 0, getWidth(), getHeight(), false);
-		
+
 	}
 
 	if(!mBodePath.isEmpty())
@@ -88,7 +89,6 @@ void BodePlot::paint (Graphics& g)
 		repaint();
 	});
     //[/UserPaint]
-	
 }
 
 void BodePlot::resized()

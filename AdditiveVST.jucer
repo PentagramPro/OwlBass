@@ -89,6 +89,10 @@
             file="Source/Synth/MultiModeOscillator.h"/>
       <FILE id="m48qZV" name="NoiseVoice.cpp" compile="1" resource="0" file="Source/Synth/NoiseVoice.cpp"/>
       <FILE id="mH6xkt" name="NoiseVoice.h" compile="0" resource="0" file="Source/Synth/NoiseVoice.h"/>
+      <FILE id="dDDSJW" name="PostProcessingVoice.cpp" compile="1" resource="0"
+            file="Source/Synth/PostProcessingVoice.cpp"/>
+      <FILE id="ssGIuR" name="PostProcessingVoice.h" compile="0" resource="0"
+            file="Source/Synth/PostProcessingVoice.h"/>
       <FILE id="nhierR" name="SawtoothVoice.cpp" compile="1" resource="0"
             file="Source/Synth/SawtoothVoice.cpp"/>
       <FILE id="oa12nC" name="SawtoothVoice.h" compile="0" resource="0" file="Source/Synth/SawtoothVoice.h"/>
@@ -101,6 +105,10 @@
             file="Source/Synth/SquareWaveVoice.h"/>
     </GROUP>
     <GROUP id="{5AB94AE6-C205-BC2E-C1FD-A2D89913ACCE}" name="DSP">
+      <FILE id="ncIEld" name="CMultiChannelIir.cpp" compile="1" resource="0"
+            file="Source/DSP/CMultiChannelIir.cpp"/>
+      <FILE id="WNj7Tr" name="CMultiChannelIir.h" compile="0" resource="0"
+            file="Source/DSP/CMultiChannelIir.h"/>
       <FILE id="FOyYAt" name="DSPDelay.cpp" compile="1" resource="0" file="Source/DSP/DSPDelay.cpp"/>
       <FILE id="g56sPT" name="DSPDelay.h" compile="0" resource="0" file="Source/DSP/DSPDelay.h"/>
       <FILE id="jdp5ph" name="DSPIntegration.cpp" compile="1" resource="0"

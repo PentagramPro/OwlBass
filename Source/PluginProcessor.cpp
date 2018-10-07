@@ -23,6 +23,7 @@
 #include "Synth/FourierProbeVoice.h"
 #include "Synth/DelayVoice.h"
 #include "Synth/NoiseVoice.h"
+#include "Synth/PostProcessingVoice.h"
 
 #include "Common/VoiceModuleHost.h"
 #include "Common/VoiceModuleHostSound.h"
@@ -60,18 +61,20 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
     voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
 	
-	voiceModuleHost->AddModule(new CNoiseVoice("Noise", *voiceModuleHost));
+	
 
 	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost, *cvEnvelopeCutoff));
 	voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
-	voiceModuleHost->AddModule(new CFourierProbeVoice("FourierProbe", *voiceModuleHost, 10));
+	
 	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.08));
 
 
 	voiceModuleHost->AddModule(new CDelayVoice("Delay", *voiceModuleHost));
-	
-	
-	
+
+	voiceModuleHost->AddModule(new CNoiseVoice("Noise", *voiceModuleHost));
+	voiceModuleHost->AddModule(new CPostProcessingVoice("PostProcessing", *voiceModuleHost));
+	voiceModuleHost->AddModule(new CFourierProbeVoice("FourierProbe", *voiceModuleHost, 11));
+
 	sineSynth.addVoice(voiceModuleHost);
 	sineSynth.addSound(new CVoiceModuleHostSound());
 

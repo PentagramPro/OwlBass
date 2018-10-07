@@ -108,6 +108,7 @@ private:
     std::unique_ptr<Slider> slider23;
     std::unique_ptr<Label> label22;
     std::unique_ptr<BodePlot> bodePlotArea;
+    std::unique_ptr<Slider> slider24;
 
 
     //==============================================================================
