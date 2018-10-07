@@ -19,7 +19,7 @@ private:
     double mAttackTime = 1;
 	double mReleaseTime = 1;
 	double mSustainLevel = 1;
-
+	int mRetrigger = 1;
     double mSoundLevel = 0;
 
     EState mState = EState ::Idle;

@@ -43,8 +43,8 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 
 	while (--samplesCount >= 0) {
 
-		//const double freqEnvelopeVal = freqEnvelope.getSample(0, currentSample)*mEnvelopeScale;
-		const double currentCutoff = mCutoffFreq;// +std::abs(mEnvelopeScale > 0 ? mCutoffFreqMax : mCutoffFreqMin - mCutoffFreq)*freqEnvelopeVal;
+		const double freqEnvelopeVal = freqEnvelope.getSample(0, currentSample)*mEnvelopeScale;
+		const double currentCutoff = mCutoffFreq +std::abs(mEnvelopeScale > 0 ? mCutoffFreqMax : mCutoffFreqMin - mCutoffFreq)*freqEnvelopeVal;
 		const double cutoff = mCutoffDelay.Next(currentCutoff);
 
 

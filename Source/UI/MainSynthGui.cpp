@@ -496,15 +496,15 @@ MainSynthGui::MainSynthGui ()
     addAndMakeVisible (bodePlotArea.get());
     bodePlotArea->setBounds (448, 136, 256, 200);
 
-    slider24.reset (new Slider ("PostProcessing.Enabled"));
+    slider24.reset (new Slider ("ADSRFilter.Retrigger"));
     addAndMakeVisible (slider24.get());
     slider24->setRange (0, 1, 1);
-    slider24->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider24->setSliderStyle (Slider::LinearVertical);
     slider24->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider24->setColour (Slider::thumbColourId, Colours::cornflowerblue);
     slider24->addListener (this);
 
-    slider24->setBounds (544, 352, 71, 56);
+    slider24->setBounds (528, 48, 71, 56);
 
 
     //[UserPreSize]
@@ -994,10 +994,10 @@ BEGIN_JUCER_METADATA
   <JUCERCOMP name="" id="32f1dfc8526ae323" memberName="bodePlotArea" virtualName=""
              explicitFocusOrder="0" pos="448 136 256 200" sourceFile="BodePlot.cpp"
              constructorParams=""/>
-  <SLIDER name="PostProcessing.Enabled" id="41b41b935d066ade" memberName="slider24"
-          virtualName="" explicitFocusOrder="0" pos="544 352 71 56" thumbcol="ff6495ed"
+  <SLIDER name="ADSRFilter.Retrigger" id="41b41b935d066ade" memberName="slider24"
+          virtualName="" explicitFocusOrder="0" pos="528 48 71 56" thumbcol="ff6495ed"
           min="0.00000000000000000000" max="1.00000000000000000000" int="1.00000000000000000000"
-          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          style="LinearVertical" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
 </JUCER_COMPONENT>

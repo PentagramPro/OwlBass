@@ -12,13 +12,16 @@ void EnvelopeVoice::InitProperties(CPropertiesRegistry & registry)
 	registry.AddProperty(GetPropName("Attack"), new CPropertySquareDouble01(mAttackTime, 0.0004, 10.0));
 	registry.AddProperty(GetPropName("Release"), new CPropertySquareDouble01(mReleaseTime, 0.001, 10.0));
 	registry.AddProperty(GetPropName("Sustain"), new CPropertyDouble01(mSustainLevel, 0.0, 1.0));
+	registry.AddProperty(GetPropName("Retrigger"), new CPropertyInt(mRetrigger, 0, 1));
 }
 
 void EnvelopeVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) {
     //mSoundLevel = 0;
 
 	mState = EState::Attack;
-
+	if (mRetrigger == 1) {
+		mSoundLevel = 0;
+	}
 	StartSound();
 }
 
