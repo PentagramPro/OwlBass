@@ -36,12 +36,17 @@ void CSawtoothVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSam
 	int samplesCount = numSamples;
 	int currentSample = startSample;
 
+	if (mCurrentSamplesPerCycle <= 0 && mNextSamplesPerCycle <= 0) {
+		return;
+	}
 
 	while (--samplesCount >= 0) {
 		mSampleCounter++;
 		if (mSampleCounter >= mCurrentSamplesPerCycle) {
-			mSampleCounter = 0;
+			mSampleCounter = mSampleCounter - mCurrentSamplesPerCycle;
 			mCurrentSamplesPerCycle = mDelay.Next(mNextSamplesPerCycle);
+
+
 		}
 		else {
 			mDelay.Next(mNextSamplesPerCycle);

@@ -22,8 +22,8 @@ public:
 private:
 	virtual void InitProperties(CPropertiesRegistry & registry) override;
 
-	double mCurrentSamplesPerCycle;
-	double mNextSamplesPerCycle;
+	double mCurrentSamplesPerCycle = 0;
+	double mNextSamplesPerCycle = 0;
 	double mSampleCounter = 0;
 	double mDetune = 1;
 	const double mDetuneScale = 1;

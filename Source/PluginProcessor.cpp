@@ -51,10 +51,10 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
 	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.3,-1);
 	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.6,1);
-	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale * 1,0.6);
-	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale * 1, -0.6);
-	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.2, -0.4);
-	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.4,0.4);
+	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale * 0.9,0.6);
+	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale * 1.2, -0.6);
+	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.5, -0.4);
+	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.8,0.4);
 	
 	voiceModuleHost->AddModule(unisonMixer);
 

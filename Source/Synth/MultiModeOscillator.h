@@ -20,7 +20,7 @@ public:
 
 private:
 	virtual void InitProperties(CPropertiesRegistry & registry) override;
-
+	double mLastReference = 0;
 	double mVolume = 1;
 	int mDividerCounter = -1;
 	int mDividerMax = 1;

@@ -8,7 +8,6 @@ CMultiModeOscillator::CMultiModeOscillator(const std::string & name, IVoiceModul
 
 void CMultiModeOscillator::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int currentPitchWheelPosition)
 {
-	DBG("Oscillator mode " << mWaveform);
 	StartSound();
 }
 
@@ -30,12 +29,13 @@ void CMultiModeOscillator::ProcessBlock(AudioSampleBuffer & outputBuffer, int st
 	while (--samplesCount >= 0) {
 		const double reference = referenceBuffer.getSample(0, currentSample);
 
-		if (reference == 0.0) {
+		if (reference < mLastReference) {
 			mDividerCounter++;
 			if (mDividerCounter >= mDividerMax) { 
 				mDividerCounter = 0;
 			}
 		}
+		mLastReference = reference;
 
 		const double sawtoothDivided = ((double)mDividerCounter + reference) / (double)mDividerMax * 2.0 - 1.0;
 		double result = 0;

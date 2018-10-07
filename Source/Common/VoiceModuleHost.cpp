@@ -22,6 +22,7 @@ bool CVoiceModuleHost::canPlaySound(SynthesiserSound *sound) {
 }
 
 void CVoiceModuleHost::startNote(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) {
+	DBG("= New note " << midiNoteNumber << " (" << MidiMessage::getMidiNoteInHertz(midiNoteNumber) << ") =");
     for(auto& voice : mVoiceModules) {
         voice->OnNoteStart(midiNoteNumber, velocity, sound, currentPitchWheelPosition);
     }
