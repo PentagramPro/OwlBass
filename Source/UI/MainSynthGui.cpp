@@ -92,7 +92,7 @@ MainSynthGui::MainSynthGui ()
     slider4->setColour (Slider::thumbColourId, Colour (0xff328f09));
     slider4->addListener (this);
 
-    slider4->setBounds (24, 56, 110, 110);
+    slider4->setBounds (40, 56, 110, 110);
 
     slider5.reset (new Slider ("OSC2.Volume"));
     addAndMakeVisible (slider5.get());
@@ -102,7 +102,7 @@ MainSynthGui::MainSynthGui ()
     slider5->setColour (Slider::thumbColourId, Colour (0xff328f09));
     slider5->addListener (this);
 
-    slider5->setBounds (24, 176, 110, 110);
+    slider5->setBounds (40, 176, 110, 110);
 
     label4.reset (new Label ("new label",
                              TRANS("main")));
@@ -113,7 +113,7 @@ MainSynthGui::MainSynthGui ()
     label4->setColour (TextEditor::textColourId, Colours::black);
     label4->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label4->setBounds (-8, 48, 56, 24);
+    label4->setBounds (8, 48, 56, 24);
 
     label5.reset (new Label ("new label",
                              TRANS("sub1")));
@@ -124,7 +124,7 @@ MainSynthGui::MainSynthGui ()
     label5->setColour (TextEditor::textColourId, Colours::black);
     label5->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label5->setBounds (-8, 168, 56, 24);
+    label5->setBounds (8, 168, 56, 24);
 
     slider6.reset (new Slider ("OSC3.Volume"));
     addAndMakeVisible (slider6.get());
@@ -134,7 +134,7 @@ MainSynthGui::MainSynthGui ()
     slider6->setColour (Slider::thumbColourId, Colour (0xff328f09));
     slider6->addListener (this);
 
-    slider6->setBounds (24, 304, 110, 110);
+    slider6->setBounds (40, 304, 110, 110);
 
     label6.reset (new Label ("new label",
                              TRANS("sub2")));
@@ -145,7 +145,7 @@ MainSynthGui::MainSynthGui ()
     label6->setColour (TextEditor::textColourId, Colours::black);
     label6->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label6->setBounds (-8, 296, 56, 24);
+    label6->setBounds (8, 296, 56, 24);
 
     slider7.reset (new Slider ("Filter.CutoffFreq"));
     addAndMakeVisible (slider7.get());
@@ -311,7 +311,7 @@ MainSynthGui::MainSynthGui ()
     slider15->setColour (Slider::thumbColourId, Colours::cornflowerblue);
     slider15->addListener (this);
 
-    slider15->setBounds (152, 72, 95, 95);
+    slider15->setBounds (168, 72, 95, 95);
 
     slider16.reset (new Slider ("OSC2.Divider"));
     addAndMakeVisible (slider16.get());
@@ -322,7 +322,7 @@ MainSynthGui::MainSynthGui ()
     slider16->setColour (Slider::thumbColourId, Colours::cornflowerblue);
     slider16->addListener (this);
 
-    slider16->setBounds (152, 192, 95, 95);
+    slider16->setBounds (168, 192, 95, 95);
 
     slider17.reset (new Slider ("OSC3.Divider"));
     addAndMakeVisible (slider17.get());
@@ -333,7 +333,7 @@ MainSynthGui::MainSynthGui ()
     slider17->setColour (Slider::thumbColourId, Colours::cornflowerblue);
     slider17->addListener (this);
 
-    slider17->setBounds (152, 320, 95, 95);
+    slider17->setBounds (168, 320, 95, 95);
 
     slider18.reset (new Slider ("OSC1.Waveform"));
     addAndMakeVisible (slider18.get());
@@ -344,7 +344,7 @@ MainSynthGui::MainSynthGui ()
     slider18->setColour (Slider::thumbColourId, Colours::cornflowerblue);
     slider18->addListener (this);
 
-    slider18->setBounds (272, 72, 95, 95);
+    slider18->setBounds (288, 72, 95, 95);
 
     slider19.reset (new Slider ("OSC2.Waveform"));
     addAndMakeVisible (slider19.get());
@@ -355,7 +355,7 @@ MainSynthGui::MainSynthGui ()
     slider19->setColour (Slider::thumbColourId, Colours::cornflowerblue);
     slider19->addListener (this);
 
-    slider19->setBounds (272, 192, 95, 95);
+    slider19->setBounds (288, 192, 95, 95);
 
     slider20.reset (new Slider ("OSC3.Waveform"));
     addAndMakeVisible (slider20.get());
@@ -366,7 +366,7 @@ MainSynthGui::MainSynthGui ()
     slider20->setColour (Slider::thumbColourId, Colours::cornflowerblue);
     slider20->addListener (this);
 
-    slider20->setBounds (272, 320, 95, 95);
+    slider20->setBounds (288, 320, 95, 95);
 
     slider9.reset (new Slider ("Filter.EnvelopeScale"));
     addAndMakeVisible (slider9.get());
@@ -390,6 +390,7 @@ MainSynthGui::MainSynthGui ()
 
     slider.reset (new Slider ("Delay.Wet"));
     addAndMakeVisible (slider.get());
+    slider->setTooltip (TRANS("effect;"));
     slider->setRange (0, 1, 0);
     slider->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -421,6 +422,7 @@ MainSynthGui::MainSynthGui ()
 
     slider13.reset (new Slider ("ReferenceOscillator.Detune"));
     addAndMakeVisible (slider13.get());
+    slider13->setTooltip (TRANS("effect;"));
     slider13->setRange (0, 1, 0);
     slider13->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider13->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -441,6 +443,7 @@ MainSynthGui::MainSynthGui ()
 
     slider21.reset (new Slider ("UnisonMixer.Volume"));
     addAndMakeVisible (slider21.get());
+    slider21->setTooltip (TRANS("effect;"));
     slider21->setRange (0, 0.5, 0);
     slider21->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider21->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -461,6 +464,7 @@ MainSynthGui::MainSynthGui ()
 
     slider22.reset (new Slider ("Delay.Delay"));
     addAndMakeVisible (slider22.get());
+    slider22->setTooltip (TRANS("effect;"));
     slider22->setRange (0, 1, 0);
     slider22->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider22->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -481,6 +485,7 @@ MainSynthGui::MainSynthGui ()
 
     slider23.reset (new Slider ("Delay.Feedback"));
     addAndMakeVisible (slider23.get());
+    slider23->setTooltip (TRANS("effect;"));
     slider23->setRange (0, 1, 0);
     slider23->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider23->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -547,16 +552,16 @@ MainSynthGui::MainSynthGui ()
     label25->setBounds (456, 192, 160, 32);
 
     cachedImage_case_main_png_1 = ImageCache::getFromMemory (case_main_png, case_main_pngSize);
-    cachedImage_icon_triangle_png_2 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
-    cachedImage_icon_square_png_3 = ImageCache::getFromMemory (icon_square_png, icon_square_pngSize);
-    cachedImage_icon_saw_png_4 = ImageCache::getFromMemory (icon_saw_png, icon_saw_pngSize);
-    cachedImage_icon_triangle_png_5 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
-    cachedImage_icon_square_png_6 = ImageCache::getFromMemory (icon_square_png, icon_square_pngSize);
-    cachedImage_icon_saw_png_7 = ImageCache::getFromMemory (icon_saw_png, icon_saw_pngSize);
-    cachedImage_icon_triangle_png_8 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
-    cachedImage_icon_square_png_9 = ImageCache::getFromMemory (icon_square_png, icon_square_pngSize);
-    cachedImage_icon_saw_png_10 = ImageCache::getFromMemory (icon_saw_png, icon_saw_pngSize);
-    cachedImage_case_effects_png_11 = ImageCache::getFromMemory (case_effects_png, case_effects_pngSize);
+    cachedImage_case_effects_png_2 = ImageCache::getFromMemory (case_effects_png, case_effects_pngSize);
+    cachedImage_icon_triangle_png_3 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
+    cachedImage_icon_square_png_4 = ImageCache::getFromMemory (icon_square_png, icon_square_pngSize);
+    cachedImage_icon_saw_png_5 = ImageCache::getFromMemory (icon_saw_png, icon_saw_pngSize);
+    cachedImage_icon_triangle_png_6 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
+    cachedImage_icon_square_png_7 = ImageCache::getFromMemory (icon_square_png, icon_square_pngSize);
+    cachedImage_icon_saw_png_8 = ImageCache::getFromMemory (icon_saw_png, icon_saw_pngSize);
+    cachedImage_icon_triangle_png_9 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
+    cachedImage_icon_square_png_10 = ImageCache::getFromMemory (icon_square_png, icon_square_pngSize);
+    cachedImage_icon_saw_png_11 = ImageCache::getFromMemory (icon_saw_png, icon_saw_pngSize);
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -649,103 +654,271 @@ void MainSynthGui::paint (Graphics& g)
     }
 
     {
-        int x = 308, y = 52, width = 28, height = 20;
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setColour (Colours::black);
-        g.drawImage (cachedImage_icon_triangle_png_2,
-                     x, y, width, height,
-                     0, 0, cachedImage_icon_triangle_png_2.getWidth(), cachedImage_icon_triangle_png_2.getHeight());
-    }
-
-    {
-        int x = 356, y = 132, width = 28, height = 20;
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setColour (Colours::black);
-        g.drawImage (cachedImage_icon_square_png_3,
-                     x, y, width, height,
-                     0, 0, cachedImage_icon_square_png_3.getWidth(), cachedImage_icon_square_png_3.getHeight());
-    }
-
-    {
-        int x = 244, y = 132, width = 36, height = 20;
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setColour (Colours::black);
-        g.drawImage (cachedImage_icon_saw_png_4,
-                     x, y, width, height,
-                     0, 0, cachedImage_icon_saw_png_4.getWidth(), cachedImage_icon_saw_png_4.getHeight());
-    }
-
-    {
-        int x = 308, y = 172, width = 28, height = 20;
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setColour (Colours::black);
-        g.drawImage (cachedImage_icon_triangle_png_5,
-                     x, y, width, height,
-                     0, 0, cachedImage_icon_triangle_png_5.getWidth(), cachedImage_icon_triangle_png_5.getHeight());
-    }
-
-    {
-        int x = 356, y = 252, width = 28, height = 20;
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setColour (Colours::black);
-        g.drawImage (cachedImage_icon_square_png_6,
-                     x, y, width, height,
-                     0, 0, cachedImage_icon_square_png_6.getWidth(), cachedImage_icon_square_png_6.getHeight());
-    }
-
-    {
-        int x = 244, y = 252, width = 36, height = 20;
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setColour (Colours::black);
-        g.drawImage (cachedImage_icon_saw_png_7,
-                     x, y, width, height,
-                     0, 0, cachedImage_icon_saw_png_7.getWidth(), cachedImage_icon_saw_png_7.getHeight());
-    }
-
-    {
-        int x = 308, y = 300, width = 28, height = 20;
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setColour (Colours::black);
-        g.drawImage (cachedImage_icon_triangle_png_8,
-                     x, y, width, height,
-                     0, 0, cachedImage_icon_triangle_png_8.getWidth(), cachedImage_icon_triangle_png_8.getHeight());
-    }
-
-    {
-        int x = 356, y = 380, width = 28, height = 20;
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setColour (Colours::black);
-        g.drawImage (cachedImage_icon_square_png_9,
-                     x, y, width, height,
-                     0, 0, cachedImage_icon_square_png_9.getWidth(), cachedImage_icon_square_png_9.getHeight());
-    }
-
-    {
-        int x = 244, y = 380, width = 36, height = 20;
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setColour (Colours::black);
-        g.drawImage (cachedImage_icon_saw_png_10,
-                     x, y, width, height,
-                     0, 0, cachedImage_icon_saw_png_10.getWidth(), cachedImage_icon_saw_png_10.getHeight());
-    }
-
-    {
         int x = -36, y = 452, width = 1072, height = 224;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (Colours::black);
-        g.drawImage (cachedImage_case_effects_png_11,
+        g.drawImage (cachedImage_case_effects_png_2,
                      x, y, width, height,
-                     0, 0, cachedImage_case_effects_png_11.getWidth(), cachedImage_case_effects_png_11.getHeight());
+                     0, 0, cachedImage_case_effects_png_2.getWidth(), cachedImage_case_effects_png_2.getHeight());
+    }
+
+    {
+        int x = 324, y = 60, width = 20, height = 16;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_triangle_png_3,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_triangle_png_3.getWidth(), cachedImage_icon_triangle_png_3.getHeight());
+    }
+
+    {
+        int x = 364, y = 148, width = 20, height = 16;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_square_png_4,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_square_png_4.getWidth(), cachedImage_icon_square_png_4.getHeight());
+    }
+
+    {
+        int x = 284, y = 148, width = 20, height = 16;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_saw_png_5,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_saw_png_5.getWidth(), cachedImage_icon_saw_png_5.getHeight());
+    }
+
+    {
+        int x = 324, y = 180, width = 20, height = 16;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_triangle_png_6,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_triangle_png_6.getWidth(), cachedImage_icon_triangle_png_6.getHeight());
+    }
+
+    {
+        int x = 364, y = 268, width = 20, height = 16;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_square_png_7,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_square_png_7.getWidth(), cachedImage_icon_square_png_7.getHeight());
+    }
+
+    {
+        int x = 284, y = 268, width = 20, height = 16;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_saw_png_8,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_saw_png_8.getWidth(), cachedImage_icon_saw_png_8.getHeight());
+    }
+
+    {
+        int x = 324, y = 308, width = 20, height = 16;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_triangle_png_9,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_triangle_png_9.getWidth(), cachedImage_icon_triangle_png_9.getHeight());
+    }
+
+    {
+        int x = 364, y = 396, width = 20, height = 16;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_square_png_10,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_square_png_10.getWidth(), cachedImage_icon_square_png_10.getHeight());
+    }
+
+    {
+        int x = 284, y = 396, width = 20, height = 16;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_saw_png_11,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_saw_png_11.getWidth(), cachedImage_icon_saw_png_11.getHeight());
+    }
+
+    {
+        int x = 180, y = 388, width = 20, height = 30;
+        String text (TRANS("1"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 180, y = 316, width = 20, height = 30;
+        String text (TRANS("2"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 236, y = 316, width = 20, height = 30;
+        String text (TRANS("3"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 236, y = 388, width = 20, height = 30;
+        String text (TRANS("4"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 180, y = 260, width = 20, height = 30;
+        String text (TRANS("1"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 180, y = 188, width = 20, height = 30;
+        String text (TRANS("2"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 236, y = 188, width = 20, height = 30;
+        String text (TRANS("3"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 236, y = 260, width = 20, height = 30;
+        String text (TRANS("4"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 180, y = 140, width = 20, height = 30;
+        String text (TRANS("1"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 180, y = 68, width = 20, height = 30;
+        String text (TRANS("2"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 236, y = 68, width = 20, height = 30;
+        String text (TRANS("3"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 236, y = 140, width = 20, height = 30;
+        String text (TRANS("4"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 300, y = 20, width = 76, height = 30;
+        String text (TRANS("waveform"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
+    }
+
+    {
+        int x = 180, y = 20, width = 76, height = 30;
+        String text (TRANS("divider"));
+        Colour fillColour = Colours::white;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (fillColour);
+        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.drawText (text, x, y, width, height,
+                    Justification::centred, true);
     }
 
     //[UserPaint] Add your own custom painting code here..
@@ -920,26 +1093,80 @@ BEGIN_JUCER_METADATA
   <BACKGROUND backgroundColour="ff323e44">
     <IMAGE pos="0 0 1000 640" resource="case_main_png" opacity="1.00000000000000000000"
            mode="0"/>
-    <IMAGE pos="308 52 28 20" resource="icon_triangle_png" opacity="1.00000000000000000000"
-           mode="0"/>
-    <IMAGE pos="356 132 28 20" resource="icon_square_png" opacity="1.00000000000000000000"
-           mode="0"/>
-    <IMAGE pos="244 132 36 20" resource="icon_saw_png" opacity="1.00000000000000000000"
-           mode="0"/>
-    <IMAGE pos="308 172 28 20" resource="icon_triangle_png" opacity="1.00000000000000000000"
-           mode="0"/>
-    <IMAGE pos="356 252 28 20" resource="icon_square_png" opacity="1.00000000000000000000"
-           mode="0"/>
-    <IMAGE pos="244 252 36 20" resource="icon_saw_png" opacity="1.00000000000000000000"
-           mode="0"/>
-    <IMAGE pos="308 300 28 20" resource="icon_triangle_png" opacity="1.00000000000000000000"
-           mode="0"/>
-    <IMAGE pos="356 380 28 20" resource="icon_square_png" opacity="1.00000000000000000000"
-           mode="0"/>
-    <IMAGE pos="244 380 36 20" resource="icon_saw_png" opacity="1.00000000000000000000"
-           mode="0"/>
     <IMAGE pos="-36 452 1072 224" resource="case_effects_png" opacity="1.00000000000000000000"
            mode="0"/>
+    <GROUP>
+      <IMAGE pos="324 60 20 16" resource="icon_triangle_png" opacity="1.00000000000000000000"
+             mode="0"/>
+      <IMAGE pos="364 148 20 16" resource="icon_square_png" opacity="1.00000000000000000000"
+             mode="0"/>
+      <IMAGE pos="284 148 20 16" resource="icon_saw_png" opacity="1.00000000000000000000"
+             mode="0"/>
+    </GROUP>
+    <GROUP>
+      <IMAGE pos="324 180 20 16" resource="icon_triangle_png" opacity="1.00000000000000000000"
+             mode="0"/>
+      <IMAGE pos="364 268 20 16" resource="icon_square_png" opacity="1.00000000000000000000"
+             mode="0"/>
+      <IMAGE pos="284 268 20 16" resource="icon_saw_png" opacity="1.00000000000000000000"
+             mode="0"/>
+    </GROUP>
+    <GROUP>
+      <IMAGE pos="324 308 20 16" resource="icon_triangle_png" opacity="1.00000000000000000000"
+             mode="0"/>
+      <IMAGE pos="364 396 20 16" resource="icon_square_png" opacity="1.00000000000000000000"
+             mode="0"/>
+      <IMAGE pos="284 396 20 16" resource="icon_saw_png" opacity="1.00000000000000000000"
+             mode="0"/>
+    </GROUP>
+    <GROUP>
+      <TEXT pos="180 388 20 30" fill="solid: ffffffff" hasStroke="0" text="1"
+            fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+            bold="0" italic="0" justification="36"/>
+      <TEXT pos="180 316 20 30" fill="solid: ffffffff" hasStroke="0" text="2"
+            fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+            bold="0" italic="0" justification="36"/>
+      <TEXT pos="236 316 20 30" fill="solid: ffffffff" hasStroke="0" text="3"
+            fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+            bold="0" italic="0" justification="36"/>
+      <TEXT pos="236 388 20 30" fill="solid: ffffffff" hasStroke="0" text="4"
+            fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+            bold="0" italic="0" justification="36"/>
+    </GROUP>
+    <GROUP>
+      <TEXT pos="180 260 20 30" fill="solid: ffffffff" hasStroke="0" text="1"
+            fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+            bold="0" italic="0" justification="36"/>
+      <TEXT pos="180 188 20 30" fill="solid: ffffffff" hasStroke="0" text="2"
+            fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+            bold="0" italic="0" justification="36"/>
+      <TEXT pos="236 188 20 30" fill="solid: ffffffff" hasStroke="0" text="3"
+            fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+            bold="0" italic="0" justification="36"/>
+      <TEXT pos="236 260 20 30" fill="solid: ffffffff" hasStroke="0" text="4"
+            fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+            bold="0" italic="0" justification="36"/>
+    </GROUP>
+    <GROUP>
+      <TEXT pos="180 140 20 30" fill="solid: ffffffff" hasStroke="0" text="1"
+            fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+            bold="0" italic="0" justification="36"/>
+      <TEXT pos="180 68 20 30" fill="solid: ffffffff" hasStroke="0" text="2"
+            fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+            bold="0" italic="0" justification="36"/>
+      <TEXT pos="236 68 20 30" fill="solid: ffffffff" hasStroke="0" text="3"
+            fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+            bold="0" italic="0" justification="36"/>
+      <TEXT pos="236 140 20 30" fill="solid: ffffffff" hasStroke="0" text="4"
+            fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+            bold="0" italic="0" justification="36"/>
+    </GROUP>
+    <TEXT pos="300 20 76 30" fill="solid: ffffffff" hasStroke="0" text="waveform"
+          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+          bold="0" italic="0" justification="36"/>
+    <TEXT pos="180 20 76 30" fill="solid: ffffffff" hasStroke="0" text="divider"
+          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
+          bold="0" italic="0" justification="36"/>
   </BACKGROUND>
   <SLIDER name="ADSRVol.Attack" id="e686dcf41ff8f723" memberName="slider2"
           virtualName="" explicitFocusOrder="0" pos="664 272 40 112" min="0.00000000000000000000"
@@ -968,35 +1195,35 @@ BEGIN_JUCER_METADATA
          fontsize="17.00000000000000000000" kerning="0.00000000000000000000"
          bold="0" italic="0" justification="33"/>
   <SLIDER name="OSC1.Volume" id="64cd19f61a09fafc" memberName="slider4"
-          virtualName="unknown" explicitFocusOrder="0" pos="24 56 110 110"
+          virtualName="Slider" explicitFocusOrder="0" pos="40 56 110 110"
           thumbcol="ff328f09" min="0.00000000000000000000" max="1.00000000000000000000"
           int="0.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <SLIDER name="OSC2.Volume" id="5b6363a9393426b5" memberName="slider5"
-          virtualName="" explicitFocusOrder="0" pos="24 176 110 110" thumbcol="ff328f09"
+          virtualName="" explicitFocusOrder="0" pos="40 176 110 110" thumbcol="ff328f09"
           min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <LABEL name="new label" id="8b601101dbaa262f" memberName="label4" virtualName=""
-         explicitFocusOrder="0" pos="-8 48 56 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="8 48 56 24" edTextCol="ff000000"
          edBkgCol="0" labelText="main" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Verdana" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="51bdd6e7adc460f1" memberName="label5" virtualName=""
-         explicitFocusOrder="0" pos="-8 168 56 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="8 168 56 24" edTextCol="ff000000"
          edBkgCol="0" labelText="sub1" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="OSC3.Volume" id="4f70b9dfb7d22046" memberName="slider6"
-          virtualName="" explicitFocusOrder="0" pos="24 304 110 110" thumbcol="ff328f09"
+          virtualName="" explicitFocusOrder="0" pos="40 304 110 110" thumbcol="ff328f09"
           min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <LABEL name="new label" id="98130ba7d077c9a8" memberName="label6" virtualName=""
-         explicitFocusOrder="0" pos="-8 296 56 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="8 296 56 24" edTextCol="ff000000"
          edBkgCol="0" labelText="sub2" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
@@ -1079,37 +1306,37 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="OSC1.Divider" id="f5dccfd9a2ecb31f" memberName="slider15"
-          virtualName="" explicitFocusOrder="0" pos="152 72 95 95" tooltip="switch;"
+          virtualName="" explicitFocusOrder="0" pos="168 72 95 95" tooltip="switch;"
           thumbcol="ff6495ed" min="1.00000000000000000000" max="4.00000000000000000000"
           int="1.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <SLIDER name="OSC2.Divider" id="27fba3479be46b37" memberName="slider16"
-          virtualName="" explicitFocusOrder="0" pos="152 192 95 95" tooltip="switch;"
+          virtualName="" explicitFocusOrder="0" pos="168 192 95 95" tooltip="switch;"
           thumbcol="ff6495ed" min="1.00000000000000000000" max="4.00000000000000000000"
           int="1.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <SLIDER name="OSC3.Divider" id="1a27da7fbd80f73" memberName="slider17"
-          virtualName="" explicitFocusOrder="0" pos="152 320 95 95" tooltip="switch;"
+          virtualName="" explicitFocusOrder="0" pos="168 320 95 95" tooltip="switch;"
           thumbcol="ff6495ed" min="1.00000000000000000000" max="4.00000000000000000000"
           int="1.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <SLIDER name="OSC1.Waveform" id="93ec2e964f54eaf6" memberName="slider18"
-          virtualName="" explicitFocusOrder="0" pos="272 72 95 95" tooltip="switch;"
+          virtualName="" explicitFocusOrder="0" pos="288 72 95 95" tooltip="switch;"
           thumbcol="ff6495ed" min="1.00000000000000000000" max="3.00000000000000000000"
           int="1.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <SLIDER name="OSC2.Waveform" id="a72293c4b71df00c" memberName="slider19"
-          virtualName="" explicitFocusOrder="0" pos="272 192 95 95" tooltip="switch;"
+          virtualName="" explicitFocusOrder="0" pos="288 192 95 95" tooltip="switch;"
           thumbcol="ff6495ed" min="1.00000000000000000000" max="3.00000000000000000000"
           int="1.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <SLIDER name="OSC3.Waveform" id="f512996821af000" memberName="slider20"
-          virtualName="" explicitFocusOrder="0" pos="272 320 95 95" tooltip="switch;"
+          virtualName="" explicitFocusOrder="0" pos="288 320 95 95" tooltip="switch;"
           thumbcol="ff6495ed" min="1.00000000000000000000" max="3.00000000000000000000"
           int="1.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
@@ -1125,10 +1352,11 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="Delay.Wet" id="f02a07f8a8edc9" memberName="slider" virtualName=""
-          explicitFocusOrder="0" pos="272 520 95 95" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          explicitFocusOrder="0" pos="272 520 95 95" tooltip="effect;"
+          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
+          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          needsCallback="1"/>
   <LABEL name="new label" id="7d1d2877a9909ff4" memberName="label15" virtualName=""
          explicitFocusOrder="0" pos="288 496 168 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Delay&#10;" editableSingleClick="0" editableDoubleClick="0"
@@ -1140,40 +1368,44 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="ReferenceOscillator.Detune" id="179c2467b254d1c1" memberName="slider13"
-          virtualName="" explicitFocusOrder="0" pos="16 520 95 95" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          virtualName="" explicitFocusOrder="0" pos="16 520 95 95" tooltip="effect;"
+          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
+          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          needsCallback="1"/>
   <LABEL name="new label" id="3fd1e9e11b37a09e" memberName="label19" virtualName=""
          explicitFocusOrder="0" pos="32 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="detune" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="UnisonMixer.Volume" id="b64e5d44b2af789a" memberName="slider21"
-          virtualName="" explicitFocusOrder="0" pos="136 520 95 95" min="0.00000000000000000000"
-          max="0.50000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          virtualName="" explicitFocusOrder="0" pos="136 520 95 95" tooltip="effect;"
+          min="0.00000000000000000000" max="0.50000000000000000000" int="0.00000000000000000000"
+          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          needsCallback="1"/>
   <LABEL name="new label" id="2e34fa49a2369321" memberName="label20" virtualName=""
          explicitFocusOrder="0" pos="152 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="volume" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="Delay.Delay" id="fef0c0a17fbbe76b" memberName="slider22"
-          virtualName="" explicitFocusOrder="0" pos="392 520 95 95" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          virtualName="" explicitFocusOrder="0" pos="392 520 95 95" tooltip="effect;"
+          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
+          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          needsCallback="1"/>
   <LABEL name="new label" id="6a484cbc8a86f45b" memberName="label21" virtualName=""
          explicitFocusOrder="0" pos="408 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="time" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="Delay.Feedback" id="e2542a2a711671ab" memberName="slider23"
-          virtualName="" explicitFocusOrder="0" pos="512 520 95 95" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          virtualName="" explicitFocusOrder="0" pos="512 520 95 95" tooltip="effect;"
+          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
+          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          needsCallback="1"/>
   <LABEL name="new label" id="3c2f6ccb4ec0e07b" memberName="label22" virtualName=""
          explicitFocusOrder="0" pos="528 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="feedback" editableSingleClick="0" editableDoubleClick="0"

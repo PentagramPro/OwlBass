@@ -80,7 +80,7 @@ private:
     std::unique_ptr<Label> label;
     std::unique_ptr<Label> label2;
     std::unique_ptr<Label> label3;
-    std::unique_ptr<unknown> slider4;
+    std::unique_ptr<Slider> slider4;
     std::unique_ptr<Slider> slider5;
     std::unique_ptr<Label> label4;
     std::unique_ptr<Label> label5;
@@ -126,16 +126,16 @@ private:
     std::unique_ptr<Label> label24;
     std::unique_ptr<Label> label25;
     Image cachedImage_case_main_png_1;
-    Image cachedImage_icon_triangle_png_2;
-    Image cachedImage_icon_square_png_3;
-    Image cachedImage_icon_saw_png_4;
-    Image cachedImage_icon_triangle_png_5;
-    Image cachedImage_icon_square_png_6;
-    Image cachedImage_icon_saw_png_7;
-    Image cachedImage_icon_triangle_png_8;
-    Image cachedImage_icon_square_png_9;
-    Image cachedImage_icon_saw_png_10;
-    Image cachedImage_case_effects_png_11;
+    Image cachedImage_case_effects_png_2;
+    Image cachedImage_icon_triangle_png_3;
+    Image cachedImage_icon_square_png_4;
+    Image cachedImage_icon_saw_png_5;
+    Image cachedImage_icon_triangle_png_6;
+    Image cachedImage_icon_square_png_7;
+    Image cachedImage_icon_saw_png_8;
+    Image cachedImage_icon_triangle_png_9;
+    Image cachedImage_icon_square_png_10;
+    Image cachedImage_icon_saw_png_11;
 
 
     //==============================================================================
