@@ -35,7 +35,7 @@ void CDelayVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSample
 		mFilter.resize(outputBuffer.getNumChannels());
 		for (auto& filter : mFilter) {
 			filter.Reset(GetSampleRate());
-			filter.SetParams(3500, 1);
+			filter.SetParams(2500, 1);
 		}
 	}
 
