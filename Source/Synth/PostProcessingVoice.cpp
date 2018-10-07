@@ -4,7 +4,8 @@
 CPostProcessingVoice::CPostProcessingVoice(const std::string & name, IVoiceModuleHost & host)
 	: CVoiceModuleBase(name, host) 
 {
-	mFilters.emplace_back(juce::IIRCoefficients::makeLowPass(GetSampleRate(), 6324, 1.2));
+	mFilters.emplace_back(juce::IIRCoefficients::makeLowPass(GetSampleRate(), 6324, 1.1));
+	mFilters.emplace_back(juce::IIRCoefficients::makeLowPass(GetSampleRate(), 6324, 1.1));
 	mFilters.emplace_back(juce::IIRCoefficients::makeHighPass(GetSampleRate(), 56, 2.6));
 	mFilters.emplace_back(juce::IIRCoefficients::makeHighPass(GetSampleRate(), 56, 2.6));
 	mFilters.emplace_back(juce::IIRCoefficients::makePeakFilter(GetSampleRate(),1326,1,0.75));
