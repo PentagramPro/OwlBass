@@ -72,7 +72,9 @@ void BodePlot::paint (Graphics& g)
 		mBodePath.startNewSubPath(length, buffer.getSample(0, 0)+0.01);
 
 		for (int i = 0; i < length; i++) {
-			const double sample = -buffer.getSample(0, i);
+			double sample = -buffer.getSample(0, i);
+			if(std::isinf(sample) || std::isnan(sample)) {
+				sample = 0;
 			mBodePath.lineTo(length-i, sample);
 		}
 		mBodePath.scaleToFit(0, 0, getWidth(), getHeight(), false);
