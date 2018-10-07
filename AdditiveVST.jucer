@@ -7,6 +7,11 @@
               pluginVSTCategory="kPlugCategGenerator" id="Dxz9Um">
   <MAINGROUP id="ErWoIN" name="AdditiveVST">
     <GROUP id="{E5593B42-EF84-EC40-B08F-4858405D93AA}" name="Ui">
+      <GROUP id="{AECCE322-69E4-2B79-88CD-6E9FA1EE7784}" name="LookAndFeel">
+        <FILE id="ycJMdF" name="LafBlackKnob.cpp" compile="1" resource="0"
+              file="Source/UI/LookAndFeel/LafBlackKnob.cpp"/>
+        <FILE id="eXmLZV" name="LafBlackKnob.h" compile="0" resource="0" file="Source/UI/LookAndFeel/LafBlackKnob.h"/>
+      </GROUP>
       <FILE id="v2erM9" name="AdvancedSlider.cpp" compile="1" resource="0"
             file="Source/UI/AdvancedSlider.cpp"/>
       <FILE id="ikJNyz" name="AdvancedSlider.h" compile="0" resource="0"
@@ -18,7 +23,16 @@
             file="Source/UI/MainSynthGui.cpp"/>
       <FILE id="IkeoRK" name="MainSynthGui.h" compile="0" resource="0" file="Source/UI/MainSynthGui.h"/>
     </GROUP>
-    <GROUP id="{D273DE03-1424-D5E0-7D48-D067800C8468}" name="Resources"/>
+    <GROUP id="{D273DE03-1424-D5E0-7D48-D067800C8468}" name="Resources">
+      <FILE id="Hu4Itm" name="black knob switch.png" compile="1" resource="1"
+            file="Resources/black knob switch.png"/>
+      <FILE id="psvFoX" name="black knob.png" compile="1" resource="1" file="Resources/black knob.png"/>
+      <FILE id="wfdtwR" name="case_main.png" compile="0" resource="1" file="Resources/case_main.png"/>
+      <FILE id="XECp4p" name="icon_saw.png" compile="0" resource="1" file="Resources/icon_saw.png"/>
+      <FILE id="UX9sSl" name="icon_square.png" compile="0" resource="1" file="Resources/icon_square.png"/>
+      <FILE id="XsvnlH" name="icon_triangle.png" compile="0" resource="1"
+            file="Resources/icon_triangle.png"/>
+    </GROUP>
     <GROUP id="{B8CFA7A4-FAD0-BD52-4FC5-F3C76E7937E6}" name="Common">
       <FILE id="aFGy48" name="AudioQueue.cpp" compile="1" resource="0" file="Source/Common/AudioQueue.cpp"/>
       <FILE id="seJFHO" name="AudioQueue.h" compile="0" resource="0" file="Source/Common/AudioQueue.h"/>

@@ -23,6 +23,7 @@
 #include "../../JuceLibraryCode/JuceHeader.h"
 #include "IGuiListener.h"
 #include "AdvancedSlider.h"
+#include "LookAndFeel\LafBlackKnob.h"
 //[/Headers]
 
 #include "BodePlot.h"
@@ -54,11 +55,23 @@ public:
     void resized() override;
     void sliderValueChanged (Slider* sliderThatWasMoved) override;
 
+    // Binary resources:
+    static const char* icon_triangle_png;
+    static const int icon_triangle_pngSize;
+    static const char* icon_square_png;
+    static const int icon_square_pngSize;
+    static const char* icon_saw_png;
+    static const int icon_saw_pngSize;
+    static const char* case_main_png;
+    static const int case_main_pngSize;
+    static const char* case_effects_png;
+    static const int case_effects_pngSize;
 
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 	IGuiListener * mListener = nullptr;
+	CLafBlackKnob mLookAndFeel;
     //[/UserVariables]
 
     //==============================================================================
@@ -67,7 +80,7 @@ private:
     std::unique_ptr<Label> label;
     std::unique_ptr<Label> label2;
     std::unique_ptr<Label> label3;
-    std::unique_ptr<Slider> slider4;
+    std::unique_ptr<unknown> slider4;
     std::unique_ptr<Slider> slider5;
     std::unique_ptr<Label> label4;
     std::unique_ptr<Label> label5;
@@ -109,6 +122,20 @@ private:
     std::unique_ptr<Label> label22;
     std::unique_ptr<BodePlot> bodePlotArea;
     std::unique_ptr<Slider> slider24;
+    std::unique_ptr<Label> label23;
+    std::unique_ptr<Label> label24;
+    std::unique_ptr<Label> label25;
+    Image cachedImage_case_main_png_1;
+    Image cachedImage_icon_triangle_png_2;
+    Image cachedImage_icon_square_png_3;
+    Image cachedImage_icon_saw_png_4;
+    Image cachedImage_icon_triangle_png_5;
+    Image cachedImage_icon_square_png_6;
+    Image cachedImage_icon_saw_png_7;
+    Image cachedImage_icon_triangle_png_8;
+    Image cachedImage_icon_square_png_9;
+    Image cachedImage_icon_saw_png_10;
+    Image cachedImage_case_effects_png_11;
 
 
     //==============================================================================

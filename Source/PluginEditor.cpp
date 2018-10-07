@@ -17,7 +17,7 @@ AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAud
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (740, 480);
+    setSize (1000, 640);
 
 	// these define the parameters of our slider object
 
