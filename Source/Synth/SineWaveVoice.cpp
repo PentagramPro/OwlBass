@@ -4,7 +4,7 @@
 
 CSineLfoVoice::CSineLfoVoice(const std::string& name, IVoiceModuleHost& host)
 		: CVoiceModuleBase(name, host){
-
+	currentAngle = 0;
 }
 
 
@@ -30,7 +30,7 @@ CSineLfoVoice::CSineLfoVoice(const std::string& name, IVoiceModuleHost& host)
 	  }
 	  while (--numSamples >= 0) 
 	  {
-		  auto currentSample = (float)(std::sin(currentAngle));
+		  auto currentSample = (float)(std::sin(currentAngle))*mVolume;
 
 		  for (auto i = outputBuffer.getNumChannels(); --i >= 0;)
 			  outputBuffer.addSample(i, startSample, currentSample);
@@ -45,13 +45,11 @@ CSineLfoVoice::CSineLfoVoice(const std::string& name, IVoiceModuleHost& host)
   void CSineLfoVoice::InitProperties(CPropertiesRegistry & registry)
   {
 	  registry.AddProperty(GetPropName("Frequency"), new CPropertySquareDouble01(mFrequency, 0.1, 5.0));
+	  registry.AddProperty(GetPropName("Volume"), new CPropertySquareDouble01(mVolume, 0, 1));
   }
 
   void CSineLfoVoice::UpdateFrequency()
   {
-	  currentAngle = 0.0;
-	  
-
 	  auto cyclesPerSecond = mFrequency;
 	  auto cyclesPerSample = cyclesPerSecond / GetSampleRate();
 

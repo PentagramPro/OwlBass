@@ -5,6 +5,7 @@
 #include "../DSP/DSPLowpassFilter2.h"
 #include "../DSP/DSPDelay.h"
 #include "IVoltageController.h"
+#include "ControlVoltageSource.h"
 #include <vector>
 
 class CFilterVoice : public CVoiceModuleBase {
@@ -16,7 +17,7 @@ public:
 	void OnNoteStop(float velocity, bool allowTailOff) override;
 
 	void ProcessBlock(AudioBuffer<float> &outputBuffer, int startSample, int numSamples) override;
-
+	void SetLfo(IVoltageController& lfo) { mCutoffLfo = &lfo; }
 private:
 	std::vector<CDSPLowpassFilter2> mFilter;
 	CDSPDelay mCutoffDelay;
@@ -30,4 +31,5 @@ private:
 	virtual void InitProperties(CPropertiesRegistry & registry) override;
 	
 	IVoltageController& mCutoffEnvelope;
+	IVoltageController* mCutoffLfo = &CCVZero::instance;
 };

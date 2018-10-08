@@ -551,6 +551,24 @@ MainSynthGui::MainSynthGui ()
 
     label25->setBounds (456, 192, 160, 32);
 
+    slider25.reset (new Slider ("FilterCutoffLfo.Frequency"));
+    addAndMakeVisible (slider25.get());
+    slider25->setRange (0, 1, 0);
+    slider25->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider25->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider25->addListener (this);
+
+    slider25->setBounds (856, 128, 95, 95);
+
+    slider26.reset (new Slider ("FilterCutoffLfo.Volume"));
+    addAndMakeVisible (slider26.get());
+    slider26->setRange (0, 1, 0);
+    slider26->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider26->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider26->addListener (this);
+
+    slider26->setBounds (856, 248, 95, 95);
+
     cachedImage_case_main_png_1 = ImageCache::getFromMemory (case_main_png, case_main_pngSize);
     cachedImage_case_effects_png_2 = ImageCache::getFromMemory (case_effects_png, case_effects_pngSize);
     cachedImage_icon_triangle_png_3 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
@@ -629,6 +647,8 @@ MainSynthGui::~MainSynthGui()
     label23 = nullptr;
     label24 = nullptr;
     label25 = nullptr;
+    slider25 = nullptr;
+    slider26 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -1062,6 +1082,16 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_slider24] -- add your slider handling code here..
         //[/UserSliderCode_slider24]
     }
+    else if (sliderThatWasMoved == slider25.get())
+    {
+        //[UserSliderCode_slider25] -- add your slider handling code here..
+        //[/UserSliderCode_slider25]
+    }
+    else if (sliderThatWasMoved == slider26.get())
+    {
+        //[UserSliderCode_slider26] -- add your slider handling code here..
+        //[/UserSliderCode_slider26]
+    }
 
     //[UsersliderValueChanged_Post]
     //[/UsersliderValueChanged_Post]
@@ -1435,6 +1465,16 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="Envelopes" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="32.50000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+  <SLIDER name="FilterCutoffLfo.Frequency" id="74ae55c52b8a875e" memberName="slider25"
+          virtualName="" explicitFocusOrder="0" pos="856 128 95 95" min="0.00000000000000000000"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+  <SLIDER name="FilterCutoffLfo.Volume" id="874163a44515b9" memberName="slider26"
+          virtualName="" explicitFocusOrder="0" pos="856 248 95 95" min="0.00000000000000000000"
+          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

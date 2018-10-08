@@ -125,6 +125,8 @@ private:
     std::unique_ptr<Label> label23;
     std::unique_ptr<Label> label24;
     std::unique_ptr<Label> label25;
+    std::unique_ptr<Slider> slider25;
+    std::unique_ptr<Slider> slider26;
     Image cachedImage_case_main_png_1;
     Image cachedImage_case_effects_png_2;
     Image cachedImage_icon_triangle_png_3;

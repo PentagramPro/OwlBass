@@ -28,7 +28,7 @@ void CLafBlackKnob::drawRotarySlider(Graphics &g, int x, int y, int width, int h
 		p.addArc(x, y, width, height, rotaryStartAngle, angle,true);
 		p.applyTransform(AffineTransform::scale(0.85,0.85, x + width / 2, y + height / 2));
 		if (IsOfType("effect",slider)) {
-			g.setColour(Colour(128, 232, 129));
+		 	g.setColour(Colour(128, 232, 129));
 		}
 		else {
 			g.setColour(Colour(255, 87, 118));

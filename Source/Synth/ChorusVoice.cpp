@@ -40,12 +40,12 @@ const int Channels = 2;
 	  if (mWet == 0) {
 		  return;
 	  }
-	  auto phaseLfoBuffer = mPhaseLfo.GetVoltageBuffer();
+	  
 
 	  while (--samplesCount >= 0) {
 		  
 		  mBuffer->AdvancePointer();
-		  const double lfo = phaseLfoBuffer.getSample(0, currentSample)/2+1;
+		  const double lfo = mPhaseLfo.GetValue(currentSample)/2+1;
 
 		  for (int channel = 0; channel < Channels; channel++) {
 			  

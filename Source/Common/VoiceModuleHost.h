@@ -10,7 +10,11 @@ class CVoiceModuleHost : public SynthesiserVoice, public IVoiceModuleHost {
 public:
     CVoiceModuleHost(CPropertiesRegistry& propRegistry);
     void AddModule(IVoiceModule* module);
-	
+	template<class T>
+	T& AddModule(T* module) {
+		AddModule((IVoiceModule*)module);
+		return *module;
+	}
 
     bool canPlaySound(SynthesiserSound* sound) override;
 

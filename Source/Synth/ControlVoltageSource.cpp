@@ -1,5 +1,8 @@
 #include "ControlVoltageSource.h"
 
+CCVOne CCVOne::instance;
+CCVZero CCVZero::instance;
+
 CControlVoltageSource::CControlVoltageSource(const std::string & name, IVoiceModuleHost & host, std::shared_ptr<CVoiceModuleBase> wrappedVoice, double initialValue)
 	: CVoiceModuleBase(name, host), mWrappedVoice(wrappedVoice), mInitialValue(initialValue)
 {
@@ -35,9 +38,9 @@ void CControlVoltageSource::ProcessBlock(AudioBuffer<float>& outputBuffer, int s
 	mWrappedVoice->ProcessBlock(mBuffer, startSample, numSamples);
 }
 
-const AudioBuffer<float> &CControlVoltageSource::GetVoltageBuffer() const
+float CControlVoltageSource::GetValue(int sampleNumber) const
 {
-	return mBuffer;
+	return mBuffer.getSample(0,sampleNumber);
 }
 
 double CControlVoltageSource::GetSampleRate() const

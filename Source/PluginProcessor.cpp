@@ -62,9 +62,18 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
     voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
 	
 	
+	{
+		std::shared_ptr<CSineLfoVoice> lfoCutoff(new CSineLfoVoice("FilterCutoffLfo", *voiceModuleHost));
+		CControlVoltageSource* cvLfoCutoff = new CControlVoltageSource("CVFilterCutoffLfo", *voiceModuleHost, lfoCutoff, 0);
+		voiceModuleHost->AddModule(cvLfoCutoff);
+		
 
-	voiceModuleHost->AddModule(new CFilterVoice("Filter",*voiceModuleHost, *cvEnvelopeCutoff));
-	voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
+		auto& filter1 = voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
+		filter1.SetLfo(*cvLfoCutoff);
+
+		auto& filter2 = voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
+		filter2.SetLfo(*cvLfoCutoff);
+	}
 	
 	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.08));
 

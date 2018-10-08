@@ -5,6 +5,17 @@
 #include "../Common/VoiceModuleBase.h"
 #include "../Common/IVoiceModuleHost.h"
 #include "IVoltageController.h"
+class CCVOne : public IVoltageController {
+public:
+	inline virtual float GetValue(int sampleNumber) const override { return 1; }
+	static CCVOne instance;
+};
+
+class CCVZero : public IVoltageController {
+public:
+	inline virtual float GetValue(int sampleNumber) const override { return 0; }
+	static CCVZero instance;
+};
 
 class CControlVoltageSource : public CVoiceModuleBase, public IVoltageController, public IVoiceModuleHost {
 public:
@@ -22,7 +33,7 @@ private:
 	AudioBuffer<float> mBuffer;
 
 	// Inherited via IVoltageController
-	virtual const AudioBuffer<float>& GetVoltageBuffer() const override;
+	inline virtual float GetValue(int sampleNumber) const override;
 
 	// Inherited via IVoiceModuleHost
 	virtual double GetSampleRate() const override;

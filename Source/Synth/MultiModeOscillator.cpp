@@ -25,9 +25,9 @@ void CMultiModeOscillator::ProcessBlock(AudioSampleBuffer & outputBuffer, int st
 		jassertfalse;
 	}
 
-	const auto& referenceBuffer = mReferenceSawtooth.GetVoltageBuffer();
+	
 	while (--samplesCount >= 0) {
-		const double reference = referenceBuffer.getSample(0, currentSample);
+		const double reference = mReferenceSawtooth.GetValue(currentSample);
 
 		if (reference < mLastReference) {
 			mDividerCounter++;
