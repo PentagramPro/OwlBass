@@ -46,7 +46,7 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
 	const double detuneScale = 2;
 	AddBlockOfOscillators(nullptr, *voiceModuleHost, detuneScale*0,0);
-
+	
 	CMixerVoice* unisonMixer(new CMixerVoice("UnisonMixer", *voiceModuleHost));
 	
 
@@ -58,9 +58,9 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.8,0.4);
 	
 	voiceModuleHost->AddModule(unisonMixer);
-
-    voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
 	
+    voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
+	mPropRegistry.ForceProperty("ADSRVol.Retrigger", 0);
 	
 	{
 		std::shared_ptr<CSineLfoVoice> lfoCutoff(new CSineLfoVoice("FilterCutoffLfo", *voiceModuleHost));
@@ -79,10 +79,19 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
 
 	voiceModuleHost->AddModule(new CDelayVoice("Delay", *voiceModuleHost));
+	
 
-	voiceModuleHost->AddModule(new CNoiseVoice("Noise", *voiceModuleHost));
+	{
+		std::shared_ptr<CSineLfoVoice> lfo(new CSineLfoVoice("ChorusLfo", *voiceModuleHost));
+		CControlVoltageSource* cvLfo = new CControlVoltageSource("CVChorusLfo", *voiceModuleHost, lfo, 0);
+		voiceModuleHost->AddModule(cvLfo);
+
+		voiceModuleHost->AddModule(new CChorusVoice("Chorus", *voiceModuleHost,*cvLfo,0.03,3));
+	}
+	
+	//voiceModuleHost->AddModule(new CNoiseVoice("Noise", *voiceModuleHost));
 	voiceModuleHost->AddModule(new CPostProcessingVoice("PostProcessing", *voiceModuleHost));
-	voiceModuleHost->AddModule(new CFourierProbeVoice("FourierProbe", *voiceModuleHost, 11));
+	//voiceModuleHost->AddModule(new CFourierProbeVoice("FourierProbe", *voiceModuleHost, 11));
 
 	sineSynth.addVoice(voiceModuleHost);
 	sineSynth.addSound(new CVoiceModuleHostSound());

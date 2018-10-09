@@ -504,10 +504,6 @@ MainSynthGui::MainSynthGui ()
 
     label22->setBounds (528, 608, 64, 24);
 
-    bodePlotArea.reset (new BodePlot());
-    addAndMakeVisible (bodePlotArea.get());
-    bodePlotArea->setBounds (784, 488, 192, 136);
-
     slider24.reset (new Slider ("ADSRFilter.Retrigger"));
     addAndMakeVisible (slider24.get());
     slider24->setRange (0, 1, 1);
@@ -558,7 +554,7 @@ MainSynthGui::MainSynthGui ()
     slider25->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider25->addListener (this);
 
-    slider25->setBounds (856, 128, 95, 95);
+    slider25->setBounds (848, 56, 95, 95);
 
     slider26.reset (new Slider ("FilterCutoffLfo.Volume"));
     addAndMakeVisible (slider26.get());
@@ -567,7 +563,93 @@ MainSynthGui::MainSynthGui ()
     slider26->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider26->addListener (this);
 
-    slider26->setBounds (856, 248, 95, 95);
+    slider26->setBounds (848, 168, 95, 95);
+
+    label26.reset (new Label ("new label",
+                              TRANS("Filter LFO")));
+    addAndMakeVisible (label26.get());
+    label26->setFont (Font (32.50f, Font::plain).withTypefaceStyle ("Regular"));
+    label26->setJustificationType (Justification::centredLeft);
+    label26->setEditable (false, false, false);
+    label26->setColour (TextEditor::textColourId, Colours::black);
+    label26->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label26->setBounds (824, 16, 160, 24);
+
+    label27.reset (new Label ("new label",
+                              TRANS("Frequency")));
+    addAndMakeVisible (label27.get());
+    label27->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label27->setJustificationType (Justification::centred);
+    label27->setEditable (false, false, false);
+    label27->setColour (TextEditor::textColourId, Colours::black);
+    label27->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label27->setBounds (856, 144, 72, 24);
+
+    label28.reset (new Label ("new label",
+                              TRANS("Amount")));
+    addAndMakeVisible (label28.get());
+    label28->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label28->setJustificationType (Justification::centred);
+    label28->setEditable (false, false, false);
+    label28->setColour (TextEditor::textColourId, Colours::black);
+    label28->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label28->setBounds (856, 256, 72, 24);
+
+    slider27.reset (new Slider ("ChorusLfo.Frequency"));
+    addAndMakeVisible (slider27.get());
+    slider27->setTooltip (TRANS("effect;"));
+    slider27->setRange (0, 1, 0);
+    slider27->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider27->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider27->addListener (this);
+
+    slider27->setBounds (703, 520, 95, 95);
+
+    label29.reset (new Label ("new label",
+                              TRANS("frequency")));
+    addAndMakeVisible (label29.get());
+    label29->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label29->setJustificationType (Justification::centred);
+    label29->setEditable (false, false, false);
+    label29->setColour (TextEditor::textColourId, Colours::black);
+    label29->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label29->setBounds (719, 608, 64, 24);
+
+    slider28.reset (new Slider ("Chorus.Wet"));
+    addAndMakeVisible (slider28.get());
+    slider28->setTooltip (TRANS("effect;"));
+    slider28->setRange (0, 0.5, 0);
+    slider28->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider28->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider28->addListener (this);
+
+    slider28->setBounds (823, 520, 95, 95);
+
+    label30.reset (new Label ("new label",
+                              TRANS("wet")));
+    addAndMakeVisible (label30.get());
+    label30->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label30->setJustificationType (Justification::centred);
+    label30->setEditable (false, false, false);
+    label30->setColour (TextEditor::textColourId, Colours::black);
+    label30->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label30->setBounds (839, 608, 64, 24);
+
+    label31.reset (new Label ("new label",
+                              TRANS("Chorus")));
+    addAndMakeVisible (label31.get());
+    label31->setFont (Font (17.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label31->setJustificationType (Justification::centredLeft);
+    label31->setEditable (false, false, false);
+    label31->setColour (TextEditor::textColourId, Colours::black);
+    label31->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label31->setBounds (703, 496, 168, 24);
 
     cachedImage_case_main_png_1 = ImageCache::getFromMemory (case_main_png, case_main_pngSize);
     cachedImage_case_effects_png_2 = ImageCache::getFromMemory (case_effects_png, case_effects_pngSize);
@@ -642,13 +724,20 @@ MainSynthGui::~MainSynthGui()
     label21 = nullptr;
     slider23 = nullptr;
     label22 = nullptr;
-    bodePlotArea = nullptr;
     slider24 = nullptr;
     label23 = nullptr;
     label24 = nullptr;
     label25 = nullptr;
     slider25 = nullptr;
     slider26 = nullptr;
+    label26 = nullptr;
+    label27 = nullptr;
+    label28 = nullptr;
+    slider27 = nullptr;
+    label29 = nullptr;
+    slider28 = nullptr;
+    label30 = nullptr;
+    label31 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -1092,6 +1181,16 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_slider26] -- add your slider handling code here..
         //[/UserSliderCode_slider26]
     }
+    else if (sliderThatWasMoved == slider27.get())
+    {
+        //[UserSliderCode_slider27] -- add your slider handling code here..
+        //[/UserSliderCode_slider27]
+    }
+    else if (sliderThatWasMoved == slider28.get())
+    {
+        //[UserSliderCode_slider28] -- add your slider handling code here..
+        //[/UserSliderCode_slider28]
+    }
 
     //[UsersliderValueChanged_Post]
     //[/UsersliderValueChanged_Post]
@@ -1441,9 +1540,6 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="feedback" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
-  <JUCERCOMP name="" id="32f1dfc8526ae323" memberName="bodePlotArea" virtualName=""
-             explicitFocusOrder="0" pos="784 488 192 136" sourceFile="BodePlot.cpp"
-             constructorParams=""/>
   <SLIDER name="ADSRFilter.Retrigger" id="41b41b935d066ade" memberName="slider24"
           virtualName="" explicitFocusOrder="0" pos="576 328 39 56" thumbcol="ff6495ed"
           min="0.00000000000000000000" max="1.00000000000000000000" int="1.00000000000000000000"
@@ -1466,15 +1562,57 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="32.50000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
   <SLIDER name="FilterCutoffLfo.Frequency" id="74ae55c52b8a875e" memberName="slider25"
-          virtualName="" explicitFocusOrder="0" pos="856 128 95 95" min="0.00000000000000000000"
+          virtualName="" explicitFocusOrder="0" pos="848 56 95 95" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="FilterCutoffLfo.Volume" id="874163a44515b9" memberName="slider26"
-          virtualName="" explicitFocusOrder="0" pos="856 248 95 95" min="0.00000000000000000000"
+          virtualName="" explicitFocusOrder="0" pos="848 168 95 95" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+  <LABEL name="new label" id="9f7aaf74327a8d7e" memberName="label26" virtualName=""
+         explicitFocusOrder="0" pos="824 16 160 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Filter LFO" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="32.50000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+  <LABEL name="new label" id="9b3c50d74fae9222" memberName="label27" virtualName=""
+         explicitFocusOrder="0" pos="856 144 72 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Frequency" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+  <LABEL name="new label" id="88875754444c615a" memberName="label28" virtualName=""
+         explicitFocusOrder="0" pos="856 256 72 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Amount" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+  <SLIDER name="ChorusLfo.Frequency" id="5b9bcdad8c2d7dc8" memberName="slider27"
+          virtualName="" explicitFocusOrder="0" pos="703 520 95 95" tooltip="effect;"
+          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
+          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          needsCallback="1"/>
+  <LABEL name="new label" id="46453cb5d64bc955" memberName="label29" virtualName=""
+         explicitFocusOrder="0" pos="719 608 64 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="frequency" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+  <SLIDER name="Chorus.Wet" id="d25757072153aaf8" memberName="slider28"
+          virtualName="" explicitFocusOrder="0" pos="823 520 95 95" tooltip="effect;"
+          min="0.00000000000000000000" max="0.50000000000000000000" int="0.00000000000000000000"
+          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
+          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          needsCallback="1"/>
+  <LABEL name="new label" id="9e48c17169ae806e" memberName="label30" virtualName=""
+         explicitFocusOrder="0" pos="839 608 64 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="wet" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+  <LABEL name="new label" id="af11cbbd2c2e2ba0" memberName="label31" virtualName=""
+         explicitFocusOrder="0" pos="703 496 168 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Chorus" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="17.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

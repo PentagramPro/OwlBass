@@ -27,10 +27,10 @@ AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAud
 	mRegistryListenerHandle = processor.GetPropertiesRegistry().AddListener(*this);
 	OnPropertiesFromSynthState();
 
-	auto voiceForBode = processor.GetModuleByName("FourierProbe");
-	if (voiceForBode) {
-		mGui.GetBodePlot().SetVoiceModule((CFourierProbeVoice&)*voiceForBode);
-	}
+	//auto voiceForBode = processor.GetModuleByName("FourierProbe");
+	//if (voiceForBode) {
+	//	mGui.GetBodePlot().SetVoiceModule((CFourierProbeVoice&)*voiceForBode);
+	//}
 }
 
 AdditiveVstAudioProcessorEditor::~AdditiveVstAudioProcessorEditor()

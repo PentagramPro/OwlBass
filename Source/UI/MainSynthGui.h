@@ -26,7 +26,6 @@
 #include "LookAndFeel\LafBlackKnob.h"
 //[/Headers]
 
-#include "BodePlot.h"
 
 
 //==============================================================================
@@ -48,7 +47,7 @@ public:
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
 	void SetListener(IGuiListener* listener);
-	BodePlot& GetBodePlot() const { return *bodePlotArea; }
+	//BodePlot& GetBodePlot() const { return *bodePlotArea; }
     //[/UserMethods]
 
     void paint (Graphics& g) override;
@@ -120,13 +119,20 @@ private:
     std::unique_ptr<Label> label21;
     std::unique_ptr<Slider> slider23;
     std::unique_ptr<Label> label22;
-    std::unique_ptr<BodePlot> bodePlotArea;
     std::unique_ptr<Slider> slider24;
     std::unique_ptr<Label> label23;
     std::unique_ptr<Label> label24;
     std::unique_ptr<Label> label25;
     std::unique_ptr<Slider> slider25;
     std::unique_ptr<Slider> slider26;
+    std::unique_ptr<Label> label26;
+    std::unique_ptr<Label> label27;
+    std::unique_ptr<Label> label28;
+    std::unique_ptr<Slider> slider27;
+    std::unique_ptr<Label> label29;
+    std::unique_ptr<Slider> slider28;
+    std::unique_ptr<Label> label30;
+    std::unique_ptr<Label> label31;
     Image cachedImage_case_main_png_1;
     Image cachedImage_case_effects_png_2;
     Image cachedImage_icon_triangle_png_3;

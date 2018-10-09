@@ -38,6 +38,11 @@ void CPropertiesRegistry::SetProperty(const std::string & name, float value)
 
 }
 
+void CPropertiesRegistry::ForceProperty(const std::string & name, float value)
+{
+	mForcedProperties[name] = value;
+}
+
 void CPropertiesRegistry::FromSynthState(const CSynthState & state)
 {
 	for (const auto& record : state.GetState()) {
@@ -47,6 +52,14 @@ void CPropertiesRegistry::FromSynthState(const CSynthState & state)
 		}
 		
 	}
+
+	for (const auto& forced : mForcedProperties) {
+		auto p = mProperties.find(forced.first);
+		if (p != mProperties.end()) {
+			p->second->SetRaw(forced.second);
+		}
+	}
+
 	for (auto& listener : GetListeners()) {
 		listener->OnPropertiesFromSynthState();
 	}

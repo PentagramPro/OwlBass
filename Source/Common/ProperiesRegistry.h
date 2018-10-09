@@ -130,6 +130,7 @@ class CPropertiesRegistry : public CListenerRegistry<IPropertiesRegistryListener
 public:
 
 	void SetProperty(const std::string& name, float value);
+	void ForceProperty(const std::string& name, float value);
 
 	void FromSynthState(const CSynthState& state);
 	void ToSynthState(CSynthState& state);
@@ -150,4 +151,5 @@ public:
 	bool HasProperty(const std::string & name) const;
 private:
 	std::unordered_map<std::string, std::unique_ptr<CPropertiesList>> mProperties;
+	std::unordered_map<std::string, float> mForcedProperties;
 };
