@@ -24,5 +24,6 @@ private:
 	double currentAngle = 0.0, angleDelta = 0.0;
 	double mFrequency = 1;
 	double mVolume = 0;
+	int mRetrigger = 1;
 
 };

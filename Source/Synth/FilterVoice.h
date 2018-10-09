@@ -26,7 +26,7 @@ private:
 	double mEnvelopeScale = 0;
 	
 	const double mCutoffFreqMax = 5000;
-	const double mCutoffFreqMin = 20;
+	const double mCutoffFreqMin = 100;
 	// Inherited via CVoiceModuleBase
 	virtual void InitProperties(CPropertiesRegistry & registry) override;
 	

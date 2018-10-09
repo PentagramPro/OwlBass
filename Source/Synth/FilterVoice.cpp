@@ -45,10 +45,11 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 
 		const double freqEnvelopeVal = mCutoffEnvelope.GetValue(currentSample)*mEnvelopeScale;
 		const double lfoCutoff = mCutoffLfo->GetValue(currentSample)*halfRange;
-		const double currentCutoff = mCutoffFreq 
+		const double currentCutoff = mCutoffFreq
 			+std::abs(mEnvelopeScale > 0 ? mCutoffFreqMax : mCutoffFreqMin - mCutoffFreq)*freqEnvelopeVal
 			+lfoCutoff;
-		const double cutoff = mCutoffDelay.Next(currentCutoff);
+		const double clampedCutoff = Toolbox::clamp(currentCutoff, mCutoffFreqMin, mCutoffFreqMax);
+		const double cutoff = mCutoffDelay.Next(clampedCutoff);
 
 
 		

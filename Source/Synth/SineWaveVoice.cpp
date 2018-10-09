@@ -12,7 +12,9 @@ CSineLfoVoice::CSineLfoVoice(const std::string& name, IVoiceModuleHost& host)
 
   void CSineLfoVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int)
   {
-	  
+	  if (mRetrigger == 1) {
+		  currentAngle = 0;
+	  }
 	  StartSound();
   }
 
