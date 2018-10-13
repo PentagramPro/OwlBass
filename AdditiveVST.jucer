@@ -34,6 +34,7 @@
             file="Resources/icon_triangle.png"/>
     </GROUP>
     <GROUP id="{B8CFA7A4-FAD0-BD52-4FC5-F3C76E7937E6}" name="Common">
+      <FILE id="mM1ktA" name="Toolbox.cpp" compile="1" resource="0" file="Source/Common/Toolbox.cpp"/>
       <FILE id="aFGy48" name="AudioQueue.cpp" compile="1" resource="0" file="Source/Common/AudioQueue.cpp"/>
       <FILE id="seJFHO" name="AudioQueue.h" compile="0" resource="0" file="Source/Common/AudioQueue.h"/>
       <GROUP id="{D3A59B67-8BAF-1206-82EF-DFF32D5407DF}" name="Patterns">

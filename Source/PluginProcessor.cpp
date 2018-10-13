@@ -83,10 +83,11 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
 	{
 		std::shared_ptr<CSineLfoVoice> lfo(new CSineLfoVoice("ChorusLfo", *voiceModuleHost));
+		mPropRegistry.ForceProperty("ChorusLfo.Volume", 0.5);
 		CControlVoltageSource* cvLfo = new CControlVoltageSource("CVChorusLfo", *voiceModuleHost, lfo, 0);
 		voiceModuleHost->AddModule(cvLfo);
 
-		voiceModuleHost->AddModule(new CChorusVoice("Chorus", *voiceModuleHost,*cvLfo,0.03,3));
+		voiceModuleHost->AddModule(new CChorusVoice("Chorus", *voiceModuleHost,*cvLfo,0.034,4));
 	}
 	
 	//voiceModuleHost->AddModule(new CNoiseVoice("Noise", *voiceModuleHost));

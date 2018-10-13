@@ -1,6 +1,8 @@
 
 #include "ChorusVoice.h"
 #include "../Common/ProperiesRegistry.h"
+#include "../Common/Toolbox.h"
+static int debugCount = 0;
 
 const int Channels = 2;
 	void CChorusVoice::InitProperties(CPropertiesRegistry & registry)
@@ -17,6 +19,7 @@ const int Channels = 2;
 			  mVoiceOffsets.push_back(mLengthSec/mVoices*voice);
 		  }
 	  }
+	  debugCount = 800;
   }
 
   void CChorusVoice::OnNoteStop(float velocity, bool allowTailOff)
@@ -41,29 +44,32 @@ const int Channels = 2;
 		  return;
 	  }
 	  
-
-	  while (--samplesCount >= 0) {
+	  
+	  while (--samplesCount >= 0) { 
 		  
 		  mBuffer->AdvancePointer();
-		  const double lfo = mPhaseLfo.GetValue(currentSample)/2+1;
+		  const double lfo = mPhaseLfo.GetValue(currentSample)/2.0f+1.0f;
 
 		  for (int channel = 0; channel < Channels; channel++) {
 			  
 			  const double oldSample = outputBuffer.getSample(channel, currentSample);
 			  mBuffer->SetSample(channel, oldSample);
-			  double result = oldSample;
+			  double result = 0;
+			
 			  for (const double offset : mVoiceOffsets) {
-				  result += mBuffer->GetRelativeToFront(offset*lfo, channel);
+				  const double delayedSample = mBuffer->GetRelativeToFront(offset*lfo, channel);
+				  
+				  result += delayedSample;
 			  }
-			  result /= mVoices;
+			  result /= (mVoices-1);
 
 			  
 
-			  outputBuffer.setSample(channel, currentSample, result*mWet*mVoices+oldSample*(1-mWet));
+			  outputBuffer.setSample(channel, currentSample, result*mWet+oldSample*(1-mWet));
 			  
 		  }
 		  
-
+		  
 		  currentSample++;
 	  }
   }

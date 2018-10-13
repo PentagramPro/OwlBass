@@ -1,5 +1,5 @@
 #pragma once
-
+#include <string>
 namespace Toolbox {
 	template<typename T> 
 	constexpr  const T& clamp(const T& v, const T& lo, const T& hi) {
@@ -13,4 +13,6 @@ namespace Toolbox {
 			return v;
 		}
 	}
+
+
 }
