@@ -598,7 +598,7 @@ MainSynthGui::MainSynthGui ()
 
     label28->setBounds (856, 256, 72, 24);
 
-    slider27.reset (new Slider ("ChorusLfo.Frequency"));
+    slider27.reset (new Slider ("Limiter.Volume"));
     addAndMakeVisible (slider27.get());
     slider27->setTooltip (TRANS("effect;"));
     slider27->setRange (0, 1, 0);
@@ -606,10 +606,10 @@ MainSynthGui::MainSynthGui ()
     slider27->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider27->addListener (this);
 
-    slider27->setBounds (703, 520, 95, 95);
+    slider27->setBounds (656, 520, 95, 95);
 
     label29.reset (new Label ("new label",
-                              TRANS("frequency")));
+                              TRANS("volume")));
     addAndMakeVisible (label29.get());
     label29->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
     label29->setJustificationType (Justification::centred);
@@ -617,31 +617,10 @@ MainSynthGui::MainSynthGui ()
     label29->setColour (TextEditor::textColourId, Colours::black);
     label29->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label29->setBounds (719, 608, 64, 24);
-
-    slider28.reset (new Slider ("Chorus.Wet"));
-    addAndMakeVisible (slider28.get());
-    slider28->setTooltip (TRANS("effect;"));
-    slider28->setRange (0, 0.5, 0);
-    slider28->setSliderStyle (Slider::RotaryHorizontalDrag);
-    slider28->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
-    slider28->addListener (this);
-
-    slider28->setBounds (823, 520, 95, 95);
-
-    label30.reset (new Label ("new label",
-                              TRANS("wet")));
-    addAndMakeVisible (label30.get());
-    label30->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label30->setJustificationType (Justification::centred);
-    label30->setEditable (false, false, false);
-    label30->setColour (TextEditor::textColourId, Colours::black);
-    label30->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
-
-    label30->setBounds (839, 608, 64, 24);
+    label29->setBounds (672, 608, 64, 24);
 
     label31.reset (new Label ("new label",
-                              TRANS("Chorus")));
+                              TRANS("Output")));
     addAndMakeVisible (label31.get());
     label31->setFont (Font (17.00f, Font::plain).withTypefaceStyle ("Regular"));
     label31->setJustificationType (Justification::centredLeft);
@@ -649,7 +628,19 @@ MainSynthGui::MainSynthGui ()
     label31->setColour (TextEditor::textColourId, Colours::black);
     label31->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label31->setBounds (703, 496, 168, 24);
+    label31->setBounds (672, 496, 168, 24);
+
+    component.reset (new LevelIndicator());
+    addAndMakeVisible (component.get());
+    component->setName ("Limiter.LevelChannel0");
+
+    component->setBounds (786, 546, 180, 8);
+
+    component2.reset (new LevelIndicator());
+    addAndMakeVisible (component2.get());
+    component2->setName ("Limiter.LevelChannel1");
+
+    component2->setBounds (786, 594, 180, 8);
 
     cachedImage_case_main_png_1 = ImageCache::getFromMemory (case_main_png, case_main_pngSize);
     cachedImage_case_effects_png_2 = ImageCache::getFromMemory (case_effects_png, case_effects_pngSize);
@@ -662,6 +653,8 @@ MainSynthGui::MainSynthGui ()
     cachedImage_icon_triangle_png_9 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
     cachedImage_icon_square_png_10 = ImageCache::getFromMemory (icon_square_png, icon_square_pngSize);
     cachedImage_icon_saw_png_11 = ImageCache::getFromMemory (icon_saw_png, icon_saw_pngSize);
+    cachedImage_levelIndicator_png_12 = ImageCache::getFromMemory (levelIndicator_png, levelIndicator_pngSize);
+    cachedImage_levelIndicator_png_13 = ImageCache::getFromMemory (levelIndicator_png, levelIndicator_pngSize);
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -735,9 +728,9 @@ MainSynthGui::~MainSynthGui()
     label28 = nullptr;
     slider27 = nullptr;
     label29 = nullptr;
-    slider28 = nullptr;
-    label30 = nullptr;
     label31 = nullptr;
+    component = nullptr;
+    component2 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -1030,6 +1023,26 @@ void MainSynthGui::paint (Graphics& g)
                     Justification::centred, true);
     }
 
+    {
+        int x = 780, y = 532, width = 192, height = 28;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_levelIndicator_png_12,
+                     x, y, width, height,
+                     0, 0, cachedImage_levelIndicator_png_12.getWidth(), cachedImage_levelIndicator_png_12.getHeight());
+    }
+
+    {
+        int x = 780, y = 580, width = 192, height = 28;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_levelIndicator_png_13,
+                     x, y, width, height,
+                     0, 0, cachedImage_levelIndicator_png_13.getWidth(), cachedImage_levelIndicator_png_13.getHeight());
+    }
+
     //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
 }
@@ -1186,11 +1199,6 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_slider27] -- add your slider handling code here..
         //[/UserSliderCode_slider27]
     }
-    else if (sliderThatWasMoved == slider28.get())
-    {
-        //[UserSliderCode_slider28] -- add your slider handling code here..
-        //[/UserSliderCode_slider28]
-    }
 
     //[UsersliderValueChanged_Post]
     //[/UsersliderValueChanged_Post]
@@ -1296,6 +1304,10 @@ BEGIN_JUCER_METADATA
     <TEXT pos="180 20 76 30" fill="solid: ffffffff" hasStroke="0" text="divider"
           fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
           bold="0" italic="0" justification="36"/>
+    <IMAGE pos="780 532 192 28" resource="levelIndicator_png" opacity="1.00000000000000000000"
+           mode="0"/>
+    <IMAGE pos="780 580 192 28" resource="levelIndicator_png" opacity="1.00000000000000000000"
+           mode="0"/>
   </BACKGROUND>
   <SLIDER name="ADSRVol.Attack" id="e686dcf41ff8f723" memberName="slider2"
           virtualName="" explicitFocusOrder="0" pos="664 272 40 112" min="0.00000000000000000000"
@@ -1586,33 +1598,28 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="Amount" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
-  <SLIDER name="ChorusLfo.Frequency" id="5b9bcdad8c2d7dc8" memberName="slider27"
-          virtualName="" explicitFocusOrder="0" pos="703 520 95 95" tooltip="effect;"
+  <SLIDER name="Limiter.Volume" id="5b9bcdad8c2d7dc8" memberName="slider27"
+          virtualName="" explicitFocusOrder="0" pos="656 520 95 95" tooltip="effect;"
           min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <LABEL name="new label" id="46453cb5d64bc955" memberName="label29" virtualName=""
-         explicitFocusOrder="0" pos="719 608 64 24" edTextCol="ff000000"
-         edBkgCol="0" labelText="frequency" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
-  <SLIDER name="Chorus.Wet" id="d25757072153aaf8" memberName="slider28"
-          virtualName="" explicitFocusOrder="0" pos="823 520 95 95" tooltip="effect;"
-          min="0.00000000000000000000" max="0.50000000000000000000" int="0.00000000000000000000"
-          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
-          needsCallback="1"/>
-  <LABEL name="new label" id="9e48c17169ae806e" memberName="label30" virtualName=""
-         explicitFocusOrder="0" pos="839 608 64 24" edTextCol="ff000000"
-         edBkgCol="0" labelText="wet" editableSingleClick="0" editableDoubleClick="0"
+         explicitFocusOrder="0" pos="672 608 64 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="volume" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="af11cbbd2c2e2ba0" memberName="label31" virtualName=""
-         explicitFocusOrder="0" pos="703 496 168 24" edTextCol="ff000000"
-         edBkgCol="0" labelText="Chorus" editableSingleClick="0" editableDoubleClick="0"
+         explicitFocusOrder="0" pos="672 496 168 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Output" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="17.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+  <GENERICCOMPONENT name="Limiter.LevelChannel0" id="3f5e527f49885cf" memberName="component"
+                    virtualName="" explicitFocusOrder="0" pos="786 546 180 8" class="LevelIndicator"
+                    params=""/>
+  <GENERICCOMPONENT name="Limiter.LevelChannel1" id="4df1d334df446ddc" memberName="component2"
+                    virtualName="" explicitFocusOrder="0" pos="786 594 180 8" class="LevelIndicator"
+                    params=""/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
@@ -3185,6 +3192,24 @@ static const unsigned char resource_MainSynthGui_case_effects_png[] = { 137,80,7
 
 const char* MainSynthGui::case_effects_png = (const char*) resource_MainSynthGui_case_effects_png;
 const int MainSynthGui::case_effects_pngSize = 12243;
+
+// JUCER_RESOURCE: levelIndicator_png, 731, "../../Resources/level indicator.png"
+static const unsigned char resource_MainSynthGui_levelIndicator_png[] = { 137,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,1,228,0,0,0,64,8,6,0,0,0,203,84,4,181,0,0,2,162,73,68,65,84,120,156,237,221,
+203,106,83,81,20,128,225,117,210,180,73,154,106,132,182,70,139,104,65,161,180,79,80,156,249,20,190,137,83,117,234,155,248,56,34,14,138,83,5,193,32,148,10,22,39,219,129,141,189,229,102,47,201,74,251,125,
+16,72,78,86,78,246,32,228,103,39,129,84,91,59,219,37,0,72,167,68,255,237,185,138,136,147,111,213,71,183,207,28,170,162,154,218,218,184,122,181,165,230,210,172,215,0,112,203,156,222,7,149,82,142,142,150,
+40,229,248,18,229,104,244,212,245,163,199,159,221,74,149,227,243,48,159,234,237,78,59,34,34,126,31,254,158,241,82,0,230,84,41,17,213,184,221,105,137,211,189,28,28,229,201,158,111,242,49,123,230,249,81,
+143,136,16,101,128,75,24,27,227,136,136,106,178,177,43,36,198,243,165,214,191,210,238,180,195,199,215,0,48,27,181,147,55,68,25,0,102,163,118,246,128,40,3,192,244,157,11,114,132,40,3,192,180,13,12,114,
+132,40,3,192,52,13,13,114,196,223,40,247,127,129,13,0,92,159,250,184,129,207,123,123,113,240,227,96,26,107,1,128,27,105,107,103,123,236,204,200,29,50,0,48,29,130,12,0,9,8,50,0,36,48,246,59,228,97,222,
+124,123,59,217,220,131,215,23,125,10,24,203,235,144,89,243,26,188,93,202,203,87,19,205,85,239,223,253,247,185,237,144,1,32,1,65,6,128,4,4,25,0,18,16,100,0,72,64,144,1,32,1,65,6,128,4,4,25,0,18,16,100,
+0,72,64,144,1,32,129,106,247,197,243,50,106,224,211,135,143,254,237,9,0,46,193,191,61,1,192,156,16,100,0,72,64,144,1,32,1,65,6,128,4,4,25,0,18,16,100,0,72,64,144,1,32,1,65,6,128,4,4,25,0,18,16,100,0,72,
+64,144,1,32,1,65,6,128,4,4,25,0,18,16,100,0,72,64,144,1,32,1,65,6,128,4,4,25,0,18,16,100,0,72,64,144,1,32,1,65,6,128,4,4,25,0,18,16,100,0,72,64,144,1,32,1,65,6,128,4,4,25,0,18,16,100,0,72,64,144,1,32,
+1,65,6,128,4,4,25,0,18,16,100,0,72,160,62,234,206,198,114,35,214,31,175,199,198,179,141,105,173,7,0,110,156,78,171,19,251,223,247,71,206,12,13,114,99,185,17,247,214,59,241,240,233,110,44,44,216,72,3,192,
+69,253,250,121,24,139,141,197,232,125,233,13,157,25,88,218,126,140,91,119,151,197,24,0,46,169,181,210,140,238,147,110,172,61,90,27,58,115,174,182,98,12,0,87,111,92,148,79,21,87,140,1,224,250,140,138,242,
+191,234,138,49,0,92,191,97,81,174,69,136,49,0,76,211,160,40,215,197,24,0,174,81,53,248,112,243,78,51,238,111,118,163,68,68,239,107,47,234,171,27,171,177,212,90,18,99,0,184,2,101,72,128,7,105,173,52,163,
+187,217,141,218,66,45,254,0,69,210,101,25,211,69,99,163,0,0,0,0,73,69,78,68,174,66,96,130,0,0};
+
+const char* MainSynthGui::levelIndicator_png = (const char*) resource_MainSynthGui_levelIndicator_png;
+const int MainSynthGui::levelIndicator_pngSize = 731;
 
 
 //[EndFile] You can add extra defines here...

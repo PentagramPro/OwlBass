@@ -3,15 +3,15 @@
 
 #include "../Common/SynthState.h"
 
-void CPropertiesRegistry::AddProperty(const std::string & name, IPropertyRecord * prop)
+void CPropertiesRegistry::AddProperty(const std::string & name, IPropertyRecord * prop, bool storeOnDisk)
 {
 	auto propList = mProperties.find(name);
 	if (propList == mProperties.end()) {
-		std::unique_ptr<CPropertiesList> newProperty(new CPropertiesList(prop));
+		std::unique_ptr<CPropertiesList> newProperty(new CPropertiesList(prop, storeOnDisk));
 		mProperties[name] = std::move(newProperty);
 	}
 	else {
-		propList->second->AddProperty(prop);
+		propList->second->AddProperty(prop, storeOnDisk);
 	}
 	
 }
@@ -68,7 +68,8 @@ void CPropertiesRegistry::FromSynthState(const CSynthState & state)
 void CPropertiesRegistry::ToSynthState(CSynthState & state)
 {
 	for (auto& record : mProperties) {
-		state.AddKeyValue(record.first, record.second->GetRaw());
+		if(record.second->IsStoreOnDisk()) 
+			state.AddKeyValue(record.first, record.second->GetRaw());
 	}
 }
 

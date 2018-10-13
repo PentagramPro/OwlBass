@@ -75,24 +75,18 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 		filter2.SetLfo(*cvLfoCutoff);
 	}
 	
-	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost,0.08));
+	
 
 
 	voiceModuleHost->AddModule(new CDelayVoice("Delay", *voiceModuleHost));
 	
 
-	{
-		std::shared_ptr<CSineLfoVoice> lfo(new CSineLfoVoice("ChorusLfo", *voiceModuleHost));
-		mPropRegistry.ForceProperty("ChorusLfo.Volume", 0.5);
-		CControlVoltageSource* cvLfo = new CControlVoltageSource("CVChorusLfo", *voiceModuleHost, lfo, 0);
-		voiceModuleHost->AddModule(cvLfo);
 
-		voiceModuleHost->AddModule(new CChorusVoice("Chorus", *voiceModuleHost,*cvLfo,0.034,4));
-	}
-	
 	//voiceModuleHost->AddModule(new CNoiseVoice("Noise", *voiceModuleHost));
 	voiceModuleHost->AddModule(new CPostProcessingVoice("PostProcessing", *voiceModuleHost));
 	//voiceModuleHost->AddModule(new CFourierProbeVoice("FourierProbe", *voiceModuleHost, 11));
+
+	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost, 0.15));
 
 	sineSynth.addVoice(voiceModuleHost);
 	sineSynth.addSound(new CVoiceModuleHostSound());

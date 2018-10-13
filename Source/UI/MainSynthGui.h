@@ -23,6 +23,7 @@
 #include "../../JuceLibraryCode/JuceHeader.h"
 #include "IGuiListener.h"
 #include "AdvancedSlider.h"
+#include "LevelIndicator.h"
 #include "LookAndFeel\LafBlackKnob.h"
 //[/Headers]
 
@@ -65,6 +66,8 @@ public:
     static const int case_main_pngSize;
     static const char* case_effects_png;
     static const int case_effects_pngSize;
+    static const char* levelIndicator_png;
+    static const int levelIndicator_pngSize;
 
 
 private:
@@ -130,9 +133,9 @@ private:
     std::unique_ptr<Label> label28;
     std::unique_ptr<Slider> slider27;
     std::unique_ptr<Label> label29;
-    std::unique_ptr<Slider> slider28;
-    std::unique_ptr<Label> label30;
     std::unique_ptr<Label> label31;
+    std::unique_ptr<LevelIndicator> component;
+    std::unique_ptr<LevelIndicator> component2;
     Image cachedImage_case_main_png_1;
     Image cachedImage_case_effects_png_2;
     Image cachedImage_icon_triangle_png_3;
@@ -144,6 +147,8 @@ private:
     Image cachedImage_icon_triangle_png_9;
     Image cachedImage_icon_square_png_10;
     Image cachedImage_icon_saw_png_11;
+    Image cachedImage_levelIndicator_png_12;
+    Image cachedImage_levelIndicator_png_13;
 
 
     //==============================================================================

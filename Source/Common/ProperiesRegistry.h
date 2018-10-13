@@ -90,13 +90,15 @@ public:
 
 class CPropertiesList : public IPropertyRecord {
 public:
-	CPropertiesList(IPropertyRecord* firstProperty) {
-		AddProperty(firstProperty);
+	CPropertiesList(IPropertyRecord* firstProperty, bool storeOnDisk) {
+		AddProperty(firstProperty, storeOnDisk);
 	}
 
-	void AddProperty(IPropertyRecord* prop) {
+	void AddProperty(IPropertyRecord* prop, bool storeOnDisk) {
 		mProperties.emplace_back(prop);
-		//std::unique_ptr<IPropertyRecord>(prop);
+		if (storeOnDisk) {
+			mStoreOnDisk = storeOnDisk;
+		}
 	}
 
 	virtual void SetReference(float value) {
@@ -116,9 +118,10 @@ public:
 		return mProperties.front()->GetRaw();
 	}
 
+	bool IsStoreOnDisk() const { return mStoreOnDisk; }
 private:
 	std::vector<std::unique_ptr<IPropertyRecord>> mProperties;
-
+	bool mStoreOnDisk = false;
 };
 
 class IPropertiesRegistryListener {
@@ -144,8 +147,16 @@ public:
 		return 0;
 	}
 
+	float GetPropertyValueRaw(const std::string& name) const {
+		auto p = mProperties.find(name);
+		if (p != mProperties.end()) {
+			return p->second->GetRaw();
+		}
+		return 0;
+	}
+
 	
-	void AddProperty(const std::string & name, IPropertyRecord* prop);
+	void AddProperty(const std::string & name, IPropertyRecord* prop, bool storeOnDisk = true);
 
 
 	bool HasProperty(const std::string & name) const;

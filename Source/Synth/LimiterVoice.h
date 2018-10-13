@@ -2,12 +2,12 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "../Common/VoiceModuleBase.h"
 #include "../Common/IVoiceModuleHost.h"
-
+#include "../DSP/DSPDelay.h"
 class CLimiterVoice : public CVoiceModuleBase {
 public:
-	CLimiterVoice(const std::string& name, IVoiceModuleHost& host, double preVolume) : CVoiceModuleBase(name, host) , mPreVolume(preVolume){}
+	CLimiterVoice(const std::string& name, IVoiceModuleHost& host, double preVolume);
 
-	void InitProperties(CPropertiesRegistry& registry) {};
+	void InitProperties(CPropertiesRegistry& registry);
 	void OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *sound, int currentPitchWheelPosition) override {};
 
 	void OnNoteStop(float velocity, bool allowTailOff) override {};
@@ -16,6 +16,11 @@ public:
 
 private:
 	double mPreVolume;
+	double mVolume = 0.75;
+	double mLevelChannel0 = 0;
+	double mLevelChannel1 = 0;
+	CDSPDelay mDelayChannel0;
+	CDSPDelay mDelayChannel1;
 };
 
 

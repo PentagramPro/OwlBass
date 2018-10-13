@@ -11,6 +11,8 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 #include "Synth\FourierProbeVoice.h"
+#include "UI/IIndicator.h"
+
 //==============================================================================
 AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAudioProcessor& p)
     : AudioProcessorEditor (&p), processor (p)
@@ -26,7 +28,13 @@ AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAud
 	mGui.SetListener(this);
 	mRegistryListenerHandle = processor.GetPropertiesRegistry().AddListener(*this);
 	OnPropertiesFromSynthState();
-
+	
+	for (auto element : mGui.getChildren()) {
+		IIndicator* indicator = dynamic_cast<IIndicator*>(element);
+		if (indicator) {
+			indicator->SetPropertiesRegistry(processor.GetPropertiesRegistry());
+		}
+	}
 	//auto voiceForBode = processor.GetModuleByName("FourierProbe");
 	//if (voiceForBode) {
 	//	mGui.GetBodePlot().SetVoiceModule((CFourierProbeVoice&)*voiceForBode);
