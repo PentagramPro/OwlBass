@@ -38,7 +38,8 @@
                                                                     //[/Comments]
 */
 class MainSynthGui  : public Component,
-                      public Slider::Listener
+                      public Slider::Listener,
+                      public Button::Listener
 {
 public:
     //==============================================================================
@@ -54,6 +55,7 @@ public:
     void paint (Graphics& g) override;
     void resized() override;
     void sliderValueChanged (Slider* sliderThatWasMoved) override;
+    void buttonClicked (Button* buttonThatWasClicked) override;
 
     // Binary resources:
     static const char* icon_triangle_png;
@@ -122,7 +124,6 @@ private:
     std::unique_ptr<Label> label21;
     std::unique_ptr<Slider> slider23;
     std::unique_ptr<Label> label22;
-    std::unique_ptr<Slider> slider24;
     std::unique_ptr<Label> label23;
     std::unique_ptr<Label> label24;
     std::unique_ptr<Label> label25;
@@ -136,6 +137,7 @@ private:
     std::unique_ptr<Label> label31;
     std::unique_ptr<LevelIndicator> component;
     std::unique_ptr<LevelIndicator> component2;
+    std::unique_ptr<ToggleButton> toggleButton;
     Image cachedImage_case_main_png_1;
     Image cachedImage_case_effects_png_2;
     Image cachedImage_icon_triangle_png_3;

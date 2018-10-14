@@ -248,7 +248,7 @@ MainSynthGui::MainSynthGui ()
     slider11->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider11->addListener (this);
 
-    slider11->setBounds (449, 260, 40, 150);
+    slider11->setBounds (442, 260, 40, 150);
 
     slider12.reset (new Slider ("ADSRFilter.Release"));
     addAndMakeVisible (slider12.get());
@@ -257,7 +257,7 @@ MainSynthGui::MainSynthGui ()
     slider12->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider12->addListener (this);
 
-    slider12->setBounds (539, 260, 40, 150);
+    slider12->setBounds (532, 260, 40, 150);
 
     slider14.reset (new Slider ("ADSRFilter.Sustain"));
     addAndMakeVisible (slider14.get());
@@ -267,7 +267,7 @@ MainSynthGui::MainSynthGui ()
     slider14->setColour (Slider::thumbColourId, Colour (0xff328f09));
     slider14->addListener (this);
 
-    slider14->setBounds (494, 260, 40, 150);
+    slider14->setBounds (487, 260, 40, 150);
 
     label14.reset (new Label ("new label",
                               TRANS("A")));
@@ -278,7 +278,7 @@ MainSynthGui::MainSynthGui ()
     label14->setColour (TextEditor::textColourId, Colours::black);
     label14->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label14->setBounds (449, 406, 40, 24);
+    label14->setBounds (442, 406, 40, 24);
 
     label16.reset (new Label ("new label",
                               TRANS("S")));
@@ -289,7 +289,7 @@ MainSynthGui::MainSynthGui ()
     label16->setColour (TextEditor::textColourId, Colours::black);
     label16->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label16->setBounds (494, 406, 40, 24);
+    label16->setBounds (487, 406, 40, 24);
 
     label17.reset (new Label ("new label",
                               TRANS("R")));
@@ -300,7 +300,7 @@ MainSynthGui::MainSynthGui ()
     label17->setColour (TextEditor::textColourId, Colours::black);
     label17->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label17->setBounds (540, 406, 40, 24);
+    label17->setBounds (533, 406, 40, 24);
 
     slider15.reset (new Slider ("OSC1.Divider"));
     addAndMakeVisible (slider15.get());
@@ -504,17 +504,6 @@ MainSynthGui::MainSynthGui ()
 
     label22->setBounds (512, 608, 64, 24);
 
-    slider24.reset (new Slider ("ADSRFilter.Retrigger"));
-    addAndMakeVisible (slider24.get());
-    slider24->setTooltip (TRANS("button;"));
-    slider24->setRange (0, 1, 1);
-    slider24->setSliderStyle (Slider::LinearVertical);
-    slider24->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
-    slider24->setColour (Slider::thumbColourId, Colours::cornflowerblue);
-    slider24->addListener (this);
-
-    slider24->setBounds (585, 321, 50, 50);
-
     label23.reset (new Label ("new label",
                               TRANS("Unison")));
     addAndMakeVisible (label23.get());
@@ -535,7 +524,7 @@ MainSynthGui::MainSynthGui ()
     label24->setColour (TextEditor::textColourId, Colours::black);
     label24->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label24->setBounds (573, 379, 64, 24);
+    label24->setBounds (576, 405, 64, 24);
 
     label25.reset (new Label ("new label",
                               TRANS("Envelopes")));
@@ -643,6 +632,13 @@ MainSynthGui::MainSynthGui ()
 
     component2->setBounds (786, 594, 180, 8);
 
+    toggleButton.reset (new ToggleButton ("ADSRFilter.Retrigger"));
+    addAndMakeVisible (toggleButton.get());
+    toggleButton->setButtonText (String());
+    toggleButton->addListener (this);
+
+    toggleButton->setBounds (587, 362, 40, 40);
+
     cachedImage_case_main_png_1 = ImageCache::getFromMemory (case_main_png, case_main_pngSize);
     cachedImage_case_effects_png_2 = ImageCache::getFromMemory (case_effects_png, case_effects_pngSize);
     cachedImage_icon_triangle_png_3 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
@@ -718,7 +714,6 @@ MainSynthGui::~MainSynthGui()
     label21 = nullptr;
     slider23 = nullptr;
     label22 = nullptr;
-    slider24 = nullptr;
     label23 = nullptr;
     label24 = nullptr;
     label25 = nullptr;
@@ -732,6 +727,7 @@ MainSynthGui::~MainSynthGui()
     label31 = nullptr;
     component = nullptr;
     component2 = nullptr;
+    toggleButton = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -1180,11 +1176,6 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_slider23] -- add your slider handling code here..
         //[/UserSliderCode_slider23]
     }
-    else if (sliderThatWasMoved == slider24.get())
-    {
-        //[UserSliderCode_slider24] -- add your slider handling code here..
-        //[/UserSliderCode_slider24]
-    }
     else if (sliderThatWasMoved == slider25.get())
     {
         //[UserSliderCode_slider25] -- add your slider handling code here..
@@ -1203,6 +1194,24 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
 
     //[UsersliderValueChanged_Post]
     //[/UsersliderValueChanged_Post]
+}
+
+void MainSynthGui::buttonClicked (Button* buttonThatWasClicked)
+{
+    //[UserbuttonClicked_Pre]
+	if (mListener) {
+		mListener->OnValueChanged(buttonThatWasClicked->getName().toStdString(), buttonThatWasClicked->getToggleState());
+	}
+    //[/UserbuttonClicked_Pre]
+
+    if (buttonThatWasClicked == toggleButton.get())
+    {
+        //[UserButtonCode_toggleButton] -- add your button handler code here..
+        //[/UserButtonCode_toggleButton]
+    }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
 }
 
 
@@ -1417,33 +1426,33 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="ADSRFilter.Attack" id="b7c6f52502efa9c4" memberName="slider11"
-          virtualName="" explicitFocusOrder="0" pos="449 260 40 150" min="0.00000000000000000000"
+          virtualName="" explicitFocusOrder="0" pos="442 260 40 150" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRFilter.Release" id="a612ede8993ce62a" memberName="slider12"
-          virtualName="" explicitFocusOrder="0" pos="539 260 40 150" min="0.00000000000000000000"
+          virtualName="" explicitFocusOrder="0" pos="532 260 40 150" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRFilter.Sustain" id="908f631705334540" memberName="slider14"
-          virtualName="" explicitFocusOrder="0" pos="494 260 40 150" thumbcol="ff328f09"
+          virtualName="" explicitFocusOrder="0" pos="487 260 40 150" thumbcol="ff328f09"
           min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="LinearVertical" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <LABEL name="new label" id="5979d19c19347180" memberName="label14" virtualName=""
-         explicitFocusOrder="0" pos="449 406 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="442 406 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="A" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="2461a2ec3f347fff" memberName="label16" virtualName=""
-         explicitFocusOrder="0" pos="494 406 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="487 406 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="S" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="2661e2cc57cd8376" memberName="label17" virtualName=""
-         explicitFocusOrder="0" pos="540 406 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="533 406 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="R" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
@@ -1553,19 +1562,13 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="feedback" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
-  <SLIDER name="ADSRFilter.Retrigger" id="41b41b935d066ade" memberName="slider24"
-          virtualName="" explicitFocusOrder="0" pos="585 321 50 50" tooltip="button;"
-          thumbcol="ff6495ed" min="0.00000000000000000000" max="1.00000000000000000000"
-          int="1.00000000000000000000" style="LinearVertical" textBoxPos="NoTextBox"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
-          needsCallback="1"/>
   <LABEL name="new label" id="829f72051db43315" memberName="label23" virtualName=""
          explicitFocusOrder="0" pos="16 496 168 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Unison" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="17.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
   <LABEL name="new label" id="255cd420d010ae7b" memberName="label24" virtualName=""
-         explicitFocusOrder="0" pos="573 379 64 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="576 405 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="retrigger" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
@@ -1621,6 +1624,9 @@ BEGIN_JUCER_METADATA
   <GENERICCOMPONENT name="Limiter.LevelChannel1" id="4df1d334df446ddc" memberName="component2"
                     virtualName="" explicitFocusOrder="0" pos="786 594 180 8" class="LevelIndicator"
                     params=""/>
+  <TOGGLEBUTTON name="ADSRFilter.Retrigger" id="4bbf329f139fd5b1" memberName="toggleButton"
+                virtualName="" explicitFocusOrder="0" pos="587 362 40 40" buttonText=""
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

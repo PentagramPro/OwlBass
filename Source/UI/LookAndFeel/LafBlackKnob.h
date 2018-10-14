@@ -12,6 +12,8 @@ public:
 			float sliderPos, float minSliderPos, float maxSliderPos,
 			const Slider::SliderStyle, Slider&) override;
 
+		void drawToggleButton(Graphics& g, ToggleButton&, bool isMouseOverButton, bool isButtonDown) override;
+
 private:
 	void DrawKnobImage(Graphics& g, Image& img, int x, int y, int width, int height, float angle);
 	bool IsOfType(const std::string& type, Slider& slider);
