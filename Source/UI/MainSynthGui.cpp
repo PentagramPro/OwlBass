@@ -40,7 +40,7 @@ MainSynthGui::MainSynthGui ()
     slider2->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider2->addListener (this);
 
-    slider2->setBounds (664, 272, 40, 112);
+    slider2->setBounds (677, 262, 40, 148);
 
     slider3.reset (new Slider ("ADSRVol.Release"));
     addAndMakeVisible (slider3.get());
@@ -49,7 +49,7 @@ MainSynthGui::MainSynthGui ()
     slider3->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider3->addListener (this);
 
-    slider3->setBounds (728, 272, 40, 112);
+    slider3->setBounds (769, 262, 40, 148);
 
     label.reset (new Label ("new label",
                             TRANS("OSC")));
@@ -71,7 +71,7 @@ MainSynthGui::MainSynthGui ()
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label2->setBounds (456, 16, 160, 24);
+    label2->setBounds (440, 16, 160, 24);
 
     label3.reset (new Label ("new label",
                              TRANS("Amplifier volume")));
@@ -82,7 +82,7 @@ MainSynthGui::MainSynthGui ()
     label3->setColour (TextEditor::textColourId, Colours::black);
     label3->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label3->setBounds (656, 240, 168, 24);
+    label3->setBounds (674, 236, 168, 24);
 
     slider4.reset (new Slider ("OSC1.Volume"));
     addAndMakeVisible (slider4.get());
@@ -154,7 +154,7 @@ MainSynthGui::MainSynthGui ()
     slider7->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider7->addListener (this);
 
-    slider7->setBounds (464, 56, 95, 95);
+    slider7->setBounds (448, 56, 95, 95);
 
     label7.reset (new Label ("new label",
                              TRANS("cutoff")));
@@ -165,7 +165,7 @@ MainSynthGui::MainSynthGui ()
     label7->setColour (TextEditor::textColourId, Colours::black);
     label7->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label7->setBounds (480, 144, 56, 24);
+    label7->setBounds (464, 144, 56, 24);
 
     slider8.reset (new Slider ("Filter.Q"));
     addAndMakeVisible (slider8.get());
@@ -174,7 +174,7 @@ MainSynthGui::MainSynthGui ()
     slider8->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider8->addListener (this);
 
-    slider8->setBounds (576, 56, 95, 95);
+    slider8->setBounds (568, 56, 95, 95);
 
     label8.reset (new Label ("new label",
                              TRANS("Q")));
@@ -185,7 +185,7 @@ MainSynthGui::MainSynthGui ()
     label8->setColour (TextEditor::textColourId, Colours::black);
     label8->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label8->setBounds (592, 144, 56, 24);
+    label8->setBounds (584, 144, 56, 24);
 
     label9.reset (new Label ("new label",
                              TRANS("Filter cutoff")));
@@ -196,7 +196,7 @@ MainSynthGui::MainSynthGui ()
     label9->setColour (TextEditor::textColourId, Colours::black);
     label9->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label9->setBounds (472, 240, 168, 24);
+    label9->setBounds (445, 236, 168, 24);
 
     slider10.reset (new Slider ("ADSRVol.Sustain"));
     addAndMakeVisible (slider10.get());
@@ -206,7 +206,7 @@ MainSynthGui::MainSynthGui ()
     slider10->setColour (Slider::thumbColourId, Colour (0xff328f09));
     slider10->addListener (this);
 
-    slider10->setBounds (696, 272, 40, 112);
+    slider10->setBounds (723, 262, 40, 148);
 
     label10.reset (new Label ("new label",
                               TRANS("A")));
@@ -217,7 +217,7 @@ MainSynthGui::MainSynthGui ()
     label10->setColour (TextEditor::textColourId, Colours::black);
     label10->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label10->setBounds (664, 384, 40, 24);
+    label10->setBounds (676, 408, 40, 24);
 
     label12.reset (new Label ("new label",
                               TRANS("S")));
@@ -228,7 +228,7 @@ MainSynthGui::MainSynthGui ()
     label12->setColour (TextEditor::textColourId, Colours::black);
     label12->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label12->setBounds (696, 384, 40, 24);
+    label12->setBounds (723, 408, 40, 24);
 
     label13.reset (new Label ("new label",
                               TRANS("R")));
@@ -239,7 +239,7 @@ MainSynthGui::MainSynthGui ()
     label13->setColour (TextEditor::textColourId, Colours::black);
     label13->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label13->setBounds (728, 384, 40, 24);
+    label13->setBounds (770, 408, 40, 24);
 
     slider11.reset (new Slider ("ADSRFilter.Attack"));
     addAndMakeVisible (slider11.get());
@@ -248,7 +248,7 @@ MainSynthGui::MainSynthGui ()
     slider11->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider11->addListener (this);
 
-    slider11->setBounds (466, 270, 40, 114);
+    slider11->setBounds (449, 260, 40, 150);
 
     slider12.reset (new Slider ("ADSRFilter.Release"));
     addAndMakeVisible (slider12.get());
@@ -257,7 +257,7 @@ MainSynthGui::MainSynthGui ()
     slider12->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider12->addListener (this);
 
-    slider12->setBounds (530, 270, 40, 114);
+    slider12->setBounds (539, 260, 40, 150);
 
     slider14.reset (new Slider ("ADSRFilter.Sustain"));
     addAndMakeVisible (slider14.get());
@@ -267,7 +267,7 @@ MainSynthGui::MainSynthGui ()
     slider14->setColour (Slider::thumbColourId, Colour (0xff328f09));
     slider14->addListener (this);
 
-    slider14->setBounds (498, 270, 40, 114);
+    slider14->setBounds (494, 260, 40, 150);
 
     label14.reset (new Label ("new label",
                               TRANS("A")));
@@ -278,7 +278,7 @@ MainSynthGui::MainSynthGui ()
     label14->setColour (TextEditor::textColourId, Colours::black);
     label14->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label14->setBounds (466, 382, 40, 24);
+    label14->setBounds (449, 406, 40, 24);
 
     label16.reset (new Label ("new label",
                               TRANS("S")));
@@ -289,7 +289,7 @@ MainSynthGui::MainSynthGui ()
     label16->setColour (TextEditor::textColourId, Colours::black);
     label16->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label16->setBounds (498, 382, 40, 24);
+    label16->setBounds (494, 406, 40, 24);
 
     label17.reset (new Label ("new label",
                               TRANS("R")));
@@ -300,7 +300,7 @@ MainSynthGui::MainSynthGui ()
     label17->setColour (TextEditor::textColourId, Colours::black);
     label17->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label17->setBounds (530, 382, 40, 24);
+    label17->setBounds (540, 406, 40, 24);
 
     slider15.reset (new Slider ("OSC1.Divider"));
     addAndMakeVisible (slider15.get());
@@ -428,7 +428,7 @@ MainSynthGui::MainSynthGui ()
     slider13->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider13->addListener (this);
 
-    slider13->setBounds (16, 520, 95, 95);
+    slider13->setBounds (136, 520, 95, 95);
 
     label19.reset (new Label ("new label",
                               TRANS("detune")));
@@ -439,7 +439,7 @@ MainSynthGui::MainSynthGui ()
     label19->setColour (TextEditor::textColourId, Colours::black);
     label19->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label19->setBounds (32, 608, 64, 24);
+    label19->setBounds (152, 608, 64, 24);
 
     slider21.reset (new Slider ("UnisonMixer.Volume"));
     addAndMakeVisible (slider21.get());
@@ -449,7 +449,7 @@ MainSynthGui::MainSynthGui ()
     slider21->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider21->addListener (this);
 
-    slider21->setBounds (136, 520, 95, 95);
+    slider21->setBounds (24, 520, 95, 95);
 
     label20.reset (new Label ("new label",
                               TRANS("volume")));
@@ -460,7 +460,7 @@ MainSynthGui::MainSynthGui ()
     label20->setColour (TextEditor::textColourId, Colours::black);
     label20->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label20->setBounds (152, 608, 64, 24);
+    label20->setBounds (40, 608, 64, 24);
 
     slider22.reset (new Slider ("Delay.Delay"));
     addAndMakeVisible (slider22.get());
@@ -470,7 +470,7 @@ MainSynthGui::MainSynthGui ()
     slider22->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider22->addListener (this);
 
-    slider22->setBounds (392, 520, 95, 95);
+    slider22->setBounds (384, 520, 95, 95);
 
     label21.reset (new Label ("new label",
                               TRANS("time")));
@@ -481,7 +481,7 @@ MainSynthGui::MainSynthGui ()
     label21->setColour (TextEditor::textColourId, Colours::black);
     label21->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label21->setBounds (408, 608, 64, 24);
+    label21->setBounds (400, 608, 64, 24);
 
     slider23.reset (new Slider ("Delay.Feedback"));
     addAndMakeVisible (slider23.get());
@@ -491,7 +491,7 @@ MainSynthGui::MainSynthGui ()
     slider23->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider23->addListener (this);
 
-    slider23->setBounds (512, 520, 95, 95);
+    slider23->setBounds (496, 520, 95, 95);
 
     label22.reset (new Label ("new label",
                               TRANS("feedback")));
@@ -502,17 +502,18 @@ MainSynthGui::MainSynthGui ()
     label22->setColour (TextEditor::textColourId, Colours::black);
     label22->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label22->setBounds (528, 608, 64, 24);
+    label22->setBounds (512, 608, 64, 24);
 
     slider24.reset (new Slider ("ADSRFilter.Retrigger"));
     addAndMakeVisible (slider24.get());
+    slider24->setTooltip (TRANS("button;"));
     slider24->setRange (0, 1, 1);
     slider24->setSliderStyle (Slider::LinearVertical);
     slider24->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider24->setColour (Slider::thumbColourId, Colours::cornflowerblue);
     slider24->addListener (this);
 
-    slider24->setBounds (576, 328, 39, 56);
+    slider24->setBounds (585, 321, 50, 50);
 
     label23.reset (new Label ("new label",
                               TRANS("Unison")));
@@ -534,7 +535,7 @@ MainSynthGui::MainSynthGui ()
     label24->setColour (TextEditor::textColourId, Colours::black);
     label24->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label24->setBounds (568, 382, 64, 24);
+    label24->setBounds (573, 379, 64, 24);
 
     label25.reset (new Label ("new label",
                               TRANS("Envelopes")));
@@ -545,7 +546,7 @@ MainSynthGui::MainSynthGui ()
     label25->setColour (TextEditor::textColourId, Colours::black);
     label25->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label25->setBounds (456, 192, 160, 32);
+    label25->setBounds (440, 192, 160, 32);
 
     slider25.reset (new Slider ("FilterCutoffLfo.Frequency"));
     addAndMakeVisible (slider25.get());
@@ -1310,12 +1311,12 @@ BEGIN_JUCER_METADATA
            mode="0"/>
   </BACKGROUND>
   <SLIDER name="ADSRVol.Attack" id="e686dcf41ff8f723" memberName="slider2"
-          virtualName="" explicitFocusOrder="0" pos="664 272 40 112" min="0.00000000000000000000"
+          virtualName="" explicitFocusOrder="0" pos="677 262 40 148" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRVol.Release" id="19e4bee93ea59267" memberName="slider3"
-          virtualName="" explicitFocusOrder="0" pos="728 272 40 112" min="0.00000000000000000000"
+          virtualName="" explicitFocusOrder="0" pos="769 262 40 148" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
@@ -1325,12 +1326,12 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="32.50000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
   <LABEL name="new label" id="fc97faf8d67fc441" memberName="label2" virtualName=""
-         explicitFocusOrder="0" pos="456 16 160 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="440 16 160 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Filter" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="32.50000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
   <LABEL name="new label" id="691b291fae04a656" memberName="label3" virtualName=""
-         explicitFocusOrder="0" pos="656 240 168 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="674 236 168 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Amplifier volume" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="17.00000000000000000000" kerning="0.00000000000000000000"
@@ -1369,80 +1370,80 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="Filter.CutoffFreq" id="b5ddfb611a52b59e" memberName="slider7"
-          virtualName="" explicitFocusOrder="0" pos="464 56 95 95" min="0.00000000000000000000"
+          virtualName="" explicitFocusOrder="0" pos="448 56 95 95" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <LABEL name="new label" id="f2561c1e16491f99" memberName="label7" virtualName=""
-         explicitFocusOrder="0" pos="480 144 56 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="464 144 56 24" edTextCol="ff000000"
          edBkgCol="0" labelText="cutoff" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="Filter.Q" id="32ff76d91d4131a8" memberName="slider8" virtualName=""
-          explicitFocusOrder="0" pos="576 56 95 95" min="0.00000000000000000000"
+          explicitFocusOrder="0" pos="568 56 95 95" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <LABEL name="new label" id="48e7205aa5fa5143" memberName="label8" virtualName=""
-         explicitFocusOrder="0" pos="592 144 56 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="584 144 56 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Q" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="f4b91f7fa1d6b033" memberName="label9" virtualName=""
-         explicitFocusOrder="0" pos="472 240 168 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="445 236 168 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Filter cutoff" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="17.00000000000000000000" kerning="0.00000000000000000000"
          bold="0" italic="0" justification="33"/>
   <SLIDER name="ADSRVol.Sustain" id="47081380203247f0" memberName="slider10"
-          virtualName="" explicitFocusOrder="0" pos="696 272 40 112" thumbcol="ff328f09"
+          virtualName="" explicitFocusOrder="0" pos="723 262 40 148" thumbcol="ff328f09"
           min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="LinearVertical" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <LABEL name="new label" id="5eb3065fc48cd13c" memberName="label10" virtualName=""
-         explicitFocusOrder="0" pos="664 384 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="676 408 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="A" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="efd670deeff2cfc7" memberName="label12" virtualName=""
-         explicitFocusOrder="0" pos="696 384 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="723 408 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="S" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="2f0c3fb14ccd3bbd" memberName="label13" virtualName=""
-         explicitFocusOrder="0" pos="728 384 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="770 408 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="R" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="ADSRFilter.Attack" id="b7c6f52502efa9c4" memberName="slider11"
-          virtualName="" explicitFocusOrder="0" pos="466 270 40 114" min="0.00000000000000000000"
+          virtualName="" explicitFocusOrder="0" pos="449 260 40 150" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRFilter.Release" id="a612ede8993ce62a" memberName="slider12"
-          virtualName="" explicitFocusOrder="0" pos="530 270 40 114" min="0.00000000000000000000"
+          virtualName="" explicitFocusOrder="0" pos="539 260 40 150" min="0.00000000000000000000"
           max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
           textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
   <SLIDER name="ADSRFilter.Sustain" id="908f631705334540" memberName="slider14"
-          virtualName="" explicitFocusOrder="0" pos="498 270 40 114" thumbcol="ff328f09"
+          virtualName="" explicitFocusOrder="0" pos="494 260 40 150" thumbcol="ff328f09"
           min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="LinearVertical" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <LABEL name="new label" id="5979d19c19347180" memberName="label14" virtualName=""
-         explicitFocusOrder="0" pos="466 382 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="449 406 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="A" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="2461a2ec3f347fff" memberName="label16" virtualName=""
-         explicitFocusOrder="0" pos="498 382 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="494 406 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="S" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="2661e2cc57cd8376" memberName="label17" virtualName=""
-         explicitFocusOrder="0" pos="530 382 40 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="540 406 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="R" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
@@ -1509,54 +1510,54 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="ReferenceOscillator.Detune" id="179c2467b254d1c1" memberName="slider13"
-          virtualName="" explicitFocusOrder="0" pos="16 520 95 95" tooltip="effect;"
+          virtualName="" explicitFocusOrder="0" pos="136 520 95 95" tooltip="effect;"
           min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <LABEL name="new label" id="3fd1e9e11b37a09e" memberName="label19" virtualName=""
-         explicitFocusOrder="0" pos="32 608 64 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="152 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="detune" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="UnisonMixer.Volume" id="b64e5d44b2af789a" memberName="slider21"
-          virtualName="" explicitFocusOrder="0" pos="136 520 95 95" tooltip="effect;"
+          virtualName="" explicitFocusOrder="0" pos="24 520 95 95" tooltip="effect;"
           min="0.00000000000000000000" max="0.50000000000000000000" int="0.00000000000000000000"
           style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <LABEL name="new label" id="2e34fa49a2369321" memberName="label20" virtualName=""
-         explicitFocusOrder="0" pos="152 608 64 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="40 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="volume" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="Delay.Delay" id="fef0c0a17fbbe76b" memberName="slider22"
-          virtualName="" explicitFocusOrder="0" pos="392 520 95 95" tooltip="effect;"
+          virtualName="" explicitFocusOrder="0" pos="384 520 95 95" tooltip="effect;"
           min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <LABEL name="new label" id="6a484cbc8a86f45b" memberName="label21" virtualName=""
-         explicitFocusOrder="0" pos="408 608 64 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="400 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="time" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="Delay.Feedback" id="e2542a2a711671ab" memberName="slider23"
-          virtualName="" explicitFocusOrder="0" pos="512 520 95 95" tooltip="effect;"
+          virtualName="" explicitFocusOrder="0" pos="496 520 95 95" tooltip="effect;"
           min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
           style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <LABEL name="new label" id="3c2f6ccb4ec0e07b" memberName="label22" virtualName=""
-         explicitFocusOrder="0" pos="528 608 64 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="512 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="feedback" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <SLIDER name="ADSRFilter.Retrigger" id="41b41b935d066ade" memberName="slider24"
-          virtualName="" explicitFocusOrder="0" pos="576 328 39 56" thumbcol="ff6495ed"
-          min="0.00000000000000000000" max="1.00000000000000000000" int="1.00000000000000000000"
-          style="LinearVertical" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          virtualName="" explicitFocusOrder="0" pos="585 321 50 50" tooltip="button;"
+          thumbcol="ff6495ed" min="0.00000000000000000000" max="1.00000000000000000000"
+          int="1.00000000000000000000" style="LinearVertical" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
           needsCallback="1"/>
   <LABEL name="new label" id="829f72051db43315" memberName="label23" virtualName=""
          explicitFocusOrder="0" pos="16 496 168 24" edTextCol="ff000000"
@@ -1564,12 +1565,12 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="17.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
   <LABEL name="new label" id="255cd420d010ae7b" memberName="label24" virtualName=""
-         explicitFocusOrder="0" pos="568 382 64 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="573 379 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="retrigger" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="8bc642808184d889" memberName="label25" virtualName=""
-         explicitFocusOrder="0" pos="456 192 160 32" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="440 192 160 32" edTextCol="ff000000"
          edBkgCol="0" labelText="Envelopes" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="32.50000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>

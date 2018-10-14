@@ -32,11 +32,15 @@
       <FILE id="Hu4Itm" name="black knob switch.png" compile="1" resource="1"
             file="Resources/black knob switch.png"/>
       <FILE id="psvFoX" name="black knob.png" compile="1" resource="1" file="Resources/black knob.png"/>
+      <FILE id="FKXKeW" name="button.png" compile="1" resource="1" file="Resources/button.png"/>
       <FILE id="wfdtwR" name="case_main.png" compile="0" resource="1" file="Resources/case_main.png"/>
       <FILE id="XECp4p" name="icon_saw.png" compile="0" resource="1" file="Resources/icon_saw.png"/>
       <FILE id="UX9sSl" name="icon_square.png" compile="0" resource="1" file="Resources/icon_square.png"/>
       <FILE id="XsvnlH" name="icon_triangle.png" compile="0" resource="1"
             file="Resources/icon_triangle.png"/>
+      <FILE id="mWk8f2" name="slider gap.png" compile="1" resource="1" file="Resources/slider gap.png"/>
+      <FILE id="vQ5xRC" name="slider handle.png" compile="1" resource="1"
+            file="Resources/slider handle.png"/>
     </GROUP>
     <GROUP id="{B8CFA7A4-FAD0-BD52-4FC5-F3C76E7937E6}" name="Common">
       <FILE id="mM1ktA" name="Toolbox.cpp" compile="1" resource="0" file="Source/Common/Toolbox.cpp"/>

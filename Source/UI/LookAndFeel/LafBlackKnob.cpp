@@ -5,6 +5,30 @@ CLafBlackKnob::CLafBlackKnob()
 {
 	mImgBlackKnob = ImageCache::getFromMemory(BinaryData::black_knob_png, BinaryData::black_knob_pngSize);
 	mImgBlackKnobSwitch = ImageCache::getFromMemory(BinaryData::black_knob_switch_png, BinaryData::black_knob_switch_pngSize);
+	mImgSliderHandle = ImageCache::getFromMemory(BinaryData::slider_handle_png, BinaryData::slider_handle_pngSize);
+	mImgSliderGap = ImageCache::getFromMemory(BinaryData::slider_gap_png, BinaryData::slider_gap_pngSize);
+	mImgButton = ImageCache::getFromMemory(BinaryData::button_png, BinaryData::button_pngSize);
+}
+
+void CLafBlackKnob::drawLinearSlider(Graphics &g, int x, int y, int width, int height, float sliderPos, float minSliderPos, float maxSliderPos, const Slider::SliderStyle, Slider &slider)
+{
+	if (IsOfType("button", slider)) {
+		Rectangle<float> buttonTarget(x, y, width, height);
+		g.drawImage(mImgButton, buttonTarget, RectanglePlacement::centred | RectanglePlacement::onlyReduceInSize);
+
+		const float size = 0.4;
+		g.setColour(Colour(255, 87, 118));
+		if (slider.getValue() > 0.5)
+			g.fillEllipse(x + width / 2 * (1 - size), y + height / 2 * (1 - size), width*size, height*size);
+	}
+	else 
+	{
+		Rectangle<float> gapTarget(x, y, width, height);
+		g.drawImage(mImgSliderGap, gapTarget, RectanglePlacement::centred | RectanglePlacement::onlyReduceInSize);
+
+		Rectangle<float> handleTarget(x, sliderPos - height / 2, width, height);
+		g.drawImage(mImgSliderHandle, handleTarget, RectanglePlacement::centred | RectanglePlacement::onlyReduceInSize);
+	}
 }
 
 void CLafBlackKnob::drawRotarySlider(Graphics &g, int x, int y, int width, int height, 
