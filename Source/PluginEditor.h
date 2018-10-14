@@ -3,7 +3,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "PluginProcessor.h"
-#include "UI/MainSynthGui.h"
+#include "UI/MainSynthGuiImpl.h"
 #include "UI/IGuiListener.h"
 #include "Common/ProperiesRegistry.h"
 #include "Common/ListenerHandle.h"
@@ -28,7 +28,7 @@ private:
     // access the processor object that created it.
     AdditiveVstAudioProcessor& processor;
 
-	MainSynthGui mGui;
+	CMainSynthGuiImpl mGui;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AdditiveVstAudioProcessorEditor)
 

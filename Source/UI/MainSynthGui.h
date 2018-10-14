@@ -21,10 +21,11 @@
 
 //[Headers]     -- You can add your own extra header files here --
 #include "../../JuceLibraryCode/JuceHeader.h"
-#include "IGuiListener.h"
-#include "AdvancedSlider.h"
+
+
 #include "LevelIndicator.h"
 #include "LookAndFeel\LafBlackKnob.h"
+
 //[/Headers]
 
 
@@ -48,7 +49,7 @@ public:
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
-	void SetListener(IGuiListener* listener);
+	
 	//BodePlot& GetBodePlot() const { return *bodePlotArea; }
     //[/UserMethods]
 
@@ -74,8 +75,9 @@ public:
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
-	IGuiListener * mListener = nullptr;
+	
 	CLafBlackKnob mLookAndFeel;
+protected:
     //[/UserVariables]
 
     //==============================================================================
@@ -138,6 +140,7 @@ private:
     std::unique_ptr<LevelIndicator> component;
     std::unique_ptr<LevelIndicator> component2;
     std::unique_ptr<ToggleButton> toggleButton;
+    std::unique_ptr<TextButton> openPresetBrowser;
     Image cachedImage_case_main_png_1;
     Image cachedImage_case_effects_png_2;
     Image cachedImage_icon_triangle_png_3;

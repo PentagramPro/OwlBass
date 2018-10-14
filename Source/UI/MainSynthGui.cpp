@@ -639,6 +639,13 @@ MainSynthGui::MainSynthGui ()
 
     toggleButton->setBounds (587, 362, 40, 40);
 
+    openPresetBrowser.reset (new TextButton ("new button"));
+    addAndMakeVisible (openPresetBrowser.get());
+    openPresetBrowser->setButtonText (TRANS("preset browser"));
+    openPresetBrowser->addListener (this);
+
+    openPresetBrowser->setBounds (344, 448, 150, 24);
+
     cachedImage_case_main_png_1 = ImageCache::getFromMemory (case_main_png, case_main_pngSize);
     cachedImage_case_effects_png_2 = ImageCache::getFromMemory (case_effects_png, case_effects_pngSize);
     cachedImage_icon_triangle_png_3 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
@@ -728,6 +735,7 @@ MainSynthGui::~MainSynthGui()
     component = nullptr;
     component2 = nullptr;
     toggleButton = nullptr;
+    openPresetBrowser = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -1056,9 +1064,7 @@ void MainSynthGui::resized()
 void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
 {
     //[UsersliderValueChanged_Pre]
-	if (mListener) {
-		mListener->OnValueChanged(sliderThatWasMoved->getName().toStdString(), sliderThatWasMoved->getValue());
-	}
+	
     //[/UsersliderValueChanged_Pre]
 
     if (sliderThatWasMoved == slider2.get())
@@ -1199,15 +1205,19 @@ void MainSynthGui::sliderValueChanged (Slider* sliderThatWasMoved)
 void MainSynthGui::buttonClicked (Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
-	if (mListener) {
-		mListener->OnValueChanged(buttonThatWasClicked->getName().toStdString(), buttonThatWasClicked->getToggleState());
-	}
+	
     //[/UserbuttonClicked_Pre]
 
     if (buttonThatWasClicked == toggleButton.get())
     {
         //[UserButtonCode_toggleButton] -- add your button handler code here..
         //[/UserButtonCode_toggleButton]
+    }
+    else if (buttonThatWasClicked == openPresetBrowser.get())
+    {
+        //[UserButtonCode_openPresetBrowser] -- add your button handler code here..
+
+        //[/UserButtonCode_openPresetBrowser]
     }
 
     //[UserbuttonClicked_Post]
@@ -1217,10 +1227,7 @@ void MainSynthGui::buttonClicked (Button* buttonThatWasClicked)
 
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
-void MainSynthGui::SetListener(IGuiListener * listener)
-{
-	mListener = listener;
-}
+
 //[/MiscUserCode]
 
 
@@ -1627,6 +1634,9 @@ BEGIN_JUCER_METADATA
   <TOGGLEBUTTON name="ADSRFilter.Retrigger" id="4bbf329f139fd5b1" memberName="toggleButton"
                 virtualName="" explicitFocusOrder="0" pos="587 362 40 40" buttonText=""
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
+  <TEXTBUTTON name="new button" id="16845eae0ccbf02e" memberName="openPresetBrowser"
+              virtualName="" explicitFocusOrder="0" pos="344 448 150 24" buttonText="preset browser"
+              connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

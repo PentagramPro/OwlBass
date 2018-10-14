@@ -27,6 +27,13 @@
       <FILE id="edn7bv" name="MainSynthGui.cpp" compile="1" resource="0"
             file="Source/UI/MainSynthGui.cpp"/>
       <FILE id="IkeoRK" name="MainSynthGui.h" compile="0" resource="0" file="Source/UI/MainSynthGui.h"/>
+      <FILE id="wmd9yk" name="MainSynthGuiImpl.cpp" compile="1" resource="0"
+            file="Source/UI/MainSynthGuiImpl.cpp"/>
+      <FILE id="RmA1KF" name="MainSynthGuiImpl.h" compile="0" resource="0"
+            file="Source/UI/MainSynthGuiImpl.h"/>
+      <FILE id="rxlGIn" name="PresetBrowser.cpp" compile="1" resource="0"
+            file="Source/UI/PresetBrowser.cpp"/>
+      <FILE id="M8wjxH" name="PresetBrowser.h" compile="0" resource="0" file="Source/UI/PresetBrowser.h"/>
     </GROUP>
     <GROUP id="{D273DE03-1424-D5E0-7D48-D067800C8468}" name="Resources">
       <FILE id="Hu4Itm" name="black knob switch.png" compile="1" resource="1"

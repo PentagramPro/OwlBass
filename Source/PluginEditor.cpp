@@ -21,9 +21,7 @@ AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAud
     // editor's size to whatever you need it to be.
     setSize (1000, 640);
 
-	// these define the parameters of our slider object
 
-	// this function adds the slider to the editor
 	addAndMakeVisible(mGui);
 	mGui.SetListener(this);
 	mRegistryListenerHandle = processor.GetPropertiesRegistry().AddListener(*this);
