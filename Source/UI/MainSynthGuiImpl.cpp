@@ -2,7 +2,7 @@
 
 CMainSynthGuiImpl::CMainSynthGuiImpl()
 {
-	mPresetBrowser.reset(new PresetBrowser());
+	mPresetBrowser.reset(new CPresetBrowserImpl());
 }
 
 void CMainSynthGuiImpl::sliderValueChanged(Slider * sliderThatWasMoved)

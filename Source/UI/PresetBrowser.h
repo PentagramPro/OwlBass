@@ -33,7 +33,8 @@
     Describe your class and how it works here!
                                                                     //[/Comments]
 */
-class PresetBrowser  : public Component
+class PresetBrowser  : public Component,
+                       public Button::Listener
 {
 public:
     //==============================================================================
@@ -46,15 +47,23 @@ public:
 
     void paint (Graphics& g) override;
     void resized() override;
+    void buttonClicked (Button* buttonThatWasClicked) override;
 
 
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
+protected:
     //[/UserVariables]
 
     //==============================================================================
+    std::unique_ptr<TextButton> textButton;
+    std::unique_ptr<TextEditor> presetName;
     std::unique_ptr<Label> label;
+    std::unique_ptr<Label> label2;
+    std::unique_ptr<TextEditor> presetName2;
+    std::unique_ptr<ListBox> mListCategories;
+    std::unique_ptr<ListBox> mListPresets;
 
 
     //==============================================================================

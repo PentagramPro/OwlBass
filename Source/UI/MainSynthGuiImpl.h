@@ -1,6 +1,6 @@
 #pragma once
 #include "MainSynthGui.h"
-#include "PresetBrowser.h"
+#include "PresetBrowserImpl.h"
 #include "IGuiListener.h"
 
 class CMainSynthGuiImpl : public MainSynthGui {
@@ -12,6 +12,6 @@ public:
 	void SetListener(IGuiListener* listener);
 
 private:
-	std::unique_ptr<PresetBrowser> mPresetBrowser;
+	std::unique_ptr<CPresetBrowserImpl> mPresetBrowser;
 	IGuiListener * mListener = nullptr;
 };
