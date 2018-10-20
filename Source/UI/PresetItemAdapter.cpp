@@ -10,7 +10,7 @@ void CPresetItemAdapter::paintListBoxItem(int rowNumber, Graphics & g, int width
 {
 	if (rowIsSelected) {
 		g.setColour(Colour(90, 90, 90));
-		g.fillRoundedRectangle(0, 0, width, height, 10);
+		g.fillRoundedRectangle(0, 0, width, height, 5);
 	}
 
 	g.setColour(Colour(255, 255, 255));

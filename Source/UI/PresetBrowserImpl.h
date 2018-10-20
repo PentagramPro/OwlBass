@@ -20,6 +20,11 @@ private:
 	void UpdateFileList();
 	void UpdatePresetNamesList();
 
+	// Inherited via IPresetItemListener
+	virtual void OnItemSelected(CPresetItemAdapter & adapter, int index) override;
+
+	void buttonClicked(Button* buttonThatWasClicked) override;
+
 	juce::File mPresetDir;
 
 	std::unordered_map<std::string,std::vector<SRecord>> mPresets;
@@ -30,6 +35,5 @@ private:
 
 	std::vector<IListenerHandle> mListenerHandles;
 
-	// Inherited via IPresetItemListener
-	virtual void OnItemSelected(CPresetItemAdapter & adapter, int index) override;
+	
 };

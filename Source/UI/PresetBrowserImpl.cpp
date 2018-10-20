@@ -16,6 +16,7 @@ CPresetBrowserImpl::CPresetBrowserImpl()
 	mListCategories->setModel(&mCategoryItems);
 	mListPresets->setModel(&mPresetItems);
 
+		
 	UpdateFileList();
 }
 
@@ -68,6 +69,16 @@ void CPresetBrowserImpl::OnItemSelected(CPresetItemAdapter & adapter, int index)
 	if (&adapter == &mCategoryItems) {
 		mSelectedCategory = mCategoryItems.GetItemAt(index);
 		UpdatePresetNamesList();
+	}
+}
+
+void CPresetBrowserImpl::buttonClicked(Button * buttonClicked)
+{
+	if (buttonClicked == mBtnLoadPreset.get()) {
+		getParentComponent()->removeChildComponent(this);
+	}
+	else if (buttonClicked == mBtnCancel.get()) {
+		getParentComponent()->removeChildComponent(this);
 	}
 }
 

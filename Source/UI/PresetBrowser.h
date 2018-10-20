@@ -57,13 +57,10 @@ protected:
     //[/UserVariables]
 
     //==============================================================================
-    std::unique_ptr<TextButton> textButton;
-    std::unique_ptr<TextEditor> presetName;
-    std::unique_ptr<Label> label;
-    std::unique_ptr<Label> label2;
-    std::unique_ptr<TextEditor> presetName2;
+    std::unique_ptr<TextButton> mBtnLoadPreset;
     std::unique_ptr<ListBox> mListCategories;
     std::unique_ptr<ListBox> mListPresets;
+    std::unique_ptr<TextButton> mBtnCancel;
 
 
     //==============================================================================
