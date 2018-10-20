@@ -10,7 +10,8 @@ CPresetBrowserImpl::CPresetBrowserImpl()
 	mPresetDir.createDirectory();
 
 	
-	
+	mListenerHandles.push_back(mCategoryItems.AddListener(*this));
+	mListenerHandles.push_back(mPresetItems.AddListener(*this));
 
 	mListCategories->setModel(&mCategoryItems);
 	mListPresets->setModel(&mPresetItems);
@@ -42,10 +43,6 @@ void CPresetBrowserImpl::UpdateFileList()
 		
 	}
 
-	if (mPresets.size() > 0) {
-		mSelectedCategory = mPresets.begin()->first;
-	} 
-
 	
 	std::set<std::string> result;
 
@@ -53,8 +50,40 @@ void CPresetBrowserImpl::UpdateFileList()
 		result.insert(item.first);
 	}
 
-
 	mCategoryItems.SetItems(std::vector<std::string>(result.begin(),result.end()));
 	mListCategories->updateContent();
+
+	if (mPresets.size() > 0) {
+		mSelectedCategory = mPresets.begin()->first;
+		mListCategories->selectRow(0);
+	}
+
+
+	UpdatePresetNamesList();
 	repaint();
+}
+
+void CPresetBrowserImpl::OnItemSelected(CPresetItemAdapter & adapter, int index)
+{
+	if (&adapter == &mCategoryItems) {
+		mSelectedCategory = mCategoryItems.GetItemAt(index);
+		UpdatePresetNamesList();
+	}
+}
+
+void CPresetBrowserImpl::UpdatePresetNamesList()
+{
+	auto list = mPresets.find(mSelectedCategory);
+	if (list == mPresets.end()) {
+		mPresetItems.SetItems({});
+	}
+	else {
+		std::vector<std::string> names;
+		for (auto& preset : list->second) {
+			names.push_back(preset.mName);
+		}
+		mPresetItems.SetItems(names);
+	}
+
+	mListPresets->updateContent();
 }

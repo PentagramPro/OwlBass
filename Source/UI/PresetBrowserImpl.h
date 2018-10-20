@@ -3,8 +3,9 @@
 #include "PresetItemAdapter.h"
 #include <unordered_map>
 #include <vector>
+#include "../Common/ListenerHandle.h"
 
-class CPresetBrowserImpl : public PresetBrowser {
+class CPresetBrowserImpl : public PresetBrowser, public IPresetItemListener {
   public:
 	  CPresetBrowserImpl();
 
@@ -17,6 +18,7 @@ private:
 	};
 	
 	void UpdateFileList();
+	void UpdatePresetNamesList();
 
 	juce::File mPresetDir;
 
@@ -25,4 +27,9 @@ private:
 
 	CPresetItemAdapter mCategoryItems;
 	CPresetItemAdapter mPresetItems;
+
+	std::vector<IListenerHandle> mListenerHandles;
+
+	// Inherited via IPresetItemListener
+	virtual void OnItemSelected(CPresetItemAdapter & adapter, int index) override;
 };
