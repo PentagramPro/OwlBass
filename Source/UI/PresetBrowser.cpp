@@ -63,7 +63,7 @@ PresetBrowser::PresetBrowser ()
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (1000, 400);
+    setSize (810, 340);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -144,7 +144,7 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="PresetBrowser" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="0" initialWidth="1000" initialHeight="400">
+                 fixedSize="0" initialWidth="810" initialHeight="340">
   <BACKGROUND backgroundColour="ff323e44"/>
   <TEXTBUTTON name="new button" id="6805fe86685143fd" memberName="mBtnLoadPreset"
               virtualName="" explicitFocusOrder="0" pos="648 304 150 24" buttonText="Load selected preset"

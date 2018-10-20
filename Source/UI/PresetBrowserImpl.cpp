@@ -27,6 +27,67 @@ void CPresetBrowserImpl::paint(Graphics & g)
 	PresetBrowser::paint(g);
 }
 
+void CPresetBrowserImpl::NextPreset()
+{
+	mSelectedPresetIndex++;
+	const SRecord* result = GetPresetByCategoryAndIndex(mSelectedCategory, mSelectedPresetIndex);
+
+	if (!result) {
+		mSelectedPresetIndex = 0;
+		auto nextCat = std::next(mPresets.find(mSelectedCategory));
+		if (nextCat == mPresets.end()) {
+			nextCat = mPresets.begin();
+		}
+		mSelectedCategory = nextCat->first;
+
+		if (nextCat->second.size() > mSelectedPresetIndex) {
+			result = &nextCat->second[mSelectedPresetIndex];
+		}
+	}
+
+	if (result) {
+		mGuiListener->OnLoadPreset(result->mFile.getFullPathName().toStdString());
+	}
+
+}
+
+void CPresetBrowserImpl::PreviousPreset()
+{
+	mSelectedPresetIndex--;
+	const SRecord* result = GetPresetByCategoryAndIndex(mSelectedCategory, mSelectedPresetIndex);
+
+	if (!result) {
+		
+
+		auto prevCat = std::prev(mPresets.find(mSelectedCategory));
+		if (prevCat == mPresets.end()) {
+			mSelectedCategory = mPresets.rbegin()->first;
+			mSelectedPresetIndex = mPresets.rbegin()->second.size() - 1;
+		}
+		else {
+			mSelectedCategory = prevCat->first;
+			mSelectedPresetIndex = prevCat->second.size() - 1;
+		}
+
+		result = GetPresetByCategoryAndIndex(mSelectedCategory, mSelectedPresetIndex);
+	}
+
+	if (result) {
+		mGuiListener->OnLoadPreset(result->mFile.getFullPathName().toStdString());
+	}
+}
+
+std::string CPresetBrowserImpl::GetPresetDescription() const
+{
+	auto result = GetPresetByCategoryAndIndex(mSelectedCategory, mSelectedPresetIndex);
+	if (result == nullptr) {
+		return "unknown";
+	}
+
+
+	return mSelectedCategory+" / "+result->mName;
+}
+
 void CPresetBrowserImpl::UpdateFileList()
 {
 	mPresets.clear();
@@ -70,10 +131,7 @@ void CPresetBrowserImpl::OnItemSelected(CPresetItemAdapter & adapter, int index)
 		mSelectedCategory = mCategoryItems.GetItemAt(index);
 		UpdatePresetNamesList();
 	} else if (&adapter == &mPresetItems) {
-		auto list = mPresets.find(mSelectedCategory);
-		if (list != mPresets.end() && index>=0 && index<list->second.size()) {
-			mSelectedPreset = &list->second[index].mFile;
-		}
+		mSelectedPresetIndex = index;
 	}
 }
 
@@ -81,8 +139,11 @@ void CPresetBrowserImpl::buttonClicked(Button * buttonClicked)
 {
 	if (buttonClicked == mBtnLoadPreset.get()) {
 		getParentComponent()->removeChildComponent(this);
-		if (mGuiListener && mSelectedPreset) {
-			mGuiListener->OnLoadPreset(mSelectedPreset->getFullPathName().toStdString());
+		if (mGuiListener) {
+			auto res = GetPresetByCategoryAndIndex(mSelectedCategory, mSelectedPresetIndex);
+			if (res) {
+				mGuiListener->OnLoadPreset(res->mFile.getFullPathName().toStdString());
+			}
 		}
 	}
 	else if (buttonClicked == mBtnCancel.get()) {
@@ -104,6 +165,16 @@ void CPresetBrowserImpl::UpdatePresetNamesList()
 		mPresetItems.SetItems(names);
 	}
 	mListPresets->selectRow(-1);
-	mSelectedPreset = nullptr;
+	mSelectedPresetIndex = -1;
 	mListPresets->updateContent();
+}
+
+const CPresetBrowserImpl::SRecord* CPresetBrowserImpl::GetPresetByCategoryAndIndex(const std::string & category, int index) const
+{
+	auto list = mPresets.find(category);
+	if (list != mPresets.end() && index >= 0 && index<list->second.size()) {
+		return &list->second[index];
+	}
+
+	return nullptr;
 }

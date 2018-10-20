@@ -12,14 +12,20 @@ void CMainSynthGuiImpl::sliderValueChanged(Slider * sliderThatWasMoved)
 	}
 }
 
-void CMainSynthGuiImpl::buttonClicked(Button * buttonThatWasClicked)
+void CMainSynthGuiImpl::buttonClicked(Button * buttonClicked)
 {
 	if (mListener) {
-		mListener->OnValueChanged(buttonThatWasClicked->getName().toStdString(), buttonThatWasClicked->getToggleState());
+		mListener->OnValueChanged(buttonClicked->getName().toStdString(), buttonClicked->getToggleState());
 	}
-	if (buttonThatWasClicked == openPresetBrowser.get()) {
+	if (buttonClicked == openPresetBrowser.get()) {
 		addAndMakeVisible(*mPresetBrowser.get());
-		 
+		mPresetBrowser->setBounds((getWidth() - mPresetBrowser->getWidth()) / 2, 0, mPresetBrowser->getWidth(), mPresetBrowser->getHeight());
+	} else if (buttonClicked == mBtnPresetNext.get()) {
+		mPresetBrowser->NextPreset();
+		openPresetBrowser->setButtonText(mPresetBrowser->GetPresetDescription());
+	} else if (buttonClicked == mBtnPresetPrev.get()) {
+		mPresetBrowser->PreviousPreset();
+		openPresetBrowser->setButtonText(mPresetBrowser->GetPresetDescription());
 	}
 }
 

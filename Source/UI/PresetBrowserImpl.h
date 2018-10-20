@@ -1,7 +1,7 @@
 #pragma once
 #include "PresetBrowser.h"
 #include "PresetItemAdapter.h"
-#include <unordered_map>
+#include <map>
 #include <vector>
 #include "../Common/ListenerHandle.h"
 #include "../UI/IGuiListener.h"
@@ -15,6 +15,9 @@ class CPresetBrowserImpl : public PresetBrowser, public IPresetItemListener {
 	  void SetGuiListener(IGuiListener* listener) {
 		  mGuiListener = listener;
 	  }
+	  void NextPreset();
+	  void PreviousPreset();
+	  std::string GetPresetDescription() const;
 private:
 	struct SRecord {
 		std::string mName;
@@ -23,6 +26,7 @@ private:
 	
 	void UpdateFileList();
 	void UpdatePresetNamesList();
+	const SRecord* GetPresetByCategoryAndIndex(const std::string& category, int index) const;
 
 	// Inherited via IPresetItemListener
 	virtual void OnItemSelected(CPresetItemAdapter & adapter, int index) override;
@@ -31,9 +35,9 @@ private:
 
 	juce::File mPresetDir;
 
-	std::unordered_map<std::string,std::vector<SRecord>> mPresets;
+	std::map<std::string,std::vector<SRecord>> mPresets;
 	std::string mSelectedCategory = "";
-	File* mSelectedPreset = nullptr;
+	int mSelectedPresetIndex = -1;
 
 	CPresetItemAdapter mCategoryItems;
 	CPresetItemAdapter mPresetItems;

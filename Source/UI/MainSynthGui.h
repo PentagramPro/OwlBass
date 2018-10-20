@@ -49,7 +49,7 @@ public:
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
-	
+
 	//BodePlot& GetBodePlot() const { return *bodePlotArea; }
     //[/UserMethods]
 
@@ -71,11 +71,13 @@ public:
     static const int case_effects_pngSize;
     static const char* levelIndicator_png;
     static const int levelIndicator_pngSize;
+    static const char* presetsPanel_png;
+    static const int presetsPanel_pngSize;
 
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
-	
+
 	CLafBlackKnob mLookAndFeel;
 protected:
     //[/UserVariables]
@@ -141,6 +143,8 @@ protected:
     std::unique_ptr<LevelIndicator> component2;
     std::unique_ptr<ToggleButton> toggleButton;
     std::unique_ptr<TextButton> openPresetBrowser;
+    std::unique_ptr<TextButton> mBtnPresetNext;
+    std::unique_ptr<TextButton> mBtnPresetPrev;
     Image cachedImage_case_main_png_1;
     Image cachedImage_case_effects_png_2;
     Image cachedImage_icon_triangle_png_3;
@@ -154,6 +158,7 @@ protected:
     Image cachedImage_icon_saw_png_11;
     Image cachedImage_levelIndicator_png_12;
     Image cachedImage_levelIndicator_png_13;
+    Image cachedImage_presetsPanel_png_14;
 
 
     //==============================================================================
