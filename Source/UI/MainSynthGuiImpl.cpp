@@ -26,4 +26,5 @@ void CMainSynthGuiImpl::buttonClicked(Button * buttonThatWasClicked)
 void CMainSynthGuiImpl::SetListener(IGuiListener * listener)
 {
 	mListener = listener;
+	mPresetBrowser->SetGuiListener(listener);
 }

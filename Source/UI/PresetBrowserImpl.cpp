@@ -69,6 +69,11 @@ void CPresetBrowserImpl::OnItemSelected(CPresetItemAdapter & adapter, int index)
 	if (&adapter == &mCategoryItems) {
 		mSelectedCategory = mCategoryItems.GetItemAt(index);
 		UpdatePresetNamesList();
+	} else if (&adapter == &mPresetItems) {
+		auto list = mPresets.find(mSelectedCategory);
+		if (list != mPresets.end() && index>=0 && index<list->second.size()) {
+			mSelectedPreset = &list->second[index].mFile;
+		}
 	}
 }
 
@@ -76,6 +81,9 @@ void CPresetBrowserImpl::buttonClicked(Button * buttonClicked)
 {
 	if (buttonClicked == mBtnLoadPreset.get()) {
 		getParentComponent()->removeChildComponent(this);
+		if (mGuiListener && mSelectedPreset) {
+			mGuiListener->OnLoadPreset(mSelectedPreset->getFullPathName().toStdString());
+		}
 	}
 	else if (buttonClicked == mBtnCancel.get()) {
 		getParentComponent()->removeChildComponent(this);
@@ -95,6 +103,7 @@ void CPresetBrowserImpl::UpdatePresetNamesList()
 		}
 		mPresetItems.SetItems(names);
 	}
-
+	mListPresets->selectRow(-1);
+	mSelectedPreset = nullptr;
 	mListPresets->updateContent();
 }

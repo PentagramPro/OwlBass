@@ -107,7 +107,10 @@ public:
 		}
 	}
 	virtual float GetFromReference() {
-		return mProperties.front()->GetFromReference();
+		const float res = mProperties.front()->GetFromReference();
+		if (std::isnan(res))
+			return 0;
+		return res;
 	}
 	virtual void SetRaw(double value) {
 		for (auto& item : mProperties) {
