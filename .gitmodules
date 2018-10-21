@@ -1,0 +1,3 @@
+[submodule "Source/VSTComponents"]
+	path = Source/VSTComponents
+	url = https://github.com/PentagramPro/VSTComponents
