@@ -3,7 +3,7 @@
 #include "PresetBrowserImpl.h"
 #include "IGuiListener.h"
 #include "IPresetBrowserListeners.h"
-#include "../Common/ListenerHandle.h"
+#include "VSTComponents/Owl/ListenerHandle.h"
 
 class CMainSynthGuiImpl : public MainSynthGui, public IPresetBrowserListener {
 public:

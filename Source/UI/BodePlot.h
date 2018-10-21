@@ -21,7 +21,7 @@
 
 //[Headers]     -- You can add your own extra header files here --
 #include "JuceHeader.h"
-#include "Common/VoiceModuleBase.h"
+#include "VSTComponents/Owl/VoiceModuleBase.h"
 class CFourierProbeVoice;
 //[/Headers]
 

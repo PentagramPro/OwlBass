@@ -1,7 +1,7 @@
 
 #include "ChorusVoice.h"
-#include <Common/ProperiesRegistry.h>
-#include <Common/Toolbox.h>
+#include <VSTComponents/Owl/ProperiesRegistry.h>
+#include <VSTComponents/Owl/Toolbox.h>
 
 
 const int Channels = 2;

@@ -11,7 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "Common/ProperiesRegistry.h"
+#include "VSTComponents/Owl/ProperiesRegistry.h"
 
 class CVoiceModuleHost;
 class CMixerVoice;

@@ -3,9 +3,9 @@
 #include "PresetItemAdapter.h"
 #include <map>
 #include <vector>
-#include "../Common/ListenerHandle.h"
+#include "VSTComponents/Owl/ListenerHandle.h"
 
-#include "../Common/ListenerRegistry.h"
+#include "VSTComponents/Owl/ListenerRegistry.h"
 #include "IPresetBrowserListeners.h"
 
 class CPresetBrowserImpl : public PresetBrowser, public IPresetItemListener, public CListenerRegistry<IPresetBrowserListener> {

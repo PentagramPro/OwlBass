@@ -60,39 +60,6 @@
       <FILE id="vQ5xRC" name="slider handle.png" compile="1" resource="1"
             file="Resources/slider handle.png"/>
     </GROUP>
-    <GROUP id="{B8CFA7A4-FAD0-BD52-4FC5-F3C76E7937E6}" name="Common">
-      <FILE id="mM1ktA" name="Toolbox.cpp" compile="1" resource="0" file="Source/Common/Toolbox.cpp"/>
-      <FILE id="aFGy48" name="AudioQueue.cpp" compile="1" resource="0" file="Source/Common/AudioQueue.cpp"/>
-      <FILE id="seJFHO" name="AudioQueue.h" compile="0" resource="0" file="Source/Common/AudioQueue.h"/>
-      <GROUP id="{D3A59B67-8BAF-1206-82EF-DFF32D5407DF}" name="Patterns">
-        <FILE id="MbYCvc" name="ListenerHandle.h" compile="0" resource="0"
-              file="Source/Common/ListenerHandle.h"/>
-        <FILE id="qkGqsQ" name="ListenerRegistry.h" compile="0" resource="0"
-              file="Source/Common/ListenerRegistry.h"/>
-      </GROUP>
-      <GROUP id="{E65FEF34-C2D2-A124-E0D1-27BC06CB9302}" name="Data">
-        <FILE id="stEVVS" name="SynthState.cpp" compile="1" resource="0" file="Source/Common/SynthState.cpp"/>
-        <FILE id="nKmN61" name="SynthState.h" compile="0" resource="0" file="Source/Common/SynthState.h"/>
-      </GROUP>
-      <FILE id="UPoTg9" name="IVoiceModule.h" compile="0" resource="0" file="Source/Common/IVoiceModule.h"/>
-      <FILE id="FUiNsk" name="IVoiceModuleHost.h" compile="0" resource="0"
-            file="Source/Common/IVoiceModuleHost.h"/>
-      <FILE id="YGJIJo" name="ProperiesRegistry.cpp" compile="1" resource="0"
-            file="Source/Common/ProperiesRegistry.cpp"/>
-      <FILE id="rety8S" name="ProperiesRegistry.h" compile="0" resource="0"
-            file="Source/Common/ProperiesRegistry.h"/>
-      <FILE id="t8FaGU" name="Toolbox.h" compile="0" resource="0" file="Source/Common/Toolbox.h"/>
-      <FILE id="qOEdOC" name="VoiceModuleBase.cpp" compile="1" resource="0"
-            file="Source/Common/VoiceModuleBase.cpp"/>
-      <FILE id="WxIXIi" name="VoiceModuleBase.h" compile="0" resource="0"
-            file="Source/Common/VoiceModuleBase.h"/>
-      <FILE id="NeIwkl" name="VoiceModuleHost.cpp" compile="1" resource="0"
-            file="Source/Common/VoiceModuleHost.cpp"/>
-      <FILE id="F9XAvg" name="VoiceModuleHost.h" compile="0" resource="0"
-            file="Source/Common/VoiceModuleHost.h"/>
-      <FILE id="MT6guM" name="VoiceModuleHostSound.h" compile="0" resource="0"
-            file="Source/Common/VoiceModuleHostSound.h"/>
-    </GROUP>
     <GROUP id="{06D74786-B672-E363-A511-E371D1D9C0AF}" name="Synth">
       <FILE id="jmyDQx" name="ChorusVoice.cpp" compile="1" resource="0" file="Source/Synth/ChorusVoice.cpp"/>
       <FILE id="r64Rlj" name="ChorusVoice.h" compile="0" resource="0" file="Source/Synth/ChorusVoice.h"/>

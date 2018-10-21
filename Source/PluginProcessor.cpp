@@ -25,9 +25,9 @@
 #include "Synth/NoiseVoice.h"
 #include "Synth/PostProcessingVoice.h"
 
-#include "Common/VoiceModuleHost.h"
-#include "Common/VoiceModuleHostSound.h"
-#include "Common/SynthState.h"
+#include "VSTComponents/Owl/VoiceModuleHost.h"
+#include "VSTComponents/Owl/VoiceModuleHostSound.h"
+#include "VSTComponents/Owl/SynthState.h"
 
 //==============================================================================
 AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()

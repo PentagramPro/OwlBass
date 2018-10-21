@@ -1,7 +1,7 @@
 #pragma once
 #include "JuceHeader.h"
-#include "Common/VoiceModuleBase.h"
-#include "Common/IVoiceModuleHost.h"
+#include "VSTComponents/Owl/VoiceModuleBase.h"
+#include "VSTComponents/Owl/IVoiceModuleHost.h"
 
 class EnvelopeVoice  : public CVoiceModuleBase {
 public:

@@ -1,6 +1,6 @@
 #pragma once
-#include "../../JuceLibraryCode/JuceHeader.h"
-#include "../Common/ListenerRegistry.h"
+#include "JuceHeader.h"
+#include "VSTComponents/Owl/ListenerRegistry.h"
 #include <string>
 #include <vector>
 

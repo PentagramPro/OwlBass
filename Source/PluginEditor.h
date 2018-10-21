@@ -5,8 +5,8 @@
 #include "PluginProcessor.h"
 #include "UI/MainSynthGuiImpl.h"
 #include "UI/IGuiListener.h"
-#include "Common/ProperiesRegistry.h"
-#include "Common/ListenerHandle.h"
+#include "VSTComponents/Owl/ProperiesRegistry.h"
+#include "VSTComponents/Owl/ListenerHandle.h"
 
 //==============================================================================
 /**

@@ -1,5 +1,5 @@
 #include "EnvelopeVoice.h"
-#include "Common/ProperiesRegistry.h"
+#include "VSTComponents/Owl/ProperiesRegistry.h"
 #include <algorithm>
 #include <string>
 #include <cmath>

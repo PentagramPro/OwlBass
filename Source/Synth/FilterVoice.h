@@ -1,7 +1,7 @@
 #pragma once
-#include "../JuceLibraryCode/JuceHeader.h"
-#include "../Common/VoiceModuleBase.h"
-#include "../Common/IVoiceModuleHost.h"
+#include "JuceHeader.h"
+#include "VSTComponents/Owl/VoiceModuleBase.h"
+#include "VSTComponents/Owl/IVoiceModuleHost.h"
 #include "VSTComponents/OwlDSP/DSPLowpassFilter2.h"
 #include "VSTComponents/OwlDSP/DSPDelay.h"
 #include "IVoltageController.h"

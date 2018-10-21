@@ -1,7 +1,7 @@
 
 #include "PresetBrowserImpl.h"
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "../Common/SynthState.h"
+#include "VSTComponents/Owl/SynthState.h"
 
 #include <set>
 

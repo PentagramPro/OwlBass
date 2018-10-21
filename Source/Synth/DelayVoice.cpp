@@ -1,5 +1,5 @@
 #include "DelayVoice.h"
-#include "Common/ProperiesRegistry.h"
+#include "VSTComponents/Owl/ProperiesRegistry.h"
 
 const double MaxDelayLength = 2;
 
