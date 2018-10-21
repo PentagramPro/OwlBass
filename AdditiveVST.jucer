@@ -192,6 +192,7 @@
         <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
         <MODULEPATH id="juce_blocks_basics" path="../JUCE/modules"/>
         <MODULEPATH id="juce_dsp" path="../../../../SDKS/JUCE/modules"/>
+        <MODULEPATH id="VSTComponents" path="Source"/>
       </MODULEPATHS>
     </VS2017>
     <XCODE_MAC targetFolder="Builds/MacOSX">
@@ -217,6 +218,7 @@
         <MODULEPATH id="juce_audio_basics" path="../../juce"/>
         <MODULEPATH id="juce_blocks_basics" path="../JUCE/modules"/>
         <MODULEPATH id="juce_dsp" path="../../../../SDKS/JUCE/modules"/>
+        <MODULEPATH id="VSTComponents" path="Source"/>
       </MODULEPATHS>
     </XCODE_MAC>
   </EXPORTFORMATS>
@@ -239,6 +241,7 @@
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_video" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="VSTComponents" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
   </MODULES>
   <JUCEOPTIONS/>
 </JUCERPROJECT>
