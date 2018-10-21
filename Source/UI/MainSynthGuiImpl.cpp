@@ -38,5 +38,5 @@ void CMainSynthGuiImpl::OnLoadPreset(const std::string & filePath)
 	if (mListener) {
 		mListener->OnLoadPreset(filePath);
 	}
-	openPresetBrowser->setButtonText(mPresetBrowser->GetPresetDescription());
+	mPresetDescr->setText(mPresetBrowser->GetPresetDescription(), NotificationType::dontSendNotification);
 }

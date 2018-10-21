@@ -83,6 +83,7 @@ protected:
     //[/UserVariables]
 
     //==============================================================================
+    std::unique_ptr<Label> mPresetDescr;
     std::unique_ptr<Slider> slider2;
     std::unique_ptr<Slider> slider3;
     std::unique_ptr<Label> label;
