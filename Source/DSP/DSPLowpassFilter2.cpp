@@ -1,5 +1,5 @@
 #include "DSPLowpassFilter2.h"
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "JuceHeader.h"
 
 CDSPLowpassFilter2::CDSPLowpassFilter2()
   {

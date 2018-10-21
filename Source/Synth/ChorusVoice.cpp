@@ -1,8 +1,8 @@
 
 #include "ChorusVoice.h"
-#include "../Common/ProperiesRegistry.h"
-#include "../Common/Toolbox.h"
-static int debugCount = 0;
+#include <Common/ProperiesRegistry.h>
+#include <Common/Toolbox.h>
+
 
 const int Channels = 2;
 	void CChorusVoice::InitProperties(CPropertiesRegistry & registry)
@@ -19,7 +19,7 @@ const int Channels = 2;
 			  mVoiceOffsets.push_back(mLengthSec/mVoices*voice);
 		  }
 	  }
-	  debugCount = 800;
+
   }
 
   void CChorusVoice::OnNoteStop(float velocity, bool allowTailOff)

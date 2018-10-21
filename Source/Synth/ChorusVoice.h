@@ -1,8 +1,8 @@
 #pragma once
-#include "../JuceLibraryCode/JuceHeader.h"
-#include "../Common/VoiceModuleBase.h"
-#include "../Common/IVoiceModuleHost.h"
-#include "../Common/AudioQueue.h"
+#include "JuceHeader.h"
+#include "Common/VoiceModuleBase.h"
+#include "Common/IVoiceModuleHost.h"
+#include "Common/AudioQueue.h"
 #include "IVoltageController.h"
 #include <vector>
 

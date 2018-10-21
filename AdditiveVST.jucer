@@ -4,7 +4,8 @@
               jucerVersion="5.3.2" pluginFormats="buildVST,buildVST3,buildAU,buildStandalone"
               buildVST="1" buildVST3="1" buildAU="1" buildAUv3="0" buildRTAS="0"
               buildAAX="0" enableIAA="0" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
-              pluginVSTCategory="kPlugCategGenerator" id="Dxz9Um">
+              pluginVSTCategory="kPlugCategGenerator" id="Dxz9Um" companyName="PentagramPro"
+              headerPath="../../Source">
   <MAINGROUP id="ErWoIN" name="AdditiveVST">
     <GROUP id="{E5593B42-EF84-EC40-B08F-4858405D93AA}" name="Ui">
       <GROUP id="{AECCE322-69E4-2B79-88CD-6E9FA1EE7784}" name="LookAndFeel">
@@ -70,13 +71,6 @@
               file="Source/Common/ListenerRegistry.h"/>
       </GROUP>
       <GROUP id="{E65FEF34-C2D2-A124-E0D1-27BC06CB9302}" name="Data">
-        <FILE id="jQksFh" name="SynthProgram.cpp" compile="1" resource="0"
-              file="Source/Common/SynthProgram.cpp"/>
-        <FILE id="FHxZlM" name="SynthProgram.h" compile="0" resource="0" file="Source/Common/SynthProgram.h"/>
-        <FILE id="rkNTOH" name="SynthProgramRegistry.cpp" compile="1" resource="0"
-              file="Source/Common/SynthProgramRegistry.cpp"/>
-        <FILE id="OmwMmJ" name="SynthProgramRegistry.h" compile="0" resource="0"
-              file="Source/Common/SynthProgramRegistry.h"/>
         <FILE id="stEVVS" name="SynthState.cpp" compile="1" resource="0" file="Source/Common/SynthState.cpp"/>
         <FILE id="nKmN61" name="SynthState.h" compile="0" resource="0" file="Source/Common/SynthState.h"/>
       </GROUP>
@@ -175,7 +169,7 @@
     <WINDOWS/>
   </LIVE_SETTINGS>
   <EXPORTFORMATS>
-    <VS2017 targetFolder="Builds/VisualStudio2017">
+    <VS2017 targetFolder="Builds/VisualStudio2017" vst3Folder="">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug"/>
         <CONFIGURATION isDebug="0" name="Release"/>
