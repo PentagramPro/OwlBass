@@ -2,6 +2,7 @@
 #include "PresetBrowserImpl.h"
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "../Common/SynthState.h"
+
 #include <set>
 
 CPresetBrowserImpl::CPresetBrowserImpl()
@@ -45,8 +46,8 @@ void CPresetBrowserImpl::NextPreset()
 		}
 	}
 
-	if (result) {
-		mGuiListener->OnLoadPreset(result->mFile.getFullPathName().toStdString());
+	for (auto& listener : GetListeners()) {
+		listener->OnLoadPreset(result->mFile.getFullPathName().toStdString());
 	}
 
 }
@@ -72,8 +73,8 @@ void CPresetBrowserImpl::PreviousPreset()
 		result = GetPresetByCategoryAndIndex(mSelectedCategory, mSelectedPresetIndex);
 	}
 
-	if (result) {
-		mGuiListener->OnLoadPreset(result->mFile.getFullPathName().toStdString());
+	for (auto& listener : GetListeners()) {
+		listener->OnLoadPreset(result->mFile.getFullPathName().toStdString());
 	}
 }
 
@@ -139,12 +140,14 @@ void CPresetBrowserImpl::buttonClicked(Button * buttonClicked)
 {
 	if (buttonClicked == mBtnLoadPreset.get()) {
 		getParentComponent()->removeChildComponent(this);
-		if (mGuiListener) {
-			auto res = GetPresetByCategoryAndIndex(mSelectedCategory, mSelectedPresetIndex);
-			if (res) {
-				mGuiListener->OnLoadPreset(res->mFile.getFullPathName().toStdString());
+		
+		auto res = GetPresetByCategoryAndIndex(mSelectedCategory, mSelectedPresetIndex);
+		if (res) {
+			for (auto& listener : GetListeners()) {
+				listener->OnLoadPreset(res->mFile.getFullPathName().toStdString());
 			}
 		}
+		
 	}
 	else if (buttonClicked == mBtnCancel.get()) {
 		getParentComponent()->removeChildComponent(this);

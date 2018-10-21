@@ -23,6 +23,19 @@ void CLafBlackKnob::drawToggleButton(Graphics & g, ToggleButton &b, bool isMouse
 		g.fillEllipse(width / 2 * (1 - size), height / 2 * (1 - size), width*size, height*size);
 }
 
+void CLafBlackKnob::drawButtonBackground(Graphics &g, Button & button, const Colour & backgroundColour, bool isMouseOverButton, bool isButtonDown)
+{
+	if (IsOfType("no_background", button)) {
+		if (isMouseOverButton) {
+			g.setColour(Colour((uint8)255, 255, 255, (uint8)20));
+			g.fillRect(0, 0, button.getWidth(), button.getHeight());
+		}
+		return;
+	}
+
+	LookAndFeel_V4::drawButtonBackground(g, button, backgroundColour, isMouseOverButton, isButtonDown);
+}
+
 
 void CLafBlackKnob::drawLinearSlider(Graphics &g, int x, int y, int width, int height, float sliderPos, float minSliderPos, float maxSliderPos, const Slider::SliderStyle, Slider &slider)
 {
@@ -83,9 +96,9 @@ void CLafBlackKnob::DrawKnobImage(Graphics & g, Image & img, int x, int y, int w
 	g.drawImageTransformed(img , transform);
 }
 
-bool CLafBlackKnob::IsOfType(const std::string & type, Slider & slider)
+bool CLafBlackKnob::IsOfType(const std::string & type, TooltipClient & component) const
 {
-	const std::string tooltip = slider.getTooltip().toStdString();
+	const std::string tooltip = component.getTooltip().toStdString();
 	auto p = tooltip.find_first_of(";", 0);
 	if (p == std::string::npos)
 		return false;

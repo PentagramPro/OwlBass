@@ -4,17 +4,17 @@
 #include <map>
 #include <vector>
 #include "../Common/ListenerHandle.h"
-#include "../UI/IGuiListener.h"
 
-class CPresetBrowserImpl : public PresetBrowser, public IPresetItemListener {
+#include "../Common/ListenerRegistry.h"
+#include "IPresetBrowserListeners.h"
+
+class CPresetBrowserImpl : public PresetBrowser, public IPresetItemListener, public CListenerRegistry<IPresetBrowserListener> {
   public:
 	  CPresetBrowserImpl();
 
 	  void paint(Graphics& g) override;
 
-	  void SetGuiListener(IGuiListener* listener) {
-		  mGuiListener = listener;
-	  }
+
 	  void NextPreset();
 	  void PreviousPreset();
 	  std::string GetPresetDescription() const;
@@ -43,6 +43,5 @@ private:
 	CPresetItemAdapter mPresetItems;
 
 	std::vector<IListenerHandle> mListenerHandles;
-	IGuiListener* mGuiListener = nullptr;
 	
 };

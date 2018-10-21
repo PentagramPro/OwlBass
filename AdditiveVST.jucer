@@ -20,6 +20,8 @@
       <FILE id="SO8XfT" name="BodePlot.h" compile="0" resource="0" file="Source/UI/BodePlot.h"/>
       <FILE id="rzxOcp" name="IGuiListener.h" compile="0" resource="0" file="Source/UI/IGuiListener.h"/>
       <FILE id="Zauu7X" name="IIndicator.h" compile="0" resource="0" file="Source/UI/IIndicator.h"/>
+      <FILE id="gRcAao" name="IPresetBrowserListeners.h" compile="0" resource="0"
+            file="Source/UI/IPresetBrowserListeners.h"/>
       <FILE id="Txx6ae" name="LevelIndicator.cpp" compile="1" resource="0"
             file="Source/UI/LevelIndicator.cpp"/>
       <FILE id="hOunIn" name="LevelIndicator.h" compile="0" resource="0"

@@ -2,8 +2,10 @@
 #include "MainSynthGui.h"
 #include "PresetBrowserImpl.h"
 #include "IGuiListener.h"
+#include "IPresetBrowserListeners.h"
+#include "../Common/ListenerHandle.h"
 
-class CMainSynthGuiImpl : public MainSynthGui {
+class CMainSynthGuiImpl : public MainSynthGui, public IPresetBrowserListener {
 public:
 	CMainSynthGuiImpl();
 	void sliderValueChanged(Slider* sliderThatWasMoved) override;
@@ -13,5 +15,9 @@ public:
 
 private:
 	std::unique_ptr<CPresetBrowserImpl> mPresetBrowser;
+	IListenerHandle mPresetListenerHandle;
 	IGuiListener * mListener = nullptr;
+
+	// Inherited via IPresetBrowserListener
+	virtual void OnLoadPreset(const std::string & filePath) override;
 };

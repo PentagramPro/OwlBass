@@ -3,6 +3,7 @@
 CMainSynthGuiImpl::CMainSynthGuiImpl()
 {
 	mPresetBrowser.reset(new CPresetBrowserImpl());
+	mPresetListenerHandle = mPresetBrowser->AddListener(*this);
 }
 
 void CMainSynthGuiImpl::sliderValueChanged(Slider * sliderThatWasMoved)
@@ -22,15 +23,20 @@ void CMainSynthGuiImpl::buttonClicked(Button * buttonClicked)
 		mPresetBrowser->setBounds((getWidth() - mPresetBrowser->getWidth()) / 2, 0, mPresetBrowser->getWidth(), mPresetBrowser->getHeight());
 	} else if (buttonClicked == mBtnPresetNext.get()) {
 		mPresetBrowser->NextPreset();
-		openPresetBrowser->setButtonText(mPresetBrowser->GetPresetDescription());
 	} else if (buttonClicked == mBtnPresetPrev.get()) {
 		mPresetBrowser->PreviousPreset();
-		openPresetBrowser->setButtonText(mPresetBrowser->GetPresetDescription());
 	}
 }
 
 void CMainSynthGuiImpl::SetListener(IGuiListener * listener)
 {
 	mListener = listener;
-	mPresetBrowser->SetGuiListener(listener);
+}
+
+void CMainSynthGuiImpl::OnLoadPreset(const std::string & filePath)
+{
+	if (mListener) {
+		mListener->OnLoadPreset(filePath);
+	}
+	openPresetBrowser->setButtonText(mPresetBrowser->GetPresetDescription());
 }

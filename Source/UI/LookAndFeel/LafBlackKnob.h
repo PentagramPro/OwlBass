@@ -13,10 +13,12 @@ public:
 			const Slider::SliderStyle, Slider&) override;
 
 		void drawToggleButton(Graphics& g, ToggleButton&, bool isMouseOverButton, bool isButtonDown) override;
-
+		
+		void drawButtonBackground(Graphics&, Button&, const Colour& backgroundColour,
+			bool isMouseOverButton, bool isButtonDown) override;
 private:
 	void DrawKnobImage(Graphics& g, Image& img, int x, int y, int width, int height, float angle);
-	bool IsOfType(const std::string& type, Slider& slider);
+	bool IsOfType(const std::string& type, TooltipClient& slider) const;
 	Image mImgBlackKnob;
 	Image mImgBlackKnobSwitch;
 	Image mImgSliderHandle;
