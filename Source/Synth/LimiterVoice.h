@@ -1,8 +1,8 @@
 #pragma once
-#include "../JuceLibraryCode/JuceHeader.h"
-#include "../Common/VoiceModuleBase.h"
-#include "../Common/IVoiceModuleHost.h"
-#include "../DSP/DSPDelay.h"
+#include "JuceHeader.h"
+#include "Common/VoiceModuleBase.h"
+#include "Common/IVoiceModuleHost.h"
+#include "VSTComponents/OwlDSP/DSPDelay.h"
 class CLimiterVoice : public CVoiceModuleBase {
 public:
 	CLimiterVoice(const std::string& name, IVoiceModuleHost& host, double preVolume);

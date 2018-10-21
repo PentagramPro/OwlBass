@@ -1,6 +1,6 @@
 #include "FilterVoice.h"
-#include "../Common/ProperiesRegistry.h"
-#include "../Common/Toolbox.h"
+#include "Common/ProperiesRegistry.h"
+#include "Common/Toolbox.h"
 
 #include <cmath>
 CFilterVoice::CFilterVoice(const std::string & name, IVoiceModuleHost & host, IVoltageController& cutoffEnvelope)

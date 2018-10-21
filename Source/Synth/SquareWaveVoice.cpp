@@ -1,5 +1,5 @@
 #include "SquareWaveVoice.h"
-#include "../Common/ProperiesRegistry.h"
+#include "Common/ProperiesRegistry.h"
 
 CSquareWaveVoice::CSquareWaveVoice(const std::string& name, IVoiceModuleHost& host, float freqRate, float volume)
 	: CVoiceModuleBase(name, host)

@@ -1,6 +1,6 @@
 #include "LimiterVoice.h"
-#include "../Common/Toolbox.h"
-#include "../Common/ProperiesRegistry.h"
+#include "Common/Toolbox.h"
+#include "Common/ProperiesRegistry.h"
 
 void CLimiterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSample, int numSamples)
 {

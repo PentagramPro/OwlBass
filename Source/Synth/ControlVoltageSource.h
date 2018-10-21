@@ -1,9 +1,9 @@
 #pragma once
 
 #pragma once
-#include "../JuceLibraryCode/JuceHeader.h"
-#include "../Common/VoiceModuleBase.h"
-#include "../Common/IVoiceModuleHost.h"
+#include "JuceHeader.h"
+#include "Common/VoiceModuleBase.h"
+#include "Common/IVoiceModuleHost.h"
 #include "IVoltageController.h"
 class CCVOne : public IVoltageController {
 public:

@@ -1,8 +1,8 @@
 #pragma once
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "JuceHeader.h"
 #include <vector>
-#include "../Common/VoiceModuleBase.h"
-#include "../Common/IVoiceModuleHost.h"
+#include "Common/VoiceModuleBase.h"
+#include "Common/IVoiceModuleHost.h"
 
 class CMixerVoice : public CVoiceModuleBase {
 

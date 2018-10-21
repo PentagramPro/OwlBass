@@ -1,9 +1,5 @@
-//
-// Created by Maxim.Machekhin on 2018-04-13.
-//
-
 #include "EnvelopeVoice.h"
-#include "../Common/ProperiesRegistry.h"
+#include "Common/ProperiesRegistry.h"
 #include <algorithm>
 #include <string>
 #include <cmath>

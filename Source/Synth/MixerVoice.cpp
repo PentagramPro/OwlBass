@@ -1,6 +1,6 @@
 
 #include "MixerVoice.h"
-#include "../Common/ProperiesRegistry.h"
+#include "Common/ProperiesRegistry.h"
 
 CMixerVoice::CMixerVoice(const std::string& name, IVoiceModuleHost& host) : CVoiceModuleBase(name, host) {
     

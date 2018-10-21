@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../JuceLibraryCode/JuceHeader.h"
+#include "JuceHeader.h"
 
 class CLafBlackKnob : public LookAndFeel_V4 {
 public:

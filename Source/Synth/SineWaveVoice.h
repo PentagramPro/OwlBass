@@ -1,8 +1,8 @@
 
 #pragma once
-#include "../JuceLibraryCode/JuceHeader.h"
-#include "../Common/VoiceModuleBase.h"
-#include "../Common/IVoiceModuleHost.h"
+#include "JuceHeader.h"
+#include "Common/VoiceModuleBase.h"
+#include "Common/IVoiceModuleHost.h"
 
 class CSineLfoVoice : public CVoiceModuleBase
 {

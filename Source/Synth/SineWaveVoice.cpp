@@ -1,6 +1,6 @@
 
 #include "SineWaveVoice.h"
-#include "../Common/ProperiesRegistry.h"
+#include "Common/ProperiesRegistry.h"
 
 CSineLfoVoice::CSineLfoVoice(const std::string& name, IVoiceModuleHost& host)
 		: CVoiceModuleBase(name, host){

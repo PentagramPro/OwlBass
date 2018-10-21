@@ -139,22 +139,6 @@
       <FILE id="Dy7cRw" name="SquareWaveVoice.h" compile="0" resource="0"
             file="Source/Synth/SquareWaveVoice.h"/>
     </GROUP>
-    <GROUP id="{5AB94AE6-C205-BC2E-C1FD-A2D89913ACCE}" name="DSP">
-      <FILE id="ncIEld" name="CMultiChannelIir.cpp" compile="1" resource="0"
-            file="Source/DSP/CMultiChannelIir.cpp"/>
-      <FILE id="WNj7Tr" name="CMultiChannelIir.h" compile="0" resource="0"
-            file="Source/DSP/CMultiChannelIir.h"/>
-      <FILE id="FOyYAt" name="DSPDelay.cpp" compile="1" resource="0" file="Source/DSP/DSPDelay.cpp"/>
-      <FILE id="g56sPT" name="DSPDelay.h" compile="0" resource="0" file="Source/DSP/DSPDelay.h"/>
-      <FILE id="jdp5ph" name="DSPIntegration.cpp" compile="1" resource="0"
-            file="Source/DSP/DSPIntegration.cpp"/>
-      <FILE id="w4BqLh" name="DSPIntegration.h" compile="0" resource="0"
-            file="Source/DSP/DSPIntegration.h"/>
-      <FILE id="Vun31j" name="DSPLowpassFilter2.cpp" compile="1" resource="0"
-            file="Source/DSP/DSPLowpassFilter2.cpp"/>
-      <FILE id="uIEMRS" name="DSPLowpassFilter2.h" compile="0" resource="0"
-            file="Source/DSP/DSPLowpassFilter2.h"/>
-    </GROUP>
     <GROUP id="{760016CA-87E6-5D77-FD13-3993BD947A8C}" name="Source">
       <FILE id="bjQnPX" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>

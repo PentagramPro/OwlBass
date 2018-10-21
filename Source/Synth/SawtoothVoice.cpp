@@ -1,5 +1,5 @@
 #include "SawtoothVoice.h"
-#include "../Common/ProperiesRegistry.h"
+#include "Common/ProperiesRegistry.h"
 
 CSawtoothVoice::CSawtoothVoice(const std::string & name, IVoiceModuleHost & host, double detuneScale) : CVoiceModuleBase(name,host)
 , mDetuneScale(detuneScale)

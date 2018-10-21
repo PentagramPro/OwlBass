@@ -1,5 +1,5 @@
 #include "PostProcessingVoice.h"
-#include "../Common/ProperiesRegistry.h"
+#include "Common/ProperiesRegistry.h"
 
 CPostProcessingVoice::CPostProcessingVoice(const std::string & name, IVoiceModuleHost & host)
 	: CVoiceModuleBase(name, host) 

@@ -2,8 +2,8 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "../Common/VoiceModuleBase.h"
 #include "../Common/IVoiceModuleHost.h"
-#include "../DSP/DSPLowpassFilter2.h"
-#include "../DSP/DSPDelay.h"
+#include "VSTComponents/OwlDSP/DSPLowpassFilter2.h"
+#include "VSTComponents/OwlDSP/DSPDelay.h"
 #include "IVoltageController.h"
 #include "ControlVoltageSource.h"
 #include <vector>

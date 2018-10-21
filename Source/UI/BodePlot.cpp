@@ -25,7 +25,7 @@
 
 
 //[MiscUserDefs] You can add your own user definitions and misc code here...
-#include "../Synth/FourierProbeVoice.h"
+#include "Synth/FourierProbeVoice.h"
 //[/MiscUserDefs]
 
 //==============================================================================

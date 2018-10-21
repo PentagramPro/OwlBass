@@ -20,8 +20,8 @@
 #pragma once
 
 //[Headers]     -- You can add your own extra header files here --
-#include "../../JuceLibraryCode/JuceHeader.h"
-#include "../Common/VoiceModuleBase.h"
+#include "JuceHeader.h"
+#include "Common/VoiceModuleBase.h"
 class CFourierProbeVoice;
 //[/Headers]
 

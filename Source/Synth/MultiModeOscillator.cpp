@@ -1,5 +1,5 @@
 #include "MultiModeOscillator.h"
-#include "../Common/ProperiesRegistry.h"
+#include "Common/ProperiesRegistry.h"
 
 CMultiModeOscillator::CMultiModeOscillator(const std::string & name, IVoiceModuleHost & host, IVoltageController & referenceSawtooth, double pan) : CVoiceModuleBase(name,host)
 , mReferenceSawtooth(referenceSawtooth), mPan(pan)

@@ -18,8 +18,8 @@
 */
 
 //[Headers] You can add your own extra header files here...
-#include "../Common/ProperiesRegistry.h"
-#include "../Common/Toolbox.h"
+#include "Common/ProperiesRegistry.h"
+#include "Common/Toolbox.h"
 //[/Headers]
 
 #include "LevelIndicator.h"
