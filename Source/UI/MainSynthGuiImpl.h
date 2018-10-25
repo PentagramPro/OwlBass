@@ -1,8 +1,8 @@
 #pragma once
 #include "MainSynthGui.h"
-#include "PresetBrowserImpl.h"
-#include "IGuiListener.h"
-#include "IPresetBrowserListeners.h"
+#include "VSTComponents/PresetBrowser/PresetBrowserImpl.h"
+#include "VSTComponents/OwlUI/IGuiListener.h"
+#include "VSTComponents/PresetBrowser/IPresetBrowserListeners.h"
 #include "VSTComponents/Owl/ListenerHandle.h"
 
 class CMainSynthGuiImpl : public MainSynthGui, public IPresetBrowserListener {

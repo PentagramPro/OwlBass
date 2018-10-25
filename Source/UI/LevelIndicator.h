@@ -21,7 +21,7 @@
 
 //[Headers]     -- You can add your own extra header files here --
 #include "JuceHeader.h"
-#include "IIndicator.h"
+#include "VSTComponents/OwlUI/IIndicator.h"
 //[/Headers]
 
 

@@ -10,8 +10,8 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
-#include "Synth\FourierProbeVoice.h"
-#include "UI/IIndicator.h"
+#include "Synth/FourierProbeVoice.h"
+#include "VSTComponents/OwlUI/IIndicator.h"
 
 //==============================================================================
 AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAudioProcessor& p)

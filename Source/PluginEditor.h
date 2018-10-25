@@ -1,10 +1,10 @@
 
 #pragma once
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "JuceHeader.h"
 #include "PluginProcessor.h"
 #include "UI/MainSynthGuiImpl.h"
-#include "UI/IGuiListener.h"
+#include "VSTComponents/OwlUI/IGuiListener.h"
 #include "VSTComponents/Owl/ProperiesRegistry.h"
 #include "VSTComponents/Owl/ListenerHandle.h"
 

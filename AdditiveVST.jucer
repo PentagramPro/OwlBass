@@ -19,10 +19,6 @@
             file="Source/UI/AdvancedSlider.h"/>
       <FILE id="RRWS8z" name="BodePlot.cpp" compile="1" resource="0" file="Source/UI/BodePlot.cpp"/>
       <FILE id="SO8XfT" name="BodePlot.h" compile="0" resource="0" file="Source/UI/BodePlot.h"/>
-      <FILE id="rzxOcp" name="IGuiListener.h" compile="0" resource="0" file="Source/UI/IGuiListener.h"/>
-      <FILE id="Zauu7X" name="IIndicator.h" compile="0" resource="0" file="Source/UI/IIndicator.h"/>
-      <FILE id="gRcAao" name="IPresetBrowserListeners.h" compile="0" resource="0"
-            file="Source/UI/IPresetBrowserListeners.h"/>
       <FILE id="Txx6ae" name="LevelIndicator.cpp" compile="1" resource="0"
             file="Source/UI/LevelIndicator.cpp"/>
       <FILE id="hOunIn" name="LevelIndicator.h" compile="0" resource="0"
@@ -34,17 +30,6 @@
             file="Source/UI/MainSynthGuiImpl.cpp"/>
       <FILE id="RmA1KF" name="MainSynthGuiImpl.h" compile="0" resource="0"
             file="Source/UI/MainSynthGuiImpl.h"/>
-      <FILE id="rxlGIn" name="PresetBrowser.cpp" compile="1" resource="0"
-            file="Source/UI/PresetBrowser.cpp"/>
-      <FILE id="M8wjxH" name="PresetBrowser.h" compile="0" resource="0" file="Source/UI/PresetBrowser.h"/>
-      <FILE id="dbLNVN" name="PresetBrowserImpl.cpp" compile="1" resource="0"
-            file="Source/UI/PresetBrowserImpl.cpp"/>
-      <FILE id="Ixpayz" name="PresetBrowserImpl.h" compile="0" resource="0"
-            file="Source/UI/PresetBrowserImpl.h"/>
-      <FILE id="pmifGN" name="PresetItemAdapter.cpp" compile="1" resource="0"
-            file="Source/UI/PresetItemAdapter.cpp"/>
-      <FILE id="Tt8U4i" name="PresetItemAdapter.h" compile="0" resource="0"
-            file="Source/UI/PresetItemAdapter.h"/>
     </GROUP>
     <GROUP id="{D273DE03-1424-D5E0-7D48-D067800C8468}" name="Resources">
       <FILE id="Hu4Itm" name="black knob switch.png" compile="1" resource="1"
