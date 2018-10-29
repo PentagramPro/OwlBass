@@ -24,7 +24,7 @@
 
 
 #include "LevelIndicator.h"
-#include "LookAndFeel\LafBlackKnob.h"
+#include "LookAndFeel/LafBlackKnob.h"
 
 //[/Headers]
 
