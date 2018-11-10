@@ -6,8 +6,8 @@ CPostProcessingVoice::CPostProcessingVoice(const std::string & name, IVoiceModul
 {
 	mFilters.emplace_back(juce::IIRCoefficients::makeLowPass(GetSampleRate(), 6324, 1.1));
 	mFilters.emplace_back(juce::IIRCoefficients::makeLowPass(GetSampleRate(), 6324, 1.1));
-	mFilters.emplace_back(juce::IIRCoefficients::makeHighPass(GetSampleRate(), 56, 2.2));
-	mFilters.emplace_back(juce::IIRCoefficients::makeHighPass(GetSampleRate(), 56, 2.2));
+	mFilters.emplace_back(juce::IIRCoefficients::makeHighPass(GetSampleRate(), 56, 2.0));
+	mFilters.emplace_back(juce::IIRCoefficients::makeHighPass(GetSampleRate(), 56, 2.0));
 	mFilters.emplace_back(juce::IIRCoefficients::makePeakFilter(GetSampleRate(),1326,1,0.75));
 }
 

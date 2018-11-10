@@ -71,7 +71,7 @@ OwlBassGui::OwlBassGui ()
 
     slider5.reset (new Slider ("OSC1.Divider"));
     addAndMakeVisible (slider5.get());
-    slider5->setRange (0, 1, 0);
+    slider5->setRange (1, 4, 1);
     slider5->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider5->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider5->addListener (this);
@@ -80,7 +80,7 @@ OwlBassGui::OwlBassGui ()
 
     slider6.reset (new Slider ("OSC1.Waveform"));
     addAndMakeVisible (slider6.get());
-    slider6->setRange (0, 1, 0);
+    slider6->setRange (1, 3, 1);
     slider6->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider6->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider6->addListener (this);
@@ -89,7 +89,7 @@ OwlBassGui::OwlBassGui ()
 
     slider7.reset (new Slider ("OSC2.Divider"));
     addAndMakeVisible (slider7.get());
-    slider7->setRange (0, 1, 0);
+    slider7->setRange (1, 4, 1);
     slider7->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider7->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider7->addListener (this);
@@ -98,7 +98,7 @@ OwlBassGui::OwlBassGui ()
 
     slider8.reset (new Slider ("OSC2.Waveform"));
     addAndMakeVisible (slider8.get());
-    slider8->setRange (0, 1, 0);
+    slider8->setRange (1, 3, 1);
     slider8->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider8->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider8->addListener (this);
@@ -107,7 +107,7 @@ OwlBassGui::OwlBassGui ()
 
     slider9.reset (new Slider ("OSC3.Waveform"));
     addAndMakeVisible (slider9.get());
-    slider9->setRange (0, 1, 0);
+    slider9->setRange (1, 3, 1);
     slider9->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider9->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider9->addListener (this);
@@ -116,7 +116,7 @@ OwlBassGui::OwlBassGui ()
 
     slider10.reset (new Slider ("OSC3.Divider"));
     addAndMakeVisible (slider10.get());
-    slider10->setRange (0, 1, 0);
+    slider10->setRange (1, 4, 1);
     slider10->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider10->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider10->addListener (this);
@@ -125,7 +125,7 @@ OwlBassGui::OwlBassGui ()
 
     slider11.reset (new Slider ("OSC4.Waveform"));
     addAndMakeVisible (slider11.get());
-    slider11->setRange (0, 1, 0);
+    slider11->setRange (1, 3, 1);
     slider11->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider11->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider11->addListener (this);
@@ -134,7 +134,7 @@ OwlBassGui::OwlBassGui ()
 
     slider12.reset (new Slider ("new slider"));
     addAndMakeVisible (slider12.get());
-    slider12->setRange (0, 1, 0);
+    slider12->setRange (1, 4, 1);
     slider12->setSliderStyle (Slider::RotaryHorizontalDrag);
     slider12->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider12->addListener (this);
@@ -399,6 +399,42 @@ OwlBassGui::OwlBassGui ()
 
     slider39->setBounds (807, 360, 30, 100);
 
+    slider26.reset (new Slider ("OSC1.Phase"));
+    addAndMakeVisible (slider26.get());
+    slider26->setRange (0, 1, 0);
+    slider26->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider26->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider26->addListener (this);
+
+    slider26->setBounds (24, 152, 50, 50);
+
+    slider27.reset (new Slider ("OSC2.Phase"));
+    addAndMakeVisible (slider27.get());
+    slider27->setRange (0, 1, 0);
+    slider27->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider27->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider27->addListener (this);
+
+    slider27->setBounds (0, 272, 50, 50);
+
+    slider28.reset (new Slider ("OSC3.Phase"));
+    addAndMakeVisible (slider28.get());
+    slider28->setRange (0, 1, 0);
+    slider28->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider28->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider28->addListener (this);
+
+    slider28->setBounds (888, 152, 50, 50);
+
+    slider29.reset (new Slider ("OSC1.Phase"));
+    addAndMakeVisible (slider29.get());
+    slider29->setRange (0, 1, 0);
+    slider29->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider29->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider29->addListener (this);
+
+    slider29->setBounds (893, 272, 50, 50);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -456,6 +492,10 @@ OwlBassGui::~OwlBassGui()
     slider37 = nullptr;
     slider38 = nullptr;
     slider39 = nullptr;
+    slider26 = nullptr;
+    slider27 = nullptr;
+    slider28 = nullptr;
+    slider29 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -663,6 +703,26 @@ void OwlBassGui::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_slider39] -- add your slider handling code here..
         //[/UserSliderCode_slider39]
     }
+    else if (sliderThatWasMoved == slider26.get())
+    {
+        //[UserSliderCode_slider26] -- add your slider handling code here..
+        //[/UserSliderCode_slider26]
+    }
+    else if (sliderThatWasMoved == slider27.get())
+    {
+        //[UserSliderCode_slider27] -- add your slider handling code here..
+        //[/UserSliderCode_slider27]
+    }
+    else if (sliderThatWasMoved == slider28.get())
+    {
+        //[UserSliderCode_slider28] -- add your slider handling code here..
+        //[/UserSliderCode_slider28]
+    }
+    else if (sliderThatWasMoved == slider29.get())
+    {
+        //[UserSliderCode_slider29] -- add your slider handling code here..
+        //[/UserSliderCode_slider29]
+    }
 
     //[UsersliderValueChanged_Post]
     //[/UsersliderValueChanged_Post]
@@ -734,43 +794,43 @@ BEGIN_JUCER_METADATA
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC1.Divider" id="2c08caa873912912" memberName="slider5"
-          virtualName="" explicitFocusOrder="0" pos="150 141 70 70" min="0.0"
-          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          virtualName="" explicitFocusOrder="0" pos="150 141 70 70" min="1.0"
+          max="4.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC1.Waveform" id="c93a5c777e89390" memberName="slider6"
-          virtualName="" explicitFocusOrder="0" pos="78 141 70 70" min="0.0"
-          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          virtualName="" explicitFocusOrder="0" pos="78 141 70 70" min="1.0"
+          max="3.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC2.Divider" id="348346d13236bf5f" memberName="slider7"
-          virtualName="" explicitFocusOrder="0" pos="128 261 70 70" min="0.0"
-          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          virtualName="" explicitFocusOrder="0" pos="128 261 70 70" min="1.0"
+          max="4.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC2.Waveform" id="bb384bd95d8593a8" memberName="slider8"
-          virtualName="" explicitFocusOrder="0" pos="56 261 70 70" min="0.0"
-          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          virtualName="" explicitFocusOrder="0" pos="56 261 70 70" min="1.0"
+          max="3.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC3.Waveform" id="50ddd2f6ccb0b007" memberName="slider9"
-          virtualName="" explicitFocusOrder="0" pos="812 141 70 70" min="0.0"
-          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          virtualName="" explicitFocusOrder="0" pos="812 141 70 70" min="1.0"
+          max="3.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC3.Divider" id="a05366187850a3f3" memberName="slider10"
-          virtualName="" explicitFocusOrder="0" pos="740 141 70 70" min="0.0"
-          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          virtualName="" explicitFocusOrder="0" pos="740 141 70 70" min="1.0"
+          max="4.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC4.Waveform" id="69358086a1303136" memberName="slider11"
-          virtualName="" explicitFocusOrder="0" pos="817 261 70 70" min="0.0"
-          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          virtualName="" explicitFocusOrder="0" pos="817 261 70 70" min="1.0"
+          max="3.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="new slider" id="648ffc9ff30d14ba" memberName="slider12"
-          virtualName="" explicitFocusOrder="0" pos="745 261 70 70" min="0.0"
-          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          virtualName="" explicitFocusOrder="0" pos="745 261 70 70" min="1.0"
+          max="4.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="Filter.Mode" id="500e770e434081df" memberName="slider13"
@@ -908,6 +968,26 @@ BEGIN_JUCER_METADATA
   <SLIDER name="ADSR2.Release" id="55c0f3eac09d48a5" memberName="slider39"
           virtualName="" explicitFocusOrder="0" pos="807 360 30 100" min="0.0"
           max="1.0" int="0.0" style="LinearVertical" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
+  <SLIDER name="OSC1.Phase" id="a097c0adb4bc2693" memberName="slider26"
+          virtualName="" explicitFocusOrder="0" pos="24 152 50 50" min="0.0"
+          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
+  <SLIDER name="OSC2.Phase" id="4efa37d2939989af" memberName="slider27"
+          virtualName="" explicitFocusOrder="0" pos="0 272 50 50" min="0.0"
+          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
+  <SLIDER name="OSC3.Phase" id="c7b2077e593df4ed" memberName="slider28"
+          virtualName="" explicitFocusOrder="0" pos="888 152 50 50" min="0.0"
+          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
+  <SLIDER name="OSC1.Phase" id="802932c5c29c4cd2" memberName="slider29"
+          virtualName="" explicitFocusOrder="0" pos="893 272 50 50" min="0.0"
+          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
 </JUCER_COMPONENT>

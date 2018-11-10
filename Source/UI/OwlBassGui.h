@@ -104,6 +104,10 @@ protected:
     std::unique_ptr<Slider> slider37;
     std::unique_ptr<Slider> slider38;
     std::unique_ptr<Slider> slider39;
+    std::unique_ptr<Slider> slider26;
+    std::unique_ptr<Slider> slider27;
+    std::unique_ptr<Slider> slider28;
+    std::unique_ptr<Slider> slider29;
 
 
     //==============================================================================

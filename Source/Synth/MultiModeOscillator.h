@@ -26,5 +26,6 @@ private:
 	int mDividerMax = 1;
 	int mWaveform = 1;
 	double mPan = 0;
+	double mPhase = 0;
 	IVoltageController& mReferenceSawtooth;
 };

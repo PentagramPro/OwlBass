@@ -27,7 +27,10 @@ void CMultiModeOscillator::ProcessBlock(AudioSampleBuffer & outputBuffer, int st
 
 	
 	while (--samplesCount >= 0) {
-		const double reference = mReferenceSawtooth.GetValue(currentSample);
+		double reference = mReferenceSawtooth.GetValue(currentSample)+mPhase;
+		if (reference > 1) {
+			reference -= 1;
+		}
 
 		if (reference < mLastReference) {
 			mDividerCounter++;
@@ -38,6 +41,8 @@ void CMultiModeOscillator::ProcessBlock(AudioSampleBuffer & outputBuffer, int st
 		mLastReference = reference;
 
 		const double sawtoothDivided = ((double)mDividerCounter + reference) / (double)mDividerMax * 2.0 - 1.0;
+		
+		
 		double result = 0;
 		switch (mWaveform) {
 		case 2:
@@ -65,6 +70,7 @@ void CMultiModeOscillator::ProcessBlock(AudioSampleBuffer & outputBuffer, int st
 void CMultiModeOscillator::InitProperties(CPropertiesRegistry & registry)
 {
 	registry.AddProperty(GetPropName("Volume"), new CPropertyDouble01(mVolume, 0.0, 1.0));
+	registry.AddProperty(GetPropName("Phase"), new CPropertyDouble01(mPhase, 0.0, 1.0));
 	registry.AddProperty(GetPropName("Divider"), new CPropertyInt(mDividerMax, 1, 4));
 	registry.AddProperty(GetPropName("Waveform"), new CPropertyInt(mWaveform, 1, 3));
 }
