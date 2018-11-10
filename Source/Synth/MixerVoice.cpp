@@ -43,7 +43,7 @@ void CMixerVoice::ProcessBlock(AudioSampleBuffer &outputBuffer, int startSample,
 	mBuffer.clear();
 
     for(auto& voice : mSubvoices) {
-        voice->ProcessBlock(mBuffer, startSample, numSamples);
+        voice->ProcessBlockOfSound(mBuffer, startSample, numSamples);
     }
 	
 	

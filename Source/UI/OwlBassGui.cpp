@@ -30,6 +30,7 @@
 OwlBassGui::OwlBassGui ()
 {
     //[Constructor_pre] You can add your own custom stuff here..
+	setLookAndFeel(&mLookAndFeel);
     //[/Constructor_pre]
 
     slider.reset (new Slider ("OSC1.Volume"));

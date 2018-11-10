@@ -65,7 +65,7 @@ public:
 
 	CPropertiesRegistry& GetPropertiesRegistry() { return mPropRegistry; }
 private:
-	void AddBlockOfOscillators(CMixerVoice* mixerVoice, CVoiceModuleHost& host, double detuneScale, double pan);
+	void AddBlockOfOscillators(CMixerVoice* mixerVoice, CVoiceModuleHost& host, const std::vector<std::string>& oscNames, double detuneScale, double pan);
 
 	CPropertiesRegistry mPropRegistry;
 	double mSampleRate;

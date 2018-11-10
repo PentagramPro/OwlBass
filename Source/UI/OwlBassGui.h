@@ -58,6 +58,7 @@ public:
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
+	CLafBlackKnob mLookAndFeel;
 protected:
     //[/UserVariables]
 

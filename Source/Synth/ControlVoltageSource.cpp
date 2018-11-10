@@ -35,7 +35,7 @@ void CControlVoltageSource::ProcessBlock(AudioBuffer<float>& outputBuffer, int s
 	mBuffer.setSize(1, outputBuffer.getNumSamples(), false, false, true);
 	FloatVectorOperations::fill(mBuffer.getWritePointer(0), mInitialValue, mBuffer.getNumSamples());
 	
-	mWrappedVoice->ProcessBlock(mBuffer, startSample, numSamples);
+	mWrappedVoice->ProcessBlockOfSound(mBuffer, startSample, numSamples);
 }
 
 float CControlVoltageSource::GetValue(int sampleNumber) const

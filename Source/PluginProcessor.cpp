@@ -44,35 +44,81 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	CControlVoltageSource* cvEnvelopeCutoff = new CControlVoltageSource("CVS1", *voiceModuleHost, envelopeCutoff,1.0);
 	voiceModuleHost->AddModule(cvEnvelopeCutoff);
 
-	const double detuneScale = 2;
-	AddBlockOfOscillators(nullptr, *voiceModuleHost, detuneScale*0,0);
-	
-	CMixerVoice* unisonMixer(new CMixerVoice("UnisonMixer", *voiceModuleHost));
-	
+	//===========================================================
+	// OSC1 + OSC2 + Unison + ADSR1
+	{
+		CMixerVoice* oscSectionMixer(new CMixerVoice("OscSectionMixer", *voiceModuleHost));
 
-	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.3,-1);
-	AddBlockOfOscillators(unisonMixer,*voiceModuleHost, detuneScale*0.6,1);
-	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale * 0.9,0.6);
-	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale * 1.2, -0.6);
-	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.5, -0.4);
-	AddBlockOfOscillators(unisonMixer, *voiceModuleHost, detuneScale*1.8,0.4);
+		const std::vector<std::string> oscNames{ "OSC1", "OSC2" };
+		const double detuneScale = 2;
+
+		AddBlockOfOscillators(oscSectionMixer, *voiceModuleHost, oscNames, detuneScale * 0, 0);
+
+		CMixerVoice* unisonMixer(new CMixerVoice("UnisonMixer", *voiceModuleHost));
+
+		AddBlockOfOscillators(unisonMixer, *voiceModuleHost, oscNames, detuneScale*0.3, -1);
+		AddBlockOfOscillators(unisonMixer, *voiceModuleHost, oscNames, detuneScale*0.6, 1);
+		AddBlockOfOscillators(unisonMixer, *voiceModuleHost, oscNames, detuneScale * 0.9, 0.6);
+		AddBlockOfOscillators(unisonMixer, *voiceModuleHost, oscNames, detuneScale * 1.2, -0.6);
+		AddBlockOfOscillators(unisonMixer, *voiceModuleHost, oscNames, detuneScale*1.5, -0.4);
+		AddBlockOfOscillators(unisonMixer, *voiceModuleHost, oscNames, detuneScale*1.8, 0.4);
+
+		oscSectionMixer->AddModule(unisonMixer);
+
+		oscSectionMixer->AddModule(new EnvelopeVoice("ADSR1", *voiceModuleHost));
+		mPropRegistry.ForceProperty("ADSR1.Retrigger", 0);
+
+		voiceModuleHost->AddModule(oscSectionMixer);
+	}
+
+	//===========================================================
+	// OSC3 + OSC4 + Unison + ADSR2
+
+	{
+		CMixerVoice* oscSectionMixer(new CMixerVoice("OscSectionMixer", *voiceModuleHost));
+
+		const std::vector<std::string> oscNames{ "OSC3", "OSC4" };
+		const double detuneScale = 2;
+
+		AddBlockOfOscillators(oscSectionMixer, *voiceModuleHost, oscNames, detuneScale * 0, 0);
+
+		CMixerVoice* unisonMixer(new CMixerVoice("UnisonMixer", *voiceModuleHost));
+
+		AddBlockOfOscillators(unisonMixer, *voiceModuleHost, oscNames, detuneScale*0.3, -1);
+		AddBlockOfOscillators(unisonMixer, *voiceModuleHost, oscNames, detuneScale*0.6, 1);
+		AddBlockOfOscillators(unisonMixer, *voiceModuleHost, oscNames, detuneScale * 0.9, 0.6);
+		AddBlockOfOscillators(unisonMixer, *voiceModuleHost, oscNames, detuneScale * 1.2, -0.6);
+		AddBlockOfOscillators(unisonMixer, *voiceModuleHost, oscNames, detuneScale*1.5, -0.4);
+		AddBlockOfOscillators(unisonMixer, *voiceModuleHost, oscNames, detuneScale*1.8, 0.4);
+
+		oscSectionMixer->AddModule(unisonMixer);
+
+		oscSectionMixer->AddModule(new EnvelopeVoice("ADSR2", *voiceModuleHost));
+		mPropRegistry.ForceProperty("ADSR2.Retrigger", 0);
+
+		voiceModuleHost->AddModule(oscSectionMixer);
+	}
 	
-	voiceModuleHost->AddModule(unisonMixer);
-	
-    voiceModuleHost->AddModule(new EnvelopeVoice("ADSRVol",*voiceModuleHost));
-	mPropRegistry.ForceProperty("ADSRVol.Retrigger", 0);
+    
 	
 	{
 		std::shared_ptr<CSineLfoVoice> lfoCutoff(new CSineLfoVoice("FilterCutoffLfo", *voiceModuleHost));
 		CControlVoltageSource* cvLfoCutoff = new CControlVoltageSource("CVFilterCutoffLfo", *voiceModuleHost, lfoCutoff, 0);
 		voiceModuleHost->AddModule(cvLfoCutoff);
 		
+		const CPropertiesRegistry& registry = mPropRegistry;
 
 		auto& filter1 = voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
 		filter1.SetLfo(*cvLfoCutoff);
+		
 
 		auto& filter2 = voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
 		filter2.SetLfo(*cvLfoCutoff);
+		filter2.AddMuteRule([&registry](const IVoiceModule& m) { return registry.GetPropertyValueFromReference("Filter.Mode") > 1; });
+
+		auto& filter3 = voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
+		filter3.SetLfo(*cvLfoCutoff);
+		filter3.AddMuteRule([&registry](const IVoiceModule& m) { return registry.GetPropertyValueFromReference("Filter.Mode") > 2; });
 	}
 	
 	
@@ -99,22 +145,22 @@ AdditiveVstAudioProcessor::~AdditiveVstAudioProcessor()
 {
 }
 
-void AdditiveVstAudioProcessor::AddBlockOfOscillators( CMixerVoice* mixerVoice, CVoiceModuleHost& host, double detuneScale, double pan) {
+void AdditiveVstAudioProcessor::AddBlockOfOscillators( CMixerVoice* mixerVoice, CVoiceModuleHost& host, const std::vector<std::string>& oscNames, double detuneScale, double pan) {
+	
+	
 	std::shared_ptr<CSawtoothVoice> referenceSawtooth(new CSawtoothVoice("ReferenceOscillator", host, detuneScale));
 	CControlVoltageSource* cvReferenceSawtooth = new CControlVoltageSource("ReferenceOscillatorCV", host, referenceSawtooth, 0.0);
-
-
 	host.AddModule(cvReferenceSawtooth);
-	if (mixerVoice) {
-		mixerVoice->AddModule(new CMultiModeOscillator("OSC1", host, *cvReferenceSawtooth,pan));
-		mixerVoice->AddModule(new CMultiModeOscillator("OSC2", host, *cvReferenceSawtooth, pan));
-		mixerVoice->AddModule(new CMultiModeOscillator("OSC3", host, *cvReferenceSawtooth, pan));
+
+	for (const auto& oscName : oscNames) {
+		if (mixerVoice) {
+			mixerVoice->AddModule(new CMultiModeOscillator(oscName, host, *cvReferenceSawtooth, pan));
+		}
+		else {
+			host.AddModule(new CMultiModeOscillator(oscName, host, *cvReferenceSawtooth, pan));
+		}
 	}
-	else {
-		host.AddModule(new CMultiModeOscillator("OSC1", host, *cvReferenceSawtooth, pan));
-		host.AddModule(new CMultiModeOscillator("OSC2", host, *cvReferenceSawtooth, pan));
-		host.AddModule(new CMultiModeOscillator("OSC3", host, *cvReferenceSawtooth, pan));
-	}
+		
 	
 }
 
