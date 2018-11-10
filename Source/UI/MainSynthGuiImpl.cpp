@@ -6,6 +6,11 @@ CMainSynthGuiImpl::CMainSynthGuiImpl()
 	mPresetListenerHandle = mPresetBrowser->AddListener(*this);
 }
 
+CMainSynthGuiImpl::~CMainSynthGuiImpl()
+{
+	setLookAndFeel(nullptr);
+}
+
 void CMainSynthGuiImpl::sliderValueChanged(Slider * sliderThatWasMoved)
 {
 	if (mListener) {

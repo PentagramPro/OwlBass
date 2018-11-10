@@ -106,7 +106,8 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 		CControlVoltageSource* cvLfoCutoff = new CControlVoltageSource("CVFilterCutoffLfo", *voiceModuleHost, lfoCutoff, 0);
 		voiceModuleHost->AddModule(cvLfoCutoff);
 		
-		const CPropertiesRegistry& registry = mPropRegistry;
+		static int filterMode = 1;
+		mPropRegistry.AddProperty("Filter.Mode", new CPropertyInt(filterMode, 1, 3));
 
 		auto& filter1 = voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
 		filter1.SetLfo(*cvLfoCutoff);
@@ -114,11 +115,11 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
 		auto& filter2 = voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
 		filter2.SetLfo(*cvLfoCutoff);
-		filter2.AddMuteRule([&registry](const IVoiceModule& m) { return registry.GetPropertyValueFromReference("Filter.Mode") > 1; });
+		filter2.AddMuteRule([](const IVoiceModule& m) { return filterMode > 1; });
 
 		auto& filter3 = voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
 		filter3.SetLfo(*cvLfoCutoff);
-		filter3.AddMuteRule([&registry](const IVoiceModule& m) { return registry.GetPropertyValueFromReference("Filter.Mode") > 2; });
+		filter3.AddMuteRule([](const IVoiceModule& m) { return filterMode > 2; });
 	}
 	
 	

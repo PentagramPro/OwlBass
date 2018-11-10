@@ -9,6 +9,7 @@
 class CMainSynthGuiImpl : public OwlBassGui, public IPresetBrowserListener {
 public:
 	CMainSynthGuiImpl();
+	virtual ~CMainSynthGuiImpl();
 	void sliderValueChanged(Slider* sliderThatWasMoved) override;
 	void buttonClicked(Button* buttonThatWasClicked) override;
 
