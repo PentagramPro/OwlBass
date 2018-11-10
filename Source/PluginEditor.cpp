@@ -19,7 +19,7 @@ AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAud
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (1000, 640);
+    setSize (1020, 668);
 
 
 	addAndMakeVisible(mGui);

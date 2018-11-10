@@ -5,7 +5,7 @@
 #include <cmath>
 void EnvelopeVoice::InitProperties(CPropertiesRegistry & registry)
 {
-	registry.AddProperty(GetPropName("Attack"), new CPropertySquareDouble01(mAttackTime, 0.0004, 10.0));
+	registry.AddProperty(GetPropName("Attack"), new CPropertySquareDouble01(mAttackTime, 0.0004, 5.0));
 	registry.AddProperty(GetPropName("Release"), new CPropertySquareDouble01(mReleaseTime, 0.001, 10.0));
 	registry.AddProperty(GetPropName("Sustain"), new CPropertyDouble01(mSustainLevel, 0.0, 1.0));
 	registry.AddProperty(GetPropName("Retrigger"), new CPropertyInt(mRetrigger, 0, 1));

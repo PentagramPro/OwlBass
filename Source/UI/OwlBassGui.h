@@ -54,6 +54,15 @@ public:
     void sliderValueChanged (Slider* sliderThatWasMoved) override;
     void buttonClicked (Button* buttonThatWasClicked) override;
 
+    // Binary resources:
+    static const char* case_main_png;
+    static const int case_main_pngSize;
+    static const char* case_effects_png;
+    static const int case_effects_pngSize;
+    static const char* levelIndicator_png;
+    static const int levelIndicator_pngSize;
+    static const char* presetsPanel_png;
+    static const int presetsPanel_pngSize;
 
 
 private:
@@ -108,6 +117,13 @@ protected:
     std::unique_ptr<Slider> slider27;
     std::unique_ptr<Slider> slider28;
     std::unique_ptr<Slider> slider29;
+    std::unique_ptr<ToggleButton> toggleButton;
+    std::unique_ptr<Slider> slider40;
+    Image cachedImage_case_main_png_1;
+    Image cachedImage_case_effects_png_2;
+    Image cachedImage_levelIndicator_png_3;
+    Image cachedImage_levelIndicator_png_4;
+    Image cachedImage_presetsPanel_png_5;
 
 
     //==============================================================================

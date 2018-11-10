@@ -69,7 +69,7 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 
 void CFilterVoice::InitProperties(CPropertiesRegistry & registry)
 {
-	registry.AddProperty(GetPropName("CutoffFreq"), new CPropertyDouble01(mCutoffFreq, mCutoffFreqMin, mCutoffFreqMax));
-	registry.AddProperty(GetPropName("Q"), new CPropertyDouble01(mQ, 0.6, 5.0));
-	registry.AddProperty(GetPropName("EnvelopeScale"), new CPropertyDouble01(mEnvelopeScale, -1.0, 1.0));
+	registry.AddProperty(GetPropName("CutoffFreq"), new CPropertySquareDouble01(mCutoffFreq, mCutoffFreqMin, mCutoffFreqMax));
+	registry.AddProperty(GetPropName("Q"), new CPropertyDouble01(mQ, 0.6, 3.0));
+	registry.AddProperty(GetPropName("EnvelopeScale"), new CPropertyInt(mEnvelopeScale, -1, 1));
 }

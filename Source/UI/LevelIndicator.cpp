@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.3.2
+  Created with Projucer version: 5.4.0
 
   ------------------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ void LevelIndicator::paint (Graphics& g)
 
 	if (mPropertiesRegistry) {
 		const float value = mPropertiesRegistry->GetPropertyValueRaw(getName().toStdString());
-		
+
 		g.setColour(Colour::fromRGB(128,232,129));
 		g.fillRect(0.0f, 0.0f, getWidth()*safeRatio*Toolbox::clamp(value,0.0f,1.0f), (float)getHeight());
 
@@ -77,8 +77,8 @@ void LevelIndicator::paint (Graphics& g)
 		}
 	}
     //[/UserPrePaint]
-	
-    
+
+    g.fillAll (Colour (0xff323e44));
 
     //[UserPaint] Add your own custom painting code here..
 	juce::Timer::callAfterDelay(50, [this]() {
@@ -117,7 +117,7 @@ BEGIN_JUCER_METADATA
 
 <JUCER_COMPONENT documentType="Component" className="LevelIndicator" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
-                 snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
+                 snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.33"
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ff323e44"/>
 </JUCER_COMPONENT>

@@ -23,7 +23,7 @@ private:
 	CDSPDelay mCutoffDelay;
 	double mCutoffFreq = 1;
 	double mQ = 1;
-	double mEnvelopeScale = 0;
+	int mEnvelopeScale = 0;
 	
 	const double mCutoffFreqMax = 5000;
 	const double mCutoffFreqMin = 100;
