@@ -51,16 +51,19 @@ void CLafBlackKnob::drawLinearSlider(Graphics &g, int x, int y, int width, int h
 void CLafBlackKnob::drawRotarySlider(Graphics &g, int x, int y, int width, int height, 
 	float sliderPosProportional, float rotaryStartAngle, float rotaryEndAngle, Slider &slider)
 {
-
-	bool isSwitch = false;
-	float angle = rotaryStartAngle + (rotaryEndAngle - rotaryStartAngle)*sliderPosProportional;
 	auto* image = &mImgBlackKnob;
-	
-	if (IsOfType("switch",slider)) {
+	bool isSwitch = false;
+	if (IsOfType("switch", slider)) {
 		image = &mImgBlackKnobSwitch;
 		isSwitch = true;
-	} 
+	}
 
+	const float rangeScale = isSwitch ? 0.5f : 1.0f;
+	const float range = rotaryEndAngle - rotaryStartAngle;
+	float angle = rotaryStartAngle + range*sliderPosProportional*rangeScale+range*(1-rangeScale)/2;
+	
+	
+	
 	DrawKnobImage(g, *image, x, y, width, height, angle);
 
 	if (!isSwitch) {
