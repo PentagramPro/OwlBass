@@ -1,11 +1,12 @@
 #pragma once
 #include "MainSynthGui.h"
+#include "OwlBassGui.h"
 #include "VSTComponents/PresetBrowser/PresetBrowserImpl.h"
 #include "VSTComponents/OwlUI/IGuiListener.h"
 #include "VSTComponents/PresetBrowser/IPresetBrowserListeners.h"
 #include "VSTComponents/Owl/ListenerHandle.h"
 
-class CMainSynthGuiImpl : public MainSynthGui, public IPresetBrowserListener {
+class CMainSynthGuiImpl : public OwlBassGui, public IPresetBrowserListener {
 public:
 	CMainSynthGuiImpl();
 	void sliderValueChanged(Slider* sliderThatWasMoved) override;

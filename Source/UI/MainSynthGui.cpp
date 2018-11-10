@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.3.2
+  Created with Projucer version: 5.4.0
 
   ------------------------------------------------------------------------------
 
@@ -36,7 +36,7 @@ MainSynthGui::MainSynthGui ()
     mPresetDescr.reset (new Label ("new label",
                                    TRANS("Bass / Wah wah sound")));
     addAndMakeVisible (mPresetDescr.get());
-    mPresetDescr->setFont (Font (Font::getDefaultMonospacedFontName(), 16.00f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (-0.046f));
+    mPresetDescr->setFont (Font (Font::getDefaultMonospacedFontName(), 16.0f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (-0.046f));
     mPresetDescr->setJustificationType (Justification::centred);
     mPresetDescr->setEditable (false, false, false);
     mPresetDescr->setColour (Label::textColourId, Colour (0xff2d0334));
@@ -66,7 +66,7 @@ MainSynthGui::MainSynthGui ()
     label.reset (new Label ("new label",
                             TRANS("OSC")));
     addAndMakeVisible (label.get());
-    label->setFont (Font (32.50f, Font::plain).withTypefaceStyle ("Regular"));
+    label->setFont (Font (32.5f, Font::plain).withTypefaceStyle ("Regular"));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
     label->setColour (TextEditor::textColourId, Colours::black);
@@ -77,7 +77,7 @@ MainSynthGui::MainSynthGui ()
     label2.reset (new Label ("new label",
                              TRANS("Filter")));
     addAndMakeVisible (label2.get());
-    label2->setFont (Font (32.50f, Font::plain).withTypefaceStyle ("Regular"));
+    label2->setFont (Font (32.5f, Font::plain).withTypefaceStyle ("Regular"));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
     label2->setColour (TextEditor::textColourId, Colours::black);
@@ -88,7 +88,7 @@ MainSynthGui::MainSynthGui ()
     label3.reset (new Label ("new label",
                              TRANS("Amplifier volume")));
     addAndMakeVisible (label3.get());
-    label3->setFont (Font (17.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label3->setFont (Font (17.0f, Font::plain).withTypefaceStyle ("Regular"));
     label3->setJustificationType (Justification::centredLeft);
     label3->setEditable (false, false, false);
     label3->setColour (TextEditor::textColourId, Colours::black);
@@ -119,7 +119,7 @@ MainSynthGui::MainSynthGui ()
     label4.reset (new Label ("new label",
                              TRANS("main")));
     addAndMakeVisible (label4.get());
-    label4->setFont (Font ("Verdana", 14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label4->setFont (Font ("Verdana", 14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label4->setJustificationType (Justification::centred);
     label4->setEditable (false, false, false);
     label4->setColour (TextEditor::textColourId, Colours::black);
@@ -130,7 +130,7 @@ MainSynthGui::MainSynthGui ()
     label5.reset (new Label ("new label",
                              TRANS("sub1")));
     addAndMakeVisible (label5.get());
-    label5->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label5->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label5->setJustificationType (Justification::centred);
     label5->setEditable (false, false, false);
     label5->setColour (TextEditor::textColourId, Colours::black);
@@ -151,7 +151,7 @@ MainSynthGui::MainSynthGui ()
     label6.reset (new Label ("new label",
                              TRANS("sub2")));
     addAndMakeVisible (label6.get());
-    label6->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label6->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label6->setJustificationType (Justification::centred);
     label6->setEditable (false, false, false);
     label6->setColour (TextEditor::textColourId, Colours::black);
@@ -171,7 +171,7 @@ MainSynthGui::MainSynthGui ()
     label7.reset (new Label ("new label",
                              TRANS("cutoff")));
     addAndMakeVisible (label7.get());
-    label7->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label7->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label7->setJustificationType (Justification::centred);
     label7->setEditable (false, false, false);
     label7->setColour (TextEditor::textColourId, Colours::black);
@@ -191,7 +191,7 @@ MainSynthGui::MainSynthGui ()
     label8.reset (new Label ("new label",
                              TRANS("Q")));
     addAndMakeVisible (label8.get());
-    label8->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label8->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label8->setJustificationType (Justification::centred);
     label8->setEditable (false, false, false);
     label8->setColour (TextEditor::textColourId, Colours::black);
@@ -202,7 +202,7 @@ MainSynthGui::MainSynthGui ()
     label9.reset (new Label ("new label",
                              TRANS("Filter cutoff")));
     addAndMakeVisible (label9.get());
-    label9->setFont (Font (17.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label9->setFont (Font (17.0f, Font::plain).withTypefaceStyle ("Regular"));
     label9->setJustificationType (Justification::centredLeft);
     label9->setEditable (false, false, false);
     label9->setColour (TextEditor::textColourId, Colours::black);
@@ -223,7 +223,7 @@ MainSynthGui::MainSynthGui ()
     label10.reset (new Label ("new label",
                               TRANS("A")));
     addAndMakeVisible (label10.get());
-    label10->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label10->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label10->setJustificationType (Justification::centred);
     label10->setEditable (false, false, false);
     label10->setColour (TextEditor::textColourId, Colours::black);
@@ -234,7 +234,7 @@ MainSynthGui::MainSynthGui ()
     label12.reset (new Label ("new label",
                               TRANS("S")));
     addAndMakeVisible (label12.get());
-    label12->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label12->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label12->setJustificationType (Justification::centred);
     label12->setEditable (false, false, false);
     label12->setColour (TextEditor::textColourId, Colours::black);
@@ -245,7 +245,7 @@ MainSynthGui::MainSynthGui ()
     label13.reset (new Label ("new label",
                               TRANS("R")));
     addAndMakeVisible (label13.get());
-    label13->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label13->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label13->setJustificationType (Justification::centred);
     label13->setEditable (false, false, false);
     label13->setColour (TextEditor::textColourId, Colours::black);
@@ -284,7 +284,7 @@ MainSynthGui::MainSynthGui ()
     label14.reset (new Label ("new label",
                               TRANS("A")));
     addAndMakeVisible (label14.get());
-    label14->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label14->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label14->setJustificationType (Justification::centred);
     label14->setEditable (false, false, false);
     label14->setColour (TextEditor::textColourId, Colours::black);
@@ -295,7 +295,7 @@ MainSynthGui::MainSynthGui ()
     label16.reset (new Label ("new label",
                               TRANS("S")));
     addAndMakeVisible (label16.get());
-    label16->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label16->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label16->setJustificationType (Justification::centred);
     label16->setEditable (false, false, false);
     label16->setColour (TextEditor::textColourId, Colours::black);
@@ -306,7 +306,7 @@ MainSynthGui::MainSynthGui ()
     label17.reset (new Label ("new label",
                               TRANS("R")));
     addAndMakeVisible (label17.get());
-    label17->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label17->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label17->setJustificationType (Justification::centred);
     label17->setEditable (false, false, false);
     label17->setColour (TextEditor::textColourId, Colours::black);
@@ -392,7 +392,7 @@ MainSynthGui::MainSynthGui ()
     label11.reset (new Label ("new label",
                               TRANS("Envelope")));
     addAndMakeVisible (label11.get());
-    label11->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label11->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label11->setJustificationType (Justification::centred);
     label11->setEditable (false, false, false);
     label11->setColour (TextEditor::textColourId, Colours::black);
@@ -413,7 +413,7 @@ MainSynthGui::MainSynthGui ()
     label15.reset (new Label ("new label",
                               TRANS("Delay\n")));
     addAndMakeVisible (label15.get());
-    label15->setFont (Font (17.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label15->setFont (Font (17.0f, Font::plain).withTypefaceStyle ("Regular"));
     label15->setJustificationType (Justification::centredLeft);
     label15->setEditable (false, false, false);
     label15->setColour (TextEditor::textColourId, Colours::black);
@@ -424,7 +424,7 @@ MainSynthGui::MainSynthGui ()
     label18.reset (new Label ("new label",
                               TRANS("wet")));
     addAndMakeVisible (label18.get());
-    label18->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label18->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label18->setJustificationType (Justification::centred);
     label18->setEditable (false, false, false);
     label18->setColour (TextEditor::textColourId, Colours::black);
@@ -445,7 +445,7 @@ MainSynthGui::MainSynthGui ()
     label19.reset (new Label ("new label",
                               TRANS("detune")));
     addAndMakeVisible (label19.get());
-    label19->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label19->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label19->setJustificationType (Justification::centred);
     label19->setEditable (false, false, false);
     label19->setColour (TextEditor::textColourId, Colours::black);
@@ -466,7 +466,7 @@ MainSynthGui::MainSynthGui ()
     label20.reset (new Label ("new label",
                               TRANS("volume")));
     addAndMakeVisible (label20.get());
-    label20->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label20->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label20->setJustificationType (Justification::centred);
     label20->setEditable (false, false, false);
     label20->setColour (TextEditor::textColourId, Colours::black);
@@ -487,7 +487,7 @@ MainSynthGui::MainSynthGui ()
     label21.reset (new Label ("new label",
                               TRANS("time")));
     addAndMakeVisible (label21.get());
-    label21->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label21->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label21->setJustificationType (Justification::centred);
     label21->setEditable (false, false, false);
     label21->setColour (TextEditor::textColourId, Colours::black);
@@ -508,7 +508,7 @@ MainSynthGui::MainSynthGui ()
     label22.reset (new Label ("new label",
                               TRANS("feedback")));
     addAndMakeVisible (label22.get());
-    label22->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label22->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label22->setJustificationType (Justification::centred);
     label22->setEditable (false, false, false);
     label22->setColour (TextEditor::textColourId, Colours::black);
@@ -519,7 +519,7 @@ MainSynthGui::MainSynthGui ()
     label23.reset (new Label ("new label",
                               TRANS("Unison")));
     addAndMakeVisible (label23.get());
-    label23->setFont (Font (17.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label23->setFont (Font (17.0f, Font::plain).withTypefaceStyle ("Regular"));
     label23->setJustificationType (Justification::centredLeft);
     label23->setEditable (false, false, false);
     label23->setColour (TextEditor::textColourId, Colours::black);
@@ -530,7 +530,7 @@ MainSynthGui::MainSynthGui ()
     label24.reset (new Label ("new label",
                               TRANS("retrigger")));
     addAndMakeVisible (label24.get());
-    label24->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label24->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label24->setJustificationType (Justification::centred);
     label24->setEditable (false, false, false);
     label24->setColour (TextEditor::textColourId, Colours::black);
@@ -541,7 +541,7 @@ MainSynthGui::MainSynthGui ()
     label25.reset (new Label ("new label",
                               TRANS("Envelopes")));
     addAndMakeVisible (label25.get());
-    label25->setFont (Font (32.50f, Font::plain).withTypefaceStyle ("Regular"));
+    label25->setFont (Font (32.5f, Font::plain).withTypefaceStyle ("Regular"));
     label25->setJustificationType (Justification::centredLeft);
     label25->setEditable (false, false, false);
     label25->setColour (TextEditor::textColourId, Colours::black);
@@ -570,7 +570,7 @@ MainSynthGui::MainSynthGui ()
     label26.reset (new Label ("new label",
                               TRANS("Filter LFO")));
     addAndMakeVisible (label26.get());
-    label26->setFont (Font (32.50f, Font::plain).withTypefaceStyle ("Regular"));
+    label26->setFont (Font (32.5f, Font::plain).withTypefaceStyle ("Regular"));
     label26->setJustificationType (Justification::centredLeft);
     label26->setEditable (false, false, false);
     label26->setColour (TextEditor::textColourId, Colours::black);
@@ -581,7 +581,7 @@ MainSynthGui::MainSynthGui ()
     label27.reset (new Label ("new label",
                               TRANS("Frequency")));
     addAndMakeVisible (label27.get());
-    label27->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label27->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label27->setJustificationType (Justification::centred);
     label27->setEditable (false, false, false);
     label27->setColour (TextEditor::textColourId, Colours::black);
@@ -592,7 +592,7 @@ MainSynthGui::MainSynthGui ()
     label28.reset (new Label ("new label",
                               TRANS("Amount")));
     addAndMakeVisible (label28.get());
-    label28->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label28->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label28->setJustificationType (Justification::centred);
     label28->setEditable (false, false, false);
     label28->setColour (TextEditor::textColourId, Colours::black);
@@ -613,7 +613,7 @@ MainSynthGui::MainSynthGui ()
     label29.reset (new Label ("new label",
                               TRANS("volume")));
     addAndMakeVisible (label29.get());
-    label29->setFont (Font (14.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label29->setFont (Font (14.0f, Font::plain).withTypefaceStyle ("Regular"));
     label29->setJustificationType (Justification::centred);
     label29->setEditable (false, false, false);
     label29->setColour (TextEditor::textColourId, Colours::black);
@@ -624,7 +624,7 @@ MainSynthGui::MainSynthGui ()
     label31.reset (new Label ("new label",
                               TRANS("Output")));
     addAndMakeVisible (label31.get());
-    label31->setFont (Font (17.00f, Font::plain).withTypefaceStyle ("Regular"));
+    label31->setFont (Font (17.0f, Font::plain).withTypefaceStyle ("Regular"));
     label31->setJustificationType (Justification::centredLeft);
     label31->setEditable (false, false, false);
     label31->setColour (TextEditor::textColourId, Colours::black);
@@ -902,7 +902,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -914,7 +914,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -956,7 +956,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (15.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centredRight, true);
     }
@@ -968,7 +968,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -980,7 +980,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -992,7 +992,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -1004,7 +1004,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -1016,7 +1016,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -1028,7 +1028,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -1040,7 +1040,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -1052,7 +1052,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -1064,7 +1064,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -1076,7 +1076,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -1088,7 +1088,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -1100,7 +1100,7 @@ void MainSynthGui::paint (Graphics& g)
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font (16.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (Font (16.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
     }
@@ -1308,394 +1308,371 @@ BEGIN_JUCER_METADATA
 
 <JUCER_COMPONENT documentType="Component" className="MainSynthGui" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
-                 snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
+                 snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.33"
                  fixedSize="0" initialWidth="1000" initialHeight="640">
   <BACKGROUND backgroundColour="ff323e44">
-    <IMAGE pos="0 0 1000 640" resource="case_main_png" opacity="1.00000000000000000000"
-           mode="0"/>
-    <IMAGE pos="-36 452 1072 224" resource="case_effects_png" opacity="1.00000000000000000000"
+    <IMAGE pos="0 0 1000 640" resource="case_main_png" opacity="1.0" mode="0"/>
+    <IMAGE pos="-36 452 1072 224" resource="case_effects_png" opacity="1.0"
            mode="0"/>
     <GROUP>
-      <IMAGE pos="324 60 20 16" resource="icon_triangle_png" opacity="1.00000000000000000000"
+      <IMAGE pos="324 60 20 16" resource="icon_triangle_png" opacity="1.0"
              mode="0"/>
-      <IMAGE pos="364 148 20 16" resource="icon_square_png" opacity="1.00000000000000000000"
+      <IMAGE pos="364 148 20 16" resource="icon_square_png" opacity="1.0"
              mode="0"/>
-      <IMAGE pos="284 148 20 16" resource="icon_saw_png" opacity="1.00000000000000000000"
-             mode="0"/>
+      <IMAGE pos="284 148 20 16" resource="icon_saw_png" opacity="1.0" mode="0"/>
     </GROUP>
     <GROUP>
-      <IMAGE pos="324 180 20 16" resource="icon_triangle_png" opacity="1.00000000000000000000"
+      <IMAGE pos="324 180 20 16" resource="icon_triangle_png" opacity="1.0"
              mode="0"/>
-      <IMAGE pos="364 268 20 16" resource="icon_square_png" opacity="1.00000000000000000000"
+      <IMAGE pos="364 268 20 16" resource="icon_square_png" opacity="1.0"
              mode="0"/>
-      <IMAGE pos="284 268 20 16" resource="icon_saw_png" opacity="1.00000000000000000000"
-             mode="0"/>
+      <IMAGE pos="284 268 20 16" resource="icon_saw_png" opacity="1.0" mode="0"/>
     </GROUP>
     <GROUP>
-      <IMAGE pos="324 308 20 16" resource="icon_triangle_png" opacity="1.00000000000000000000"
+      <IMAGE pos="324 308 20 16" resource="icon_triangle_png" opacity="1.0"
              mode="0"/>
-      <IMAGE pos="364 396 20 16" resource="icon_square_png" opacity="1.00000000000000000000"
+      <IMAGE pos="364 396 20 16" resource="icon_square_png" opacity="1.0"
              mode="0"/>
-      <IMAGE pos="284 396 20 16" resource="icon_saw_png" opacity="1.00000000000000000000"
-             mode="0"/>
+      <IMAGE pos="284 396 20 16" resource="icon_saw_png" opacity="1.0" mode="0"/>
     </GROUP>
     <TEXT pos="300 20 76 30" fill="solid: ffffffff" hasStroke="0" text="waveform"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
     <TEXT pos="180 20 76 30" fill="solid: ffffffff" hasStroke="0" text="divider"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
-    <IMAGE pos="780 532 192 28" resource="levelIndicator_png" opacity="1.00000000000000000000"
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
+    <IMAGE pos="780 532 192 28" resource="levelIndicator_png" opacity="1.0"
            mode="0"/>
-    <IMAGE pos="780 580 192 28" resource="levelIndicator_png" opacity="1.00000000000000000000"
+    <IMAGE pos="780 580 192 28" resource="levelIndicator_png" opacity="1.0"
            mode="0"/>
-    <IMAGE pos="124 438 324 39" resource="presetsPanel_png" opacity="1.00000000000000000000"
+    <IMAGE pos="124 438 324 39" resource="presetsPanel_png" opacity="1.0"
            mode="0"/>
     <TEXT pos="12 442 104 30" fill="solid: ffffffff" hasStroke="0" text="Current preset:"
-          fontname="Default font" fontsize="15.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="34"/>
+          fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
+          italic="0" justification="34"/>
     <TEXT pos="175 140 20 30" fill="solid: ffffffff" hasStroke="0" text="1"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
     <TEXT pos="175 68 20 30" fill="solid: ffffffff" hasStroke="0" text="2"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
     <TEXT pos="236 68 20 30" fill="solid: ffffffff" hasStroke="0" text="3"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
     <TEXT pos="236 140 20 30" fill="solid: ffffffff" hasStroke="0" text="4"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
     <TEXT pos="175 260 20 30" fill="solid: ffffffff" hasStroke="0" text="1"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
     <TEXT pos="175 188 20 30" fill="solid: ffffffff" hasStroke="0" text="2"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
     <TEXT pos="236 188 20 30" fill="solid: ffffffff" hasStroke="0" text="3"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
     <TEXT pos="236 260 20 30" fill="solid: ffffffff" hasStroke="0" text="4"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
     <TEXT pos="175 388 20 30" fill="solid: ffffffff" hasStroke="0" text="1"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
     <TEXT pos="175 316 20 30" fill="solid: ffffffff" hasStroke="0" text="2"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
     <TEXT pos="236 316 20 30" fill="solid: ffffffff" hasStroke="0" text="3"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
     <TEXT pos="236 388 20 30" fill="solid: ffffffff" hasStroke="0" text="4"
-          fontname="Default font" fontsize="16.00000000000000000000" kerning="0.00000000000000000000"
-          bold="0" italic="0" justification="36"/>
+          fontname="Default font" fontsize="16.0" kerning="0.0" bold="0"
+          italic="0" justification="36"/>
   </BACKGROUND>
   <LABEL name="new label" id="149006776a721cd6" memberName="mPresetDescr"
          virtualName="" explicitFocusOrder="0" pos="128 446 312 24" textCol="ff2d0334"
          edTextCol="ff000000" edBkgCol="0" labelText="Bass / Wah wah sound"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Default monospaced font" fontsize="16.00000000000000000000"
-         kerning="-0.04599999999999999922" bold="0" italic="0" justification="36"/>
+         fontname="Default monospaced font" fontsize="16.0" kerning="-0.04599999999999999922"
+         bold="0" italic="0" justification="36"/>
   <SLIDER name="ADSRVol.Attack" id="e686dcf41ff8f723" memberName="slider2"
-          virtualName="" explicitFocusOrder="0" pos="677 252 40 148" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          virtualName="" explicitFocusOrder="0" pos="677 252 40 148" min="0.0"
+          max="1.0" int="0.0" style="LinearVertical" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
   <SLIDER name="ADSRVol.Release" id="19e4bee93ea59267" memberName="slider3"
-          virtualName="" explicitFocusOrder="0" pos="769 252 40 148" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          virtualName="" explicitFocusOrder="0" pos="769 252 40 148" min="0.0"
+          max="1.0" int="0.0" style="LinearVertical" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
   <LABEL name="new label" id="cb473a02381fc25e" memberName="label" virtualName=""
          explicitFocusOrder="0" pos="24 16 128 24" edTextCol="ff000000"
          edBkgCol="0" labelText="OSC" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="32.50000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="32.5"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="new label" id="fc97faf8d67fc441" memberName="label2" virtualName=""
          explicitFocusOrder="0" pos="440 16 160 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Filter" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="32.50000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="32.5"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="new label" id="691b291fae04a656" memberName="label3" virtualName=""
          explicitFocusOrder="0" pos="674 226 168 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Amplifier volume" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="17.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="17.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <SLIDER name="OSC1.Volume" id="64cd19f61a09fafc" memberName="slider4"
           virtualName="Slider" explicitFocusOrder="0" pos="40 56 110 110"
-          thumbcol="ff328f09" min="0.00000000000000000000" max="1.00000000000000000000"
-          int="0.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
-          needsCallback="1"/>
+          thumbcol="ff328f09" min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
   <SLIDER name="OSC2.Volume" id="5b6363a9393426b5" memberName="slider5"
           virtualName="" explicitFocusOrder="0" pos="40 176 110 110" thumbcol="ff328f09"
-          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
-          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <LABEL name="new label" id="8b601101dbaa262f" memberName="label4" virtualName=""
          explicitFocusOrder="0" pos="8 48 56 24" edTextCol="ff000000"
          edBkgCol="0" labelText="main" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Verdana" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Verdana" fontsize="14.0" kerning="0.0"
+         bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="51bdd6e7adc460f1" memberName="label5" virtualName=""
          explicitFocusOrder="0" pos="8 168 56 24" edTextCol="ff000000"
          edBkgCol="0" labelText="sub1" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <SLIDER name="OSC3.Volume" id="4f70b9dfb7d22046" memberName="slider6"
           virtualName="" explicitFocusOrder="0" pos="40 304 110 110" thumbcol="ff328f09"
-          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
-          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <LABEL name="new label" id="98130ba7d077c9a8" memberName="label6" virtualName=""
          explicitFocusOrder="0" pos="8 296 56 24" edTextCol="ff000000"
          edBkgCol="0" labelText="sub2" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <SLIDER name="Filter.CutoffFreq" id="b5ddfb611a52b59e" memberName="slider7"
-          virtualName="" explicitFocusOrder="0" pos="448 56 95 95" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          virtualName="" explicitFocusOrder="0" pos="448 56 95 95" min="0.0"
+          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
   <LABEL name="new label" id="f2561c1e16491f99" memberName="label7" virtualName=""
          explicitFocusOrder="0" pos="464 144 56 24" edTextCol="ff000000"
          edBkgCol="0" labelText="cutoff" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <SLIDER name="Filter.Q" id="32ff76d91d4131a8" memberName="slider8" virtualName=""
-          explicitFocusOrder="0" pos="571 56 95 95" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          explicitFocusOrder="0" pos="571 56 95 95" min="0.0" max="1.0"
+          int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
   <LABEL name="new label" id="48e7205aa5fa5143" memberName="label8" virtualName=""
          explicitFocusOrder="0" pos="587 144 56 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Q" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="f4b91f7fa1d6b033" memberName="label9" virtualName=""
          explicitFocusOrder="0" pos="445 226 168 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Filter cutoff" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="17.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="17.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <SLIDER name="ADSRVol.Sustain" id="47081380203247f0" memberName="slider10"
           virtualName="" explicitFocusOrder="0" pos="723 252 40 148" thumbcol="ff328f09"
-          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
-          style="LinearVertical" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          min="0.0" max="1.0" int="0.0" style="LinearVertical" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <LABEL name="new label" id="5eb3065fc48cd13c" memberName="label10" virtualName=""
          explicitFocusOrder="0" pos="676 398 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="A" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="efd670deeff2cfc7" memberName="label12" virtualName=""
          explicitFocusOrder="0" pos="723 398 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="S" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="2f0c3fb14ccd3bbd" memberName="label13" virtualName=""
          explicitFocusOrder="0" pos="770 398 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="R" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <SLIDER name="ADSRFilter.Attack" id="b7c6f52502efa9c4" memberName="slider11"
-          virtualName="" explicitFocusOrder="0" pos="442 250 40 150" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          virtualName="" explicitFocusOrder="0" pos="442 250 40 150" min="0.0"
+          max="1.0" int="0.0" style="LinearVertical" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
   <SLIDER name="ADSRFilter.Release" id="a612ede8993ce62a" memberName="slider12"
-          virtualName="" explicitFocusOrder="0" pos="532 250 40 150" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="LinearVertical"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          virtualName="" explicitFocusOrder="0" pos="532 250 40 150" min="0.0"
+          max="1.0" int="0.0" style="LinearVertical" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
   <SLIDER name="ADSRFilter.Sustain" id="908f631705334540" memberName="slider14"
           virtualName="" explicitFocusOrder="0" pos="487 250 40 150" thumbcol="ff328f09"
-          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
-          style="LinearVertical" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          min="0.0" max="1.0" int="0.0" style="LinearVertical" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <LABEL name="new label" id="5979d19c19347180" memberName="label14" virtualName=""
          explicitFocusOrder="0" pos="442 396 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="A" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="2461a2ec3f347fff" memberName="label16" virtualName=""
          explicitFocusOrder="0" pos="487 396 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="S" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="2661e2cc57cd8376" memberName="label17" virtualName=""
          explicitFocusOrder="0" pos="533 396 40 24" edTextCol="ff000000"
          edBkgCol="0" labelText="R" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <SLIDER name="OSC1.Divider" id="f5dccfd9a2ecb31f" memberName="slider15"
           virtualName="" explicitFocusOrder="0" pos="168 72 95 95" tooltip="switch;"
-          thumbcol="ff6495ed" min="1.00000000000000000000" max="4.00000000000000000000"
-          int="1.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
-          needsCallback="1"/>
+          thumbcol="ff6495ed" min="1.0" max="4.0" int="1.0" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
   <SLIDER name="OSC2.Divider" id="27fba3479be46b37" memberName="slider16"
           virtualName="" explicitFocusOrder="0" pos="168 192 95 95" tooltip="switch;"
-          thumbcol="ff6495ed" min="1.00000000000000000000" max="4.00000000000000000000"
-          int="1.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
-          needsCallback="1"/>
+          thumbcol="ff6495ed" min="1.0" max="4.0" int="1.0" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
   <SLIDER name="OSC3.Divider" id="1a27da7fbd80f73" memberName="slider17"
           virtualName="" explicitFocusOrder="0" pos="168 320 95 95" tooltip="switch;"
-          thumbcol="ff6495ed" min="1.00000000000000000000" max="4.00000000000000000000"
-          int="1.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
-          needsCallback="1"/>
+          thumbcol="ff6495ed" min="1.0" max="4.0" int="1.0" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
   <SLIDER name="OSC1.Waveform" id="93ec2e964f54eaf6" memberName="slider18"
           virtualName="" explicitFocusOrder="0" pos="288 72 95 95" tooltip="switch;"
-          thumbcol="ff6495ed" min="1.00000000000000000000" max="3.00000000000000000000"
-          int="1.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
-          needsCallback="1"/>
+          thumbcol="ff6495ed" min="1.0" max="3.0" int="1.0" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
   <SLIDER name="OSC2.Waveform" id="a72293c4b71df00c" memberName="slider19"
           virtualName="" explicitFocusOrder="0" pos="288 192 95 95" tooltip="switch;"
-          thumbcol="ff6495ed" min="1.00000000000000000000" max="3.00000000000000000000"
-          int="1.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
-          needsCallback="1"/>
+          thumbcol="ff6495ed" min="1.0" max="3.0" int="1.0" style="RotaryHorizontalDrag"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
+          textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
   <SLIDER name="OSC3.Waveform" id="f512996821af000" memberName="slider20"
           virtualName="" explicitFocusOrder="0" pos="288 320 95 95" tooltip="switch;"
-          thumbcol="ff6495ed" min="1.00000000000000000000" max="3.00000000000000000000"
-          int="1.00000000000000000000" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
-          needsCallback="1"/>
-  <SLIDER name="Filter.EnvelopeScale" id="ca2b8d2bd3d5be06" memberName="slider9"
-          virtualName="" explicitFocusOrder="0" pos="686 56 95 95" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
+          thumbcol="ff6495ed" min="1.0" max="3.0" int="1.0" style="RotaryHorizontalDrag"
           textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
+  <SLIDER name="Filter.EnvelopeScale" id="ca2b8d2bd3d5be06" memberName="slider9"
+          virtualName="" explicitFocusOrder="0" pos="686 56 95 95" min="0.0"
+          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
   <LABEL name="new label" id="2744ff8c0fec8fa" memberName="label11" virtualName=""
          explicitFocusOrder="0" pos="702 144 72 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Envelope" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <SLIDER name="Delay.Wet" id="f02a07f8a8edc9" memberName="slider" virtualName=""
           explicitFocusOrder="0" pos="272 520 95 95" tooltip="effect;"
-          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
-          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <LABEL name="new label" id="7d1d2877a9909ff4" memberName="label15" virtualName=""
          explicitFocusOrder="0" pos="288 496 168 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Delay&#10;" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="17.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="17.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="new label" id="2e9d93e276cf4ffd" memberName="label18" virtualName=""
          explicitFocusOrder="0" pos="288 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="wet" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <SLIDER name="ReferenceOscillator.Detune" id="179c2467b254d1c1" memberName="slider13"
           virtualName="" explicitFocusOrder="0" pos="136 520 95 95" tooltip="effect;"
-          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
-          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <LABEL name="new label" id="3fd1e9e11b37a09e" memberName="label19" virtualName=""
          explicitFocusOrder="0" pos="152 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="detune" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <SLIDER name="UnisonMixer.Volume" id="b64e5d44b2af789a" memberName="slider21"
           virtualName="" explicitFocusOrder="0" pos="24 520 95 95" tooltip="effect;"
-          min="0.00000000000000000000" max="0.50000000000000000000" int="0.00000000000000000000"
-          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          min="0.0" max="0.5" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <LABEL name="new label" id="2e34fa49a2369321" memberName="label20" virtualName=""
          explicitFocusOrder="0" pos="40 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="volume" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <SLIDER name="Delay.Delay" id="fef0c0a17fbbe76b" memberName="slider22"
           virtualName="" explicitFocusOrder="0" pos="384 520 95 95" tooltip="effect;"
-          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
-          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <LABEL name="new label" id="6a484cbc8a86f45b" memberName="label21" virtualName=""
          explicitFocusOrder="0" pos="400 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="time" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <SLIDER name="Delay.Feedback" id="e2542a2a711671ab" memberName="slider23"
           virtualName="" explicitFocusOrder="0" pos="496 520 95 95" tooltip="effect;"
-          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
-          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <LABEL name="new label" id="3c2f6ccb4ec0e07b" memberName="label22" virtualName=""
          explicitFocusOrder="0" pos="512 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="feedback" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="829f72051db43315" memberName="label23" virtualName=""
          explicitFocusOrder="0" pos="16 496 168 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Unison" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="17.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="17.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="new label" id="255cd420d010ae7b" memberName="label24" virtualName=""
          explicitFocusOrder="0" pos="576 395 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="retrigger" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="8bc642808184d889" memberName="label25" virtualName=""
          explicitFocusOrder="0" pos="440 187 160 32" edTextCol="ff000000"
          edBkgCol="0" labelText="Envelopes" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="32.50000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="32.5"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <SLIDER name="FilterCutoffLfo.Frequency" id="74ae55c52b8a875e" memberName="slider25"
-          virtualName="" explicitFocusOrder="0" pos="848 56 95 95" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          virtualName="" explicitFocusOrder="0" pos="848 56 95 95" min="0.0"
+          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
   <SLIDER name="FilterCutoffLfo.Volume" id="874163a44515b9" memberName="slider26"
-          virtualName="" explicitFocusOrder="0" pos="848 168 95 95" min="0.00000000000000000000"
-          max="1.00000000000000000000" int="0.00000000000000000000" style="RotaryHorizontalDrag"
-          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="80"
-          textBoxHeight="20" skewFactor="1.00000000000000000000" needsCallback="1"/>
+          virtualName="" explicitFocusOrder="0" pos="848 168 95 95" min="0.0"
+          max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
   <LABEL name="new label" id="9f7aaf74327a8d7e" memberName="label26" virtualName=""
          explicitFocusOrder="0" pos="824 16 160 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Filter LFO" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="32.50000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="32.5"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="new label" id="9b3c50d74fae9222" memberName="label27" virtualName=""
          explicitFocusOrder="0" pos="856 144 72 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Frequency" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="88875754444c615a" memberName="label28" virtualName=""
          explicitFocusOrder="0" pos="856 256 72 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Amount" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <SLIDER name="Limiter.Volume" id="5b9bcdad8c2d7dc8" memberName="slider27"
           virtualName="" explicitFocusOrder="0" pos="656 520 95 95" tooltip="effect;"
-          min="0.00000000000000000000" max="1.00000000000000000000" int="0.00000000000000000000"
-          style="RotaryHorizontalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
-          textBoxWidth="80" textBoxHeight="20" skewFactor="1.00000000000000000000"
+          min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <LABEL name="new label" id="46453cb5d64bc955" memberName="label29" virtualName=""
          explicitFocusOrder="0" pos="672 608 64 24" edTextCol="ff000000"
          edBkgCol="0" labelText="volume" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="14.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="14.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="new label" id="af11cbbd2c2e2ba0" memberName="label31" virtualName=""
          explicitFocusOrder="0" pos="672 496 168 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Output" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="17.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="17.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <GENERICCOMPONENT name="Limiter.LevelChannel0" id="3f5e527f49885cf" memberName="component"
                     virtualName="" explicitFocusOrder="0" pos="786 546 180 8" class="LevelIndicator"
                     params=""/>
