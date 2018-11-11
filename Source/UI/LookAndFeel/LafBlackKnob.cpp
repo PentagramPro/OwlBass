@@ -39,9 +39,9 @@ void CLafBlackKnob::drawButtonBackground(Graphics &g, Button & button, const Col
 
 void CLafBlackKnob::drawLinearSlider(Graphics &g, int x, int y, int width, int height, float sliderPos, float minSliderPos, float maxSliderPos, const Slider::SliderStyle, Slider &slider)
 {
-	
-	Rectangle<float> gapTarget(x, y, width, height);
-	g.drawImage(mImgSliderGap, gapTarget, RectanglePlacement::centred | RectanglePlacement::onlyReduceInSize);
+	const float gapThickness = 10;
+	Rectangle<float> gapTarget(x+(width-gapThickness)/2, y, gapThickness, height);
+	g.drawImage(mImgSliderGap, gapTarget, RectanglePlacement::centred | RectanglePlacement::stretchToFit);
 
 	Rectangle<float> handleTarget(x, sliderPos - height / 2, width, height);
 	g.drawImage(mImgSliderHandle, handleTarget, RectanglePlacement::centred | RectanglePlacement::onlyReduceInSize);
