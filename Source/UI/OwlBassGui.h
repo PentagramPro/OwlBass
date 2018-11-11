@@ -69,6 +69,8 @@ public:
     static const int icon_square_pngSize;
     static const char* icon_triangle_png;
     static const int icon_triangle_pngSize;
+    static const char* icon_rnd_png;
+    static const int icon_rnd_pngSize;
 
 
 private:
@@ -145,6 +147,28 @@ protected:
     std::unique_ptr<Label> label18;
     std::unique_ptr<Label> label19;
     std::unique_ptr<Label> label20;
+    std::unique_ptr<Label> label21;
+    std::unique_ptr<Label> label22;
+    std::unique_ptr<Label> label23;
+    std::unique_ptr<Label> label24;
+    std::unique_ptr<Label> label25;
+    std::unique_ptr<Label> label26;
+    std::unique_ptr<Label> label27;
+    std::unique_ptr<Label> label28;
+    std::unique_ptr<Label> label29;
+    std::unique_ptr<Label> label30;
+    std::unique_ptr<Label> label31;
+    std::unique_ptr<Label> label32;
+    std::unique_ptr<Label> label33;
+    std::unique_ptr<Label> label34;
+    std::unique_ptr<Label> label35;
+    std::unique_ptr<Label> label36;
+    std::unique_ptr<Label> label37;
+    std::unique_ptr<Label> label38;
+    std::unique_ptr<Label> label39;
+    std::unique_ptr<Label> label40;
+    std::unique_ptr<Label> label41;
+    std::unique_ptr<Label> label42;
     Image cachedImage_case_main_png_1;
     Image cachedImage_case_effects_png_2;
     Image cachedImage_levelIndicator_png_3;
@@ -162,6 +186,9 @@ protected:
     Image cachedImage_icon_saw_png_15;
     Image cachedImage_icon_triangle_png_16;
     Image cachedImage_icon_square_png_17;
+    Image cachedImage_icon_triangle_png_18;
+    Image cachedImage_icon_square_png_19;
+    Image cachedImage_icon_rnd_png_20;
 
 
     //==============================================================================
