@@ -63,6 +63,12 @@ public:
     static const int levelIndicator_pngSize;
     static const char* presetsPanel_png;
     static const int presetsPanel_pngSize;
+    static const char* icon_saw_png;
+    static const int icon_saw_pngSize;
+    static const char* icon_square_png;
+    static const int icon_square_pngSize;
+    static const char* icon_triangle_png;
+    static const int icon_triangle_pngSize;
 
 
 private:
@@ -144,6 +150,18 @@ protected:
     Image cachedImage_levelIndicator_png_3;
     Image cachedImage_levelIndicator_png_4;
     Image cachedImage_presetsPanel_png_5;
+    Image cachedImage_icon_saw_png_6;
+    Image cachedImage_icon_triangle_png_7;
+    Image cachedImage_icon_square_png_8;
+    Image cachedImage_icon_saw_png_9;
+    Image cachedImage_icon_triangle_png_10;
+    Image cachedImage_icon_square_png_11;
+    Image cachedImage_icon_saw_png_12;
+    Image cachedImage_icon_triangle_png_13;
+    Image cachedImage_icon_square_png_14;
+    Image cachedImage_icon_saw_png_15;
+    Image cachedImage_icon_triangle_png_16;
+    Image cachedImage_icon_square_png_17;
 
 
     //==============================================================================

@@ -40,7 +40,7 @@ OwlBassGui::OwlBassGui ()
     slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider->addListener (this);
 
-    slider->setBounds (263, 109, 110, 110);
+    slider->setBounds (267, 109, 110, 110);
 
     slider2.reset (new Slider ("OSC2.Volume"));
     addAndMakeVisible (slider2.get());
@@ -49,7 +49,7 @@ OwlBassGui::OwlBassGui ()
     slider2->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider2->addListener (this);
 
-    slider2->setBounds (239, 241, 110, 110);
+    slider2->setBounds (243, 241, 110, 110);
 
     slider3.reset (new Slider ("OSC3.Volume"));
     addAndMakeVisible (slider3.get());
@@ -58,7 +58,7 @@ OwlBassGui::OwlBassGui ()
     slider3->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider3->addListener (this);
 
-    slider3->setBounds (654, 109, 110, 110);
+    slider3->setBounds (650, 109, 110, 110);
 
     slider4.reset (new Slider ("OSC4.Volume"));
     addAndMakeVisible (slider4.get());
@@ -67,7 +67,7 @@ OwlBassGui::OwlBassGui ()
     slider4->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider4->addListener (this);
 
-    slider4->setBounds (670, 241, 110, 110);
+    slider4->setBounds (666, 241, 110, 110);
 
     slider5.reset (new Slider ("OSC1.Divider"));
     addAndMakeVisible (slider5.get());
@@ -77,7 +77,7 @@ OwlBassGui::OwlBassGui ()
     slider5->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider5->addListener (this);
 
-    slider5->setBounds (173, 120, 90, 90);
+    slider5->setBounds (176, 120, 90, 90);
 
     mOsc1Waveform.reset (new Slider ("OSC1.Waveform"));
     addAndMakeVisible (mOsc1Waveform.get());
@@ -87,7 +87,7 @@ OwlBassGui::OwlBassGui ()
     mOsc1Waveform->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     mOsc1Waveform->addListener (this);
 
-    mOsc1Waveform->setBounds (86, 120, 90, 90);
+    mOsc1Waveform->setBounds (84, 120, 90, 90);
 
     slider7.reset (new Slider ("OSC2.Divider"));
     addAndMakeVisible (slider7.get());
@@ -97,7 +97,7 @@ OwlBassGui::OwlBassGui ()
     slider7->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider7->addListener (this);
 
-    slider7->setBounds (151, 252, 90, 90);
+    slider7->setBounds (154, 252, 90, 90);
 
     slider8.reset (new Slider ("OSC2.Waveform"));
     addAndMakeVisible (slider8.get());
@@ -107,7 +107,7 @@ OwlBassGui::OwlBassGui ()
     slider8->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider8->addListener (this);
 
-    slider8->setBounds (64, 252, 90, 90);
+    slider8->setBounds (62, 252, 90, 90);
 
     slider9.reset (new Slider ("OSC3.Waveform"));
     addAndMakeVisible (slider9.get());
@@ -117,7 +117,7 @@ OwlBassGui::OwlBassGui ()
     slider9->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider9->addListener (this);
 
-    slider9->setBounds (853, 125, 90, 90);
+    slider9->setBounds (855, 125, 90, 90);
 
     slider10.reset (new Slider ("OSC3.Divider"));
     addAndMakeVisible (slider10.get());
@@ -127,7 +127,7 @@ OwlBassGui::OwlBassGui ()
     slider10->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider10->addListener (this);
 
-    slider10->setBounds (766, 125, 90, 90);
+    slider10->setBounds (763, 125, 90, 90);
 
     slider11.reset (new Slider ("OSC4.Waveform"));
     addAndMakeVisible (slider11.get());
@@ -137,7 +137,7 @@ OwlBassGui::OwlBassGui ()
     slider11->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider11->addListener (this);
 
-    slider11->setBounds (866, 252, 90, 90);
+    slider11->setBounds (868, 252, 90, 90);
 
     slider12.reset (new Slider ("new slider"));
     addAndMakeVisible (slider12.get());
@@ -147,7 +147,7 @@ OwlBassGui::OwlBassGui ()
     slider12->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider12->addListener (this);
 
-    slider12->setBounds (779, 252, 90, 90);
+    slider12->setBounds (776, 252, 90, 90);
 
     mSliderFilterMode.reset (new Slider ("Filter.Mode"));
     addAndMakeVisible (mSliderFilterMode.get());
@@ -409,7 +409,7 @@ OwlBassGui::OwlBassGui ()
     slider26->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider26->addListener (this);
 
-    slider26->setBounds (37, 141, 50, 50);
+    slider26->setBounds (35, 141, 50, 50);
 
     slider27.reset (new Slider ("OSC2.Phase"));
     addAndMakeVisible (slider27.get());
@@ -418,7 +418,7 @@ OwlBassGui::OwlBassGui ()
     slider27->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider27->addListener (this);
 
-    slider27->setBounds (13, 273, 50, 50);
+    slider27->setBounds (11, 273, 50, 50);
 
     slider28.reset (new Slider ("OSC3.Phase"));
     addAndMakeVisible (slider28.get());
@@ -427,7 +427,7 @@ OwlBassGui::OwlBassGui ()
     slider28->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider28->addListener (this);
 
-    slider28->setBounds (943, 141, 50, 50);
+    slider28->setBounds (945, 141, 50, 50);
 
     slider29.reset (new Slider ("OSC4.Phase"));
     addAndMakeVisible (slider29.get());
@@ -436,7 +436,7 @@ OwlBassGui::OwlBassGui ()
     slider29->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider29->addListener (this);
 
-    slider29->setBounds (956, 273, 50, 50);
+    slider29->setBounds (958, 273, 50, 50);
 
     toggleButton.reset (new ToggleButton ("ADSRFilter.Retrigger"));
     addAndMakeVisible (toggleButton.get());
@@ -475,7 +475,7 @@ OwlBassGui::OwlBassGui ()
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label->setBounds (270, 90, 98, 24);
+    label->setBounds (274, 90, 98, 24);
 
     label2.reset (new Label ("labelOsc1",
                              TRANS("SUB")));
@@ -486,7 +486,7 @@ OwlBassGui::OwlBassGui ()
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label2->setBounds (246, 222, 98, 24);
+    label2->setBounds (250, 222, 98, 24);
 
     label3.reset (new Label ("labelOsc1",
                              TRANS("Cutoff")));
@@ -519,7 +519,7 @@ OwlBassGui::OwlBassGui ()
     label5->setColour (TextEditor::textColourId, Colours::black);
     label5->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label5->setBounds (662, 90, 98, 24);
+    label5->setBounds (658, 90, 98, 24);
 
     label6.reset (new Label ("labelOsc1",
                              TRANS("SUB")));
@@ -530,7 +530,7 @@ OwlBassGui::OwlBassGui ()
     label6->setColour (TextEditor::textColourId, Colours::black);
     label6->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label6->setBounds (676, 222, 98, 24);
+    label6->setBounds (672, 222, 98, 24);
 
     label7.reset (new Label ("labelOsc1",
                              TRANS("Filter")));
@@ -618,7 +618,7 @@ OwlBassGui::OwlBassGui ()
     label14->setColour (TextEditor::textColourId, Colours::black);
     label14->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label14->setBounds (24, 184, 74, 24);
+    label14->setBounds (22, 184, 74, 24);
 
     label15.reset (new Label ("labelOsc1",
                               TRANS("Phase")));
@@ -629,7 +629,7 @@ OwlBassGui::OwlBassGui ()
     label15->setColour (TextEditor::textColourId, Colours::black);
     label15->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label15->setBounds (-2, 314, 74, 24);
+    label15->setBounds (-4, 314, 74, 24);
 
     label16.reset (new Label ("labelOsc1",
                               TRANS("Phase")));
@@ -640,7 +640,7 @@ OwlBassGui::OwlBassGui ()
     label16->setColour (TextEditor::textColourId, Colours::black);
     label16->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label16->setBounds (932, 182, 74, 24);
+    label16->setBounds (934, 182, 74, 24);
 
     label17.reset (new Label ("labelOsc1",
                               TRANS("Phase")));
@@ -651,7 +651,7 @@ OwlBassGui::OwlBassGui ()
     label17->setColour (TextEditor::textColourId, Colours::black);
     label17->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label17->setBounds (944, 316, 74, 24);
+    label17->setBounds (946, 316, 74, 24);
 
     label18.reset (new Label ("labelOsc1",
                               TRANS("-")));
@@ -691,6 +691,18 @@ OwlBassGui::OwlBassGui ()
     cachedImage_levelIndicator_png_3 = ImageCache::getFromMemory (levelIndicator_png, levelIndicator_pngSize);
     cachedImage_levelIndicator_png_4 = ImageCache::getFromMemory (levelIndicator_png, levelIndicator_pngSize);
     cachedImage_presetsPanel_png_5 = ImageCache::getFromMemory (presetsPanel_png, presetsPanel_pngSize);
+    cachedImage_icon_saw_png_6 = ImageCache::getFromMemory (icon_saw_png, icon_saw_pngSize);
+    cachedImage_icon_triangle_png_7 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
+    cachedImage_icon_square_png_8 = ImageCache::getFromMemory (icon_square_png, icon_square_pngSize);
+    cachedImage_icon_saw_png_9 = ImageCache::getFromMemory (icon_saw_png, icon_saw_pngSize);
+    cachedImage_icon_triangle_png_10 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
+    cachedImage_icon_square_png_11 = ImageCache::getFromMemory (icon_square_png, icon_square_pngSize);
+    cachedImage_icon_saw_png_12 = ImageCache::getFromMemory (icon_saw_png, icon_saw_pngSize);
+    cachedImage_icon_triangle_png_13 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
+    cachedImage_icon_square_png_14 = ImageCache::getFromMemory (icon_square_png, icon_square_pngSize);
+    cachedImage_icon_saw_png_15 = ImageCache::getFromMemory (icon_saw_png, icon_saw_pngSize);
+    cachedImage_icon_triangle_png_16 = ImageCache::getFromMemory (icon_triangle_png, icon_triangle_pngSize);
+    cachedImage_icon_square_png_17 = ImageCache::getFromMemory (icon_square_png, icon_square_pngSize);
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -839,7 +851,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 164, y = 139, width = 28, height = 30;
+        int x = 167, y = 139, width = 28, height = 30;
         String text (TRANS("1\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -851,7 +863,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 186, y = 110, width = 28, height = 30;
+        int x = 189, y = 110, width = 28, height = 30;
         String text (TRANS("2\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -863,7 +875,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 228, y = 110, width = 28, height = 30;
+        int x = 231, y = 110, width = 28, height = 30;
         String text (TRANS("4\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -875,7 +887,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 246, y = 139, width = 28, height = 30;
+        int x = 249, y = 139, width = 28, height = 30;
         String text (TRANS("8\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -887,7 +899,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 142, y = 271, width = 28, height = 30;
+        int x = 145, y = 271, width = 28, height = 30;
         String text (TRANS("1\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -899,7 +911,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 164, y = 242, width = 28, height = 30;
+        int x = 167, y = 242, width = 28, height = 30;
         String text (TRANS("2\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -911,7 +923,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 206, y = 242, width = 28, height = 30;
+        int x = 209, y = 242, width = 28, height = 30;
         String text (TRANS("4\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -923,7 +935,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 224, y = 271, width = 28, height = 30;
+        int x = 227, y = 271, width = 28, height = 30;
         String text (TRANS("8\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -935,7 +947,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 770, y = 271, width = 28, height = 30;
+        int x = 767, y = 271, width = 28, height = 30;
         String text (TRANS("1\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -947,7 +959,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 792, y = 242, width = 28, height = 30;
+        int x = 789, y = 242, width = 28, height = 30;
         String text (TRANS("2\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -959,7 +971,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 834, y = 242, width = 28, height = 30;
+        int x = 831, y = 242, width = 28, height = 30;
         String text (TRANS("4\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -971,7 +983,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 852, y = 271, width = 28, height = 30;
+        int x = 849, y = 271, width = 28, height = 30;
         String text (TRANS("8\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -983,7 +995,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 756, y = 145, width = 28, height = 30;
+        int x = 753, y = 145, width = 28, height = 30;
         String text (TRANS("1\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -995,7 +1007,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 778, y = 116, width = 28, height = 30;
+        int x = 775, y = 116, width = 28, height = 30;
         String text (TRANS("2\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -1007,7 +1019,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 820, y = 116, width = 28, height = 30;
+        int x = 817, y = 116, width = 28, height = 30;
         String text (TRANS("4\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -1019,7 +1031,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 838, y = 145, width = 28, height = 30;
+        int x = 835, y = 145, width = 28, height = 30;
         String text (TRANS("8\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
@@ -1028,6 +1040,126 @@ void OwlBassGui::paint (Graphics& g)
         g.setFont (Font (15.0f, Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     Justification::centred, true);
+    }
+
+    {
+        int x = 64, y = 270, width = 14, height = 8;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_saw_png_6,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_saw_png_6.getWidth(), cachedImage_icon_saw_png_6.getHeight());
+    }
+
+    {
+        int x = 100, y = 250, width = 14, height = 8;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_triangle_png_7,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_triangle_png_7.getWidth(), cachedImage_icon_triangle_png_7.getHeight());
+    }
+
+    {
+        int x = 134, y = 270, width = 14, height = 8;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_square_png_8,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_square_png_8.getWidth(), cachedImage_icon_square_png_8.getHeight());
+    }
+
+    {
+        int x = 86, y = 136, width = 14, height = 8;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_saw_png_9,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_saw_png_9.getWidth(), cachedImage_icon_saw_png_9.getHeight());
+    }
+
+    {
+        int x = 122, y = 116, width = 14, height = 8;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_triangle_png_10,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_triangle_png_10.getWidth(), cachedImage_icon_triangle_png_10.getHeight());
+    }
+
+    {
+        int x = 156, y = 136, width = 14, height = 8;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_square_png_11,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_square_png_11.getWidth(), cachedImage_icon_square_png_11.getHeight());
+    }
+
+    {
+        int x = 858, y = 142, width = 14, height = 8;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_saw_png_12,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_saw_png_12.getWidth(), cachedImage_icon_saw_png_12.getHeight());
+    }
+
+    {
+        int x = 894, y = 122, width = 14, height = 8;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_triangle_png_13,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_triangle_png_13.getWidth(), cachedImage_icon_triangle_png_13.getHeight());
+    }
+
+    {
+        int x = 928, y = 142, width = 14, height = 8;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_square_png_14,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_square_png_14.getWidth(), cachedImage_icon_square_png_14.getHeight());
+    }
+
+    {
+        int x = 872, y = 270, width = 14, height = 8;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_saw_png_15,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_saw_png_15.getWidth(), cachedImage_icon_saw_png_15.getHeight());
+    }
+
+    {
+        int x = 908, y = 250, width = 14, height = 8;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_triangle_png_16,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_triangle_png_16.getWidth(), cachedImage_icon_triangle_png_16.getHeight());
+    }
+
+    {
+        int x = 942, y = 270, width = 14, height = 8;
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (Colours::black);
+        g.drawImage (cachedImage_icon_square_png_17,
+                     x, y, width, height,
+                     0, 0, cachedImage_icon_square_png_17.getWidth(), cachedImage_icon_square_png_17.getHeight());
     }
 
     //[UserPaint] Add your own custom painting code here..
@@ -1312,112 +1444,128 @@ BEGIN_JUCER_METADATA
            mode="0"/>
     <IMAGE pos="664 14 332 44" resource="presetsPanel_png" opacity="1.0"
            mode="0"/>
-    <TEXT pos="164 139 28 30" fill="solid: ffffffff" hasStroke="0" text="1'"
+    <TEXT pos="167 139 28 30" fill="solid: ffffffff" hasStroke="0" text="1'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="186 110 28 30" fill="solid: ffffffff" hasStroke="0" text="2'"
+    <TEXT pos="189 110 28 30" fill="solid: ffffffff" hasStroke="0" text="2'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="228 110 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
+    <TEXT pos="231 110 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="246 139 28 30" fill="solid: ffffffff" hasStroke="0" text="8'"
+    <TEXT pos="249 139 28 30" fill="solid: ffffffff" hasStroke="0" text="8'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="142 271 28 30" fill="solid: ffffffff" hasStroke="0" text="1'"
+    <TEXT pos="145 271 28 30" fill="solid: ffffffff" hasStroke="0" text="1'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="164 242 28 30" fill="solid: ffffffff" hasStroke="0" text="2'"
+    <TEXT pos="167 242 28 30" fill="solid: ffffffff" hasStroke="0" text="2'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="206 242 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
+    <TEXT pos="209 242 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="224 271 28 30" fill="solid: ffffffff" hasStroke="0" text="8'"
+    <TEXT pos="227 271 28 30" fill="solid: ffffffff" hasStroke="0" text="8'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="770 271 28 30" fill="solid: ffffffff" hasStroke="0" text="1'"
+    <TEXT pos="767 271 28 30" fill="solid: ffffffff" hasStroke="0" text="1'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="792 242 28 30" fill="solid: ffffffff" hasStroke="0" text="2'"
+    <TEXT pos="789 242 28 30" fill="solid: ffffffff" hasStroke="0" text="2'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="834 242 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
+    <TEXT pos="831 242 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="852 271 28 30" fill="solid: ffffffff" hasStroke="0" text="8'"
+    <TEXT pos="849 271 28 30" fill="solid: ffffffff" hasStroke="0" text="8'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="756 145 28 30" fill="solid: ffffffff" hasStroke="0" text="1'"
+    <TEXT pos="753 145 28 30" fill="solid: ffffffff" hasStroke="0" text="1'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="778 116 28 30" fill="solid: ffffffff" hasStroke="0" text="2'"
+    <TEXT pos="775 116 28 30" fill="solid: ffffffff" hasStroke="0" text="2'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="820 116 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
+    <TEXT pos="817 116 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="838 145 28 30" fill="solid: ffffffff" hasStroke="0" text="8'"
+    <TEXT pos="835 145 28 30" fill="solid: ffffffff" hasStroke="0" text="8'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
+    <IMAGE pos="64 270 14 8" resource="icon_saw_png" opacity="1.0" mode="0"/>
+    <IMAGE pos="100 250 14 8" resource="icon_triangle_png" opacity="1.0"
+           mode="0"/>
+    <IMAGE pos="134 270 14 8" resource="icon_square_png" opacity="1.0" mode="0"/>
+    <IMAGE pos="86 136 14 8" resource="icon_saw_png" opacity="1.0" mode="0"/>
+    <IMAGE pos="122 116 14 8" resource="icon_triangle_png" opacity="1.0"
+           mode="0"/>
+    <IMAGE pos="156 136 14 8" resource="icon_square_png" opacity="1.0" mode="0"/>
+    <IMAGE pos="858 142 14 8" resource="icon_saw_png" opacity="1.0" mode="0"/>
+    <IMAGE pos="894 122 14 8" resource="icon_triangle_png" opacity="1.0"
+           mode="0"/>
+    <IMAGE pos="928 142 14 8" resource="icon_square_png" opacity="1.0" mode="0"/>
+    <IMAGE pos="872 270 14 8" resource="icon_saw_png" opacity="1.0" mode="0"/>
+    <IMAGE pos="908 250 14 8" resource="icon_triangle_png" opacity="1.0"
+           mode="0"/>
+    <IMAGE pos="942 270 14 8" resource="icon_square_png" opacity="1.0" mode="0"/>
   </BACKGROUND>
   <SLIDER name="OSC1.Volume" id="a3679e39b3ca9aa0" memberName="slider"
-          virtualName="" explicitFocusOrder="0" pos="263 109 110 110" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="267 109 110 110" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC2.Volume" id="995566f65765c2eb" memberName="slider2"
-          virtualName="" explicitFocusOrder="0" pos="239 241 110 110" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="243 241 110 110" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC3.Volume" id="3b5eb21fc2082bb" memberName="slider3"
-          virtualName="" explicitFocusOrder="0" pos="654 109 110 110" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="650 109 110 110" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC4.Volume" id="a17a53d967d4ab66" memberName="slider4"
-          virtualName="" explicitFocusOrder="0" pos="670 241 110 110" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="666 241 110 110" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC1.Divider" id="2c08caa873912912" memberName="slider5"
-          virtualName="" explicitFocusOrder="0" pos="173 120 90 90" tooltip="switch;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="176 120 90 90" tooltip="switch;&#10;"
           min="1.0" max="4.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC1.Waveform" id="c93a5c777e89390" memberName="mOsc1Waveform"
-          virtualName="" explicitFocusOrder="0" pos="86 120 90 90" tooltip="switch;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="84 120 90 90" tooltip="switch;&#10;"
           min="1.0" max="3.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC2.Divider" id="348346d13236bf5f" memberName="slider7"
-          virtualName="" explicitFocusOrder="0" pos="151 252 90 90" tooltip="switch;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="154 252 90 90" tooltip="switch;&#10;"
           min="1.0" max="4.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC2.Waveform" id="bb384bd95d8593a8" memberName="slider8"
-          virtualName="" explicitFocusOrder="0" pos="64 252 90 90" tooltip="switch;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="62 252 90 90" tooltip="switch;&#10;"
           min="1.0" max="3.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC3.Waveform" id="50ddd2f6ccb0b007" memberName="slider9"
-          virtualName="" explicitFocusOrder="0" pos="853 125 90 90" tooltip="switch;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="855 125 90 90" tooltip="switch;&#10;"
           min="1.0" max="3.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC3.Divider" id="a05366187850a3f3" memberName="slider10"
-          virtualName="" explicitFocusOrder="0" pos="766 125 90 90" tooltip="switch;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="763 125 90 90" tooltip="switch;&#10;"
           min="1.0" max="4.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC4.Waveform" id="69358086a1303136" memberName="slider11"
-          virtualName="" explicitFocusOrder="0" pos="866 252 90 90" tooltip="switch;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="868 252 90 90" tooltip="switch;&#10;"
           min="1.0" max="3.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="new slider" id="648ffc9ff30d14ba" memberName="slider12"
-          virtualName="" explicitFocusOrder="0" pos="779 252 90 90" tooltip="switch;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="776 252 90 90" tooltip="switch;&#10;"
           min="1.0" max="4.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
@@ -1553,22 +1701,22 @@ BEGIN_JUCER_METADATA
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC1.Phase" id="a097c0adb4bc2693" memberName="slider26"
-          virtualName="" explicitFocusOrder="0" pos="37 141 50 50" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="35 141 50 50" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC2.Phase" id="4efa37d2939989af" memberName="slider27"
-          virtualName="" explicitFocusOrder="0" pos="13 273 50 50" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="11 273 50 50" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC3.Phase" id="c7b2077e593df4ed" memberName="slider28"
-          virtualName="" explicitFocusOrder="0" pos="943 141 50 50" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="945 141 50 50" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC4.Phase" id="802932c5c29c4cd2" memberName="slider29"
-          virtualName="" explicitFocusOrder="0" pos="956 273 50 50" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="958 273 50 50" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
@@ -1587,12 +1735,12 @@ BEGIN_JUCER_METADATA
                     virtualName="" explicitFocusOrder="0" pos="694 608 156 8" class="LevelIndicator"
                     params=""/>
   <LABEL name="labelOsc1" id="345a1b876e439ba9" memberName="label" virtualName=""
-         explicitFocusOrder="0" pos="270 90 98 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="274 90 98 24" edTextCol="ff000000"
          edBkgCol="0" labelText="OSC-1" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="b1c441e10e800f74" memberName="label2" virtualName=""
-         explicitFocusOrder="0" pos="246 222 98 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="250 222 98 24" edTextCol="ff000000"
          edBkgCol="0" labelText="SUB" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
@@ -1607,12 +1755,12 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="498a9e6dbb32bf2b" memberName="label5" virtualName=""
-         explicitFocusOrder="0" pos="662 90 98 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="658 90 98 24" edTextCol="ff000000"
          edBkgCol="0" labelText="OSC-2" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="f6c9266d62d94cc5" memberName="label6" virtualName=""
-         explicitFocusOrder="0" pos="676 222 98 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="672 222 98 24" edTextCol="ff000000"
          edBkgCol="0" labelText="SUB" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
@@ -1652,22 +1800,22 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="3d26b70f71d188a7" memberName="label14" virtualName=""
-         explicitFocusOrder="0" pos="24 184 74 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="22 184 74 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Phase" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="eb3e74a88e933489" memberName="label15" virtualName=""
-         explicitFocusOrder="0" pos="-2 314 74 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="-4 314 74 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Phase" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="3f2dc31fde89c18f" memberName="label16" virtualName=""
-         explicitFocusOrder="0" pos="932 182 74 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="934 182 74 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Phase" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="f2739283f2cddd55" memberName="label17" virtualName=""
-         explicitFocusOrder="0" pos="944 316 74 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="946 316 74 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Phase" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
@@ -3555,6 +3703,80 @@ static const unsigned char resource_OwlBassGui_presetsPanel_png[] = { 137,80,78,
 
 const char* OwlBassGui::presetsPanel_png = (const char*) resource_OwlBassGui_presetsPanel_png;
 const int OwlBassGui::presetsPanel_pngSize = 24691;
+
+// JUCER_RESOURCE: icon_saw_png, 1372, "../../Resources/icon_saw.png"
+static const unsigned char resource_OwlBassGui_icon_saw_png[] = { 137,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,0,70,0,0,0,40,8,6,0,0,0,67,208,140,174,0,0,0,4,115,66,73,84,8,8,8,8,124,8,100,136,0,
+0,0,9,112,72,89,115,0,0,3,200,0,0,3,200,1,39,83,115,255,0,0,0,25,116,69,88,116,83,111,102,116,119,97,114,101,0,119,119,119,46,105,110,107,115,99,97,112,101,46,111,114,103,155,238,60,26,0,0,4,217,73,68,
+65,84,104,129,197,90,91,104,29,85,20,93,123,244,156,57,73,172,193,34,42,254,52,34,162,136,5,169,250,33,136,72,69,33,73,181,40,62,73,165,126,212,136,138,216,218,212,215,71,241,195,71,41,141,37,138,246,
+195,62,144,130,84,109,107,205,163,65,65,240,71,197,26,17,68,4,223,130,136,248,2,49,87,239,236,51,185,179,253,240,70,66,58,251,206,220,220,153,201,250,156,117,238,89,139,117,207,157,89,247,156,33,102,22,
+232,216,21,134,225,182,22,124,161,200,240,50,99,173,189,134,136,254,174,194,75,144,193,143,68,81,244,80,21,70,114,224,114,239,253,107,34,114,106,21,98,89,193,128,136,158,99,230,91,170,48,147,3,131,204,
+252,98,21,66,153,193,52,199,28,140,227,248,170,178,205,228,1,17,13,71,81,52,82,182,78,158,96,0,192,37,73,242,22,51,95,84,170,155,156,32,162,157,204,60,84,166,70,222,96,0,96,37,128,233,90,173,118,78,89,
+102,218,0,1,216,95,175,215,215,150,37,160,5,83,83,174,247,25,99,166,68,100,69,89,134,82,240,5,128,36,229,186,13,130,224,141,40,138,46,44,67,52,53,24,34,58,0,224,77,229,51,107,226,56,62,38,34,182,12,67,
+41,94,222,17,145,71,21,122,37,17,77,215,106,181,179,139,214,213,86,76,195,90,59,4,224,131,52,82,68,214,122,239,247,139,8,21,109,40,13,206,185,93,68,244,188,66,159,215,92,197,61,69,106,170,247,24,34,170,
+91,107,215,3,248,82,25,50,228,189,127,178,72,51,173,96,140,217,2,125,21,95,86,116,199,105,121,243,37,162,223,69,100,128,136,126,81,134,108,143,162,232,129,162,204,100,120,73,154,171,248,67,101,72,161,
+29,39,243,169,228,156,251,14,192,58,40,55,100,34,26,99,230,245,69,25,106,133,230,42,190,17,192,215,10,63,204,204,143,20,161,149,235,113,109,173,157,17,145,219,1,204,165,208,167,0,120,53,142,227,43,139,
+48,148,133,230,42,238,39,162,95,149,33,59,152,121,67,167,58,185,123,140,115,238,56,17,221,167,208,221,141,70,99,60,138,162,11,58,53,148,211,203,183,0,110,0,240,79,10,77,0,246,117,218,113,218,41,120,176,
+214,238,5,240,84,26,71,68,103,18,209,244,236,236,236,89,157,24,106,195,203,9,0,27,161,119,156,163,204,124,201,82,231,111,43,152,166,161,237,0,14,40,244,249,214,218,201,162,31,157,26,194,48,60,44,34,218,
+61,165,23,192,196,82,155,122,219,193,16,145,88,107,239,5,240,182,50,228,10,239,253,161,170,182,7,156,115,163,68,52,166,208,125,198,152,73,17,57,173,221,121,219,14,6,0,136,40,182,214,222,10,224,83,101,
+200,186,170,182,7,0,192,24,243,48,128,163,10,189,164,142,179,164,96,0,128,136,102,231,230,230,6,1,252,160,240,195,204,252,216,82,231,111,211,75,98,173,221,0,165,169,3,24,96,230,151,218,153,115,201,193,
+0,64,79,79,207,207,34,114,157,136,252,166,12,121,198,123,191,177,19,141,188,88,208,212,191,82,248,123,152,89,251,207,117,18,58,10,6,0,156,115,223,4,65,160,62,58,69,228,229,40,138,174,239,84,39,15,22,52,
+117,173,227,60,235,189,191,43,207,92,29,7,3,0,214,218,143,68,228,78,0,141,20,218,16,209,97,239,253,165,69,104,101,33,171,227,136,200,222,122,189,126,109,214,60,133,4,211,52,52,78,68,15,42,244,10,17,153,
+170,215,235,171,138,210,107,5,107,237,9,17,185,3,233,95,148,13,130,224,8,51,175,110,53,71,97,193,52,13,237,33,162,81,133,62,55,8,130,227,34,114,70,145,154,26,156,115,19,34,162,29,253,244,2,24,111,213,
+113,10,13,6,0,140,49,219,0,28,84,232,139,153,249,152,136,184,162,117,211,224,156,219,157,209,113,166,180,142,83,120,48,205,2,184,137,136,222,85,248,171,189,247,175,136,72,225,218,105,200,232,56,107,188,
+247,175,167,117,156,82,204,17,145,55,198,220,12,224,51,101,200,109,113,28,239,44,67,59,197,75,86,199,233,103,230,61,139,47,150,246,173,17,209,95,141,70,99,0,192,143,105,188,136,108,141,162,104,115,89,
+250,139,188,204,239,227,104,29,103,19,51,63,190,240,90,169,203,185,187,187,251,39,0,3,0,254,84,12,141,86,117,202,73,68,127,100,236,227,60,189,176,227,148,254,59,15,195,240,243,36,73,110,2,192,41,116,165,
+167,156,11,118,35,211,94,12,32,17,217,55,223,113,42,185,1,118,117,117,189,7,224,110,0,105,111,51,184,36,73,38,179,122,69,81,176,214,126,220,170,140,54,247,113,86,87,18,12,0,132,97,120,8,192,19,10,221,
+11,96,188,42,47,205,142,179,85,161,79,7,48,81,89,48,0,16,134,225,14,34,122,65,161,251,170,244,226,156,27,35,162,221,10,189,170,210,96,0,192,24,179,25,122,175,168,20,198,152,17,0,71,210,184,202,131,201,
+209,43,42,247,34,34,239,47,230,42,15,166,105,104,190,87,104,167,156,85,122,137,194,48,60,233,196,117,89,130,1,254,235,21,73,146,244,183,56,229,172,212,203,226,19,215,101,11,6,0,186,186,186,190,7,48,8,
+253,181,147,202,176,184,227,44,107,48,0,96,173,253,164,197,41,103,213,94,102,230,247,113,150,61,24,224,255,83,206,251,151,219,7,0,56,231,38,69,100,203,191,127,197,232,37,136,107,0,55,0,0,0,0,73,69,78,
+68,174,66,96,130,0,0};
+
+const char* OwlBassGui::icon_saw_png = (const char*) resource_OwlBassGui_icon_saw_png;
+const int OwlBassGui::icon_saw_pngSize = 1372;
+
+// JUCER_RESOURCE: icon_square_png, 332, "../../Resources/icon_square.png"
+static const unsigned char resource_OwlBassGui_icon_square_png[] = { 137,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,0,70,0,0,0,40,8,6,0,0,0,67,208,140,174,0,0,0,4,115,66,73,84,8,8,8,8,124,8,100,136,
+0,0,0,9,112,72,89,115,0,0,3,200,0,0,3,200,1,39,83,115,255,0,0,0,25,116,69,88,116,83,111,102,116,119,97,114,101,0,119,119,119,46,105,110,107,115,99,97,112,101,46,111,114,103,155,238,60,26,0,0,0,201,73,
+68,65,84,104,129,237,217,177,13,194,64,12,64,81,31,66,73,157,37,232,168,161,98,5,70,129,81,24,5,137,37,160,166,103,15,167,57,122,148,47,65,115,9,210,127,165,27,91,95,186,234,74,102,214,88,158,71,223,247,
+251,22,139,198,113,188,212,90,79,159,243,85,139,229,255,200,48,192,48,192,48,96,13,243,87,68,60,27,221,112,136,136,161,209,174,175,77,134,41,165,220,186,174,59,183,56,32,51,239,17,177,107,177,235,23,62,
+37,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,96,24,64,159,250,115,219,100,230,181,197,162,90,
+235,118,106,190,212,48,67,68,28,231,60,192,167,4,12,3,12,3,12,3,222,44,201,26,175,113,156,25,221,0,0,0,0,73,69,78,68,174,66,96,130,0,0};
+
+const char* OwlBassGui::icon_square_png = (const char*) resource_OwlBassGui_icon_square_png;
+const int OwlBassGui::icon_square_pngSize = 332;
+
+// JUCER_RESOURCE: icon_triangle_png, 1561, "../../Resources/icon_triangle.png"
+static const unsigned char resource_OwlBassGui_icon_triangle_png[] = { 137,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,0,70,0,0,0,40,8,6,0,0,0,67,208,140,174,0,0,0,4,115,66,73,84,8,8,8,8,124,8,100,136,
+0,0,0,9,112,72,89,115,0,0,3,200,0,0,3,200,1,39,83,115,255,0,0,0,25,116,69,88,116,83,111,102,116,119,97,114,101,0,119,119,119,46,105,110,107,115,99,97,112,101,46,111,114,103,155,238,60,26,0,0,5,150,73,
+68,65,84,104,129,197,90,77,140,20,69,20,254,94,207,116,85,207,46,43,26,81,3,241,96,88,8,24,127,136,26,19,56,232,193,120,212,24,47,38,196,152,120,80,227,5,35,9,34,24,144,5,5,23,241,39,26,162,145,4,227,
+193,128,241,64,192,159,131,81,99,228,162,200,9,92,33,6,22,57,200,146,152,229,160,50,110,215,171,76,63,15,206,110,216,161,171,186,171,167,39,126,201,92,230,85,189,247,242,245,215,221,175,190,52,80,51,152,
+249,9,99,140,184,126,204,252,76,221,53,171,192,24,51,238,233,241,27,170,179,152,136,196,204,124,26,192,168,103,217,148,82,106,25,17,205,212,89,59,4,237,118,123,113,179,217,60,11,96,40,47,78,68,107,162,
+58,11,90,107,159,130,159,20,0,88,98,140,121,182,206,186,161,104,52,26,91,224,32,5,192,97,165,212,143,181,41,70,68,18,102,62,3,224,230,18,107,167,181,214,163,68,244,87,93,245,203,98,102,102,230,150,40,
+138,126,5,160,114,194,25,17,221,173,148,58,81,155,98,152,249,57,148,32,5,0,136,104,17,51,63,95,87,237,16,68,81,180,29,249,164,0,192,1,165,212,9,0,168,69,49,34,50,98,140,153,36,162,27,2,182,253,169,148,
+26,37,162,75,117,244,80,6,105,154,174,32,162,9,0,205,156,176,21,145,91,147,36,153,4,128,90,20,195,204,27,2,73,1,128,133,204,188,177,142,250,101,65,68,187,144,79,10,68,100,255,44,41,64,13,138,17,145,69,
+204,60,9,224,26,71,124,35,17,237,118,212,74,59,157,206,242,161,161,161,223,251,237,163,8,204,124,143,136,28,47,219,71,223,138,177,214,110,134,131,20,0,95,37,73,178,7,192,17,71,60,137,162,104,115,191,61,
+148,129,136,236,130,91,8,123,123,47,78,95,138,105,183,219,75,186,243,64,43,175,23,34,90,163,148,58,102,140,185,13,192,73,228,95,136,121,247,246,32,96,173,189,47,203,178,163,142,240,101,102,30,29,25,25,
+249,227,202,63,251,82,76,163,209,216,134,124,82,0,224,144,82,234,24,0,104,173,127,1,112,192,177,46,38,162,151,251,233,163,8,89,150,141,123,194,111,246,146,2,244,161,152,52,77,151,17,209,41,0,113,78,184,
+3,224,78,173,245,169,217,63,138,230,7,0,119,105,173,79,86,237,199,211,231,67,68,244,185,35,124,73,41,181,52,111,158,170,172,24,34,218,142,124,82,0,224,227,43,73,1,128,86,171,117,94,68,62,116,172,143,0,
+108,171,218,139,11,34,66,68,244,138,39,254,154,107,200,172,164,24,99,204,237,0,78,192,253,204,88,153,36,201,185,222,64,137,51,202,234,217,219,175,14,24,99,214,194,125,11,79,41,165,150,19,209,63,121,193,
+170,138,217,233,218,75,68,251,242,72,1,128,225,225,225,139,0,222,115,37,21,145,29,21,251,201,203,213,0,224,124,118,17,209,14,23,41,64,5,197,48,243,189,34,114,204,177,119,166,59,15,92,112,237,23,145,235,
+153,249,28,28,175,248,44,203,30,104,181,90,223,133,246,149,211,231,211,34,178,207,17,254,77,41,181,146,136,216,181,191,138,98,198,225,38,244,93,31,41,0,208,61,2,188,237,108,40,138,198,69,164,175,49,66,
+68,18,17,217,234,89,178,213,71,10,16,168,152,52,77,31,36,162,175,29,225,210,103,31,17,89,96,173,157,20,145,27,29,241,135,147,36,249,34,164,183,158,62,215,19,209,91,142,240,132,82,106,21,17,101,190,28,
+65,138,241,61,225,1,188,81,246,64,72,68,151,179,44,219,227,137,239,18,145,74,207,63,17,89,16,69,209,139,158,37,91,138,72,1,2,136,49,198,60,10,96,181,163,153,105,165,212,59,101,115,1,128,214,122,47,0,215,
+25,233,14,102,126,44,36,223,44,152,121,189,136,220,228,8,31,87,74,125,86,38,79,41,98,186,87,207,55,103,236,36,162,191,203,228,154,5,17,165,68,180,211,179,100,135,136,184,230,164,92,136,200,181,0,214,187,
+226,89,150,109,38,34,41,147,171,20,49,214,218,199,1,172,114,132,47,104,173,63,40,147,167,23,113,28,239,7,112,214,17,94,110,173,125,50,36,31,51,111,2,112,93,94,76,68,142,182,90,173,111,203,230,42,36,70,
+68,98,17,113,170,133,136,198,170,26,219,68,100,1,140,121,106,143,137,136,235,44,54,15,237,118,123,49,128,117,174,120,163,209,216,20,210,91,33,49,5,6,247,153,56,142,63,10,41,216,11,165,212,65,252,55,69,
+231,161,180,113,94,96,112,31,137,227,248,135,144,190,188,175,235,18,6,247,90,173,245,39,33,5,243,96,140,121,4,192,97,71,15,211,90,235,165,190,103,88,89,131,59,164,39,175,98,140,49,235,224,38,229,103,165,
+212,167,33,197,92,208,90,31,1,144,123,69,203,24,231,5,6,247,193,80,82,0,143,98,6,61,132,245,194,90,123,127,150,101,223,59,194,206,225,49,196,224,14,129,83,49,204,188,193,69,10,128,159,180,214,95,134,22,
+243,33,142,227,163,68,228,122,107,44,100,230,23,242,2,33,6,119,8,114,21,83,100,112,215,117,208,235,69,232,1,53,212,224,14,65,174,98,172,181,155,224,49,184,7,65,10,0,40,165,142,3,112,77,166,173,102,179,
+57,207,56,15,53,184,67,112,85,210,174,193,125,6,249,175,190,57,131,187,106,193,34,148,53,193,170,24,220,33,184,170,120,215,224,118,205,3,135,6,73,10,0,104,173,39,0,28,116,132,231,140,243,78,167,243,170,
+39,77,174,193,29,130,121,138,9,53,184,7,133,52,77,71,137,232,180,167,143,151,0,236,206,219,91,215,7,3,243,20,19,106,112,15,10,73,146,76,122,140,243,6,28,164,116,177,187,142,175,40,230,20,83,213,224,30,
+20,10,158,117,46,92,236,126,148,228,244,114,203,226,74,18,42,25,220,131,194,240,240,240,20,17,189,31,178,167,200,224,14,202,5,244,111,112,15,10,69,243,84,15,206,43,165,86,20,121,185,101,49,171,144,190,
+12,238,65,129,136,166,225,49,206,123,176,165,46,82,0,128,234,50,184,7,133,162,51,91,23,165,12,238,16,68,68,228,157,7,254,79,82,128,57,227,252,245,130,101,91,235,36,5,0,254,5,135,12,216,244,221,167,129,
+217,0,0,0,0,73,69,78,68,174,66,96,130,0,0};
+
+const char* OwlBassGui::icon_triangle_png = (const char*) resource_OwlBassGui_icon_triangle_png;
+const int OwlBassGui::icon_triangle_pngSize = 1561;
 
 
 //[EndFile] You can add extra defines here...
