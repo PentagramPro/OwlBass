@@ -2,60 +2,86 @@
 #include "SineWaveVoice.h"
 #include "VSTComponents/Owl/ProperiesRegistry.h"
 
-CSineLfoVoice::CSineLfoVoice(const std::string& name, IVoiceModuleHost& host)
+CLfoOscillatorVoice::CLfoOscillatorVoice(const std::string& name, IVoiceModuleHost& host, const std::vector<EWaveform>& waveformMapping)
 		: CVoiceModuleBase(name, host){
-	currentAngle = 0;
+	
 }
 
 
 
 
-  void CSineLfoVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int)
+  void CLfoOscillatorVoice::OnNoteStart(int midiNoteNumber, float velocity, SynthesiserSound *, int)
   {
 	  if (mRetrigger == 1) {
-		  currentAngle = 0;
+		  mSampleCounter = 0;
 	  }
 	  StartSound();
   }
 
-  void CSineLfoVoice::OnNoteStop(float, bool allowTailOff)
+  void CLfoOscillatorVoice::OnNoteStop(float, bool allowTailOff)
   {
 	  StopSound();
   }
 
-  void CSineLfoVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSample, int numSamples)
+  void CLfoOscillatorVoice::ProcessBlock(AudioSampleBuffer & outputBuffer, int startSample, int numSamples)
   {
+	  const EWaveform waveform = mWaveformMapping[mWaveformRaw - 1];
+	  
+
 	  UpdateFrequency();
-	  if (angleDelta == 0.0)
-	  {
-		  return;
-	  }
+	  
 	  while (--numSamples >= 0) 
 	  {
-		  auto currentSample = (float)(std::sin(currentAngle))*mVolume;
+		  double currentValue = mSampleCounter / mSamplesPerCycle;
+
+		  switch (waveform) {
+		  case EWaveform::Sine: 
+			  currentValue = std::sin(currentValue * 2 * MathConstants<double>::pi);
+			  break;
+		  case EWaveform::Square: 
+			  currentValue = currentValue > 0.5 ? 1 : -1;
+			  break;
+		  case EWaveform::Triangle: 
+			  currentValue = (currentValue > 0.5? currentValue-0.5: 0.5-currentValue)*4-1;
+			  break;
+		  case EWaveform::Sawtooth: 
+			  currentValue = currentValue * 2 - 1;
+			  break;
+		  case EWaveform::RandomSquare:
+			  const double value = currentValue;
+			  if (value < mLastValue) {
+				  mRandomizedValue = mRandom.nextDouble()*2-1;
+			  }
+			  currentValue = mRandomizedValue;
+			  mLastValue = value;
+			  break;
+		  }
+		  
 
 		  for (auto i = outputBuffer.getNumChannels(); --i >= 0;)
-			  outputBuffer.addSample(i, startSample, currentSample);
+			  outputBuffer.addSample(i, startSample, currentValue);
 
-		  currentAngle += angleDelta;
+		  mSampleCounter++;
+		  if (mSampleCounter > mSamplesPerCycle) {
+			  mSampleCounter -= mSamplesPerCycle;
+		  }
+		  
 		  ++startSample;
 	  }
 		  
 	  
   }
 
-  void CSineLfoVoice::InitProperties(CPropertiesRegistry & registry)
+  void CLfoOscillatorVoice::InitProperties(CPropertiesRegistry & registry)
   {
 	  registry.AddProperty(GetPropName("Frequency"), new CPropertySquareDouble01(mFrequency, 0.1, 5.0));
 	  registry.AddProperty(GetPropName("Volume"), new CPropertySquareDouble01(mVolume, 0, 1));
+	  registry.AddProperty(GetPropName("Waveform"), new CPropertyInt(mWaveformRaw, 1, mWaveformMapping.size()));
   }
 
-  void CSineLfoVoice::UpdateFrequency()
+  void CLfoOscillatorVoice::UpdateFrequency()
   {
-	  auto cyclesPerSecond = mFrequency;
-	  auto cyclesPerSample = cyclesPerSecond / GetSampleRate();
-
-	  angleDelta = cyclesPerSample * 2.0 * MathConstants<double>::pi;
+	  mSamplesPerCycle = GetSampleRate()/ mFrequency;
   }
 
 

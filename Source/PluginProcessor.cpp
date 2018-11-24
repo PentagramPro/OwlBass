@@ -102,7 +102,11 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
     
 	
 	{
-		std::shared_ptr<CSineLfoVoice> lfoCutoff(new CSineLfoVoice("FilterCutoffLfo", *voiceModuleHost));
+		std::shared_ptr<CLfoOscillatorVoice> lfoCutoff(new CLfoOscillatorVoice("FilterCutoffLfo", *voiceModuleHost, {
+			CLfoOscillatorVoice::EWaveform::Triangle,
+			CLfoOscillatorVoice::EWaveform::Square,
+			CLfoOscillatorVoice::EWaveform::RandomSquare
+			}));
 		CControlVoltageSource* cvLfoCutoff = new CControlVoltageSource("CVFilterCutoffLfo", *voiceModuleHost, lfoCutoff, 0);
 		voiceModuleHost->AddModule(cvLfoCutoff);
 		
