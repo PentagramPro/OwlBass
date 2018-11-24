@@ -85,13 +85,10 @@
       <FILE id="nhierR" name="SawtoothVoice.cpp" compile="1" resource="0"
             file="Source/Synth/SawtoothVoice.cpp"/>
       <FILE id="oa12nC" name="SawtoothVoice.h" compile="0" resource="0" file="Source/Synth/SawtoothVoice.h"/>
-      <FILE id="GBYkHe" name="SineWaveVoice.cpp" compile="1" resource="0"
-            file="Source/Synth/SineWaveVoice.cpp"/>
-      <FILE id="wQIBYk" name="SineWaveVoice.h" compile="0" resource="0" file="Source/Synth/SineWaveVoice.h"/>
-      <FILE id="Cj3yHl" name="SquareWaveVoice.cpp" compile="1" resource="0"
-            file="Source/Synth/SquareWaveVoice.cpp"/>
-      <FILE id="Dy7cRw" name="SquareWaveVoice.h" compile="0" resource="0"
-            file="Source/Synth/SquareWaveVoice.h"/>
+      <FILE id="GBYkHe" name="LfoOscillatorVoice.cpp" compile="1" resource="0"
+            file="Source/Synth/LfoOscillatorVoice.cpp"/>
+      <FILE id="wQIBYk" name="LfoOscillatorVoice.h" compile="0" resource="0"
+            file="Source/Synth/LfoOscillatorVoice.h"/>
     </GROUP>
     <GROUP id="{760016CA-87E6-5D77-FD13-3993BD947A8C}" name="Source">
       <FILE id="bjQnPX" name="PluginProcessor.cpp" compile="1" resource="0"

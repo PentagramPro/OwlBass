@@ -1,9 +1,9 @@
 
-#include "SineWaveVoice.h"
+#include "LfoOscillatorVoice.h"
 #include "VSTComponents/Owl/ProperiesRegistry.h"
 
 CLfoOscillatorVoice::CLfoOscillatorVoice(const std::string& name, IVoiceModuleHost& host, const std::vector<EWaveform>& waveformMapping)
-		: CVoiceModuleBase(name, host){
+		: CVoiceModuleBase(name, host), mWaveformMapping(waveformMapping){
 	
 }
 
@@ -56,7 +56,7 @@ CLfoOscillatorVoice::CLfoOscillatorVoice(const std::string& name, IVoiceModuleHo
 			  mLastValue = value;
 			  break;
 		  }
-		  
+		  currentValue *= mVolume;
 
 		  for (auto i = outputBuffer.getNumChannels(); --i >= 0;)
 			  outputBuffer.addSample(i, startSample, currentValue);

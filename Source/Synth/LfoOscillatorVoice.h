@@ -31,7 +31,7 @@ private:
 	int mRetrigger = 1;
 
 	std::vector<EWaveform> mWaveformMapping;
-	int mWaveformRaw;
+	int mWaveformRaw = 1;
 	juce::Random mRandom;
 
 };

@@ -222,7 +222,7 @@ OwlBassGui::OwlBassGui ()
 
     slider20->setBounds (404, 450, 70, 70);
 
-    slider21.reset (new Slider ("FilterCutoffLfo.Mode"));
+    slider21.reset (new Slider ("FilterCutoffLfo.Waveform"));
     addAndMakeVisible (slider21.get());
     slider21->setTooltip (TRANS("switch;\n"));
     slider21->setRange (1, 3, 1);
@@ -1910,7 +1910,7 @@ BEGIN_JUCER_METADATA
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
-  <SLIDER name="FilterCutoffLfo.Mode" id="172855be44414814" memberName="slider21"
+  <SLIDER name="FilterCutoffLfo.Waveform" id="172855be44414814" memberName="slider21"
           virtualName="" explicitFocusOrder="0" pos="552 444 85 85" tooltip="switch;&#10;"
           min="1.0" max="3.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
