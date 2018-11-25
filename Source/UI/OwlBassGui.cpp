@@ -204,7 +204,7 @@ OwlBassGui::OwlBassGui ()
 
     slider18->setBounds (550, 303, 40, 115);
 
-    slider19.reset (new Slider ("FilterCutoffLfo.Volume"));
+    slider19.reset (new Slider ("FilterCutoffLfo.Frequency"));
     addAndMakeVisible (slider19.get());
     slider19->setRange (0, 1, 0);
     slider19->setSliderStyle (Slider::RotaryHorizontalDrag);
@@ -213,7 +213,7 @@ OwlBassGui::OwlBassGui ()
 
     slider19->setBounds (476, 450, 70, 70);
 
-    slider20.reset (new Slider ("FilterCutoffLfo.Frequency"));
+    slider20.reset (new Slider ("FilterCutoffLfo.Volume"));
     addAndMakeVisible (slider20.get());
     slider20->setRange (0, 1, 0);
     slider20->setSliderStyle (Slider::RotaryHorizontalDrag);
@@ -1900,12 +1900,12 @@ BEGIN_JUCER_METADATA
           max="1.0" int="0.0" style="LinearVertical" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
-  <SLIDER name="FilterCutoffLfo.Volume" id="f9ef9f642b0fceb2" memberName="slider19"
+  <SLIDER name="FilterCutoffLfo.Frequency" id="f9ef9f642b0fceb2" memberName="slider19"
           virtualName="" explicitFocusOrder="0" pos="476 450 70 70" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
-  <SLIDER name="FilterCutoffLfo.Frequency" id="16bbf472a1fc85ba" memberName="slider20"
+  <SLIDER name="FilterCutoffLfo.Volume" id="16bbf472a1fc85ba" memberName="slider20"
           virtualName="" explicitFocusOrder="0" pos="404 450 70 70" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"

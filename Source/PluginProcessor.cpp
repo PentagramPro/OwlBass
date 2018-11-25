@@ -118,11 +118,11 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
 		auto& filter2 = voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
 		filter2.SetLfo(*cvLfoCutoff);
-		filter2.AddMuteRule([](const IVoiceModule& m) { return filterMode > 1; });
+		filter2.AddMuteRule([](const IVoiceModule& m) { return filterMode < 2; });
 
 		auto& filter3 = voiceModuleHost->AddModule(new CFilterVoice("Filter", *voiceModuleHost, *cvEnvelopeCutoff));
 		filter3.SetLfo(*cvLfoCutoff);
-		filter3.AddMuteRule([](const IVoiceModule& m) { return filterMode > 2; });
+		filter3.AddMuteRule([](const IVoiceModule& m) { return filterMode < 3; });
 	}
 	
 	

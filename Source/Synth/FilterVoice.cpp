@@ -40,7 +40,7 @@ void CFilterVoice::ProcessBlock(AudioBuffer<float>& outputBuffer, int startSampl
 	}
 
 	
-	const float halfRange = mCutoffFreqMax - mCutoffFreqMin;
+	const float halfRange = (mCutoffFreqMax - mCutoffFreqMin)/2;
 	while (--samplesCount >= 0) {
 
 		const double freqEnvelopeVal = mCutoffEnvelope.GetValue(currentSample)*mEnvelopeScale;
