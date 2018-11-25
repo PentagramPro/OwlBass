@@ -15,13 +15,15 @@ public:
     void ProcessBlock(AudioBuffer<float> &outputBuffer, int startSample, int numSamples) override;
 
 private:
-    enum class EState {Idle, Attack, Sustain, Release};
+    enum class EState {Idle, Attack, Decay, Sustain, Release};
     double mAttackTime = 1;
+	double mDecayTime = 0;
 	double mReleaseTime = 1;
 	double mSustainLevel = 1;
 	int mRetrigger = 1;
     double mSoundLevel = 0;
 
+	double mReleaseStep = 1;
     EState mState = EState ::Idle;
 };
 
