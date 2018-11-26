@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<state>
+  <property name="FilterCutoffLfo.Volume" value="0.45697599649429321289"/>
+  <property name="ADSRFilter.Attack" value="5.0"/>
+  <property name="Filter.EnvelopeScale" value="1.0"/>
+  <property name="ADSRFilter.Decay" value="0.0"/>
+  <property name="OSC3.Phase" value="0.12399999797344207764"/>
+  <property name="ADSRFilter.Sustain" value="0.21978022158145904541"/>
+  <property name="ADSR2.Retrigger" value="0.0"/>
+  <property name="ADSRFilter.Release" value="1.01647635453939422234"/>
+  <property name="OscSectionMixer.Volume" value="1.0"/>
+  <property name="OSC1.Phase" value="0.0"/>
+  <property name="ADSRFilter.Retrigger" value="1.0"/>
+  <property name="Filter.Q" value="1.24320001602172847122"/>
+  <property name="Delay.Wet" value="0.20000000298023223877"/>
+  <property name="ReferenceOscillator.Detune" value="1.00104000002145765436"/>
+  <property name="OSC1.Volume" value="0.66399997472763061523"/>
+  <property name="ADSR2.Decay" value="0.01969182633608579716"/>
+  <property name="OSC1.Divider" value="1.0"/>
+  <property name="Filter.CutoffFreq" value="1118.8864186406135559082"/>
+  <property name="OSC1.Waveform" value="2.0"/>
+  <property name="OSC2.Volume" value="0.23999999463558197021"/>
+  <property name="OSC2.Phase" value="0.47999998927116394043"/>
+  <property name="ADSR1.Release" value="0.50129620130732654992"/>
+  <property name="OSC2.Divider" value="4.0"/>
+  <property name="ADSR2.Attack" value="0.08695817631110548673"/>
+  <property name="OSC2.Waveform" value="1.0"/>
+  <property name="UnisonMixer.Volume" value="0.24799999594688415527"/>
+  <property name="ADSR1.Attack" value="0.1051353843033313723"/>
+  <property name="ADSR1.Decay" value="0.00100000000000000002"/>
+  <property name="ADSR1.Sustain" value="1.0"/>
+  <property name="ADSR1.Retrigger" value="0.0"/>
+  <property name="OSC4.Waveform" value="1.0"/>
+  <property name="OSC3.Volume" value="0.15199999511241912842"/>
+  <property name="OSC3.Divider" value="4.0"/>
+  <property name="OSC3.Waveform" value="1.0"/>
+  <property name="OSC4.Volume" value="0.14000000059604644775"/>
+  <property name="Filter.Mode" value="1.0"/>
+  <property name="OSC4.Phase" value="0.35199999809265136719"/>
+  <property name="OSC4.Divider" value="1.0"/>
+  <property name="ADSR2.Release" value="0.50129620130732654992"/>
+  <property name="ADSR2.Sustain" value="1.0"/>
+  <property name="FilterCutoffLfo.Frequency" value="4.31980131268501299502"/>
+  <property name="FilterCutoffLfo.Waveform" value="1.0"/>
+  <property name="Delay.Delay" value="0.23199999332427978516"/>
+  <property name="Delay.Feedback" value="0.50199997425079345703"/>
+  <property name="PostProcessing.Enabled" value="1.0"/>
+  <info>
+    <category></category>
+    <name></name>
+  </info>
+</state>
