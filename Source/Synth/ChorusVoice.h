@@ -3,7 +3,7 @@
 #include "VSTComponents/Owl/VoiceModuleBase.h"
 #include "VSTComponents/Owl/IVoiceModuleHost.h"
 #include "VSTComponents/Owl/AudioQueue.h"
-#include "IVoltageController.h"
+#include "VSTComponents/OwlVoices/IVoltageController.h"
 #include <vector>
 
 class CChorusVoice : public CVoiceModuleBase {

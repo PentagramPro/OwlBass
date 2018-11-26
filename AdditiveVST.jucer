@@ -50,45 +50,14 @@
     <GROUP id="{06D74786-B672-E363-A511-E371D1D9C0AF}" name="Synth">
       <FILE id="jmyDQx" name="ChorusVoice.cpp" compile="1" resource="0" file="Source/Synth/ChorusVoice.cpp"/>
       <FILE id="r64Rlj" name="ChorusVoice.h" compile="0" resource="0" file="Source/Synth/ChorusVoice.h"/>
-      <FILE id="SEiEh8" name="ControlVoltageSource.cpp" compile="1" resource="0"
-            file="Source/Synth/ControlVoltageSource.cpp"/>
-      <FILE id="MENVG3" name="ControlVoltageSource.h" compile="0" resource="0"
-            file="Source/Synth/ControlVoltageSource.h"/>
-      <FILE id="oakOjE" name="DelayVoice.cpp" compile="1" resource="0" file="Source/Synth/DelayVoice.cpp"/>
-      <FILE id="Onst5s" name="DelayVoice.h" compile="0" resource="0" file="Source/Synth/DelayVoice.h"/>
-      <FILE id="ecgqvL" name="EnvelopeVoice.cpp" compile="1" resource="0"
-            file="Source/Synth/EnvelopeVoice.cpp"/>
-      <FILE id="OaBZLH" name="EnvelopeVoice.h" compile="0" resource="0" file="Source/Synth/EnvelopeVoice.h"/>
-      <FILE id="t7vMNY" name="FilterVoice.cpp" compile="1" resource="0" file="Source/Synth/FilterVoice.cpp"/>
-      <FILE id="omX3Ae" name="FilterVoice.h" compile="0" resource="0" file="Source/Synth/FilterVoice.h"/>
       <FILE id="zITBcL" name="FourierProbeVoice.cpp" compile="1" resource="0"
             file="Source/Synth/FourierProbeVoice.cpp"/>
       <FILE id="kDzFMd" name="FourierProbeVoice.h" compile="0" resource="0"
             file="Source/Synth/FourierProbeVoice.h"/>
-      <FILE id="pjUBBv" name="IVoltageController.h" compile="0" resource="0"
-            file="Source/Synth/IVoltageController.h"/>
-      <FILE id="h6fDDv" name="LimiterVoice.cpp" compile="1" resource="0"
-            file="Source/Synth/LimiterVoice.cpp"/>
-      <FILE id="SKjVvV" name="LimiterVoice.h" compile="0" resource="0" file="Source/Synth/LimiterVoice.h"/>
-      <FILE id="fnSfqN" name="MixerVoice.cpp" compile="1" resource="0" file="Source/Synth/MixerVoice.cpp"/>
-      <FILE id="NiSqvs" name="MixerVoice.h" compile="0" resource="0" file="Source/Synth/MixerVoice.h"/>
-      <FILE id="OlKDXh" name="MultiModeOscillator.cpp" compile="1" resource="0"
-            file="Source/Synth/MultiModeOscillator.cpp"/>
-      <FILE id="aKokZR" name="MultiModeOscillator.h" compile="0" resource="0"
-            file="Source/Synth/MultiModeOscillator.h"/>
-      <FILE id="m48qZV" name="NoiseVoice.cpp" compile="1" resource="0" file="Source/Synth/NoiseVoice.cpp"/>
-      <FILE id="mH6xkt" name="NoiseVoice.h" compile="0" resource="0" file="Source/Synth/NoiseVoice.h"/>
       <FILE id="dDDSJW" name="PostProcessingVoice.cpp" compile="1" resource="0"
             file="Source/Synth/PostProcessingVoice.cpp"/>
       <FILE id="ssGIuR" name="PostProcessingVoice.h" compile="0" resource="0"
             file="Source/Synth/PostProcessingVoice.h"/>
-      <FILE id="nhierR" name="SawtoothVoice.cpp" compile="1" resource="0"
-            file="Source/Synth/SawtoothVoice.cpp"/>
-      <FILE id="oa12nC" name="SawtoothVoice.h" compile="0" resource="0" file="Source/Synth/SawtoothVoice.h"/>
-      <FILE id="GBYkHe" name="LfoOscillatorVoice.cpp" compile="1" resource="0"
-            file="Source/Synth/LfoOscillatorVoice.cpp"/>
-      <FILE id="wQIBYk" name="LfoOscillatorVoice.h" compile="0" resource="0"
-            file="Source/Synth/LfoOscillatorVoice.h"/>
     </GROUP>
     <GROUP id="{760016CA-87E6-5D77-FD13-3993BD947A8C}" name="Source">
       <FILE id="bjQnPX" name="PluginProcessor.cpp" compile="1" resource="0"
