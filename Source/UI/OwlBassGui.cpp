@@ -40,7 +40,7 @@ OwlBassGui::OwlBassGui ()
     slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider->addListener (this);
 
-    slider->setBounds (277, 109, 110, 110);
+    slider->setBounds (282, 114, 100, 100);
 
     slider2.reset (new Slider ("OSC2.Volume"));
     addAndMakeVisible (slider2.get());
@@ -49,7 +49,7 @@ OwlBassGui::OwlBassGui ()
     slider2->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider2->addListener (this);
 
-    slider2->setBounds (253, 241, 110, 110);
+    slider2->setBounds (258, 246, 100, 100);
 
     slider3.reset (new Slider ("OSC3.Volume"));
     addAndMakeVisible (slider3.get());
@@ -58,7 +58,7 @@ OwlBassGui::OwlBassGui ()
     slider3->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider3->addListener (this);
 
-    slider3->setBounds (640, 109, 110, 110);
+    slider3->setBounds (645, 114, 100, 100);
 
     slider4.reset (new Slider ("OSC4.Volume"));
     addAndMakeVisible (slider4.get());
@@ -67,7 +67,7 @@ OwlBassGui::OwlBassGui ()
     slider4->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider4->addListener (this);
 
-    slider4->setBounds (656, 241, 110, 110);
+    slider4->setBounds (661, 246, 100, 100);
 
     slider5.reset (new Slider ("OSC1.Divider"));
     addAndMakeVisible (slider5.get());
@@ -157,7 +157,7 @@ OwlBassGui::OwlBassGui ()
     mSliderFilterMode->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     mSliderFilterMode->addListener (this);
 
-    mSliderFilterMode->setBounds (449, 67, 130, 130);
+    mSliderFilterMode->setBounds (447, 67, 133, 133);
 
     slider14.reset (new Slider ("Filter.CutoffFreq"));
     addAndMakeVisible (slider14.get());
@@ -166,7 +166,7 @@ OwlBassGui::OwlBassGui ()
     slider14->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider14->addListener (this);
 
-    slider14->setBounds (398, 173, 110, 110);
+    slider14->setBounds (405, 180, 100, 100);
 
     slider15.reset (new Slider ("Filter.Q"));
     addAndMakeVisible (slider15.get());
@@ -175,7 +175,7 @@ OwlBassGui::OwlBassGui ()
     slider15->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider15->addListener (this);
 
-    slider15->setBounds (518, 173, 110, 110);
+    slider15->setBounds (523, 180, 100, 100);
 
     slider16.reset (new Slider ("ADSRFilter.Attack"));
     addAndMakeVisible (slider16.get());
@@ -211,7 +211,7 @@ OwlBassGui::OwlBassGui ()
     slider19->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider19->addListener (this);
 
-    slider19->setBounds (476, 450, 70, 70);
+    slider19->setBounds (474, 456, 66, 66);
 
     slider20.reset (new Slider ("FilterCutoffLfo.Volume"));
     addAndMakeVisible (slider20.get());
@@ -220,7 +220,7 @@ OwlBassGui::OwlBassGui ()
     slider20->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider20->addListener (this);
 
-    slider20->setBounds (404, 450, 70, 70);
+    slider20->setBounds (394, 456, 66, 66);
 
     slider21.reset (new Slider ("FilterCutoffLfo.Waveform"));
     addAndMakeVisible (slider21.get());
@@ -230,7 +230,7 @@ OwlBassGui::OwlBassGui ()
     slider21->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider21->addListener (this);
 
-    slider21->setBounds (552, 444, 85, 85);
+    slider21->setBounds (551, 444, 90, 90);
 
     slider22.reset (new Slider ("ADSR1.Attack"));
     addAndMakeVisible (slider22.get());
@@ -314,7 +314,7 @@ OwlBassGui::OwlBassGui ()
     slider30->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider30->addListener (this);
 
-    slider30->setBounds (240, 565, 70, 70);
+    slider30->setBounds (240, 580, 70, 70);
 
     slider31.reset (new Slider ("UnisonMixer.Volume"));
     addAndMakeVisible (slider31.get());
@@ -324,7 +324,7 @@ OwlBassGui::OwlBassGui ()
     slider31->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider31->addListener (this);
 
-    slider31->setBounds (168, 565, 70, 70);
+    slider31->setBounds (168, 580, 70, 70);
 
     slider32.reset (new Slider ("Delay.Delay"));
     addAndMakeVisible (slider32.get());
@@ -334,7 +334,7 @@ OwlBassGui::OwlBassGui ()
     slider32->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider32->addListener (this);
 
-    slider32->setBounds (424, 565, 70, 70);
+    slider32->setBounds (424, 580, 70, 70);
 
     slider33.reset (new Slider ("Delay.Wet"));
     addAndMakeVisible (slider33.get());
@@ -344,7 +344,7 @@ OwlBassGui::OwlBassGui ()
     slider33->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider33->addListener (this);
 
-    slider33->setBounds (352, 565, 70, 70);
+    slider33->setBounds (352, 580, 70, 70);
 
     slider34.reset (new Slider ("Delay.Feedback"));
     addAndMakeVisible (slider34.get());
@@ -354,7 +354,7 @@ OwlBassGui::OwlBassGui ()
     slider34->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider34->addListener (this);
 
-    slider34->setBounds (498, 565, 70, 70);
+    slider34->setBounds (498, 580, 70, 70);
 
     slider35.reset (new Slider ("Limiter.Volume"));
     addAndMakeVisible (slider35.get());
@@ -364,7 +364,7 @@ OwlBassGui::OwlBassGui ()
     slider35->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider35->addListener (this);
 
-    slider35->setBounds (606, 565, 70, 70);
+    slider35->setBounds (606, 580, 70, 70);
 
     slider36.reset (new Slider ("ADSR2.Attack"));
     addAndMakeVisible (slider36.get());
@@ -458,13 +458,13 @@ OwlBassGui::OwlBassGui ()
     addAndMakeVisible (component.get());
     component->setName ("Limiter.LevelChannel0");
 
-    component->setBounds (694, 579, 156, 8);
+    component->setBounds (694, 595, 156, 8);
 
     component2.reset (new LevelIndicator());
     addAndMakeVisible (component2.get());
     component2->setName ("Limiter.LevelChannel1");
 
-    component2->setBounds (694, 608, 156, 8);
+    component2->setBounds (694, 624, 156, 8);
 
     label.reset (new Label ("labelOsc1",
                             TRANS("OSC-1")));
@@ -596,7 +596,7 @@ OwlBassGui::OwlBassGui ()
     label12->setColour (TextEditor::textColourId, Colours::black);
     label12->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label12->setBounds (402, 508, 74, 24);
+    label12->setBounds (388, 517, 74, 24);
 
     label13.reset (new Label ("labelOsc1",
                               TRANS("Frequency")));
@@ -607,7 +607,7 @@ OwlBassGui::OwlBassGui ()
     label13->setColour (TextEditor::textColourId, Colours::black);
     label13->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label13->setBounds (470, 508, 84, 24);
+    label13->setBounds (464, 517, 84, 24);
 
     label14.reset (new Label ("labelOsc1",
                               TRANS("Phase")));
@@ -783,7 +783,7 @@ OwlBassGui::OwlBassGui ()
     label29->setColour (TextEditor::textColourId, Colours::black);
     label29->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label29->setBounds (165, 627, 74, 24);
+    label29->setBounds (165, 643, 74, 24);
 
     label30.reset (new Label ("labelOsc1",
                               TRANS("Detune")));
@@ -794,7 +794,7 @@ OwlBassGui::OwlBassGui ()
     label30->setColour (TextEditor::textColourId, Colours::black);
     label30->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label30->setBounds (238, 627, 74, 24);
+    label30->setBounds (238, 643, 74, 24);
 
     label31.reset (new Label ("labelOsc1",
                               TRANS("Amount")));
@@ -805,7 +805,7 @@ OwlBassGui::OwlBassGui ()
     label31->setColour (TextEditor::textColourId, Colours::black);
     label31->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label31->setBounds (349, 627, 74, 24);
+    label31->setBounds (349, 643, 74, 24);
 
     label32.reset (new Label ("labelOsc1",
                               TRANS("Time")));
@@ -816,7 +816,7 @@ OwlBassGui::OwlBassGui ()
     label32->setColour (TextEditor::textColourId, Colours::black);
     label32->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label32->setBounds (422, 627, 74, 24);
+    label32->setBounds (422, 643, 74, 24);
 
     label33.reset (new Label ("labelOsc1",
                               TRANS("Feedback")));
@@ -827,7 +827,7 @@ OwlBassGui::OwlBassGui ()
     label33->setColour (TextEditor::textColourId, Colours::black);
     label33->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label33->setBounds (495, 627, 74, 24);
+    label33->setBounds (495, 643, 74, 24);
 
     label34.reset (new Label ("labelOsc1",
                               TRANS("Volume")));
@@ -838,7 +838,7 @@ OwlBassGui::OwlBassGui ()
     label34->setColour (TextEditor::textColourId, Colours::black);
     label34->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label34->setBounds (603, 627, 74, 24);
+    label34->setBounds (603, 643, 74, 24);
 
     label35.reset (new Label ("labelOsc1",
                               TRANS("Delay")));
@@ -849,7 +849,7 @@ OwlBassGui::OwlBassGui ()
     label35->setColour (TextEditor::textColourId, Colours::black);
     label35->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label35->setBounds (344, 546, 98, 24);
+    label35->setBounds (344, 559, 98, 24);
 
     label36.reset (new Label ("labelOsc1",
                               TRANS("Unison")));
@@ -860,7 +860,7 @@ OwlBassGui::OwlBassGui ()
     label36->setColour (TextEditor::textColourId, Colours::black);
     label36->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label36->setBounds (158, 545, 98, 24);
+    label36->setBounds (158, 558, 98, 24);
 
     label37.reset (new Label ("labelOsc1",
                               TRANS("Output")));
@@ -871,7 +871,7 @@ OwlBassGui::OwlBassGui ()
     label37->setColour (TextEditor::textColourId, Colours::black);
     label37->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    label37->setBounds (600, 545, 98, 24);
+    label37->setBounds (600, 558, 98, 24);
 
     label38.reset (new Label ("labelOsc1",
                               TRANS("Owl Bass")));
@@ -952,7 +952,7 @@ OwlBassGui::OwlBassGui ()
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (1020, 668);
+    setSize (1020, 682);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -1078,7 +1078,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = -36, y = 506, width = 1096, height = 192;
+        int x = -37, y = 516, width = 1096, height = 192;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (Colours::black);
@@ -1088,7 +1088,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 688, y = 572, width = 168, height = 20;
+        int x = 688, y = 587, width = 168, height = 20;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (Colours::black);
@@ -1098,7 +1098,7 @@ void OwlBassGui::paint (Graphics& g)
     }
 
     {
-        int x = 688, y = 601, width = 168, height = 20;
+        int x = 688, y = 616, width = 168, height = 20;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (Colours::black);
@@ -1730,14 +1730,14 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="OwlBassGui" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="2" snapActive="1" snapShown="1" overlayOpacity="0.33"
-                 fixedSize="0" initialWidth="1020" initialHeight="668">
+                 fixedSize="0" initialWidth="1020" initialHeight="682">
   <BACKGROUND backgroundColour="ff323e44">
     <IMAGE pos="0 0 1020 668" resource="case_main_png" opacity="1.0" mode="0"/>
-    <IMAGE pos="-36 506 1096 192" resource="case_effects_png" opacity="1.0"
+    <IMAGE pos="-37 516 1096 192" resource="case_effects_png" opacity="1.0"
            mode="0"/>
-    <IMAGE pos="688 572 168 20" resource="levelIndicator_png" opacity="1.0"
+    <IMAGE pos="688 587 168 20" resource="levelIndicator_png" opacity="1.0"
            mode="0"/>
-    <IMAGE pos="688 601 168 20" resource="levelIndicator_png" opacity="1.0"
+    <IMAGE pos="688 616 168 20" resource="levelIndicator_png" opacity="1.0"
            mode="0"/>
     <IMAGE pos="664 14 332 44" resource="presetsPanel_png" opacity="1.0"
            mode="0"/>
@@ -1811,22 +1811,22 @@ BEGIN_JUCER_METADATA
     <IMAGE pos="632 468 14 8" resource="icon_rnd_png" opacity="1.0" mode="0"/>
   </BACKGROUND>
   <SLIDER name="OSC1.Volume" id="a3679e39b3ca9aa0" memberName="slider"
-          virtualName="" explicitFocusOrder="0" pos="277 109 110 110" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="282 114 100 100" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC2.Volume" id="995566f65765c2eb" memberName="slider2"
-          virtualName="" explicitFocusOrder="0" pos="253 241 110 110" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="258 246 100 100" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC3.Volume" id="3b5eb21fc2082bb" memberName="slider3"
-          virtualName="" explicitFocusOrder="0" pos="640 109 110 110" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="645 114 100 100" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="OSC4.Volume" id="a17a53d967d4ab66" memberName="slider4"
-          virtualName="" explicitFocusOrder="0" pos="656 241 110 110" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="661 246 100 100" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
@@ -1871,17 +1871,17 @@ BEGIN_JUCER_METADATA
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="Filter.Mode" id="500e770e434081df" memberName="mSliderFilterMode"
-          virtualName="" explicitFocusOrder="0" pos="449 67 130 130" tooltip="switch;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="447 67 133 133" tooltip="switch;&#10;"
           min="1.0" max="3.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="Filter.CutoffFreq" id="513b91f5ae1bd693" memberName="slider14"
-          virtualName="" explicitFocusOrder="0" pos="398 173 110 110" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="405 180 100 100" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="Filter.Q" id="be0bf92848c827a1" memberName="slider15" virtualName=""
-          explicitFocusOrder="0" pos="518 173 110 110" min="0.0" max="1.0"
+          explicitFocusOrder="0" pos="523 180 100 100" min="0.0" max="1.0"
           int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
@@ -1901,17 +1901,17 @@ BEGIN_JUCER_METADATA
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="FilterCutoffLfo.Frequency" id="f9ef9f642b0fceb2" memberName="slider19"
-          virtualName="" explicitFocusOrder="0" pos="476 450 70 70" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="474 456 66 66" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="FilterCutoffLfo.Volume" id="16bbf472a1fc85ba" memberName="slider20"
-          virtualName="" explicitFocusOrder="0" pos="404 450 70 70" min="0.0"
+          virtualName="" explicitFocusOrder="0" pos="394 456 66 66" min="0.0"
           max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="FilterCutoffLfo.Waveform" id="172855be44414814" memberName="slider21"
-          virtualName="" explicitFocusOrder="0" pos="552 444 85 85" tooltip="switch;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="551 444 90 90" tooltip="switch;&#10;"
           min="1.0" max="3.0" int="1.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
@@ -1952,32 +1952,32 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="800 61 88 24" buttonText="Previous"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <SLIDER name="ReferenceOscillator.Detune" id="14d7a0bddcdfb29" memberName="slider30"
-          virtualName="" explicitFocusOrder="0" pos="240 565 70 70" tooltip="effect;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="240 580 70 70" tooltip="effect;&#10;"
           min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="UnisonMixer.Volume" id="a80ff1604b13e5d8" memberName="slider31"
-          virtualName="" explicitFocusOrder="0" pos="168 565 70 70" tooltip="effect;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="168 580 70 70" tooltip="effect;&#10;"
           min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="Delay.Delay" id="6acc910924aa9904" memberName="slider32"
-          virtualName="" explicitFocusOrder="0" pos="424 565 70 70" tooltip="effect;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="424 580 70 70" tooltip="effect;&#10;"
           min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="Delay.Wet" id="3e51784dc694ef6a" memberName="slider33"
-          virtualName="" explicitFocusOrder="0" pos="352 565 70 70" tooltip="effect;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="352 580 70 70" tooltip="effect;&#10;"
           min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="Delay.Feedback" id="5798c0f055b0143e" memberName="slider34"
-          virtualName="" explicitFocusOrder="0" pos="498 565 70 70" tooltip="effect;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="498 580 70 70" tooltip="effect;&#10;"
           min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="Limiter.Volume" id="b5cc91d820dcaec" memberName="slider35"
-          virtualName="" explicitFocusOrder="0" pos="606 565 70 70" tooltip="effect;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="606 580 70 70" tooltip="effect;&#10;"
           min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
@@ -2030,10 +2030,10 @@ BEGIN_JUCER_METADATA
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <GENERICCOMPONENT name="Limiter.LevelChannel0" id="3f5e527f49885cf" memberName="component"
-                    virtualName="" explicitFocusOrder="0" pos="694 579 156 8" class="LevelIndicator"
+                    virtualName="" explicitFocusOrder="0" pos="694 595 156 8" class="LevelIndicator"
                     params=""/>
   <GENERICCOMPONENT name="Limiter.LevelChannel1" id="4df1d334df446ddc" memberName="component2"
-                    virtualName="" explicitFocusOrder="0" pos="694 608 156 8" class="LevelIndicator"
+                    virtualName="" explicitFocusOrder="0" pos="694 624 156 8" class="LevelIndicator"
                     params=""/>
   <LABEL name="labelOsc1" id="345a1b876e439ba9" memberName="label" virtualName=""
          explicitFocusOrder="0" pos="284 90 98 24" edTextCol="ff000000"
@@ -2091,12 +2091,12 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="48a549ac9501b73f" memberName="label12" virtualName=""
-         explicitFocusOrder="0" pos="402 508 74 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="388 517 74 24" edTextCol="ff000000"
          edBkgCol="0" labelText="LFO" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="4f79d2a103127b07" memberName="label13" virtualName=""
-         explicitFocusOrder="0" pos="470 508 84 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="464 517 84 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Frequency" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
@@ -2176,47 +2176,47 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="9ea2aa3cf83d6110" memberName="label29" virtualName=""
-         explicitFocusOrder="0" pos="165 627 74 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="165 643 74 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Amount" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="c0be43b120cfab8d" memberName="label30" virtualName=""
-         explicitFocusOrder="0" pos="238 627 74 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="238 643 74 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Detune" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="b2596d24e283e853" memberName="label31" virtualName=""
-         explicitFocusOrder="0" pos="349 627 74 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="349 643 74 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Amount" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="886720fa50ef9700" memberName="label32" virtualName=""
-         explicitFocusOrder="0" pos="422 627 74 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="422 643 74 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Time" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="9afd7f996dbb5275" memberName="label33" virtualName=""
-         explicitFocusOrder="0" pos="495 627 74 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="495 643 74 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Feedback" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="71aa273c8cb7f22c" memberName="label34" virtualName=""
-         explicitFocusOrder="0" pos="603 627 74 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="603 643 74 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Volume" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="eddc8bb070d20ea3" memberName="label35" virtualName=""
-         explicitFocusOrder="0" pos="344 546 98 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="344 559 98 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Delay" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="20.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="3fe4f48cc4a59d44" memberName="label36" virtualName=""
-         explicitFocusOrder="0" pos="158 545 98 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="158 558 98 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Unison" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="20.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <LABEL name="labelOsc1" id="5a51b1b69f19858f" memberName="label37" virtualName=""
-         explicitFocusOrder="0" pos="600 545 98 24" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="600 558 98 24" edTextCol="ff000000"
          edBkgCol="0" labelText="Output" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="20.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
