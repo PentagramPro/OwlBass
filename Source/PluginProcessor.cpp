@@ -23,6 +23,7 @@
 #include "VSTComponents/OwlVoices/DelayVoice.h"
 #include "VSTComponents/OwlVoices/NoiseVoice.h"
 #include "Synth/PostProcessingVoice.h"
+#include "Synth/StereoEffectsVoice.h"
 
 #include "VSTComponents/Owl/VoiceModuleHost.h"
 #include "VSTComponents/Owl/VoiceModuleHostSound.h"
@@ -67,6 +68,9 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 		oscSectionMixer->AddModule(new EnvelopeVoice("ADSR1", *voiceModuleHost));
 		mPropRegistry.ForceProperty("ADSR1.Retrigger", 0);
 
+		oscSectionMixer->AddModule(new CStereoEffectsVoice("Stereo1", *voiceModuleHost));
+		mPropRegistry.ForceProperty("Stereo1.Pan", 0.5);
+
 		voiceModuleHost->AddModule(oscSectionMixer);
 	}
 
@@ -94,6 +98,9 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 
 		oscSectionMixer->AddModule(new EnvelopeVoice("ADSR2", *voiceModuleHost));
 		mPropRegistry.ForceProperty("ADSR2.Retrigger", 0);
+
+		oscSectionMixer->AddModule(new CStereoEffectsVoice("Stereo2", *voiceModuleHost));
+		mPropRegistry.ForceProperty("Stereo2.Pan", -0.5);
 
 		voiceModuleHost->AddModule(oscSectionMixer);
 	}

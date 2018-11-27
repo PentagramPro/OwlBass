@@ -58,6 +58,10 @@
             file="Source/Synth/PostProcessingVoice.cpp"/>
       <FILE id="ssGIuR" name="PostProcessingVoice.h" compile="0" resource="0"
             file="Source/Synth/PostProcessingVoice.h"/>
+      <FILE id="HUOnHk" name="StereoEffectsVoice.cpp" compile="1" resource="0"
+            file="Source/Synth/StereoEffectsVoice.cpp"/>
+      <FILE id="qnhjUu" name="StereoEffectsVoice.h" compile="0" resource="0"
+            file="Source/Synth/StereoEffectsVoice.h"/>
     </GROUP>
     <GROUP id="{760016CA-87E6-5D77-FD13-3993BD947A8C}" name="Source">
       <FILE id="bjQnPX" name="PluginProcessor.cpp" compile="1" resource="0"
