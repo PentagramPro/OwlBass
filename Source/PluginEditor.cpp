@@ -75,7 +75,7 @@ void AdditiveVstAudioProcessorEditor::OnLoadPreset(const std::string & filePath)
 	File file(filePath);
 	MemoryBlock state;
 	if (file.loadFileAsData(state)) {
-		processor.setStateInformation(state.getData(), state.getSize());
+		processor.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
 	}
 }
 

@@ -22,9 +22,10 @@ public:
 	virtual void ProcessBlock(AudioSampleBuffer & outputBuffer, int startSample, int numSamples) override;
 private:
 	std::unique_ptr<CAudioQueue> mBuffer;
+
+	double mLengthSec;
 	std::vector<double> mVoiceOffsets;
 	IVoltageController& mPhaseLfo;
-	double mLengthSec;
 	double mWet = 0;
 	
 	int mVoices;
