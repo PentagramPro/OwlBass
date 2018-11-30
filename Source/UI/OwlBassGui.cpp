@@ -928,6 +928,16 @@ OwlBassGui::OwlBassGui ()
 
     label42->setBounds (552, 82, 48, 24);
 
+    slider6.reset (new Slider ("ReferenceOscillator.Portamento"));
+    addAndMakeVisible (slider6.get());
+    slider6->setTooltip (TRANS("effect;\n"));
+    slider6->setRange (0, 1, 0);
+    slider6->setSliderStyle (Slider::RotaryHorizontalDrag);
+    slider6->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
+    slider6->addListener (this);
+
+    slider6->setBounds (868, 584, 70, 70);
+
     cachedImage_case_main_png_1 = ImageCache::getFromMemory (case_main_png, case_main_pngSize);
     cachedImage_case_effects_png_2 = ImageCache::getFromMemory (case_effects_png, case_effects_pngSize);
     cachedImage_levelIndicator_png_3 = ImageCache::getFromMemory (levelIndicator_png, levelIndicator_pngSize);
@@ -1053,6 +1063,7 @@ OwlBassGui::~OwlBassGui()
     label40 = nullptr;
     label41 = nullptr;
     label42 = nullptr;
+    slider6 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -1677,6 +1688,11 @@ void OwlBassGui::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_slider40] -- add your slider handling code here..
         //[/UserSliderCode_slider40]
     }
+    else if (sliderThatWasMoved == slider6.get())
+    {
+        //[UserSliderCode_slider6] -- add your slider handling code here..
+        //[/UserSliderCode_slider6]
+    }
 
     //[UsersliderValueChanged_Post]
     //[/UsersliderValueChanged_Post]
@@ -2245,6 +2261,11 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="LPx3" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
+  <SLIDER name="ReferenceOscillator.Portamento" id="df9a5c678e3f1315" memberName="slider6"
+          virtualName="" explicitFocusOrder="0" pos="868 584 70 70" tooltip="effect;&#10;"
+          min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+          needsCallback="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

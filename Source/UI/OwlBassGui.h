@@ -169,6 +169,7 @@ protected:
     std::unique_ptr<Label> label40;
     std::unique_ptr<Label> label41;
     std::unique_ptr<Label> label42;
+    std::unique_ptr<Slider> slider6;
     Image cachedImage_case_main_png_1;
     Image cachedImage_case_effects_png_2;
     Image cachedImage_levelIndicator_png_3;

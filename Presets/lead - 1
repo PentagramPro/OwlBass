@@ -47,7 +47,7 @@
   <property name="Delay.Feedback" value="0.99799996614456176758"/>
   <property name="PostProcessing.Enabled" value="1.0"/>
   <info>
-    <category></category>
-    <name></name>
+    <category>Lead</category>
+    <name>Sound 1</name>
   </info>
 </state>

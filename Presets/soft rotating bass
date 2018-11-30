@@ -49,7 +49,7 @@
   <property name="Delay.Feedback" value="0.67799997329711914063"/>
   <property name="PostProcessing.Enabled" value="1.0"/>
   <info>
-    <category></category>
-    <name></name>
+    <category>Pad</category>
+    <name>Soft Rolling</name>
   </info>
 </state>

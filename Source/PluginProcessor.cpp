@@ -24,6 +24,7 @@
 #include "VSTComponents/OwlVoices/NoiseVoice.h"
 #include "Synth/PostProcessingVoice.h"
 #include "Synth/StereoEffectsVoice.h"
+#include "Synth/CompressorVoice.h"
 
 #include "VSTComponents/Owl/VoiceModuleHost.h"
 #include "VSTComponents/Owl/VoiceModuleHostSound.h"
@@ -143,7 +144,14 @@ AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
 	voiceModuleHost->AddModule(new CPostProcessingVoice("PostProcessing", *voiceModuleHost));
 	//voiceModuleHost->AddModule(new CFourierProbeVoice("FourierProbe", *voiceModuleHost, 11));
 
-	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost, 0.15));
+    voiceModuleHost->AddModule(new CCompressorVoice("Compressor1", *voiceModuleHost,0.15f));
+    mPropRegistry.ForceProperty("Compressor.Threshold", 0.7);
+    mPropRegistry.ForceProperty("Compressor.Rate", 2);
+    voiceModuleHost->AddModule(new CCompressorVoice("Compressor2", *voiceModuleHost,1));
+    mPropRegistry.ForceProperty("Compressor.Threshold", 0.85);
+    mPropRegistry.ForceProperty("Compressor.Rate", 5);
+
+	voiceModuleHost->AddModule(new CLimiterVoice("Limiter", *voiceModuleHost, 1));
 
 	sineSynth.addVoice(voiceModuleHost);
 	sineSynth.addSound(new CVoiceModuleHostSound());
