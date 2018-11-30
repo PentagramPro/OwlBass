@@ -60,6 +60,12 @@ LevelIndicator::~LevelIndicator()
 void LevelIndicator::paint (Graphics& g)
 {
     //[UserPrePaint] Add your own custom painting code here..
+
+    //[/UserPrePaint]
+
+    g.fillAll (Colour (0xff323e44));
+
+    //[UserPaint] Add your own custom painting code here..
 	g.setColour(Colour::fromRGB(0, 0, 0));
 	g.fillAll();
 
@@ -76,11 +82,7 @@ void LevelIndicator::paint (Graphics& g)
 			g.fillRect(getWidth()*safeRatio, 0.0f, getWidth()*safeRatio*Toolbox::clamp(value-1.0f, 0.0f, 1.0f-safeRatio), (float)getHeight());
 		}
 	}
-    //[/UserPrePaint]
 
-    g.fillAll (Colour (0xff323e44));
-
-    //[UserPaint] Add your own custom painting code here..
 	juce::Timer::callAfterDelay(50, [this]() {
 		repaint();
 	});

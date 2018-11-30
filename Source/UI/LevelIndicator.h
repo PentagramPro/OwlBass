@@ -35,6 +35,9 @@
                                                                     //[/Comments]
 */
 class LevelIndicator  : public Component
+		// [interfaces]
+				, public IIndicator
+				// [/interfaces]
 {
 public:
     //==============================================================================
@@ -43,7 +46,7 @@ public:
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
-	void SetPropertiesRegistry(CPropertiesRegistry& properties);
+	void SetPropertiesRegistry(CPropertiesRegistry& properties) override;
     //[/UserMethods]
 
     void paint (Graphics& g) override;

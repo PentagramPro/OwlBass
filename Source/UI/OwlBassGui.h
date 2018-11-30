@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.0
+  Created with Projucer version: 5.4.1
 
   ------------------------------------------------------------------------------
 
@@ -125,8 +125,8 @@ protected:
     std::unique_ptr<Slider> slider29;
     std::unique_ptr<ToggleButton> toggleButton;
     std::unique_ptr<Slider> slider40;
-    std::unique_ptr<LevelIndicator> component;
-    std::unique_ptr<LevelIndicator> component2;
+    std::unique_ptr<Component> component;
+    std::unique_ptr<Component> component2;
     std::unique_ptr<Label> label;
     std::unique_ptr<Label> label2;
     std::unique_ptr<Label> label3;

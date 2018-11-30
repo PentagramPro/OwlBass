@@ -1,7 +1,7 @@
 
 #include "StereoEffectsVoice.h"
-#include "VSTComponents\Owl\ProperiesRegistry.h"
-#include "VSTComponents\Owl\Toolbox.h"
+#include "VSTComponents/Owl/ProperiesRegistry.h"
+#include "VSTComponents/Owl/Toolbox.h"
 
 CStereoEffectsVoice::CStereoEffectsVoice(const std::string & name, IVoiceModuleHost & host)
 	: CVoiceModuleBase(name, host)

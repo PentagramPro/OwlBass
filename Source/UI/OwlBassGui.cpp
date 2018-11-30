@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.0
+  Created with Projucer version: 5.4.1
 
   ------------------------------------------------------------------------------
 
@@ -454,13 +454,13 @@ OwlBassGui::OwlBassGui ()
 
     slider40->setBounds (387, 336, 40, 64);
 
-    component.reset (new LevelIndicator());
+    component.reset (new Component());
     addAndMakeVisible (component.get());
     component->setName ("Limiter.LevelChannel0");
 
     component->setBounds (694, 595, 156, 8);
 
-    component2.reset (new LevelIndicator());
+    component2.reset (new Component());
     addAndMakeVisible (component2.get());
     component2->setName ("Limiter.LevelChannel1");
 
@@ -2030,11 +2030,11 @@ BEGIN_JUCER_METADATA
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <GENERICCOMPONENT name="Limiter.LevelChannel0" id="3f5e527f49885cf" memberName="component"
-                    virtualName="" explicitFocusOrder="0" pos="694 595 156 8" class="LevelIndicator"
-                    params=""/>
+                    virtualName="Component" explicitFocusOrder="0" pos="694 595 156 8"
+                    class="LevelIndicator" params=""/>
   <GENERICCOMPONENT name="Limiter.LevelChannel1" id="4df1d334df446ddc" memberName="component2"
-                    virtualName="" explicitFocusOrder="0" pos="694 624 156 8" class="LevelIndicator"
-                    params=""/>
+                    virtualName="Component" explicitFocusOrder="0" pos="694 624 156 8"
+                    class="LevelIndicator" params=""/>
   <LABEL name="labelOsc1" id="345a1b876e439ba9" memberName="label" virtualName=""
          explicitFocusOrder="0" pos="284 90 98 24" edTextCol="ff000000"
          edBkgCol="0" labelText="OSC-1" editableSingleClick="0" editableDoubleClick="0"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT name="AdditiveVST" projectType="audioplug" buildStandalone="1"
-              jucerVersion="5.4.0" pluginFormats="buildVST,buildVST3,buildAU,buildStandalone"
+              jucerVersion="5.4.1" pluginFormats="buildVST,buildVST3,buildAU,buildStandalone"
               buildVST="1" buildVST3="1" buildAU="1" buildAUv3="0" buildRTAS="0"
               buildAAX="0" enableIAA="0" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
               pluginVSTCategory="kPlugCategGenerator" id="Dxz9Um" companyName="PentagramPro"
