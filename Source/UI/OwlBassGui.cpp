@@ -936,7 +936,18 @@ OwlBassGui::OwlBassGui ()
     slider6->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     slider6->addListener (this);
 
-    slider6->setBounds (868, 584, 70, 70);
+    slider6->setBounds (62, 580, 70, 70);
+
+    label43.reset (new Label ("labelOsc1",
+                              TRANS("Slide")));
+    addAndMakeVisible (label43.get());
+    label43->setFont (Font (20.0f, Font::plain).withTypefaceStyle ("Regular"));
+    label43->setJustificationType (Justification::centred);
+    label43->setEditable (false, false, false);
+    label43->setColour (TextEditor::textColourId, Colours::black);
+    label43->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    label43->setBounds (44, 558, 98, 24);
 
     cachedImage_case_main_png_1 = ImageCache::getFromMemory (case_main_png, case_main_pngSize);
     cachedImage_case_effects_png_2 = ImageCache::getFromMemory (case_effects_png, case_effects_pngSize);
@@ -1064,6 +1075,7 @@ OwlBassGui::~OwlBassGui()
     label41 = nullptr;
     label42 = nullptr;
     slider6 = nullptr;
+    label43 = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -2262,10 +2274,15 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="15.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
   <SLIDER name="ReferenceOscillator.Portamento" id="df9a5c678e3f1315" memberName="slider6"
-          virtualName="" explicitFocusOrder="0" pos="868 584 70 70" tooltip="effect;&#10;"
+          virtualName="" explicitFocusOrder="0" pos="62 580 70 70" tooltip="effect;&#10;"
           min="0.0" max="1.0" int="0.0" style="RotaryHorizontalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
+  <LABEL name="labelOsc1" id="cc279a687e2a75bc" memberName="label43" virtualName=""
+         explicitFocusOrder="0" pos="44 558 98 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="Slide" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="20.0"
+         kerning="0.0" bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
