@@ -125,8 +125,8 @@ protected:
     std::unique_ptr<Slider> slider29;
     std::unique_ptr<ToggleButton> toggleButton;
     std::unique_ptr<Slider> slider40;
-    std::unique_ptr<Component> component;
-    std::unique_ptr<Component> component2;
+    std::unique_ptr<LevelIndicator> indicator1;
+    std::unique_ptr<LevelIndicator> indicator2;
     std::unique_ptr<Label> label;
     std::unique_ptr<Label> label2;
     std::unique_ptr<Label> label3;

@@ -454,17 +454,17 @@ OwlBassGui::OwlBassGui ()
 
     slider40->setBounds (387, 336, 40, 64);
 
-    component.reset (new Component());
-    addAndMakeVisible (component.get());
-    component->setName ("Limiter.LevelChannel0");
+    indicator1.reset (new LevelIndicator());
+    addAndMakeVisible (indicator1.get());
+    indicator1->setName ("Limiter.LevelChannel0");
 
-    component->setBounds (694, 595, 156, 8);
+    indicator1->setBounds (694, 595, 156, 8);
 
-    component2.reset (new Component());
-    addAndMakeVisible (component2.get());
-    component2->setName ("Limiter.LevelChannel1");
+    indicator2.reset (new LevelIndicator());
+    addAndMakeVisible (indicator2.get());
+    indicator2->setName ("Limiter.LevelChannel1");
 
-    component2->setBounds (694, 624, 156, 8);
+    indicator2->setBounds (694, 624, 156, 8);
 
     label.reset (new Label ("labelOsc1",
                             TRANS("OSC-1")));
@@ -1009,8 +1009,8 @@ OwlBassGui::~OwlBassGui()
     slider29 = nullptr;
     toggleButton = nullptr;
     slider40 = nullptr;
-    component = nullptr;
-    component2 = nullptr;
+    indicator1 = nullptr;
+    indicator2 = nullptr;
     label = nullptr;
     label2 = nullptr;
     label3 = nullptr;
@@ -2029,11 +2029,11 @@ BEGIN_JUCER_METADATA
           max="1.0" int="1.0" style="LinearVertical" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
-  <GENERICCOMPONENT name="Limiter.LevelChannel0" id="3f5e527f49885cf" memberName="component"
-                    virtualName="Component" explicitFocusOrder="0" pos="694 595 156 8"
+  <GENERICCOMPONENT name="Limiter.LevelChannel0" id="3f5e527f49885cf" memberName="indicator1"
+                    virtualName="LevelIndicator" explicitFocusOrder="0" pos="694 595 156 8"
                     class="LevelIndicator" params=""/>
-  <GENERICCOMPONENT name="Limiter.LevelChannel1" id="4df1d334df446ddc" memberName="component2"
-                    virtualName="Component" explicitFocusOrder="0" pos="694 624 156 8"
+  <GENERICCOMPONENT name="Limiter.LevelChannel1" id="4df1d334df446ddc" memberName="indicator2"
+                    virtualName="LevelIndicator" explicitFocusOrder="0" pos="694 624 156 8"
                     class="LevelIndicator" params=""/>
   <LABEL name="labelOsc1" id="345a1b876e439ba9" memberName="label" virtualName=""
          explicitFocusOrder="0" pos="284 90 98 24" edTextCol="ff000000"
