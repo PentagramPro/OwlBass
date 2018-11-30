@@ -68,6 +68,9 @@ void AdditiveVstAudioProcessorEditor::OnPropertiesFromSynthState()
 			slider->setValue(processor.GetPropertiesRegistry().GetPropertyValueFromReference(slider->getName().toStdString()));
 		}
 	}
+
+	const auto& info = processor.GetSynthState().GetStateInfo();
+	mGui.SetPresetNameAndCategory(info.name, info.category);
 }
 
 void AdditiveVstAudioProcessorEditor::OnLoadPreset(const std::string & filePath)

@@ -14,7 +14,7 @@ public:
 	void buttonClicked(Button* buttonThatWasClicked) override;
 
 	void SetListener(IGuiListener* listener);
-
+	void SetPresetNameAndCategory(const std::string &name, const std::string &category);
 private:
 	std::unique_ptr<CPresetBrowserImpl> mPresetBrowser;
 	IListenerHandle mPresetListenerHandle;

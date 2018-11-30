@@ -4,6 +4,7 @@ CMainSynthGuiImpl::CMainSynthGuiImpl()
 {
 	mPresetBrowser.reset(new CPresetBrowserImpl());
 	mPresetListenerHandle = mPresetBrowser->AddListener(*this);
+
 }
 
 CMainSynthGuiImpl::~CMainSynthGuiImpl()
@@ -43,5 +44,8 @@ void CMainSynthGuiImpl::OnLoadPreset(const std::string & filePath)
 	if (mListener) {
 		mListener->OnLoadPreset(filePath);
 	}
-	mPresetDescr->setText(mPresetBrowser->GetPresetDescription(), NotificationType::dontSendNotification);
+}
+
+void CMainSynthGuiImpl::SetPresetNameAndCategory(const std::string &name, const std::string &category) {
+    mPresetDescr->setText(category+" / "+name, NotificationType::dontSendNotification);
 }

@@ -10,7 +10,7 @@
 
 #pragma once
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "JuceHeader.h"
 #include "VSTComponents/Owl/ProperiesRegistry.h"
 
 class CVoiceModuleHost;
@@ -59,14 +59,17 @@ public:
     void getStateInformation (MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
+
 	Synthesiser sineSynth;
 	AudioBuffer<float> mInternalBuffer;
 	IVoiceModule* GetModuleByName(const std::string& name) const;
 
 	CPropertiesRegistry& GetPropertiesRegistry() { return mPropRegistry; }
+	const CSynthState& GetSynthState() const {return mSynthState; }
 private:
 	void AddBlockOfOscillators(CMixerVoice* mixerVoice, CVoiceModuleHost& host, const std::vector<std::string>& oscNames, double detuneScale, double pan);
 
+	CSynthState mSynthState;
 	CPropertiesRegistry mPropRegistry;
 	double mSampleRate;
 	int mSampleCounter = 0;

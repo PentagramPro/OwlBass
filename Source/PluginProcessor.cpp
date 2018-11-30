@@ -302,18 +302,18 @@ void AdditiveVstAudioProcessor::getStateInformation (MemoryBlock& destData)
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
-	CSynthState state;
-	mPropRegistry.ToSynthState(state);
-	state.Serialize(destData);
+
+	mPropRegistry.ToSynthState(mSynthState);
+    mSynthState.Serialize(destData);
 }
 
 void AdditiveVstAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
-	CSynthState state;
-	state.Deserialize((const char*)data, sizeInBytes);
-	mPropRegistry.FromSynthState(state);
+
+	mSynthState.Deserialize((const char*)data, sizeInBytes);
+	mPropRegistry.FromSynthState(mSynthState);
 }
 
 IVoiceModule* AdditiveVstAudioProcessor::GetModuleByName(const std::string & name) const
