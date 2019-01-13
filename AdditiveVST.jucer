@@ -68,6 +68,7 @@
             file="Source/Synth/StereoEffectsVoice.h"/>
     </GROUP>
     <GROUP id="{760016CA-87E6-5D77-FD13-3993BD947A8C}" name="Source">
+      <FILE id="SVD54W" name="Version.h" compile="0" resource="0" file="Source/Version.h"/>
       <FILE id="bjQnPX" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="lmULkP" name="PluginProcessor.h" compile="0" resource="0"
@@ -82,10 +83,10 @@
     <OSX/>
   </LIVE_SETTINGS>
   <EXPORTFORMATS>
-    <VS2017 targetFolder="Builds/VisualStudio2017" extraCompilerFlags="-Wno-reorder">
+    <VS2017 targetFolder="Builds/VisualStudio2017">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" postbuildCommand="cmd.exe /k copy /y &quot;$(ProjectDir)..\..\Presets\*&quot; &quot;$(TargetDir)presets&quot;"/>
-        <CONFIGURATION isDebug="0" name="Release" postbuildCommand="cmd.exe /k copy /y &quot;$(ProjectDir)..\..\Presets\*&quot; &quot;$(TargetDir)presets&quot;"/>
+        <CONFIGURATION isDebug="1" name="Debug" postbuildCommand="rmdir &quot;$(TargetDir)presets&quot; /s /q&#10;md &quot;$(TargetDir)presets&quot;&#10;cmd.exe /k copy /y &quot;$(ProjectDir)..\..\Presets\*&quot; &quot;$(TargetDir)presets&quot;"/>
+        <CONFIGURATION isDebug="0" name="Release" postbuildCommand="rmdir &quot;$(TargetDir)presets&quot; /s /q&#10;md &quot;$(TargetDir)presets&quot;&#10;cmd.exe /k copy /y &quot;$(ProjectDir)..\..\Presets\*&quot; &quot;$(TargetDir)presets&quot;"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../JUCE/modules"/>

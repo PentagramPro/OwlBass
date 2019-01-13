@@ -1,9 +1,11 @@
 #include "MainSynthGuiImpl.h"
+#include "Version.h"
 
 CMainSynthGuiImpl::CMainSynthGuiImpl()
 {
 	mPresetBrowser.reset(new CPresetBrowserImpl());
 	mPresetListenerHandle = mPresetBrowser->AddListener(*this);
+	mAppVersion->setText(std::string("v")+AppVersion,juce::NotificationType::dontSendNotification);
 
 }
 

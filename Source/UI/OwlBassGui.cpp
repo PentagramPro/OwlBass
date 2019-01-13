@@ -949,6 +949,18 @@ OwlBassGui::OwlBassGui ()
 
     label43->setBounds (44, 558, 98, 24);
 
+    mAppVersion.reset (new Label ("new label",
+                                  TRANS("label text")));
+    addAndMakeVisible (mAppVersion.get());
+    mAppVersion->setFont (Font (15.0f, Font::plain).withTypefaceStyle ("Regular"));
+    mAppVersion->setJustificationType (Justification::centredRight);
+    mAppVersion->setEditable (false, false, false);
+    mAppVersion->setColour (Label::textColourId, Colour (0xffb0b0b0));
+    mAppVersion->setColour (TextEditor::textColourId, Colours::black);
+    mAppVersion->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    mAppVersion->setBounds (922, 644, 86, 24);
+
     cachedImage_case_main_png_1 = ImageCache::getFromMemory (case_main_png, case_main_pngSize);
     cachedImage_case_effects_png_2 = ImageCache::getFromMemory (case_effects_png, case_effects_pngSize);
     cachedImage_levelIndicator_png_3 = ImageCache::getFromMemory (levelIndicator_png, levelIndicator_pngSize);
@@ -1076,6 +1088,7 @@ OwlBassGui::~OwlBassGui()
     label42 = nullptr;
     slider6 = nullptr;
     label43 = nullptr;
+    mAppVersion = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -2283,6 +2296,11 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="Slide" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="20.0"
          kerning="0.0" bold="0" italic="0" justification="36"/>
+  <LABEL name="new label" id="dfab8e7ed7e0a888" memberName="mAppVersion"
+         virtualName="" explicitFocusOrder="0" pos="922 644 86 24" textCol="ffb0b0b0"
+         edTextCol="ff000000" edBkgCol="0" labelText="label text" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
+         fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="34"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
