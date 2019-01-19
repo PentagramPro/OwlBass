@@ -30,6 +30,7 @@ void CMainSynthGuiImpl::buttonClicked(Button * buttonClicked)
 	if (buttonClicked == openPresetBrowser.get()) {
 		addAndMakeVisible(*mPresetBrowser.get());
 		mPresetBrowser->setBounds((getWidth() - mPresetBrowser->getWidth()) / 2, 0, mPresetBrowser->getWidth(), mPresetBrowser->getHeight());
+		mPresetBrowser->UpdateFileList();
 	} else if (buttonClicked == mBtnPresetNext.get()) {
 		mPresetBrowser->NextPreset();
 	} else if (buttonClicked == mBtnPresetPrev.get()) {
@@ -37,6 +38,7 @@ void CMainSynthGuiImpl::buttonClicked(Button * buttonClicked)
 	}
 	else if (buttonClicked == mBtnRename.get() && mRenamePreset) {
 		addAndMakeVisible(*mRenamePreset.get());
+
 	}
 }
 
@@ -57,4 +59,7 @@ void CMainSynthGuiImpl::OnLoadPreset(const std::string & filePath)
 
 void CMainSynthGuiImpl::SetPresetNameAndCategory(const std::string &name, const std::string &category) {
     mPresetDescr->setText(category+" / "+name, NotificationType::dontSendNotification);
+	if (mRenamePreset) {
+		mRenamePreset->SetNameAndCategory(name, category);
+	}
 }

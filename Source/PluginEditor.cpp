@@ -81,6 +81,7 @@ void AdditiveVstAudioProcessorEditor::OnLoadPreset(const std::string & filePath)
 		processor.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
 		mCurrentPresetPath = filePath;
 	}
+
 }
 
 void AdditiveVstAudioProcessorEditor::OnSavePreset(const std::string & name, const std::string & category)
@@ -90,6 +91,9 @@ void AdditiveVstAudioProcessorEditor::OnSavePreset(const std::string & name, con
 	processor.getStateInformation(state);
 	File file(mCurrentPresetPath);
 	file.replaceWithData(state.getData(),state.getSize());
+
+	const auto& info = processor.GetSynthState().GetStateInfo();
+	mGui.SetPresetNameAndCategory(info.name, info.category);
 }
 
 
