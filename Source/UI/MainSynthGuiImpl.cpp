@@ -4,6 +4,7 @@
 CMainSynthGuiImpl::CMainSynthGuiImpl()
 {
 	mPresetBrowser.reset(new CPresetBrowserImpl());
+	
 	mPresetListenerHandle = mPresetBrowser->AddListener(*this);
 	mAppVersion->setText(std::string("v")+AppVersion,juce::NotificationType::dontSendNotification);
 
@@ -34,10 +35,16 @@ void CMainSynthGuiImpl::buttonClicked(Button * buttonClicked)
 	} else if (buttonClicked == mBtnPresetPrev.get()) {
 		mPresetBrowser->PreviousPreset();
 	}
+	else if (buttonClicked == mBtnRename.get() && mRenamePreset) {
+		addAndMakeVisible(*mRenamePreset.get());
+	}
 }
 
 void CMainSynthGuiImpl::SetListener(IGuiListener * listener)
 {
+	if (!mRenamePreset) {
+		mRenamePreset.reset(new CRenamePresetGuiImpl(*listener));
+	}
 	mListener = listener;
 }
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "MainSynthGui.h"
 #include "OwlBassGui.h"
+#include "RenamePresetGuiImpl.h"
 #include "VSTComponents/PresetBrowser/PresetBrowserImpl.h"
 #include "VSTComponents/OwlUI/IGuiListener.h"
 #include "VSTComponents/PresetBrowser/IPresetBrowserListeners.h"
@@ -17,6 +18,7 @@ public:
 	void SetPresetNameAndCategory(const std::string &name, const std::string &category);
 private:
 	std::unique_ptr<CPresetBrowserImpl> mPresetBrowser;
+	std::unique_ptr<CRenamePresetGuiImpl> mRenamePreset;
 	IListenerHandle mPresetListenerHandle;
 	IGuiListener * mListener = nullptr;
 

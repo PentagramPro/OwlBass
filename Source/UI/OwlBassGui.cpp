@@ -297,14 +297,14 @@ OwlBassGui::OwlBassGui ()
     addAndMakeVisible (mBtnPresetNext.get());
     mBtnPresetNext->addListener (this);
 
-    mBtnPresetNext->setBounds (898, 61, 88, 24);
+    mBtnPresetNext->setBounds (908, 61, 75, 24);
 
     mBtnPresetPrev.reset (new TextButton ("Next"));
     addAndMakeVisible (mBtnPresetPrev.get());
     mBtnPresetPrev->setButtonText (TRANS("Previous"));
     mBtnPresetPrev->addListener (this);
 
-    mBtnPresetPrev->setBounds (800, 61, 88, 24);
+    mBtnPresetPrev->setBounds (828, 61, 75, 24);
 
     slider30.reset (new Slider ("ReferenceOscillator.Detune"));
     addAndMakeVisible (slider30.get());
@@ -961,6 +961,14 @@ OwlBassGui::OwlBassGui ()
 
     mAppVersion->setBounds (922, 644, 86, 24);
 
+    mBtnRename.reset (new TextButton ("Next"));
+    addAndMakeVisible (mBtnRename.get());
+    mBtnRename->setButtonText (TRANS("Rename"));
+    mBtnRename->addListener (this);
+    mBtnRename->setColour (TextButton::buttonColourId, Colour (0xff686868));
+
+    mBtnRename->setBounds (759, 62, 64, 20);
+
     cachedImage_case_main_png_1 = ImageCache::getFromMemory (case_main_png, case_main_pngSize);
     cachedImage_case_effects_png_2 = ImageCache::getFromMemory (case_effects_png, case_effects_pngSize);
     cachedImage_levelIndicator_png_3 = ImageCache::getFromMemory (levelIndicator_png, levelIndicator_pngSize);
@@ -1089,6 +1097,7 @@ OwlBassGui::~OwlBassGui()
     slider6 = nullptr;
     label43 = nullptr;
     mAppVersion = nullptr;
+    mBtnRename = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -1748,6 +1757,11 @@ void OwlBassGui::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_toggleButton] -- add your button handler code here..
         //[/UserButtonCode_toggleButton]
     }
+    else if (buttonThatWasClicked == mBtnRename.get())
+    {
+        //[UserButtonCode_mBtnRename] -- add your button handler code here..
+        //[/UserButtonCode_mBtnRename]
+    }
 
     //[UserbuttonClicked_Post]
     //[/UserbuttonClicked_Post]
@@ -1987,10 +2001,10 @@ BEGIN_JUCER_METADATA
               bgColOff="a45c94" bgColOn="181f22" textCol="ff0d0d0d" textColOn="ff000000"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="Next" id="7f2dcf690d640765" memberName="mBtnPresetNext"
-              virtualName="" explicitFocusOrder="0" pos="898 61 88 24" buttonText="Next"
+              virtualName="" explicitFocusOrder="0" pos="908 61 75 24" buttonText="Next"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="Next" id="731168668bd98da4" memberName="mBtnPresetPrev"
-              virtualName="" explicitFocusOrder="0" pos="800 61 88 24" buttonText="Previous"
+              virtualName="" explicitFocusOrder="0" pos="828 61 75 24" buttonText="Previous"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <SLIDER name="ReferenceOscillator.Detune" id="14d7a0bddcdfb29" memberName="slider30"
           virtualName="" explicitFocusOrder="0" pos="240 580 70 70" tooltip="effect;&#10;"
@@ -2301,6 +2315,9 @@ BEGIN_JUCER_METADATA
          edTextCol="ff000000" edBkgCol="0" labelText="label text" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="34"/>
+  <TEXTBUTTON name="Next" id="d32182bb08c0ef64" memberName="mBtnRename" virtualName=""
+              explicitFocusOrder="0" pos="759 62 64 20" bgColOff="ff686868"
+              buttonText="Rename" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

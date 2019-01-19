@@ -30,6 +30,8 @@ private:
 
 	CMainSynthGuiImpl mGui;
 
+	std::string mCurrentPresetPath = "";
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AdditiveVstAudioProcessorEditor)
 
 		// Inherited via IGuiListener
@@ -41,4 +43,7 @@ private:
 
 	// Inherited via IGuiListener
 	virtual void OnLoadPreset(const std::string & filePath) override;
+
+	// Inherited via IGuiListener
+	virtual void OnSavePreset(const std::string & name, const std::string & category) override;
 };

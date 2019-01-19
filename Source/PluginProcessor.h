@@ -66,6 +66,7 @@ public:
 
 	CPropertiesRegistry& GetPropertiesRegistry() { return mPropRegistry; }
 	const CSynthState& GetSynthState() const {return mSynthState; }
+	CSynthState& GetSynthState() { return mSynthState; }
 private:
 	void AddBlockOfOscillators(CMixerVoice* mixerVoice, CVoiceModuleHost& host, const std::vector<std::string>& oscNames, double detuneScale, double pan);
 

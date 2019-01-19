@@ -79,7 +79,17 @@ void AdditiveVstAudioProcessorEditor::OnLoadPreset(const std::string & filePath)
 	MemoryBlock state;
 	if (file.loadFileAsData(state)) {
 		processor.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
+		mCurrentPresetPath = filePath;
 	}
+}
+
+void AdditiveVstAudioProcessorEditor::OnSavePreset(const std::string & name, const std::string & category)
+{
+	processor.GetSynthState().SetNameAndCategory(name, category);
+	MemoryBlock state;
+	processor.getStateInformation(state);
+	File file(mCurrentPresetPath);
+	file.replaceWithData(state.getData(),state.getSize());
 }
 
 

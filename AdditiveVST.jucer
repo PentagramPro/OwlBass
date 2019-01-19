@@ -32,6 +32,14 @@
             file="Source/UI/MainSynthGuiImpl.h"/>
       <FILE id="K1s1Q3" name="OwlBassGui.cpp" compile="1" resource="0" file="Source/UI/OwlBassGui.cpp"/>
       <FILE id="EGWuwY" name="OwlBassGui.h" compile="0" resource="0" file="Source/UI/OwlBassGui.h"/>
+      <FILE id="xiBj3m" name="RenamePresetGui.cpp" compile="1" resource="0"
+            file="Source/UI/RenamePresetGui.cpp"/>
+      <FILE id="jjidmv" name="RenamePresetGui.h" compile="0" resource="0"
+            file="Source/UI/RenamePresetGui.h"/>
+      <FILE id="GmEyzw" name="RenamePresetGuiImpl.cpp" compile="1" resource="0"
+            file="Source/UI/RenamePresetGuiImpl.cpp"/>
+      <FILE id="w1YrH3" name="RenamePresetGuiImpl.h" compile="0" resource="0"
+            file="Source/UI/RenamePresetGuiImpl.h"/>
     </GROUP>
     <GROUP id="{D273DE03-1424-D5E0-7D48-D067800C8468}" name="Resources">
       <FILE id="Hu4Itm" name="black knob switch.png" compile="1" resource="1"
