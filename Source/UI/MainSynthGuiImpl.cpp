@@ -1,6 +1,6 @@
 #include "MainSynthGuiImpl.h"
 #include "Version.h"
-#include "SynthStateManager.h"
+#include "VSTComponents/Owl/SynthStateManager.h"
 
 CMainSynthGuiImpl::CMainSynthGuiImpl()
 {

@@ -1,6 +1,6 @@
 
 #include "RenamePresetGuiImpl.h"
-#include "SynthStateManager.h"
+#include "VSTComponents/Owl/SynthStateManager.h"
 
 CRenamePresetGuiImpl::CRenamePresetGuiImpl(CSynthStateManager & stateManager) : mStateManager(stateManager)
 {

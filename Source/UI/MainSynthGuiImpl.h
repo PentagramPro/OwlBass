@@ -3,7 +3,7 @@
 #include "OwlBassGui.h"
 #include "RenamePresetGuiImpl.h"
 
-#include "ISynthStateManagerListener.h"
+#include "VSTComponents/Owl/ISynthStateManagerListener.h"
 #include "VSTComponents/PresetBrowser/PresetBrowserImpl.h"
 #include "VSTComponents/OwlUI/IGuiListener.h"
 #include "VSTComponents/PresetBrowser/IPresetBrowserListeners.h"

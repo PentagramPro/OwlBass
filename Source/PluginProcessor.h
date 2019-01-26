@@ -12,7 +12,7 @@
 
 #include "JuceHeader.h"
 #include "VSTComponents/Owl/ProperiesRegistry.h"
-#include "SynthStateManager.h"
+#include "VSTComponents/Owl/SynthStateManager.h"
 
 class CVoiceModuleHost;
 class CMixerVoice;

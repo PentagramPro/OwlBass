@@ -963,7 +963,7 @@ OwlBassGui::OwlBassGui ()
 
     mBtnRename.reset (new TextButton ("Next"));
     addAndMakeVisible (mBtnRename.get());
-    mBtnRename->setButtonText (TRANS("Rename"));
+    mBtnRename->setButtonText (TRANS("Save"));
     mBtnRename->addListener (this);
     mBtnRename->setColour (TextButton::buttonColourId, Colour (0xff686868));
 
@@ -1188,7 +1188,7 @@ void OwlBassGui::paint (Graphics& g)
 
     {
         int x = 236, y = 110, width = 28, height = 30;
-        String text (TRANS("4\'"));
+        String text (TRANS("3\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
@@ -1200,7 +1200,7 @@ void OwlBassGui::paint (Graphics& g)
 
     {
         int x = 254, y = 139, width = 28, height = 30;
-        String text (TRANS("8\'"));
+        String text (TRANS("4\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
@@ -1236,7 +1236,7 @@ void OwlBassGui::paint (Graphics& g)
 
     {
         int x = 214, y = 242, width = 28, height = 30;
-        String text (TRANS("4\'"));
+        String text (TRANS("3\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
@@ -1248,7 +1248,7 @@ void OwlBassGui::paint (Graphics& g)
 
     {
         int x = 232, y = 271, width = 28, height = 30;
-        String text (TRANS("8\'"));
+        String text (TRANS("4\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
@@ -1284,7 +1284,7 @@ void OwlBassGui::paint (Graphics& g)
 
     {
         int x = 826, y = 242, width = 28, height = 30;
-        String text (TRANS("4\'"));
+        String text (TRANS("3\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
@@ -1296,7 +1296,7 @@ void OwlBassGui::paint (Graphics& g)
 
     {
         int x = 844, y = 271, width = 28, height = 30;
-        String text (TRANS("8\'"));
+        String text (TRANS("4\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
@@ -1332,7 +1332,7 @@ void OwlBassGui::paint (Graphics& g)
 
     {
         int x = 812, y = 116, width = 28, height = 30;
-        String text (TRANS("4\'"));
+        String text (TRANS("3\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
@@ -1344,7 +1344,7 @@ void OwlBassGui::paint (Graphics& g)
 
     {
         int x = 830, y = 145, width = 28, height = 30;
-        String text (TRANS("8\'"));
+        String text (TRANS("4\'"));
         Colour fillColour = Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
@@ -1802,10 +1802,10 @@ BEGIN_JUCER_METADATA
     <TEXT pos="194 110 28 30" fill="solid: ffffffff" hasStroke="0" text="2'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="236 110 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
+    <TEXT pos="236 110 28 30" fill="solid: ffffffff" hasStroke="0" text="3'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="254 139 28 30" fill="solid: ffffffff" hasStroke="0" text="8'"
+    <TEXT pos="254 139 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
     <TEXT pos="150 271 28 30" fill="solid: ffffffff" hasStroke="0" text="1'"
@@ -1814,10 +1814,10 @@ BEGIN_JUCER_METADATA
     <TEXT pos="172 242 28 30" fill="solid: ffffffff" hasStroke="0" text="2'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="214 242 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
+    <TEXT pos="214 242 28 30" fill="solid: ffffffff" hasStroke="0" text="3'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="232 271 28 30" fill="solid: ffffffff" hasStroke="0" text="8'"
+    <TEXT pos="232 271 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
     <TEXT pos="762 271 28 30" fill="solid: ffffffff" hasStroke="0" text="1'"
@@ -1826,10 +1826,10 @@ BEGIN_JUCER_METADATA
     <TEXT pos="784 242 28 30" fill="solid: ffffffff" hasStroke="0" text="2'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="826 242 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
+    <TEXT pos="826 242 28 30" fill="solid: ffffffff" hasStroke="0" text="3'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="844 271 28 30" fill="solid: ffffffff" hasStroke="0" text="8'"
+    <TEXT pos="844 271 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
     <TEXT pos="748 145 28 30" fill="solid: ffffffff" hasStroke="0" text="1'"
@@ -1838,10 +1838,10 @@ BEGIN_JUCER_METADATA
     <TEXT pos="770 116 28 30" fill="solid: ffffffff" hasStroke="0" text="2'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="812 116 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
+    <TEXT pos="812 116 28 30" fill="solid: ffffffff" hasStroke="0" text="3'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <TEXT pos="830 145 28 30" fill="solid: ffffffff" hasStroke="0" text="8'"
+    <TEXT pos="830 145 28 30" fill="solid: ffffffff" hasStroke="0" text="4'"
           fontname="Default font" fontsize="15.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
     <IMAGE pos="64 270 14 8" resource="icon_saw_png" opacity="1.0" mode="0"/>
@@ -2317,7 +2317,7 @@ BEGIN_JUCER_METADATA
          fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="34"/>
   <TEXTBUTTON name="Next" id="d32182bb08c0ef64" memberName="mBtnRename" virtualName=""
               explicitFocusOrder="0" pos="759 62 64 20" bgColOff="ff686868"
-              buttonText="Rename" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+              buttonText="Save" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
