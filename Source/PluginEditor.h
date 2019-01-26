@@ -41,9 +41,5 @@ private:
 	// Inherited via IPropertiesRegistryListener
 	virtual void OnPropertiesFromSynthState() override;
 
-	// Inherited via IGuiListener
-	virtual void OnLoadPreset(const std::string & filePath) override;
 
-	// Inherited via IGuiListener
-	virtual void OnSavePreset(const std::string & name, const std::string & category) override;
 };

@@ -34,6 +34,7 @@
 AdditiveVstAudioProcessor::AdditiveVstAudioProcessor()
      : AudioProcessor (BusesProperties() .withOutput ("Output", AudioChannelSet::stereo(), true)
                        )
+	, mStateManager(mPropRegistry)
 
 {
 
@@ -299,21 +300,12 @@ AudioProcessorEditor* AdditiveVstAudioProcessor::createEditor()
 //==============================================================================
 void AdditiveVstAudioProcessor::getStateInformation (MemoryBlock& destData)
 {
-    // You should use this method to store your parameters in the memory block.
-    // You could do that either as raw data, or use the XML or ValueTree classes
-    // as intermediaries to make it easy to save and load complex data.
-
-	mPropRegistry.ToSynthState(mSynthState);
-    mSynthState.Serialize(destData);
+	mStateManager.SaveStateToMemory(destData);
 }
 
 void AdditiveVstAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
-    // You should use this method to restore your parameters from this memory block,
-    // whose contents will have been created by the getStateInformation() call.
-
-	mSynthState.Deserialize((const char*)data, sizeInBytes);
-	mPropRegistry.FromSynthState(mSynthState);
+	mStateManager.LoadStateFromMemory(MemoryBlock(data, sizeInBytes));
 }
 
 IVoiceModule* AdditiveVstAudioProcessor::GetModuleByName(const std::string & name) const

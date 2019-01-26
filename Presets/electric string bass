@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <state>
-  <property name="FilterCutoffLfo.Volume" value="0.0"/>
-  <property name="ADSR2.Retrigger" value="0.0"/>
-  <property name="ADSRFilter.Attack" value="0.08733907539620995586"/>
   <property name="Filter.EnvelopeScale" value="-1.0"/>
   <property name="ADSRFilter.Decay" value="0.0"/>
+  <property name="FilterCutoffLfo.Volume" value="0.0"/>
+  <property name="ADSRFilter.Attack" value="0.08733907539620995586"/>
+  <property name="OscSectionMixer.Volume" value="1.0"/>
+  <property name="ADSR2.Retrigger" value="0.0"/>
   <property name="ADSRFilter.Release" value="1.01647635453939422234"/>
   <property name="FilterCutoffLfo.Frequency" value="1.81727367937564876499"/>
-  <property name="Filter.Q" value="1.37760000228881818174"/>
+  <property name="OSC3.Waveform" value="3.0"/>
   <property name="Compressor1.Threshold" value="0.0"/>
+  <property name="Delay.Wet" value="0.93199998140335083008"/>
   <property name="ADSRFilter.Retrigger" value="1.0"/>
+  <property name="Filter.Q" value="1.37760000228881818174"/>
   <property name="ReferenceOscillator.Detune" value="1.00384000003337869877"/>
+  <property name="OSC2.Divider" value="4.0"/>
   <property name="ADSR2.Attack" value="0.03156093862950801882"/>
+  <property name="ADSR2.Decay" value="0.7118086820989847352"/>
   <property name="OSC1.Volume" value="0.71599996089935302734"/>
+  <property name="Stereo2.Pan" value="-0.5"/>
+  <property name="Filter.CutoffFreq" value="2478.12379300594329833984"/>
   <property name="OSC1.Divider" value="1.0"/>
   <property name="ADSR1.Sustain" value="0.57894736528396606445"/>
-  <property name="Filter.CutoffFreq" value="2478.12379300594329833984"/>
   <property name="OSC2.Volume" value="0.35600000619888305664"/>
   <property name="ADSR2.Release" value="0.50129620130732654992"/>
-  <property name="OSC2.Phase" value="0.70399999618530273438"/>
   <property name="ADSR1.Release" value="0.50129620130732654992"/>
-  <property name="Delay.Wet" value="0.93199998140335083008"/>
-  <property name="OSC2.Divider" value="4.0"/>
-  <property name="ADSR2.Decay" value="0.7118086820989847352"/>
+  <property name="OSC2.Phase" value="0.70399999618530273438"/>
   <property name="Delay.Feedback" value="0.32199996709823608398"/>
   <property name="ReferenceOscillator.Portamento" value="0.14812399786710739313"/>
   <property name="UnisonMixer.Volume" value="0.82400000095367431641"/>
   <property name="OSC2.Waveform" value="1.0"/>
+  <property name="OSC3.Phase" value="0.73199999332427978516"/>
   <property name="ADSRFilter.Sustain" value="0.21978022158145904541"/>
   <property name="ADSR1.Decay" value="0.32551090057939291444"/>
   <property name="ADSR1.Attack" value="0.07051212122887372258"/>
+  <property name="OSC4.Waveform" value="3.0"/>
   <property name="ADSR1.Retrigger" value="0.0"/>
   <property name="ADSR2.Sustain" value="0.0"/>
+  <property name="OSC4.Volume" value="0.43599998950958251953"/>
   <property name="Filter.Mode" value="2.0"/>
   <property name="OSC1.Waveform" value="1.0"/>
   <property name="PostProcessing.Enabled" value="1.0"/>
-  <property name="OSC4.Waveform" value="3.0"/>
-  <property name="OscSectionMixer.Volume" value="1.0"/>
-  <property name="OSC3.Waveform" value="3.0"/>
   <property name="Compressor2.Threshold" value="0.0"/>
   <property name="OSC4.Phase" value="0.58399999141693115234"/>
   <property name="FilterCutoffLfo.Waveform" value="1.0"/>
   <property name="Compressor1.Rate" value="1.0"/>
-  <property name="OSC4.Volume" value="0.43599998950958251953"/>
   <property name="OSC4.Divider" value="1.0"/>
   <property name="Compressor2.Rate" value="1.0"/>
   <property name="OSC1.Phase" value="0.0"/>
   <property name="Delay.Delay" value="0.10399999469518661499"/>
-  <property name="OSC3.Phase" value="0.73199999332427978516"/>
   <property name="Stereo1.Pan" value="0.5"/>
   <property name="OSC3.Volume" value="0.51999998092651367188"/>
   <property name="OSC3.Divider" value="2.0"/>
-  <property name="Stereo2.Pan" value="-0.5"/>
   <info>
     <category>Pad</category>
-    <name>Creeping</name>
+    <name>Alien Strings</name>
   </info>
 </state>

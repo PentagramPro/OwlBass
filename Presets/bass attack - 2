@@ -19,6 +19,7 @@
   <property name="ADSR2.Decay" value="0.01969182633608579716"/>
   <property name="OSC1.Divider" value="1.0"/>
   <property name="Filter.CutoffFreq" value="1118.8864186406135559082"/>
+  <property name="Stereo2.Pan" value="-0.5"/>
   <property name="OSC1.Waveform" value="2.0"/>
   <property name="OSC2.Volume" value="0.23999999463558197021"/>
   <property name="OSC2.Phase" value="0.47999998927116394043"/>
@@ -35,6 +36,7 @@
   <property name="OSC3.Volume" value="0.15199999511241912842"/>
   <property name="OSC3.Divider" value="4.0"/>
   <property name="OSC3.Waveform" value="1.0"/>
+  <property name="Compressor1.Threshold" value="0.0"/>
   <property name="OSC4.Volume" value="0.14000000059604644775"/>
   <property name="Filter.Mode" value="1.0"/>
   <property name="OSC4.Phase" value="0.35199999809265136719"/>
@@ -46,8 +48,13 @@
   <property name="Delay.Delay" value="0.23199999332427978516"/>
   <property name="Delay.Feedback" value="0.50199997425079345703"/>
   <property name="PostProcessing.Enabled" value="1.0"/>
+  <property name="ReferenceOscillator.Portamento" value="0.00300000000000000006"/>
+  <property name="Stereo1.Pan" value="0.5"/>
+  <property name="Compressor1.Rate" value="1.0"/>
+  <property name="Compressor2.Threshold" value="0.0"/>
+  <property name="Compressor2.Rate" value="1.0"/>
   <info>
-    <category>Bass with attack</category>
-    <name>Sound 2</name>
+    <category>Pad</category>
+    <name>Matrix Printer</name>
   </info>
 </state>

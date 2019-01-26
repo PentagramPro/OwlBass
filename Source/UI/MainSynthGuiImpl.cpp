@@ -1,5 +1,6 @@
 #include "MainSynthGuiImpl.h"
 #include "Version.h"
+#include "SynthStateManager.h"
 
 CMainSynthGuiImpl::CMainSynthGuiImpl()
 {
@@ -7,7 +8,7 @@ CMainSynthGuiImpl::CMainSynthGuiImpl()
 	
 	mPresetListenerHandle = mPresetBrowser->AddListener(*this);
 	mAppVersion->setText(std::string("v")+AppVersion,juce::NotificationType::dontSendNotification);
-
+	mBtnRename->setVisible(false);
 }
 
 CMainSynthGuiImpl::~CMainSynthGuiImpl()
@@ -42,24 +43,31 @@ void CMainSynthGuiImpl::buttonClicked(Button * buttonClicked)
 	}
 }
 
-void CMainSynthGuiImpl::SetListener(IGuiListener * listener)
+void CMainSynthGuiImpl::Initialize(IGuiListener* listener, CSynthStateManager& stateManager)
 {
 	if (!mRenamePreset) {
-		mRenamePreset.reset(new CRenamePresetGuiImpl(*listener));
+		mRenamePreset.reset(new CRenamePresetGuiImpl(stateManager));
 	}
 	mListener = listener;
+	mStateManager = &stateManager;
+	mStateManagerListenerHandle = mStateManager->AddListener(*this);
+	OnNameAndCategoryChanged();
 }
 
 void CMainSynthGuiImpl::OnLoadPreset(const std::string & filePath)
 {
-	if (mListener) {
-		mListener->OnLoadPreset(filePath);
+	if (mStateManager) {
+		mStateManager->LoadStateFromFile(filePath);
 	}
+	
+	mBtnRename->setVisible(mStateManager->HasCurrentPath());
+	
 }
 
-void CMainSynthGuiImpl::SetPresetNameAndCategory(const std::string &name, const std::string &category) {
-    mPresetDescr->setText(category+" / "+name, NotificationType::dontSendNotification);
-	if (mRenamePreset) {
-		mRenamePreset->SetNameAndCategory(name, category);
-	}
+void CMainSynthGuiImpl::OnNameAndCategoryChanged()
+{
+	const auto& info = mStateManager->GetState().GetStateInfo();
+	mPresetDescr->setText(info.category + " / " + info.name, NotificationType::dontSendNotification);
+	mRenamePreset->SetNameAndCategory(info.name, info.category);
 }
+

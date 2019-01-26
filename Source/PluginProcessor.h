@@ -12,6 +12,7 @@
 
 #include "JuceHeader.h"
 #include "VSTComponents/Owl/ProperiesRegistry.h"
+#include "SynthStateManager.h"
 
 class CVoiceModuleHost;
 class CMixerVoice;
@@ -65,12 +66,12 @@ public:
 	IVoiceModule* GetModuleByName(const std::string& name) const;
 
 	CPropertiesRegistry& GetPropertiesRegistry() { return mPropRegistry; }
-	const CSynthState& GetSynthState() const {return mSynthState; }
-	CSynthState& GetSynthState() { return mSynthState; }
+	
+	CSynthStateManager& GetStateManager() { return mStateManager; }
 private:
 	void AddBlockOfOscillators(CMixerVoice* mixerVoice, CVoiceModuleHost& host, const std::vector<std::string>& oscNames, double detuneScale, double pan);
 
-	CSynthState mSynthState;
+	CSynthStateManager mStateManager;
 	CPropertiesRegistry mPropRegistry;
 	double mSampleRate;
 	int mSampleCounter = 0;

@@ -2,46 +2,57 @@
 
 <state>
   <property name="FilterCutoffLfo.Volume" value="0.07182400673627853394"/>
-  <property name="ADSRFilter.Attack" value="0.27719447236806155077"/>
-  <property name="OSC3.Phase" value="0.0"/>
-  <property name="ADSRFilter.Sustain" value="0.16666667163372039795"/>
+  <property name="ADSRFilter.Attack" value="0.6578767070472240075"/>
   <property name="ADSR2.Retrigger" value="0.0"/>
   <property name="ADSRFilter.Release" value="0.98513847234845164369"/>
   <property name="OscSectionMixer.Volume" value="1.0"/>
-  <property name="ADSRFilter.Retrigger" value="1.0"/>
-  <property name="Filter.Q" value="1.6656000137329098898"/>
+  <property name="OSC3.Phase" value="0.0"/>
+  <property name="ADSRFilter.Sustain" value="0.16666667163372039795"/>
   <property name="Delay.Wet" value="0.0"/>
+  <property name="ADSRFilter.Retrigger" value="1.0"/>
+  <property name="Filter.Q" value="2.00159997940063449917"/>
   <property name="OSC1.Phase" value="0.0"/>
   <property name="ReferenceOscillator.Detune" value="1.00560000002384186679"/>
+  <property name="ADSR2.Decay" value="0.00100000000000000002"/>
   <property name="OSC1.Volume" value="0.95599997043609619141"/>
-  <property name="OSC1.Divider" value="2.0"/>
+  <property name="Stereo2.Pan" value="-0.5"/>
   <property name="Filter.CutoffFreq" value="106.58441914711147546768"/>
+  <property name="OSC1.Divider" value="2.0"/>
   <property name="OSC1.Waveform" value="3.0"/>
   <property name="OSC2.Volume" value="1.0"/>
-  <property name="OSC2.Phase" value="0.49599999189376831055"/>
   <property name="ADSR1.Release" value="1.00000007476657626349"/>
-  <property name="OSC2.Divider" value="2.0"/>
+  <property name="OSC2.Phase" value="0.49599999189376831055"/>
   <property name="ADSR2.Attack" value="0.49897501807212829572"/>
+  <property name="OSC2.Divider" value="2.0"/>
   <property name="OSC2.Waveform" value="2.0"/>
   <property name="UnisonMixer.Volume" value="0.0"/>
   <property name="ADSR1.Attack" value="0.22198893210142853216"/>
   <property name="ADSR1.Sustain" value="1.0"/>
-  <property name="ADSR1.Retrigger" value="0.0"/>
   <property name="OSC4.Waveform" value="1.0"/>
+  <property name="ADSR1.Retrigger" value="0.0"/>
   <property name="OSC3.Volume" value="0.28000000119209289551"/>
   <property name="OSC3.Divider" value="1.0"/>
+  <property name="Compressor1.Threshold" value="0.0"/>
   <property name="OSC3.Waveform" value="3.0"/>
+  <property name="Filter.Mode" value="2.0"/>
   <property name="OSC4.Volume" value="0.0"/>
-  <property name="Filter.Mode" value="1.0"/>
   <property name="OSC4.Phase" value="0.0"/>
   <property name="OSC4.Divider" value="1.0"/>
   <property name="ADSR2.Release" value="0.50129620130732654992"/>
   <property name="ADSR2.Sustain" value="1.0"/>
   <property name="FilterCutoffLfo.Frequency" value="3.14262542128562971655"/>
+  <property name="ADSRFilter.Decay" value="0.00100000000000000002"/>
   <property name="Filter.EnvelopeScale" value="1.0"/>
   <property name="Delay.Delay" value="0.31999999284744262695"/>
   <property name="Delay.Feedback" value="0.67799997329711914063"/>
   <property name="PostProcessing.Enabled" value="1.0"/>
+  <property name="ReferenceOscillator.Portamento" value="0.00300000000000000006"/>
+  <property name="ADSR1.Decay" value="0.00100000000000000002"/>
+  <property name="Stereo1.Pan" value="0.5"/>
+  <property name="FilterCutoffLfo.Waveform" value="1.0"/>
+  <property name="Compressor1.Rate" value="1.0"/>
+  <property name="Compressor2.Threshold" value="0.0"/>
+  <property name="Compressor2.Rate" value="1.0"/>
   <info>
     <category>Fx</category>
     <name>Bending metal</name>

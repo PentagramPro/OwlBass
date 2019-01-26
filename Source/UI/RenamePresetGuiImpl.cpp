@@ -1,13 +1,15 @@
 
 #include "RenamePresetGuiImpl.h"
+#include "SynthStateManager.h"
 
-CRenamePresetGuiImpl::CRenamePresetGuiImpl(IGuiListener & listener) : mGuiListener(listener)
+CRenamePresetGuiImpl::CRenamePresetGuiImpl(CSynthStateManager & stateManager) : mStateManager(stateManager)
 {
 }
 
 void CRenamePresetGuiImpl::buttonClicked(Button * buttonThatWasClicked)
 {
-	mGuiListener.OnSavePreset(mTxtName->getText().toStdString(), mTxtCategory->getText().toStdString());
+	mStateManager.SetNameAndCategory(mTxtName->getText().toStdString(), mTxtCategory->getText().toStdString());
+	mStateManager.SaveStateToFile(mStateManager.GetCurrentPath());
 	getParentComponent()->removeChildComponent(this);
 }
 

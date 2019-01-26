@@ -76,6 +76,12 @@
             file="Source/Synth/StereoEffectsVoice.h"/>
     </GROUP>
     <GROUP id="{760016CA-87E6-5D77-FD13-3993BD947A8C}" name="Source">
+      <FILE id="cr5Xme" name="ISynthStateManagerListener.h" compile="0" resource="0"
+            file="Source/ISynthStateManagerListener.h"/>
+      <FILE id="VQQbqm" name="SynthStateManager.cpp" compile="1" resource="0"
+            file="Source/SynthStateManager.cpp"/>
+      <FILE id="S3ynPs" name="SynthStateManager.h" compile="0" resource="0"
+            file="Source/SynthStateManager.h"/>
       <FILE id="SVD54W" name="Version.h" compile="0" resource="0" file="Source/Version.h"/>
       <FILE id="bjQnPX" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>

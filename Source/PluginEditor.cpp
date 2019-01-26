@@ -23,7 +23,7 @@ AdditiveVstAudioProcessorEditor::AdditiveVstAudioProcessorEditor (AdditiveVstAud
 
 
 	addAndMakeVisible(mGui);
-	mGui.SetListener(this);
+	mGui.Initialize(this, processor.GetStateManager());
 	mRegistryListenerHandle = processor.GetPropertiesRegistry().AddListener(*this);
 	OnPropertiesFromSynthState();
 	
@@ -69,23 +69,14 @@ void AdditiveVstAudioProcessorEditor::OnPropertiesFromSynthState()
 		}
 	}
 
-	const auto& info = processor.GetSynthState().GetStateInfo();
-	mGui.SetPresetNameAndCategory(info.name, info.category);
+	//const auto& info = processor.GetSynthState().GetStateInfo();
+	//mGui.SetPresetNameAndCategory(info.name, info.category);
 }
 
-void AdditiveVstAudioProcessorEditor::OnLoadPreset(const std::string & filePath)
-{
-	File file(filePath);
-	MemoryBlock state;
-	if (file.loadFileAsData(state)) {
-		processor.setStateInformation(state.getData(), static_cast<int>(state.getSize()));
-		mCurrentPresetPath = filePath;
-	}
-
-}
-
+/*
 void AdditiveVstAudioProcessorEditor::OnSavePreset(const std::string & name, const std::string & category)
 {
+	
 	processor.GetSynthState().SetNameAndCategory(name, category);
 	MemoryBlock state;
 	processor.getStateInformation(state);
@@ -95,5 +86,5 @@ void AdditiveVstAudioProcessorEditor::OnSavePreset(const std::string & name, con
 	const auto& info = processor.GetSynthState().GetStateInfo();
 	mGui.SetPresetNameAndCategory(info.name, info.category);
 }
-
+*/
 
